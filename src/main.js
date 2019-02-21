@@ -4,6 +4,9 @@ import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
 
+import { Button } from "ant-design-vue";
+Vue.use(Button);
+
 Vue.config.productionTip = false;
 
 new Vue({
