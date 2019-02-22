@@ -1,8 +1,8 @@
-const antdTheme = require("./src/theme.js");
+const antdTheme = require('./src/theme.js')
 module.exports = {
   pwa: {
     iconPaths: {
-      favicon32: "favicon.png"
+      favicon32: 'favicon.png'
     }
   },
   css: {
@@ -13,4 +13,4 @@ module.exports = {
       }
     }
   }
-};
+}

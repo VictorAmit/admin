@@ -22,24 +22,30 @@
 </template>
 
 <script>
-import CuiTopbar from "@/components/LayoutComponents/Topbar";
-import CuiFooter from "@/components/LayoutComponents/Footer";
-import CuiMenuLeft from "@/components/LayoutComponents/Menu/MenuLeft";
+import CuiTopbar from '@/components/LayoutComponents/Topbar'
+import CuiFooter from '@/components/LayoutComponents/Footer'
+import CuiMenuLeft from '@/components/LayoutComponents/Menu/MenuLeft'
 
 export default {
   components: { CuiFooter, CuiTopbar, CuiMenuLeft }
-};
+}
 </script>
 
 <style lang="scss" module>
 @import "@/assets/styles/mixins.scss";
 
 .sider {
+  background: $white;
+
   @media (max-width: $md-max-width) {
     flex: 0 0 64px !important;
     max-width: 64px !important;
     min-width: 64px !important;
-    width: 64px !important;
+    width: 80px !important;
+  }
+
+  @media (max-width: $sm-max-width) {
+    display: none;
   }
 }
 </style>
