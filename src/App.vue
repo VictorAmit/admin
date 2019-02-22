@@ -27,7 +27,7 @@ import CuiFooter from '@/components/LayoutComponents/Footer'
 import CuiMenuLeft from '@/components/LayoutComponents/Menu/MenuLeft'
 
 export default {
-  components: { CuiFooter, CuiTopbar, CuiMenuLeft }
+  components: { CuiFooter, CuiTopbar, CuiMenuLeft },
 }
 </script>
 

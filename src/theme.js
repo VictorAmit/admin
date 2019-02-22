@@ -43,5 +43,5 @@ module.exports = {
   '@table-padding-vertical': '12px',
   '@table-padding-horizontal': '8px',
 
-  '@modal-mask-bg': 'rgba(15, 12, 41, 0.5)'
+  '@modal-mask-bg': 'rgba(15, 12, 41, 0.5)',
 }

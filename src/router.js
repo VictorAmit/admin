@@ -8,17 +8,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: 'dashboard/alpha'
+      redirect: 'dashboard/alpha',
     },
     {
       path: '/dashboard/alpha',
       name: 'dashboardAlpha',
-      component: () => import('./views/dashboard/alpha')
+      component: () => import('./views/dashboard/alpha'),
     },
     {
       path: '/dashboard/beta',
       name: 'dashboardBeta',
-      component: () => import('./views/dashboard/beta')
-    }
-  ]
+      component: () => import('./views/dashboard/beta'),
+    },
+  ],
 })

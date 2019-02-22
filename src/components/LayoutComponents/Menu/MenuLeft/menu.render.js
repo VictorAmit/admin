@@ -5,26 +5,26 @@ export default {
   name: 'CuiMenu',
   props: {
     menuData: {
-      required: true
+      required: true,
     },
     theme: {
       required: false,
-      default: 'dark'
+      default: 'dark',
     },
     mode: {
       required: false,
-      default: 'inline'
+      default: 'inline',
     },
     collapsed: {
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       openKeys: [],
       selectedKeys: [],
-      cachedOpenKeys: []
+      cachedOpenKeys: [],
     }
   },
   computed: {
@@ -34,7 +34,7 @@ export default {
         keys.push(item.key)
       })
       return keys
-    }
+    },
   },
   created() {
     this.updateMenu()
@@ -50,7 +50,7 @@ export default {
     },
     $route: function () {
       this.updateMenu()
-    }
+    },
   },
   methods: {
     renderIcon: function () {
@@ -61,20 +61,20 @@ export default {
         Item,
         {
           disabled: true,
-          key: menu.key ? menu.key : 'item_' + pIndex + '_' + index
+          key: menu.key ? menu.key : 'item_' + pIndex + '_' + index,
         },
         [
           menu.url
             ? menu.target
               ? h('a', { attrs: { href: menu.url, target: menu.target ? menu.target : '' } }, [
                 this.renderIcon(h, menu.icon),
-                h('span', [menu.title])
+                h('span', [menu.title]),
               ])
               : h('router-link', { props: { to: menu.url } }, [
                 this.renderIcon(h, menu.icon),
-                h('span', [menu.title])
+                h('span', [menu.title]),
               ])
-            : h('span', [menu.title])
+            : h('span', [menu.title]),
         ]
       )
     },
@@ -83,8 +83,8 @@ export default {
       var subItem = [
         h('span', { slot: 'title' }, [
           this.renderIcon(h, menu.icon),
-          h('span', [menu.title])
-        ])
+          h('span', [menu.title]),
+        ]),
       ]
       var itemArr = []
       var pIndex_ = pIndex + '_' + index
@@ -135,7 +135,7 @@ export default {
       // this.collapsed || this.mode === "horizontal"
       //   ? (this.cachedOpenKeys = openKeys)
       //   : (this.openKeys = openKeys);
-    }
+    },
   },
   render(h) {
     return h(
@@ -145,17 +145,17 @@ export default {
           theme: this.$props.theme,
           mode: this.$props.mode,
           openKeys: this.openKeys,
-          selectedKeys: this.selectedKeys
+          selectedKeys: this.selectedKeys,
         },
         on: {
           openChange: this.onOpenChange,
           select: obj => {
             this.selectedKeys = obj.selectedKeys
             this.$emit('select', obj)
-          }
-        }
+          },
+        },
       },
       this.renderMenu(h, this.menuData)
     )
-  }
+  },
 }

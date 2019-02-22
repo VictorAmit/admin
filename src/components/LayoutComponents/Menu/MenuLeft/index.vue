@@ -15,9 +15,9 @@ export default {
   components: { CuiMenuLeft },
   data() {
     return {
-      menuData: getLeftMenuData
+      menuData: getLeftMenuData,
     }
-  }
+  },
 }
 </script>
 

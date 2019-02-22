@@ -2,63 +2,63 @@ export const getLeftMenuData = [
   {
     title: 'Settings',
     key: 'settings',
-    icon: 'icmn icmn-cog utils__spin-delayed--pseudo-selector'
+    icon: 'icmn icmn-cog utils__spin-delayed--pseudo-selector',
   },
   {
     title: 'Documentation',
     key: 'documentation',
     url: 'https://docs.cleanuitemplate.com/react/getting-started',
     target: '_blank',
-    icon: 'icmn icmn-books'
+    icon: 'icmn icmn-books',
   },
   {
-    divider: true
+    divider: true,
   },
   {
     title: 'Dashboard Alpha',
     key: 'dashboardAlpha',
     url: '/dashboard/alpha',
-    icon: 'icmn icmn-home'
+    icon: 'icmn icmn-home',
   },
   {
     title: 'Dashboard Beta',
     key: 'dashboardBeta',
     url: '/dashboard/beta',
     icon: 'icmn icmn-home',
-    pro: true
+    pro: true,
   },
   {
     title: 'Dashboard Crypto',
     key: 'dashboardCrypto',
     url: '/dashboard/crypto',
     icon: 'icmn icmn-home',
-    pro: true
+    pro: true,
   },
   {
     title: 'Dashboard Gamma',
     key: 'dashboardGamma',
     url: '/dashboard/gamma',
     icon: 'icmn icmn-home',
-    pro: true
+    pro: true,
   },
   {
     title: 'Dashboard Docs',
     key: 'dashboardDocs',
     url: '/dashboard/docs',
     icon: 'icmn icmn-home',
-    pro: true
+    pro: true,
   },
   {
-    divider: true
+    divider: true,
   },
   {
     title: 'AntDesign Components',
     key: 'antComponents',
     icon: 'icmn icmn-menu',
-    url: '/antd'
+    url: '/antd',
   },
   {
-    divider: true
+    divider: true,
   },
   {
     title: 'Default Pages',
@@ -69,39 +69,39 @@ export const getLeftMenuData = [
         key: 'loginAlpha',
         title: 'Login Alpha',
         url: '/pages/login-alpha',
-        pro: true
+        pro: true,
       },
       {
         key: 'loginBeta',
         title: 'Login Beta',
         url: '/pages/login-beta',
-        pro: true
+        pro: true,
       },
       {
         key: 'register',
         title: 'Register',
         url: '/pages/register',
-        pro: true
+        pro: true,
       },
       {
         key: 'lockscreen',
         title: 'Lockscreen',
         url: '/pages/lockscreen',
-        pro: true
+        pro: true,
       },
       {
         key: 'pricingTable',
         title: 'Pricing Tables',
         url: '/pages/pricing-table',
-        pro: true
+        pro: true,
       },
       {
         key: 'invoice',
         title: 'Invoice',
         url: '/pages/invoice',
-        pro: true
-      }
-    ]
+        pro: true,
+      },
+    ],
   },
   {
     title: 'Charts',
@@ -111,37 +111,37 @@ export const getLeftMenuData = [
       {
         title: 'Chartist',
         key: 'chartist',
-        url: '/charts/chartist'
+        url: '/charts/chartist',
       },
       {
         title: 'Chart',
         key: 'chart',
         url: '/charts/chart',
-        pro: true
+        pro: true,
       },
       {
         title: 'Peity',
         key: 'peity',
         url: '/charts/peity',
-        pro: true
+        pro: true,
       },
       {
         title: 'C3',
         key: 'c3',
         url: '/charts/c3',
-        pro: true
-      }
-    ]
+        pro: true,
+      },
+    ],
   },
   {
     title: 'Mail Templates',
     key: 'mailTemplates',
     url: '/layout/mail-templates',
     icon: 'icmn icmn-envelop',
-    pro: true
+    pro: true,
   },
   {
-    divider: true
+    divider: true,
   },
   {
     title: 'Apps',
@@ -152,27 +152,27 @@ export const getLeftMenuData = [
         title: 'Messaging',
         key: 'messaging',
         url: '/apps/messaging',
-        pro: true
+        pro: true,
       },
       {
         title: 'Mail',
         key: 'mail',
         url: '/apps/mail',
-        pro: true
+        pro: true,
       },
       {
         title: 'Profile',
         key: 'profile',
         url: '/apps/profile',
-        pro: true
+        pro: true,
       },
       {
         title: 'Gallery',
         key: 'gallery',
         url: '/apps/gallery',
-        pro: true
-      }
-    ]
+        pro: true,
+      },
+    ],
   },
   {
     title: 'Ecommerce',
@@ -183,45 +183,45 @@ export const getLeftMenuData = [
         title: 'Dashboard',
         key: 'dashboard',
         url: '/ecommerce/dashboard',
-        pro: true
+        pro: true,
       },
       {
         title: 'Products Catalog',
         key: 'productsCatalog',
         url: '/ecommerce/products-catalog',
-        pro: true
+        pro: true,
       },
       {
         title: 'Products Details',
         key: 'productsDetails',
         url: '/ecommerce/product-details',
-        pro: true
+        pro: true,
       },
       {
         title: 'Products Edit',
         key: 'productsEdit',
         url: '/ecommerce/product-edit',
-        pro: true
+        pro: true,
       },
       {
         title: 'Products List',
         key: 'productsList',
         url: '/ecommerce/products-list',
-        pro: true
+        pro: true,
       },
       {
         title: 'Orders',
         key: 'orders',
         url: '/ecommerce/orders',
-        pro: true
+        pro: true,
       },
       {
         title: 'Cart',
         key: 'cart',
         url: '/ecommerce/cart',
-        pro: true
-      }
-    ]
+        pro: true,
+      },
+    ],
   },
   {
     title: 'Blog',
@@ -232,21 +232,21 @@ export const getLeftMenuData = [
         title: 'Feed',
         key: 'blogFeed',
         url: '/blog/feed',
-        pro: true
+        pro: true,
       },
       {
         title: 'Post',
         key: 'blogPost',
         url: '/blog/post',
-        pro: true
+        pro: true,
       },
       {
         title: 'Add Post',
         key: 'blogAddPost',
         url: '/blog/add-blog-post',
-        pro: true
-      }
-    ]
+        pro: true,
+      },
+    ],
   },
   {
     title: 'YouTube',
@@ -257,15 +257,15 @@ export const getLeftMenuData = [
         title: 'Feed',
         key: 'youtubeFeed',
         url: '/youtube/feed',
-        pro: true
+        pro: true,
       },
       {
         title: 'View',
         key: 'youtubeView',
         url: '/youtube/view',
-        pro: true
-      }
-    ]
+        pro: true,
+      },
+    ],
   },
   {
     title: 'GitHub',
@@ -276,18 +276,18 @@ export const getLeftMenuData = [
         title: 'Explore',
         key: 'githubExplore',
         url: '/github/explore',
-        pro: true
+        pro: true,
       },
       {
         title: 'Discuss',
         key: 'githubDiscuss',
         url: '/github/discuss',
-        pro: true
-      }
-    ]
+        pro: true,
+      },
+    ],
   },
   {
-    divider: true
+    divider: true,
   },
   {
     title: 'Icons',
@@ -297,46 +297,46 @@ export const getLeftMenuData = [
       {
         title: 'FontAwesome',
         key: 'fontAwesome',
-        url: '/icons/fontawesome'
+        url: '/icons/fontawesome',
       },
       {
         title: 'Linear',
         key: 'linear',
-        url: '/icons/linear'
+        url: '/icons/linear',
       },
       {
         title: 'Icomoon',
         key: 'icoMoon',
-        url: '/icons/icomoon'
-      }
-    ]
+        url: '/icons/icomoon',
+      },
+    ],
   },
   {
     title: 'Bootstrap Grid',
     key: 'bootstrap',
     url: '/layout/bootstrap',
-    icon: 'icmn icmn-html-five'
+    icon: 'icmn icmn-html-five',
   },
   {
     title: 'Bootstrap Card',
     key: 'card',
     url: '/layout/card',
-    icon: 'icmn icmn-stack'
+    icon: 'icmn icmn-stack',
   },
   {
     title: 'Typography',
     key: 'typography',
     url: '/layout/typography',
-    icon: 'icmn icmn-font-size'
+    icon: 'icmn icmn-font-size',
   },
   {
     title: 'Utilities',
     key: 'utilities',
     url: '/layout/utilities',
-    icon: 'icmn icmn-magic-wand'
+    icon: 'icmn icmn-magic-wand',
   },
   {
-    divider: true
+    divider: true,
   },
   {
     title: 'Nested Items',
@@ -350,25 +350,25 @@ export const getLeftMenuData = [
         children: [
           {
             title: 'Nested Item 1-1-1',
-            key: 'nestedItem1-1-1'
+            key: 'nestedItem1-1-1',
           },
           {
             title: 'Nested Items 1-1-2',
             key: 'nestedItem1-1-2',
-            disabled: true
-          }
-        ]
+            disabled: true,
+          },
+        ],
       },
       {
         title: 'Nested Items 1-2',
-        key: 'nestedItem1-2'
-      }
-    ]
+        key: 'nestedItem1-2',
+      },
+    ],
   },
   {
     title: 'Disabled Item',
     key: 'disabledItem',
     disabled: true,
-    icon: 'icmn icmn-cancel-circle'
-  }
+    icon: 'icmn icmn-cancel-circle',
+  },
 ]
