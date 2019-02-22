@@ -1,3 +1,3 @@
 <template>
-  <div>Gamma</div>
+  <div>C3</div>
 </template>

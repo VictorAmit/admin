@@ -1,3 +1,3 @@
 <template>
-  <div>Gamma</div>
+  <div>View</div>
 </template>

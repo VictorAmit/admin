@@ -1,3 +1,3 @@
 <template>
-  <div>Gamma</div>
+  <div>Register</div>
 </template>

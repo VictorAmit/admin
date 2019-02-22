@@ -1,3 +1,3 @@
 <template>
-  <div>Crypto</div>
+  <div>Docs</div>
 </template>
