@@ -1,5 +1,22 @@
 <template>
-  <div>
+  <div :class="$style.topbar">
     Topbar
   </div>
 </template>
+
+<style lang="scss" module>
+@import "@/assets/styles/mixins.scss";
+
+.topbar {
+  background: $white;
+  padding: 0 rem(20);
+  min-height: 64px;
+  height: 64px;
+  border-bottom: 1px solid $gray-border;
+  color: $text;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+</style>
