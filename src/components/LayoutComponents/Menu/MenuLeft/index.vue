@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import { getLeftMenuData } from './menu.config';
-import CuiMenuLeft from './menu.render';
+import { getLeftMenuData } from './menu.config'
+import CuiMenuLeft from './menu.render'
 
 export default {
   name: 'menu-left',
   components: { CuiMenuLeft },
-  data () {
+  data() {
     return {
       menuData: getLeftMenuData
     }

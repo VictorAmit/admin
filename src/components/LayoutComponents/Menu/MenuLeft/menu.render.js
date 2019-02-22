@@ -20,7 +20,7 @@ export default {
       default: false
     }
   },
-  data () {
+  data() {
     return {
       openKeys: [],
       selectedKeys: [],
@@ -36,11 +36,11 @@ export default {
       return keys
     }
   },
-  created () {
+  created() {
     this.updateMenu()
   },
   watch: {
-    collapsed (val) {
+    collapsed(val) {
       if (val) {
         this.cachedOpenKeys = this.openKeys
         this.openKeys = []
@@ -115,7 +115,7 @@ export default {
       })
       return menuArr
     },
-    onOpenChange (openKeys) {
+    onOpenChange(openKeys) {
       const latestOpenKey = openKeys.find(
         key => this.openKeys.indexOf(key) === -1
       )
@@ -125,7 +125,7 @@ export default {
         this.openKeys = latestOpenKey ? [latestOpenKey] : []
       }
     },
-    updateMenu () {
+    updateMenu() {
       // let routes = this.$route.matched.concat();
       // this.selectedKeys = [routes.pop().key ? routes.pop().key : ''];
       // let openKeys = [];
@@ -137,7 +137,7 @@ export default {
       //   : (this.openKeys = openKeys);
     }
   },
-  render (h) {
+  render(h) {
     return h(
       Menu,
       {

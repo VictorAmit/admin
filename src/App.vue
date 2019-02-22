@@ -2,19 +2,19 @@
   <div id="app">
     <a-layout>
       <a-layout-sider :width="256" :class="$style.sider">
-        <cui-menu-left />
+        <cui-menu-left/>
       </a-layout-sider>
       <a-layout>
         <a-layout-header>
-          <cui-topbar />
+          <cui-topbar/>
         </a-layout-header>
         <a-layout-content>
           <div class="utils__content">
-            <router-view />
+            <router-view/>
           </div>
         </a-layout-content>
         <a-layout-footer>
-          <cui-footer />
+          <cui-footer/>
         </a-layout-footer>
       </a-layout>
     </a-layout>
