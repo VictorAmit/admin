@@ -1,4 +1,4 @@
-@import "@/assets/styles/mixins.scss";
+@import '@/assets/styles/mixins.scss';
 
 .card {
   padding: rem(15) rem(30) rem(20);
@@ -10,8 +10,24 @@
   height: 100%;
   width: 120px;
   position: absolute;
-  top: 0;
+  top: -3px;
   right: 0;
+
+  :global(.ct-line) {
+      stroke-width: 1px;
+  }
+
+  :global(.ct-series-a .ct-point,
+  .ct-series-a .ct-line,
+  .ct-series-a .ct-bar,
+  .ct-series-a .ct-slice-donut) {
+    stroke: #004585;
+  }
+
+  :global(.ct-series-a .ct-slice-pie,
+  .ct-series-a .ct-area) {
+    fill: #0084ff;
+  }
 }
 
 .amount {
