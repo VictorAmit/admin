@@ -8,6 +8,7 @@
         <a-layout-header>
           <cui-topbar/>
         </a-layout-header>
+        <cui-breadcrumbs />
         <a-layout-content>
           <div class="utils__content">
             <router-view/>
@@ -23,11 +24,12 @@
 
 <script>
 import CuiTopbar from '@/components/LayoutComponents/Topbar'
+import CuiBreadcrumbs from '@/components/LayoutComponents/Breadcrumbs'
 import CuiFooter from '@/components/LayoutComponents/Footer'
 import CuiMenuLeft from '@/components/LayoutComponents/Menu/MenuLeft'
 
 export default {
-  components: { CuiFooter, CuiTopbar, CuiMenuLeft },
+  components: { CuiFooter, CuiTopbar, CuiMenuLeft, CuiBreadcrumbs },
 }
 </script>
 

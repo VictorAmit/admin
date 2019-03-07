@@ -1,22 +1,57 @@
 <template>
   <div :class="$style.topbar">
-    Topbar
+    <div class="mr-4">
+      <cui-issues-history />
+    </div>
+    <div class="mr-4">
+      <cui-project-management />
+    </div>
+    <div class="mr-auto">
+      <cui-live-search />
+    </div>
+    <a
+      href="https://themeforest.net/item/clean-ui-admin-template-react-redux-ant-design-fully-responsive-freebies/21938700"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mr-4 d-none d-sm-inline"
+    >
+      <a-button type="danger">
+        Buy Now
+      </a-button>
+    </a>
+    <div class="mr-4">
+      <cui-bitcoin-price />
+    </div>
+    <div class="mr-4">
+      <cui-language-selector />
+    </div>
+    <div class="mr-4">
+      <cui-home-menu />
+    </div>
+    <cui-profile-menu />
   </div>
 </template>
+<script>
+import CuiIssuesHistory from '@/components/LayoutComponents/Topbar/IssuesHistory'
+import CuiProjectManagement from '@/components/LayoutComponents/Topbar/ProjectManagement'
+import CuiLiveSearch from '@/components/LayoutComponents/Topbar/LiveSearch'
+import CuiBitcoinPrice from '@/components/LayoutComponents/Topbar/BitcoinPrice'
+import CuiLanguageSelector from '@/components/LayoutComponents/Topbar/LanguageSelector'
+import CuiHomeMenu from '@/components/LayoutComponents/Topbar/HomeMenu'
+import CuiProfileMenu from '@/components/LayoutComponents/Topbar/ProfileMenu'
 
-<style lang="scss" module>
-@import "@/assets/styles/mixins.scss";
-
-.topbar {
-  background: $white;
-  padding: 0 rem(20);
-  min-height: 64px;
-  height: 64px;
-  border-bottom: 1px solid $gray-border;
-  color: $text;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
+export default {
+  components: {
+    CuiIssuesHistory,
+    CuiProjectManagement,
+    CuiLiveSearch,
+    CuiBitcoinPrice,
+    CuiLanguageSelector,
+    CuiHomeMenu,
+    CuiProfileMenu,
+  },
 }
+</script>
+<style lang="scss" module>
+  @import './style.module.scss';
 </style>
