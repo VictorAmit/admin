@@ -2,8 +2,13 @@
   <div :class="$style.bitcoinPrice">
     <span>Bitcoin Price:</span>
     <span :class="$style.bitcoinGraph">
-       <peity :type="'line'" :options="{ 'fill': ['#72cfff'], 'stroke': '#01a8fe', 'height': 22, 'width': 44, 'strokeWidth': 1, }" :data="lineDataDinamycFirst"></peity>
+      <peity
+        :type="'line'"
+        :options="{ 'fill': ['#72cfff'], 'stroke': '#01a8fe', 'height': 15, 'width': 40, 'strokeWidth': 1, }"
+        :data="lineDataDinamycFirst"
+      ></peity>
     </span>
+    <span>+20%</span>
   </div>
 </template>
 <script>
@@ -19,11 +24,11 @@ export default {
     }
   },
   computed: {
-    lineDataDinamycFirst () {
+    lineDataDinamycFirst() {
       return this.dynamicDataFirst.toString()
     },
   },
-  created () {
+  created() {
     setInterval(() => {
       this.dynamicDataFirst.unshift(this.dynamicDataFirst.pop())
     }, 377)
@@ -31,5 +36,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

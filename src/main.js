@@ -5,7 +5,12 @@ import store from './store'
 import './registerServiceWorker'
 import './global.scss'
 
-import { Avatar, TreeSelect, Rate, Breadcrumb, InputNumber, Steps, Message, Upload, Button, Layout, Table, Icon, Progress, Radio, Dropdown, Menu, Carousel, Input, Calendar, Badge, Slider, Form, Tooltip, Select, Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination } from 'ant-design-vue'
+import {
+  Avatar, TreeSelect, Rate, Breadcrumb, InputNumber, Steps, Message,
+  Upload, Button, Layout, Table, Icon, Progress, Radio, Dropdown, Menu,
+  Carousel, Input, Calendar, Badge, Slider, Form, Tooltip, Select,
+  Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination,
+} from 'ant-design-vue'
 
 Vue.use(Avatar)
 Vue.use(Button)

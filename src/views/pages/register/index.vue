@@ -5,15 +5,14 @@
   >
     <header :class="$style.header">
       <a href="javascript: void(0);" :class="$style.logo">
-        <img src="resources/images/logo-inverse.png" alt="Clean UI Admin Template" />
+        <img src="resources/images/logo-inverse.png" alt="Clean UI Admin Template">
       </a>
       <div :class="$style.styleControls">
-        <a-button class="mt-3 mt-xl-0" @click="setFullscreen">
-          Set {{fullscreen ? 'Windowed' : 'Fullscreen'}}
-        </a-button>
-        <a-button class="ml-3 mt-3 mt-xl-0" @click="changeBackground">
-          Change Background
-        </a-button>
+        <a-button
+          class="mt-3 mt-xl-0"
+          @click="setFullscreen"
+        >Set {{fullscreen ? 'Windowed' : 'Fullscreen'}}</a-button>
+        <a-button class="ml-3 mt-3 mt-xl-0" @click="changeBackground">Change Background</a-button>
       </div>
       <nav :class="$style.loginNav">
         <ul :class="$style.navItems">
@@ -21,9 +20,7 @@
             <a href="javascript: void(0);">&larr; Back</a>
           </li>
           <li>
-            <a :class="$style.active" href="javascript: void(0);">
-              Login
-            </a>
+            <a :class="$style.active" href="javascript: void(0);">Login</a>
           </li>
           <li>
             <a href="javascript: void(0);">About</a>
@@ -46,21 +43,25 @@
         <p :class="$style.formTitle">Please register</p>
         <a-form class="login-form" :form="form">
           <a-form-item>
-            <a-input placeholder="Username" v-decorator="['username', {rules: [{ required: true, message: 'Please input your username!' }]}]"
+            <a-input
+              placeholder="Username"
+              v-decorator="['username', {rules: [{ required: true, message: 'Please input your username!' }]}]"
             >
               <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25);"/>
             </a-input>
           </a-form-item>
           <a-form-item>
-            <a-input placeholder="Password"
-                     v-decorator="['password', {rules: [{ required: true, message: 'Please input your Password!' }]}]"
+            <a-input
+              placeholder="Password"
+              v-decorator="['password', {rules: [{ required: true, message: 'Please input your Password!' }]}]"
             >
               <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25);"/>
             </a-input>
           </a-form-item>
           <a-form-item>
-            <a-input placeholder="Confirm password"
-                     v-decorator="['password', {rules: [{ required: true, message: 'Please input your Password!' }]}]"
+            <a-input
+              placeholder="Confirm password"
+              v-decorator="['password', {rules: [{ required: true, message: 'Please input your Password!' }]}]"
             >
               <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25);"/>
             </a-input>
@@ -68,20 +69,16 @@
           <a-form-item>
             <a-checkbox
               v-decorator="['remember', { valuePropName: 'checked', initialValue: true,}]"
-            >
-              Remember me
-            </a-checkbox>
-            <a class="login-form-forgot pull-right text-primary" style="line-height: 39px;" href="javascript: void(0);">
-              Forgot password?
-            </a>
+            >Remember me</a-checkbox>
+            <a
+              class="pull-right text-primary"
+              style="line-height: 39px;"
+              href="javascript: void(0);"
+            >Forgot password?</a>
           </a-form-item>
           <div class="form-actions">
-            <a-button type="primary" htmlType="submit" class="login-form-button mr-3">
-              Sign in
-            </a-button>
-            <a-checkbox>
-              Mail Subscription
-            </a-checkbox>
+            <a-button type="primary" htmlType="submit" class="login-form-button mr-3">Sign in</a-button>
+            <a-checkbox>Mail Subscription</a-checkbox>
           </div>
         </a-form>
       </div>
@@ -109,7 +106,7 @@
 </template>
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       form: this.$form.createForm(this),
       fullscreen: false,
@@ -131,5 +128,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

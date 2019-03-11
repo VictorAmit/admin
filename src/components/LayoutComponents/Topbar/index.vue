@@ -1,13 +1,13 @@
 <template>
   <div :class="$style.topbar">
     <div class="mr-4">
-      <cui-issues-history />
+      <cui-issues-history/>
     </div>
     <div class="mr-4">
-      <cui-project-management />
+      <cui-project-management/>
     </div>
     <div class="mr-auto">
-      <cui-live-search />
+      <cui-live-search/>
     </div>
     <a
       href="https://themeforest.net/item/clean-ui-admin-template-react-redux-ant-design-fully-responsive-freebies/21938700"
@@ -15,20 +15,18 @@
       rel="noopener noreferrer"
       class="mr-4 d-none d-sm-inline"
     >
-      <a-button type="danger">
-        Buy Now
-      </a-button>
+      <a-button type="danger">Buy Now $24</a-button>
     </a>
     <div class="mr-4">
-      <cui-bitcoin-price />
+      <cui-bitcoin-price/>
     </div>
     <div class="mr-4">
-      <cui-language-selector />
+      <cui-language-selector/>
     </div>
     <div class="mr-4">
-      <cui-home-menu />
+      <cui-home-menu/>
     </div>
-    <cui-profile-menu />
+    <cui-profile-menu/>
   </div>
 </template>
 <script>
@@ -53,5 +51,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>
