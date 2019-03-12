@@ -341,7 +341,6 @@ export const getLeftMenuData = [
   {
     title: 'Nested Items',
     key: 'nestedItem1',
-    disabled: true,
     icon: 'icmn icmn-arrow-down2',
     children: [
       {
@@ -355,7 +354,6 @@ export const getLeftMenuData = [
           {
             title: 'Nested Items 1-1-2',
             key: 'nestedItem1-1-2',
-            disabled: true,
           },
         ],
       },
@@ -364,11 +362,5 @@ export const getLeftMenuData = [
         key: 'nestedItem1-2',
       },
     ],
-  },
-  {
-    title: 'Disabled Item',
-    key: 'disabledItem',
-    disabled: true,
-    icon: 'icmn icmn-cancel-circle',
   },
 ]

@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.bitcoinPrice">
-    <span>Bitcoin Price:</span>
+    <span>Bitcoin:</span>
     <span :class="$style.bitcoinGraph">
       <peity
         :type="'line'"

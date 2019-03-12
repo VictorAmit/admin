@@ -60,8 +60,7 @@ export default {
       return h(
         Item,
         {
-          disabled: true,
-          key: menu.key ? menu.key : 'item_' + pIndex + '_' + index,
+          key: menu.url ? menu.url : 'item_' + pIndex + '_' + index,
         },
         [
           menu.url
@@ -126,15 +125,22 @@ export default {
       }
     },
     updateMenu() {
-      // let routes = this.$route.matched.concat();
-      // this.selectedKeys = [routes.pop().key ? routes.pop().key : ''];
-      // let openKeys = [];
-      // routes.forEach(item => {
-      //   openKeys.push(item.key);
-      // });
-      // this.collapsed || this.mode === "horizontal"
-      //   ? (this.cachedOpenKeys = openKeys)
-      //   : (this.openKeys = openKeys);
+      const routes = this.$route.matched.concat()
+      if (routes.length > 1) {
+        routes.shift()
+        this.selectedKeys = [routes[0].path] || ''
+      } else {
+        this.selectKeys = ''
+      }
+
+      // const openKeys = []
+      // if (this.mode === 'inline') {
+      //   routes.forEach(item => {
+      //     openKeys.push(item.path)
+      //   })
+      // }
+
+      // this.collapsed ? (this.cachedOpenKeys = openKeys) : (this.openKeys = openKeys)
     },
   },
   render(h) {

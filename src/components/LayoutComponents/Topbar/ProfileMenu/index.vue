@@ -44,7 +44,7 @@
 export default {
   data: function () {
     return {
-      count: 1,
+      count: 7,
     }
   },
   methods: {

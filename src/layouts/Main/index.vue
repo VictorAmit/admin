@@ -1,8 +1,23 @@
 <template>
-  <a-layout>
-    <a-layout-sider :width="256" :class="$style.sider">
-      <cui-menu-left/>
+  <a-layout
+    :class="{
+      'settings__borderLess': isBorderless,
+      'settings__squaredBorders': isSquaredBorders,
+      'settings__fixedWidth': isFixedWidth,
+      'settings__menuShadow': isMenuShadow,
+      'settings__menuTop': isMenuTop
+    }"
+  >
+    <!-- left menu -->
+    <a-layout-sider
+      :width="256"
+      :class="isLightTheme ? [$style.sider, $style.light] : $style.sider"
+      collapsible
+      v-model="isMenuCollapsed"
+    >
+      <cui-menu-left v-bind:isMenuCollapsed="isMenuCollapsed" v-bind:isLightTheme="isLightTheme"/>
     </a-layout-sider>
+
     <a-layout>
       <a-layout-header>
         <cui-topbar/>
@@ -29,24 +44,22 @@ import CuiMenuLeft from '@/components/LayoutComponents/Menu/MenuLeft'
 export default {
   name: 'MainLayout',
   components: { CuiFooter, CuiTopbar, CuiMenuLeft, CuiBreadcrumbs },
+  data: function () {
+    return {
+      isMenuCollapsed: false,
+      isMobileView: false,
+      isMenuTop: false,
+      isLightTheme: true,
+      isMobileMenuOpen: false,
+      isMenuShadow: true,
+      isFixedWidth: false,
+      isSquaredBorders: false,
+      isBorderless: false,
+    }
+  },
 }
 </script>
 
 <style lang="scss" module>
-@import "@/assets/styles/mixins.scss";
-
-.sider {
-  background: $white;
-
-  @media (max-width: $md-max-width) {
-    flex: 0 0 64px !important;
-    max-width: 64px !important;
-    min-width: 64px !important;
-    width: 80px !important;
-  }
-
-  @media (max-width: $sm-max-width) {
-    display: none;
-  }
-}
+@import "./style.module.scss";
 </style>

@@ -1,18 +1,48 @@
 <template>
-  <div :class="$style.menu">
-    <div :class="$style.inner">
-      <cui-menu-left :theme="'light'" :collapsed="false" :menuData="menuData"/>
+  <div>
+    <div :class="$style.logo">
+      <div :class="$style.logoContainer">
+        <img v-if="!isMenuCollapsed" src="resources/images/logo-inverse.png" alt>
+        <img v-if="isMenuCollapsed" src="resources/images/logo-inverse-mobile.png" alt>
+      </div>
+    </div>
+    <div :class="isLightTheme ? [$style.navigation, $style.light] : $style.navigation">
+      <vue-custom-scrollbar
+        :class="isMobileView ? $style.scrollbarMobile : $style.scrollbarDesktop"
+      >
+        <cui-menu-left
+          class="123123"
+          :theme="isLightTheme ? 'light' : 'dark'"
+          :collapsed="isMenuCollapsed"
+          :menuData="menuData"
+        />
+      </vue-custom-scrollbar>
     </div>
   </div>
 </template>
 
 <script>
-import { getLeftMenuData } from './menu.config'
+import vueCustomScrollbar from 'vue-custom-scrollbar'
 import CuiMenuLeft from './menu.render'
+import { getLeftMenuData } from './menu.config'
 
 export default {
   name: 'menu-left',
-  components: { CuiMenuLeft },
+  components: { CuiMenuLeft, vueCustomScrollbar },
+  props: {
+    isMenuCollapsed: {
+      type: Boolean,
+      default: false,
+    },
+    isLightTheme: {
+      type: Boolean,
+      default: false,
+    },
+    isMobileView: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       menuData: getLeftMenuData,
@@ -22,24 +52,5 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import "@/assets/styles/mixins.scss";
-
-.menu {
-  width: 100%;
-  height: 100%;
-  color: $text;
-  box-shadow: 0 0 200px -30px rgba(57, 55, 73, 0.4);
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-}
-
-.inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
+@import "./style.module.scss";
 </style>
