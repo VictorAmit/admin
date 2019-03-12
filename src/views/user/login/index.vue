@@ -20,7 +20,7 @@
               <h4 class="text-uppercase">
                 <strong>Please log in</strong>
               </h4>
-              <a-form class="login-form" :form="form">
+              <a-form class="login-form" :form="form" @submit="handleSubmit">
                 <a-form-item label="Email">
                   <a-input
                     placeholder="Email"
@@ -85,11 +85,50 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data: function () {
     return {
       form: this.$form.createForm(this),
     }
+  },
+  computed: {
+    ...mapGetters(['user']),
+    nextRoute() {
+      return this.$route.query.redirect || '/'
+    },
+  },
+  watch: {
+    user(auth) {
+      if (auth) {
+        this.$router.replace(this.nextRoute)
+      }
+    },
+  },
+  methods: {
+    handleSubmit(e) {
+      e.preventDefault()
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          this.$nprogress.start()
+          this.$auth.login(values.email, values.password)
+            .then(() => {
+              this.$nprogress.done()
+              this.$notification['success']({
+                message: 'Logged In',
+                description: 'You have successfully logged in to Clean UI React Admin Template!',
+              })
+            })
+            .catch((error) => {
+              this.$nprogress.done()
+              this.$notification['warning']({
+                message: error.code,
+                description: error.message,
+              })
+            })
+        }
+      })
+    },
   },
 }
 </script>

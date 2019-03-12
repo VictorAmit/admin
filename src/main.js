@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import NProgress from 'vue-nprogress'
+import FirebaseAuthService from './services/firebase'
 import './registerServiceWorker'
 import './global.scss'
 
@@ -9,7 +11,7 @@ import {
   Avatar, TreeSelect, Rate, Breadcrumb, InputNumber, Steps, Message,
   Upload, Button, Layout, Table, Icon, Progress, Radio, Dropdown, Menu,
   Carousel, Input, Calendar, Badge, Slider, Form, Tooltip, Select,
-  Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination,
+  Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination, notification,
 } from 'ant-design-vue'
 
 Vue.use(Avatar)
@@ -43,11 +45,19 @@ Vue.use(Upload)
 Vue.use(Message)
 Vue.use(Steps)
 Vue.use(InputNumber)
+Vue.use(notification)
+
+Vue.prototype.$notification = notification
+
+Vue.use(NProgress)
+Vue.use(FirebaseAuthService)
 
 Vue.config.productionTip = false
+const nprogress = new NProgress({ parent: 'body' })
 
 new Vue({
   router,
   store,
+  nprogress,
   render: h => h(App),
 }).$mount('#app')

@@ -5,7 +5,7 @@
         <a-avatar shape="square" icon="user" size="large" :class="$style.avatar"/>
       </a-badge>
     </div>
-    <a-menu slot="overlay" >
+    <a-menu slot="overlay">
       <a-menu-item>
         <div>
           <strong>Hello, Administrator</strong>
@@ -17,7 +17,7 @@
           <strong class="mr-1">Role:</strong> Admin
         </div>
       </a-menu-item>
-      <a-menu-divider />
+      <a-menu-divider/>
       <a-menu-item>
         <div>
           <strong class="mr-1">Email:</strong> admin@mediatec.org
@@ -26,14 +26,14 @@
           <strong class="mr-1">Phone:</strong> -
         </div>
       </a-menu-item>
-      <a-menu-divider />
+      <a-menu-divider/>
       <a-menu-item>
         <a href="javascript: void(0);">
           <i :class="$style.menuIcon" class="icmn-user"></i> Edit Profile
         </a>
       </a-menu-item>
       <a-menu-item>
-        <a href="javascript: void(0);">
+        <a href="javascript: void(0);" @click="logout">
           <i :class="$style.menuIcon" class="icmn-exit"></i> Logout
         </a>
       </a-menu-item>
@@ -51,9 +51,12 @@ export default {
     addCount() {
       this.count++
     },
+    logout() {
+      this.$auth.logout()
+    },
   },
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

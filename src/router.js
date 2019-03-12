@@ -2,16 +2,18 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LoginLayout from '@/layouts/Login'
 import MainLayout from '@/layouts/Main'
+import store from '@/store'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
       redirect: 'dashboard/alpha',
       component: MainLayout,
+      meta: { authRequired: true },
       children: [
         // Dashboards
         {
@@ -209,6 +211,7 @@ export default new Router({
     {
       path: '/user',
       component: LoginLayout,
+      redirect: '/user/login',
       children: [
         {
           path: '/user/login',
@@ -222,3 +225,20 @@ export default new Router({
     },
   ],
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.authRequired)) {
+    if (!store.state.user.user) {
+      next({
+        path: '/user/login',
+        query: { redirect: to.fullPath },
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
+})
+
+export default router
