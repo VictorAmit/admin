@@ -3,12 +3,9 @@
     <div class="card-header">
       <div class="utils__title">
         <strong>Linear Icons Free</strong>
-        <a
-          href="https://linearicons.com/free"
-          target="_blank"
-          class="btn btn-sm btn-primary ml-4"
-        >
-          Official Documentation <i class="icmn-link ml-1" />
+        <a href="https://linearicons.com/free" target="_blank" class="btn btn-sm btn-primary ml-4">
+          Official Documentation
+          <i class="icmn-link ml-1"/>
         </a>
       </div>
     </div>
@@ -17,9 +14,7 @@
         <div class="col-xl-6 offset-xl-3">
           <ul class="utils__iconsBlock list-unstyled">
             <a-tooltip v-for="icon in iconsData" :key="icon">
-              <template slot="title">
-                lnr {{icon}}
-              </template>
+              <template slot="title">lnr {{icon}}</template>
               <li>
                 <i :class="['lnr', icon]"/>
               </li>

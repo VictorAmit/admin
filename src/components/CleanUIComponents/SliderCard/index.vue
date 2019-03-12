@@ -4,7 +4,7 @@
       <div :class="$style.item">
         <a href="javascript: void(0);" :class="$style.body">
           <div :class="$style.icon">
-            <i class="icmn-accessibility" />
+            <i class="icmn-accessibility"/>
           </div>
           <h2>Sales Growth</h2>
           <p>View Report</p>
@@ -13,7 +13,7 @@
       <div :class="$style.item">
         <a href="javascript: void(0);" :class="$style.body">
           <div :class="$style.icon">
-            <i class="icmn-download" />
+            <i class="icmn-download"/>
           </div>
           <h2>All Reports</h2>
           <p>Pdf Download</p>
@@ -33,5 +33,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

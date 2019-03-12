@@ -10,7 +10,11 @@
         <div class="row">
           <div class="col-lg-8">
             <main>
-              <article v-for="(article, index) in articlesData" :key="index" :class="$style.article">
+              <article
+                v-for="(article, index) in articlesData"
+                :key="index"
+                :class="$style.article"
+              >
                 <div :class="$style.information">
                   <div :clas="$style.title">
                     <h1>
@@ -19,7 +23,10 @@
                   </div>
                   <ul :class="$style.meta">
                     <li :class="$style.metaInf">
-                      <span>Post By <a href="javascript: void(0);">{{article.author}}</a></span>
+                      <span>
+                        Post By
+                        <a href="javascript: void(0);">{{article.author}}</a>
+                      </span>
                     </li>
                     <li :class="$style.metaInf">
                       <span :class="$style.articleData">On {{article.date}}</span>
@@ -44,9 +51,11 @@
                   <div class="row">
                     <div class="col-8">
                       <div :class="$style.hashtags">
-                        <a href="javascript: void(0);" v-for="(tag, index) in article.tags" :key="index">
-                          {{tag}}
-                        </a>
+                        <a
+                          href="javascript: void(0);"
+                          v-for="(tag, index) in article.tags"
+                          :key="index"
+                        >{{tag}}</a>
                       </div>
                     </div>
                     <div class="col-4">
@@ -85,8 +94,7 @@
                 <div class="input-group">
                   <a-input-search placeholder="Search ...">
                     <a-button slot="enterButton" type="primary">
-                      <a-icon type="search"/>
-                      Search
+                      <a-icon type="search"/>Search
                     </a-button>
                   </a-input-search>
                 </div>
@@ -96,7 +104,11 @@
                   <span :class="$style.partitionName">Categories</span>
                 </div>
                 <ul :class="$style.categoriesList">
-                  <li :class="$style.categoriesItem" v-for="(category, index) in articlesCategories" :key="index">
+                  <li
+                    :class="$style.categoriesItem"
+                    v-for="(category, index) in articlesCategories"
+                    :key="index"
+                  >
                     <a :class="$style.categoriesLink" href="javascript: void(0);">{{category}}</a>
                   </li>
                 </ul>
@@ -105,7 +117,11 @@
                 <div :class="$style.partitionHead">
                   <span :class="$style.partitionName">Latest Post</span>
                 </div>
-                <article :class="$style.latestPost" v-for="(latestArticle, index) in latesArticlesData" :key="index">
+                <article
+                  :class="$style.latestPost"
+                  v-for="(latestArticle, index) in latesArticlesData"
+                  :key="index"
+                >
                   <div :class="$style.latestImg">
                     <a href="javascript: void(0);">
                       <img :src="latestArticle.cover" :alt="latestArticle.name">
@@ -119,7 +135,10 @@
                     </div>
                     <ul :class="[$style.latestArticleMeta, $style.meta]">
                       <li :class="$style.metaInf">
-                        <span>Post By <a href="javascript: void(0);">{{latestArticle.author}}</a></span>
+                        <span>
+                          Post By
+                          <a href="javascript: void(0);">{{latestArticle.author}}</a>
+                        </span>
                       </li>
                       <li :class="$style.metaInf">
                         <span :class="$style.articleData">On {{latestArticle.date}}</span>
@@ -134,7 +153,7 @@
                 </div>
                 <div class="input-group">
                   <a-input placeholder="Email adress">
-                      <a-icon type="mail" slot="addonAfter"/>
+                    <a-icon type="mail" slot="addonAfter"/>
                   </a-input>
                 </div>
               </div>
@@ -159,5 +178,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

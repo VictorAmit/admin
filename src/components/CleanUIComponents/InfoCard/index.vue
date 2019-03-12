@@ -32,9 +32,7 @@
           <div class="mb-2">
             <p>Lorem Ipsum is simply dummy text of printing the printing and typesetti...</p>
           </div>
-          <a href="javascript: void(0);" :class="['btn', 'btn-outline-' + btnType,]">
-            Information
-          </a>
+          <a href="javascript: void(0);" :class="['btn', 'btn-outline-' + btnType,]">Information</a>
         </div>
       </div>
     </div>
@@ -83,5 +81,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

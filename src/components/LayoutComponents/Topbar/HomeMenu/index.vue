@@ -9,8 +9,8 @@
         <div :class="$style.inner">
           <div :class="$style.title">
             <span class="pull-right">now</span>
-            <a href="javascript: void(0);">
-              Update Status: <span class="badge badge-danger">New</span>
+            <a href="javascript: void(0);">Update Status:
+              <span class="badge badge-danger">New</span>
             </a>
             <div :class="$style.descr">
               Failed to get available update data. To ensure the proper functioning of your
@@ -20,12 +20,12 @@
         </div>
       </a-menu-item>
       <a-menu-item :class="$style.item">
-        <i :class="$style.icon" class=" icmn-stack"></i>
+        <i :class="$style.icon" class="icmn-stack"></i>
         <div :class="$style.inner">
           <div :class="$style.title">
             <span class="pull-right">24 min ago</span>
-            <a href="javascript: void(0);">
-              Income: <span class="badge badge-default">$299.00</span>
+            <a href="javascript: void(0);">Income:
+              <span class="badge badge-default">$299.00</span>
             </a>
             <div :class="$style.descr">
               Failed to get available update data. To ensure the proper functioning of your
@@ -40,8 +40,8 @@
           <div :class="$style.title">
             <span class="pull-right">30 min ago</span>
             <a href="javascript: void(0);">Inbox Message</a>
-            <div :class="$style.descr">
-              From: <a href="javascript: void(0);">David Bowie</a>
+            <div :class="$style.descr">From:
+              <a href="javascript: void(0);">David Bowie</a>
             </div>
           </div>
         </div>
@@ -51,8 +51,8 @@
         <div :class="$style.inner">
           <div :class="$style.title">
             <span class="pull-right">now</span>
-            <a href="javascript: void(0);">
-              Update Status: <span class="badge badge-primary">New</span>
+            <a href="javascript: void(0);">Update Status:
+              <span class="badge badge-primary">New</span>
             </a>
             <div :class="$style.descr">
               Failed to get available update data. To ensure the proper functioning of your
@@ -66,8 +66,8 @@
         <div :class="$style.inner">
           <div :class="$style.title">
             <span class="pull-right">24 min ago</span>
-            <a href="javascript: void(0);">
-              Income: <span class="badge badge-warning">$299.00</span>
+            <a href="javascript: void(0);">Income:
+              <span class="badge badge-warning">$299.00</span>
             </a>
             <div :class="$style.descr">
               Failed to get available update data. To ensure the proper functioning of your
@@ -88,5 +88,5 @@
   </a-dropdown>
 </template>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

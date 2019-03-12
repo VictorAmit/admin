@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-body">
-      <cui-invoice />
+      <cui-invoice/>
     </div>
   </div>
 </template>

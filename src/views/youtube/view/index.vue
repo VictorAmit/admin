@@ -15,22 +15,29 @@
             <div :class="$style.card">
               <div class="mb-2">
                 <strong>
-                  Published on <span>{{viewData.date}}</span>
+                  Published on
+                  <span>{{viewData.date}}</span>
                 </strong>
                 <div class="pull-right">
                   <a-dropdown>
-                    <a class="ant-dropdown-link" href="javascript: void(0);">
-                      Actions <a-icon type="down" />
+                    <a class="ant-dropdown-link" href="javascript: void(0);">Actions
+                      <a-icon type="down"/>
                     </a>
                     <a-menu slot="overlay">
                       <a-menu-item>
-                        <a href="javascript:void(0)"><a-icon type="edit" /> Edit Post</a>
+                        <a href="javascript:void(0)">
+                          <a-icon type="edit"/>Edit Post
+                        </a>
                       </a-menu-item>
                       <a-menu-item>
-                        <a href="javascript:void(0)"><a-icon type="delete" /> Delete Post</a>
+                        <a href="javascript:void(0)">
+                          <a-icon type="delete"/>Delete Post
+                        </a>
                       </a-menu-item>
                       <a-menu-item>
-                        <a href="javascript:void(0)"><a-icon type="frown-o" /> Mark as a Spam</a>
+                        <a href="javascript:void(0)">
+                          <a-icon type="frown-o"/>Mark as a Spam
+                        </a>
                       </a-menu-item>
                     </a-menu>
                   </a-dropdown>
@@ -54,21 +61,27 @@
                 </div>
               </div>
             </div>
-            <div :class="$style.commentItem" class="clearfix" v-for="(comment, index) in viewData.comments" :key="index">
+            <div
+              :class="$style.commentItem"
+              class="clearfix"
+              v-for="(comment, index) in viewData.comments"
+              :key="index"
+            >
               <div :class="$style.commentAvatar">
-                <cui-avatar :src="comment.avatar" :size="50" :bordered="false" />
+                <cui-avatar :src="comment.avatar" :size="50" :bordered="false"/>
               </div>
               <div :class="$style.commentContent">
                 <strong>
                   {{comment.name}}
-                  <span :class="$style.commentTime" class="text-muted ml-2">
-                    {{comment.date}}
-                  </span>
+                  <span
+                    :class="$style.commentTime"
+                    class="text-muted ml-2"
+                  >{{comment.date}}</span>
                 </strong>
                 <p class="mb-0">{{comment.content}}</p>
                 <div :class="$style.commentLike">
                   <a href="javascript: void(0);" class="mr-2">
-                    <i class="icmn-heart mr-2" />
+                    <i class="icmn-heart mr-2"/>
                     <span v-if="comment.likesCount > 0">{{comment.likesCount}} Likes</span>
                     <span v-if="comment.likesCount === 0">{{comment.likesCount}} Like</span>
                   </a>
@@ -85,7 +98,12 @@
             </div>
           </div>
           <ul :class="$style.watchNext">
-            <li :class="$style.nextItem" class="clearfix" v-for="(video, index) in upNext" :key="index">
+            <li
+              :class="$style.nextItem"
+              class="clearfix"
+              v-for="(video, index) in upNext"
+              :key="index"
+            >
               <a href="javascript: void(0);" :class="$style.nextItemLink">
                 <div :class="$style.itemThumb">
                   <img :src="video.cover" :alt="video.name" :class="$style.itemThumbImg">
@@ -112,7 +130,7 @@ export default {
   components: {
     CuiAvatar,
   },
-  data: function() {
+  data: function () {
     return {
       viewData,
       upNext,
@@ -121,5 +139,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

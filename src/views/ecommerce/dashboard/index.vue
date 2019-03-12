@@ -106,29 +106,45 @@
           <div>
             <a-tabs defaultActiveKey="1">
               <a-tab-pane tab="Bestsellers" key="1">
-                <a-table :columns="bestsellersColumns" :dataSource="bestsellersData" class="utils__scrollTable"
-                         :scroll="{ x: '100%' }">
+                <a-table
+                  :columns="bestsellersColumns"
+                  :dataSource="bestsellersData"
+                  class="utils__scrollTable"
+                  :scroll="{ x: '100%' }"
+                >
                   <a slot="product" slot-scope="text" href="javascript: void(0);">{{text}}</a>
                   <span slot="price" slot-scope="text">${{text}}</span>
                 </a-table>
               </a-tab-pane>
               <a-tab-pane tab="Most Viewed Products" key="2">
-                <a-table :columns="mostViewedColumns" :dataSource="mostViewedData" class="utils__scrollTable"
-                         :scroll="{ x: '100%' }">
+                <a-table
+                  :columns="mostViewedColumns"
+                  :dataSource="mostViewedData"
+                  class="utils__scrollTable"
+                  :scroll="{ x: '100%' }"
+                >
                   <a slot="product" slot-scope="text" href="javascript: void(0);">{{text}}</a>
                   <span slot="price" slot-scope="text">${{text}}</span>
                 </a-table>
               </a-tab-pane>
               <a-tab-pane tab="New Customers" key="3">
-                <a-table :columns="customersColumns" :dataSource="newCustomersData" class="utils__scrollTable"
-                         :scroll="{ x: '100%' }">
+                <a-table
+                  :columns="customersColumns"
+                  :dataSource="newCustomersData"
+                  class="utils__scrollTable"
+                  :scroll="{ x: '100%' }"
+                >
                   <a slot="name" slot-scope="text" href="javascript: void(0);">{{text}}</a>
                   <span slot="total" slot-scope="text">${{text}}</span>
                 </a-table>
               </a-tab-pane>
               <a-tab-pane tab="Top Customers" key="4">
-                <a-table :columns="customersColumns" :dataSource="topCustomersData" class="utils__scrollTable"
-                         :scroll="{ x: '100%' }">
+                <a-table
+                  :columns="customersColumns"
+                  :dataSource="topCustomersData"
+                  class="utils__scrollTable"
+                  :scroll="{ x: '100%' }"
+                >
                   <span slot="total" slot-scope="text">${{text}}</span>
                 </a-table>
               </a-tab-pane>
@@ -138,10 +154,10 @@
         <div class="col-xl-4 col-lg-12">
           <div class="row mb-5">
             <div class="col-xl-12 col-lg-6 col-sm-12">
-              <cui-info-card form="stats-large" icon="download" type="primary" />
+              <cui-info-card form="stats-large" icon="download" type="primary"/>
             </div>
             <div class="col-xl-12 col-lg-6 col-sm-12">
-              <cui-info-card form="stats-large" icon="stack" type="default" />
+              <cui-info-card form="stats-large" icon="stack" type="default"/>
             </div>
           </div>
           <div class="row mb-5">
@@ -149,8 +165,13 @@
               <div class="font-size-16 text-black mb-3">
                 <strong>Last Orders</strong>
               </div>
-              <a-table :columns="lastOrdersColumns" :dataSource="lastOrdersData" :pagination="false" class="utils__scrollTable" :scroll="{ x: '100%' }">
-              </a-table>
+              <a-table
+                :columns="lastOrdersColumns"
+                :dataSource="lastOrdersData"
+                :pagination="false"
+                class="utils__scrollTable"
+                :scroll="{ x: '100%' }"
+              ></a-table>
             </div>
           </div>
           <div class="row mb-5">
@@ -158,8 +179,13 @@
               <div class="font-size-16 text-black mb-3">
                 <strong>Last Search Terms</strong>
               </div>
-              <a-table :columns="searchColumns" :dataSource="lastSearchData" :pagination="false" class="utils__scrollTable" :scroll="{ x: '100%' }">
-              </a-table>
+              <a-table
+                :columns="searchColumns"
+                :dataSource="lastSearchData"
+                :pagination="false"
+                class="utils__scrollTable"
+                :scroll="{ x: '100%' }"
+              ></a-table>
             </div>
           </div>
           <div class="row mb-5">
@@ -167,8 +193,13 @@
               <div class="font-size-16 text-black mb-3">
                 <strong>Top Search Terms</strong>
               </div>
-              <a-table :columns="searchColumns" :dataSource="topSearchData" :pagination="false" class="utils__scrollTable" :scroll="{ x: '100%' }">
-              </a-table>
+              <a-table
+                :columns="searchColumns"
+                :dataSource="topSearchData"
+                :pagination="false"
+                class="utils__scrollTable"
+                :scroll="{ x: '100%' }"
+              ></a-table>
             </div>
           </div>
         </div>

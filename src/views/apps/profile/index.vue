@@ -8,7 +8,7 @@
           :style="{ backgroundImage: 'url(' + background + ')'}"
         >
           <div class="card-body text-center">
-            <cui-avatar :src="photo" size="110" bordered="true" borderColor="white"/>
+            <cui-avatar :src="photo" size="110" bordered="true" bordercolor="white"/>
             <br>
             <br>
             <a-button-group>
@@ -59,9 +59,11 @@
               <dd class="col-xl-9">{{adress}}</dd>
               <dt class="col-xl-3">Skills:</dt>
               <dd class="col-xl-9">
-                <span class="badge badge-default mr-1" :key="index" v-for="(skill, index) in profSkills">
-                  {{skill}}
-                </span>
+                <span
+                  class="badge badge-default mr-1"
+                  :key="index"
+                  v-for="(skill, index) in profSkills"
+                >{{skill}}</span>
               </dd>
               <dt class="col-xl-3">Last companies:</dt>
               <dd class="col-xl-9">{{lastCompanies}}</dd>
@@ -117,11 +119,15 @@
                       <i class="fa fa-send mr-2"/>
                       Create Post
                     </a-button>
-                    <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/"
-                              :headers="headers" @change="handleChange">
+                    <a-upload
+                      name="file"
+                      :multiple="true"
+                      action="//jsonplaceholder.typicode.com/posts/"
+                      :headers="headers"
+                      @change="handleChange"
+                    >
                       <a-button>
-                        <a-icon type="upload"/>
-                        Click to Upload
+                        <a-icon type="upload"/>Click to Upload
                       </a-button>
                     </a-upload>
                   </div>
@@ -135,25 +141,24 @@
                       <div class="mb-3">
                         <div class="pull-right">
                           <a-dropdown>
-                            <a class="ant-dropdown-link" href="javascript: void(0);">
-                              Actions
+                            <a class="ant-dropdown-link" href="javascript: void(0);">Actions
                               <a-icon type="down"/>
                             </a>
                             <a-menu slot="overlay">
                               <a-menu-item>
                                 <a href="javascript:void(0)">
-                                  <a-icon type="edit"/>
-                                  Edit Post</a>
+                                  <a-icon type="edit"/>Edit Post
+                                </a>
                               </a-menu-item>
                               <a-menu-item>
                                 <a href="javascript:void(0)">
-                                  <a-icon type="delete"/>
-                                  Delete Post</a>
+                                  <a-icon type="delete"/>Delete Post
+                                </a>
                               </a-menu-item>
                               <a-menu-item>
                                 <a href="javascript:void(0)">
-                                  <a-icon type="frown-o"/>
-                                  Mark as a Spam</a>
+                                  <a-icon type="frown-o"/>Mark as a Spam
+                                </a>
                               </a-menu-item>
                             </a-menu>
                           </a-dropdown>
@@ -177,8 +182,12 @@
                   </div>
                   <div :class="[$style.wallContent, $style.wallInnerContent]">
                     <div :class="$style.wallComments">
-                      <div :class="$style.wallItem" class="clearfix" v-for="(postComment, index) in item.comments"
-                           :key="index">
+                      <div
+                        :class="$style.wallItem"
+                        class="clearfix"
+                        v-for="(postComment, index) in item.comments"
+                        :key="index"
+                      >
                         <div :class="$style.wallAvatar">
                           <cui-avatar size="50" :src="postComment.avatar" :bordered="false"/>
                         </div>
@@ -186,25 +195,24 @@
                           <div class="clearfix">
                             <div class="pull-right">
                               <a-dropdown>
-                                <a class="ant-dropdown-link" href="javascript: void(0);">
-                                  Actions
+                                <a class="ant-dropdown-link" href="javascript: void(0);">Actions
                                   <a-icon type="down"/>
                                 </a>
                                 <a-menu slot="overlay">
                                   <a-menu-item>
                                     <a href="javascript:void(0)">
-                                      <a-icon type="edit"/>
-                                      Edit Post</a>
+                                      <a-icon type="edit"/>Edit Post
+                                    </a>
                                   </a-menu-item>
                                   <a-menu-item>
                                     <a href="javascript:void(0)">
-                                      <a-icon type="delete"/>
-                                      Delete Post</a>
+                                      <a-icon type="delete"/>Delete Post
+                                    </a>
                                   </a-menu-item>
                                   <a-menu-item>
                                     <a href="javascript:void(0)">
-                                      <a-icon type="frown-o"/>
-                                      Mark as a Spam</a>
+                                      <a-icon type="frown-o"/>Mark as a Spam
+                                    </a>
                                   </a-menu-item>
                                 </a-menu>
                               </a-dropdown>
@@ -217,12 +225,18 @@
                           <a href="javascript: void(0);" class="mr-3">
                             <i class="icmn-heart mr-2"/>
                             <span v-if="postComment.likesCount > 0">{{postComment.likesCount}} Likes</span>
-                            <span v-if="postComment.likesCount === 0">{{postComment.likesCount}} Like</span>
+                            <span
+                              v-if="postComment.likesCount === 0"
+                            >{{postComment.likesCount}} Like</span>
                           </a>
                           <a href="javascript: void(0);" class="mr-3">
                             <i class="icmn-bubble mr-2"/>
-                            <span v-if="postComment.commentsCount > 0">{{postComment.commentsCount}} Comments</span>
-                            <span v-if="postComment.commentsCount === 0">{{postComment.commentsCount}} Comment</span>
+                            <span
+                              v-if="postComment.commentsCount > 0"
+                            >{{postComment.commentsCount}} Comments</span>
+                            <span
+                              v-if="postComment.commentsCount === 0"
+                            >{{postComment.commentsCount}} Comment</span>
                           </a>
                         </div>
                       </div>
@@ -242,7 +256,7 @@
                 <span slot="tab">
                   <i class="icmn-cog"/> Settings
                 </span>
-                <a-form  :form="form">
+                <a-form :form="form">
                   <h5 class="text-black mt-2 mb-3">
                     <strong>Personal Information</strong>
                   </h5>
@@ -279,9 +293,15 @@
                         <strong>Profile Avatar</strong>
                       </h5>
                       <a-form-item>
-                        <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
+                        <a-upload
+                          name="file"
+                          :multiple="true"
+                          action="//jsonplaceholder.typicode.com/posts/"
+                          :headers="headers"
+                          @change="handleChange"
+                        >
                           <a-button>
-                            <a-icon type="upload" /> Click to Upload
+                            <a-icon type="upload"/>Click to Upload
                           </a-button>
                         </a-upload>
                       </a-form-item>
@@ -291,18 +311,27 @@
                         <strong>Profile Background</strong>
                       </h5>
                       <a-form-item>
-                        <a-upload name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" :headers="headers" @change="handleChange">
+                        <a-upload
+                          name="file"
+                          :multiple="true"
+                          action="//jsonplaceholder.typicode.com/posts/"
+                          :headers="headers"
+                          @change="handleChange"
+                        >
                           <a-button>
-                            <a-icon type="upload" /> Click to Upload
+                            <a-icon type="upload"/>Click to Upload
                           </a-button>
                         </a-upload>
                       </a-form-item>
                     </div>
                   </div>
                   <div class="form-actions mt-0">
-                    <a-button style="width: 150px;" type="primary" htmlType="submit" class="mr-3">
-                      Submit
-                    </a-button>
+                    <a-button
+                      style="width: 150px;"
+                      type="primary"
+                      htmlType="submit"
+                      class="mr-3"
+                    >Submit</a-button>
                     <a-button htmlType="submit">Cancel</a-button>
                   </div>
                 </a-form>
@@ -379,5 +408,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

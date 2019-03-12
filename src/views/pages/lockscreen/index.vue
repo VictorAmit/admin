@@ -5,15 +5,14 @@
   >
     <header :class="$style.header">
       <a href="javascript: void(0);" :class="$style.logo">
-        <img src="resources/images/logo-inverse.png" alt="Clean UI Admin Template" />
+        <img src="resources/images/logo-inverse.png" alt="Clean UI Admin Template">
       </a>
       <div :class="$style.styleControls">
-        <a-button class="mt-3 mt-xl-0" @click="setFullscreen">
-          Set {{fullscreen ? 'Windowed' : 'Fullscreen'}}
-        </a-button>
-        <a-button class="ml-3 mt-3 mt-xl-0" @click="changeBackground">
-          Change Background
-        </a-button>
+        <a-button
+          class="mt-3 mt-xl-0"
+          @click="setFullscreen"
+        >Set {{fullscreen ? 'Windowed' : 'Fullscreen'}}</a-button>
+        <a-button class="ml-3 mt-3 mt-xl-0" @click="changeBackground">Change Background</a-button>
       </div>
     </header>
     <div :class="$style.content">
@@ -21,7 +20,7 @@
         <div :class="$style.user">
           <cui-avatar src="resources/images/avatars/1.jpg" :bordered="true" :size="90"/>
           <p>
-            <i class="icmn-lock" />
+            <i class="icmn-lock"/>
             <strong>Artour Arteezy</strong>
           </p>
         </div>
@@ -32,14 +31,10 @@
             </a-input>
           </a-form-item>
           <div class="form-actions text-center">
-            <button type="submit" class="btn btn-success">
-              Unlock
-            </button>
+            <button type="submit" class="btn btn-success">Unlock</button>
           </div>
           <div class="text-center">
-            <a href="javascript: void(0);" class="text-default">
-              Or sign in as a different user
-            </a>
+            <a href="javascript: void(0);" class="text-default">Or sign in as a different user</a>
           </div>
         </a-form>
       </div>
@@ -53,7 +48,7 @@ export default {
   components: {
     CuiAvatar,
   },
-  data: function() {
+  data: function () {
     return {
       fullscreen: false,
       backgroundNumber: 1,
@@ -74,5 +69,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

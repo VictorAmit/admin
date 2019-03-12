@@ -6,12 +6,31 @@
       </div>
     </div>
     <div class="card-body">
-      <a-table :columns="columns" :dataSource="data" class="utils__scrollTable" :scroll="{ x: '100%' }">
-        <a slot="id" slot-scope="value" class="utils__link--underlined" href="javascript: void(0);">#{{value}}</a>
-        <a slot="thumbnail" slot-scope="value" :class="$style.thumbnail" href="javascript: void(0);">
-          <img :src="value"/>
+      <a-table
+        :columns="columns"
+        :dataSource="data"
+        class="utils__scrollTable"
+        :scroll="{ x: '100%' }"
+      >
+        <a
+          slot="id"
+          slot-scope="value"
+          class="utils__link--underlined"
+          href="javascript: void(0);"
+        >#{{value}}</a>
+        <a
+          slot="thumbnail"
+          slot-scope="value"
+          :class="$style.thumbnail"
+          href="javascript: void(0);"
+        >
+          <img :src="value">
         </a>
-        <div slot="filterDropdown" slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }" class='custom-filter-dropdown'>
+        <div
+          slot="filterDropdown"
+          slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
+          class="custom-filter-dropdown"
+        >
           <a-input
             v-ant-ref="c => searchInput = c"
             :placeholder="`Search ${column.dataIndex}`"
@@ -21,37 +40,45 @@
             style="width: 188px; margin-bottom: 8px; display: block;"
           />
           <a-button
-            type='primary'
+            type="primary"
             @click="() => handleSearch(selectedKeys, confirm)"
             icon="search"
             size="small"
             style="width: 90px; margin-right: 8px"
           >Search</a-button>
-          <a-button
-            @click="() => handleReset(clearFilters)"
-            size="small"
-            style="width: 90px"
-          >Reset</a-button>
+          <a-button @click="() => handleReset(clearFilters)" size="small" style="width: 90px">Reset</a-button>
         </div>
-        <a-icon slot="filterIcon" slot-scope="filtered" type='search' :style="{ color: filtered ? '#108ee9' : undefined }" />
+        <a-icon
+          slot="filterIcon"
+          slot-scope="filtered"
+          type="search"
+          :style="{ color: filtered ? '#108ee9' : undefined }"
+        />
         <template slot="customRender" slot-scope="text">
           <span v-if="searchText">
-            <template v-for="(fragment, i) in text.toString().split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))">
-              <mark v-if="fragment.toLowerCase() === searchText.toLowerCase()" :key="i" class="highlight">{{fragment}}</mark>
+            <template
+              v-for="(fragment, i) in text.toString().split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))"
+            >
+              <mark
+                v-if="fragment.toLowerCase() === searchText.toLowerCase()"
+                :key="i"
+                class="highlight"
+              >{{fragment}}</mark>
               <template v-else>{{fragment}}</template>
             </template>
           </span>
           <template v-else>{{text}}</template>
         </template>
         <span slot="price" slot-scope="value">${{value}}</span>
-        <span slot="status" slot-scope="value" class="font-size-12 badge" :class="[value === 'Enabled' ? 'badge-success' : 'badge-danger']">{{value}}</span>
+        <span
+          slot="status"
+          slot-scope="value"
+          class="font-size-12 badge"
+          :class="[value === 'Enabled' ? 'badge-success' : 'badge-danger']"
+        >{{value}}</span>
         <span slot="action">
-          <a-button icon="edit" size="small" class="mr-1">
-            View
-          </a-button>
-          <a-button icon="cross" size="small">
-            Remove
-          </a-button>
+          <a-button icon="edit" size="small" class="mr-1">View</a-button>
+          <a-button icon="cross" size="small">Remove</a-button>
         </span>
       </a-table>
     </div>
@@ -61,7 +88,7 @@
 import { data } from './data.json'
 
 export default {
-  data: function() {
+  data: function () {
     return {
       data,
       searchText: '',
@@ -155,12 +182,12 @@ export default {
     }
   },
   methods: {
-    handleSearch (selectedKeys, confirm) {
+    handleSearch(selectedKeys, confirm) {
       confirm()
       this.searchText = selectedKeys[0]
     },
 
-    handleReset (clearFilters) {
+    handleReset(clearFilters) {
       clearFilters()
       this.searchText = ''
     },
@@ -168,5 +195,5 @@ export default {
 }
 </script>
 <style lang="scss" module scoped>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

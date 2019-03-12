@@ -1,14 +1,7 @@
 <template>
-  <div
-    class="card"
-    :class="$style.card"
-  >
+  <div class="card" :class="$style.card">
     <div :class="$style.chart">
-      <vue-chartist
-        :data="chartData"
-        :options="chartOptions"
-        type="Line"
-      />
+      <vue-chartist :data="chartData" :options="chartOptions" type="Line"/>
     </div>
     <div v-if="amount" :class="$style.amount">{{amount}}</div>
     <div v-if="title" :class="$style.title">{{title}}</div>
@@ -63,5 +56,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

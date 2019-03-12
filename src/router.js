@@ -204,6 +204,12 @@ const router = new Router({
           path: '/antd',
           component: () => import('./views/antd'),
         },
+
+        // 404
+        {
+          path: '/404',
+          component: () => import('./views/404'),
+        },
       ],
     },
 
@@ -222,6 +228,11 @@ const router = new Router({
           component: () => import('./views/user/forgot'),
         },
       ],
+    },
+
+    // Redirect to 404
+    {
+      path: '*', redirect: '/404', hidden: true,
     },
   ],
 })

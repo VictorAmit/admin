@@ -4,8 +4,8 @@
       :class="[$style.donut, color === undefined ? $style[type] : '']"
       :style="[color !== undefined ? { borderColor: color } : {}]"
     />
-      {{name}}
-    </span>
+    {{name}}
+  </span>
 </template>
 <script>
 export default {
@@ -27,5 +27,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

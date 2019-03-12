@@ -4,7 +4,7 @@ import { PolarArea } from 'vue-chartjs'
 export default {
   extends: PolarArea,
   props: ['chartdata', 'options'],
-  mounted () {
+  mounted() {
     this.renderChart(this.chartdata, this.options)
   },
 }

@@ -4,12 +4,9 @@
       <div class="card-header">
         <div class="utils__title">
           <strong>FontAwesome</strong>
-          <a
-            href="http://fontawesome.io/"
-            target="_blank"
-            class="btn btn-sm btn-primary ml-4"
-          >
-            Official Documentation <i class="icmn-link ml-1" />
+          <a href="http://fontawesome.io/" target="_blank" class="btn btn-sm btn-primary ml-4">
+            Official Documentation
+            <i class="icmn-link ml-1"/>
           </a>
         </div>
       </div>
@@ -21,8 +18,7 @@
             </h5>
             <p class="text-muted">
               The complete set of 634 icons in Font Awesome 4.6.3
-              <br />
-              License: MIT License. You can use it for commercial projects, open source
+              <br>License: MIT License. You can use it for commercial projects, open source
               projects, or really just about whatever you want
             </p>
           </div>
@@ -35,9 +31,7 @@
               </h3>
               <ul class="utils__iconsBlock list-unstyled">
                 <a-tooltip v-for="icon in iconsSet.icons" :key="icon">
-                  <template slot="title">
-                    fa {{icon}}
-                  </template>
+                  <template slot="title">fa {{icon}}</template>
                   <li>
                     <i :class="['fa', icon]"/>
                   </li>

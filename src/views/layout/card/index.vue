@@ -5,12 +5,13 @@
         <div class="utils__title">
           <strong>Cards</strong>
           <a
-            href="http://v4-alpha.getbootstrap.com/components/card/"
+            href="https://getbootstrap.com/docs/4.2/components/card/"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-sm btn-primary ml-4"
           >
-            Official Documentation <i class="icmn-link ml-1" />
+            Official Documentation
+            <i class="icmn-link ml-1"/>
           </a>
         </div>
       </div>
@@ -24,15 +25,16 @@
     <section class="card">
       <div class="card-header">
         <div class="pull-right mt-2">
-              <span class="mr-3">
-                User: <a href="javascript: void(0);">Administrator</a>
-              </span>
+          <span class="mr-3">
+            User:
+            <a href="javascript: void(0);">Administrator</a>
+          </span>
           <div class="d-inline-block">
             <a-dropdown>
               <a class="ant-dropdown-link" href="#">
-                <i class="icmn-database mr-2" />
+                <i class="icmn-database mr-2"/>
                 <span class="hidden-lg-down mr-2">Dashboards</span>
-                <a-icon type="down" />
+                <a-icon type="down"/>
               </a>
               <a-menu slot="overlay">
                 <a-menu-item>
@@ -49,7 +51,7 @@
                 </a-menu-item>
                 <a-menu-item>
                   <a href="javascript:void(0)">
-                    <i class="dropdown-icon icmn-cog" /> Settings
+                    <i class="dropdown-icon icmn-cog"/> Settings
                   </a>
                 </a-menu-item>
               </a-menu>
@@ -76,9 +78,10 @@
             </div>
           </div>
           <div class="card-body">
-                <span>
-                  Grid: <code>.col-lg-4</code>
-                </span>
+            <span>
+              Grid:
+              <code>.col-lg-4</code>
+            </span>
           </div>
           <div class="card-footer">
             <span>Default Card footer</span>
@@ -93,9 +96,10 @@
             </div>
           </div>
           <div class="card-body">
-                <span>
-                  Grid: <code>.col-lg-8</code>
-                </span>
+            <span>
+              Grid:
+              <code>.col-lg-8</code>
+            </span>
           </div>
           <div class="card-footer">
             <span>Default Card footer</span>

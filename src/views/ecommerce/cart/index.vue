@@ -3,24 +3,39 @@
     <div class="card-body">
       <a-steps :current="current">
         <a-step title="Cart">
-          <a-icon type="user" style="font-size: 40px;" slot="icon"/> Cart
+          <a-icon type="user" style="font-size: 40px;" slot="icon"/>Cart
         </a-step>
         <a-step title="Shipment and Payment">
-            <a-icon type="tags" style="font-size: 40px;" slot="icon"/> Cart
+          <a-icon type="tags" style="font-size: 40px;" slot="icon"/>Cart
         </a-step>
         <a-step title="Confirmation">
-            <a-icon type="credit-card" style="font-size: 40px;" slot="icon"/> Cart
+          <a-icon type="credit-card" style="font-size: 40px;" slot="icon"/>Cart
         </a-step>
       </a-steps>
       <div :class="$style.stepsContent">
         <div v-if="current === 0">
-          <a-table :columns="columns" :dataSource="ordersTableData" :pagination="false" class="utils__scrollTable" :scroll="{ x: '100%' }">
-            <a href="javascript: void(0);" slot="description" slot-scope="text" class="utils__link">
-              {{text}}
-            </a>
-            <a-input-number slot="quantity" slot-scope="value" size="small" :min="1" :defaultValue="+value" />
+          <a-table
+            :columns="columns"
+            :dataSource="ordersTableData"
+            :pagination="false"
+            class="utils__scrollTable"
+            :scroll="{ x: '100%' }"
+          >
+            <a
+              href="javascript: void(0);"
+              slot="description"
+              slot-scope="text"
+              class="utils__link"
+            >{{text}}</a>
+            <a-input-number
+              slot="quantity"
+              slot-scope="value"
+              size="small"
+              :min="1"
+              :defaultValue="+value"
+            />
             <a-button size="small" slot="actions">
-              <a-icon type="cross" /> Remove
+              <a-icon type="cross"/>Remove
             </a-button>
           </a-table>
           <div class="text-right clearfix mt-4">
@@ -39,10 +54,11 @@
               </p>
               <p>
                 <strong>
-                  Grand Total: <span>{{invoicePrices.invoiceTotal}}</span>
+                  Grand Total:
+                  <span>{{invoicePrices.invoiceTotal}}</span>
                 </strong>
               </p>
-              <br />
+              <br>
             </div>
           </div>
         </div>
@@ -54,32 +70,50 @@
                 <div class="row">
                   <div class="col-md-6">
                     <a-form-item label="Email">
-                      <a-input placeholder="Email" v-decorator="['email', {rules: [{required: true, message: 'Please input your Email!'}]}]"/>
+                      <a-input
+                        placeholder="Email"
+                        v-decorator="['email', {rules: [{required: true, message: 'Please input your Email!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                   <div class="col-md-6">
                     <a-form-item label="Phone Number">
-                      <a-input placeholder="Phone Number" v-decorator="['phoneNumber', {rules: [{required: true, message: 'Please input your Phone Number!'}]}]"/>
+                      <a-input
+                        placeholder="Phone Number"
+                        v-decorator="['phoneNumber', {rules: [{required: true, message: 'Please input your Phone Number!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                   <div class="col-md-6">
                     <a-form-item label="Name">
-                      <a-input placeholder="Name" v-decorator="['name', {rules: [{required: true, message: 'Please input your Name!'}]}]"/>
+                      <a-input
+                        placeholder="Name"
+                        v-decorator="['name', {rules: [{required: true, message: 'Please input your Name!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                   <div class="col-md-6">
                     <a-form-item label="Surname">
-                      <a-input placeholder="Surname" v-decorator="['surname', {rules: [{required: true, message: 'Please input your Surname!'}]}]"/>
+                      <a-input
+                        placeholder="Surname"
+                        v-decorator="['surname', {rules: [{required: true, message: 'Please input your Surname!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                   <div class="col-md-12">
                     <a-form-item label="City">
-                      <a-input placeholder="City" v-decorator="['city', {rules: [{required: true, message: 'Please input your City!'}]}]"/>
+                      <a-input
+                        placeholder="City"
+                        v-decorator="['city', {rules: [{required: true, message: 'Please input your City!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                   <div class="col-md-12 mb-3">
                     <a-form-item label="Adress">
-                      <a-input placeholder="Adress" v-decorator="['city', {rules: [{required: true, message: 'Please input your Adress!'}]}]"/>
+                      <a-input
+                        placeholder="Adress"
+                        v-decorator="['city', {rules: [{required: true, message: 'Please input your Adress!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                   <div class="col-12">
@@ -89,24 +123,36 @@
                   </div>
                   <div class="col-md-12">
                     <a-form-item label="Card Number">
-                      <a-input placeholder="Card Number" v-decorator="['curdnum', {rules: [{required: true, message: 'Please input your Card Number!'}]}]">
+                      <a-input
+                        placeholder="Card Number"
+                        v-decorator="['curdnum', {rules: [{required: true, message: 'Please input your Card Number!'}]}]"
+                      >
                         <a-icon type="credit-card" slot="addonBefore"/>
                       </a-input>
                     </a-form-item>
                   </div>
                   <div class="col-md-7">
                     <a-form-item label="Expiration Date">
-                      <a-input placeholder="Surname" v-decorator="['expirationdate', {rules: [{required: true, message: 'Please input Card Expiration Date!'}]}]"/>
+                      <a-input
+                        placeholder="Surname"
+                        v-decorator="['expirationdate', {rules: [{required: true, message: 'Please input Card Expiration Date!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                   <div class="col-md-5">
                     <a-form-item label="Card CVC">
-                      <a-input placeholder="CVC" v-decorator="['cardcvc', {rules: [{required: true, message: 'Please input Card CVC!'}]}]"/>
+                      <a-input
+                        placeholder="CVC"
+                        v-decorator="['cardcvc', {rules: [{required: true, message: 'Please input Card CVC!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                   <div class="col-md-12">
                     <a-form-item label="Card Holder Name">
-                      <a-input placeholder="Name and Surname" v-decorator="['cardholdername', {rules: [{required: true, message: 'Please input Card Holder Name!'}]}]"/>
+                      <a-input
+                        placeholder="Name and Surname"
+                        v-decorator="['cardholdername', {rules: [{required: true, message: 'Please input Card Holder Name!'}]}]"
+                      />
                     </a-form-item>
                   </div>
                 </div>
@@ -117,9 +163,9 @@
                 <strong>General Info</strong>
               </h4>
               <h2>
-                <i class="fa fa-cc-visa text-primary mr-1" />
-                <i class="fa fa-cc-mastercard text-default mr-1" />
-                <i class="fa fa-cc-amex text-default" />
+                <i class="fa fa-cc-visa text-primary mr-1"/>
+                <i class="fa fa-cc-mastercard text-default mr-1"/>
+                <i class="fa fa-cc-amex text-default"/>
               </h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -133,24 +179,12 @@
           </div>
         </div>
         <div v-if="current === 2">
-          <cui-invoice />
+          <cui-invoice/>
         </div>
       </div>
       <div class="text-center" :class="$style.stepsAction">
-        <a-button
-          v-if="current > 0"
-          style="margin-left: 8px"
-          @click="prev"
-          class="mr-2"
-        >
-          Previous
-        </a-button>
-        <a-button
-          v-if="current < 2"
-          type="primary" @click="next"
-        >
-          Next
-        </a-button>
+        <a-button v-if="current > 0" style="margin-left: 8px" @click="prev" class="mr-2">Previous</a-button>
+        <a-button v-if="current < 2" type="primary" @click="next">Next</a-button>
       </div>
     </div>
   </div>
@@ -211,5 +245,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

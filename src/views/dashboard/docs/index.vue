@@ -9,73 +9,53 @@
           <ul :class="$style.menuList">
             <li :class="$style.menuItem">
               <a href="javascript: void(0)" :class="$style.menuLink">
-                <i :class="[$style.menuIcon, 'icmn icmn-home']" /> Home
+                <i :class="[$style.menuIcon, 'icmn icmn-home']"/> Home
               </a>
             </li>
             <li :class="$style.menuItem">
               <a href="javascript: void(0);" :class="$style.menuLink">
-                <i :class="[$style.menuIcon, 'icmn icmn-cog']" /> Payments
+                <i :class="[$style.menuIcon, 'icmn icmn-cog']"/> Payments
               </a>
               <ul :class="$style.submenu">
                 <li :class="$style.submenuItem">
                   <a
                     href="javascript: void(0)"
                     :class="[$style.menuLink, $style.menuLinkSelected]"
-                  >
-                    Quickstart
-                  </a>
+                  >Quickstart</a>
                 </li>
-                <li :class="[$style.submenuItem, $style.submenuItemCategory]">
-                  Collecting payment details
+                <li
+                  :class="[$style.submenuItem, $style.submenuItemCategory]"
+                >Collecting payment details</li>
+                <li :class="$style.submenuItem">
+                  <a href="javascript: void(0)" :class="$style.submenuLink">Checkout</a>
                 </li>
                 <li :class="$style.submenuItem">
-                  <a href="javascript: void(0)" :class="$style.submenuLink">
-                    Checkout
-                  </a>
+                  <a href="javascript: void(0)" :class="$style.submenuLink">Clean Pay.js & Elements</a>
                 </li>
                 <li :class="$style.submenuItem">
-                  <a href="javascript: void(0)" :class="$style.submenuLink">
-                    Clean Pay.js & Elements
-                  </a>
+                  <a href="javascript: void(0)" :class="$style.submenuLink">iOS</a>
+                </li>
+                <li :class="[$style.submenuItem, $style.submenuItemCategory]">Charges</li>
+                <li :class="$style.submenuItem">
+                  <a href="javascript: void(0)" :class="$style.submenuLink">Creating Charges</a>
                 </li>
                 <li :class="$style.submenuItem">
-                  <a href="javascript: void(0)" :class="$style.submenuLink">
-                    iOS
-                  </a>
-                </li>
-                <li :class="[$style.submenuItem, $style.submenuItemCategory]">
-                  Charges
-                </li>
-                <li :class="$style.submenuItem">
-                  <a href="javascript: void(0)" :class="$style.submenuLink">
-                    Creating Charges
-                  </a>
-                </li>
-                <li :class="$style.submenuItem">
-                  <a href="javascript: void(0)" :class="$style.submenuLink">
-                    Refunds
-                  </a>
+                  <a href="javascript: void(0)" :class="$style.submenuLink">Refunds</a>
                 </li>
                 <li :class="[$style.submenuItem, $style.submenuItemSeparator]">
-                  <a href="javascript: void(0)" :class="$style.submenuLink">
-                    Testing
-                  </a>
+                  <a href="javascript: void(0)" :class="$style.submenuLink">Testing</a>
                 </li>
               </ul>
             </li>
             <li :class="$style.menuItem">
               <a href="javascript: void(0)" :class="$style.menuLink">
-                <i :class="[$style.menuIcon,  'icmn icmn-loop']" /> Billing
+                <i :class="[$style.menuIcon,  'icmn icmn-loop']"/> Billing
               </a>
             </li>
             <li :class="[$style.menuItem, $style.menuItemSeparator]">
-              <a
-                href="javascript: void(0)"
-                :class="$style.menuLink"
-                target="_blank"
-              >
-                <i :class="[$style.menuIcon, 'icmn icmn-book']" /> API Reference
-                <i :class="[$style.menuIcon, 'lnr lnr-link ml-2']" />
+              <a href="javascript: void(0)" :class="$style.menuLink" target="_blank">
+                <i :class="[$style.menuIcon, 'icmn icmn-book']"/> API Reference
+                <i :class="[$style.menuIcon, 'lnr lnr-link ml-2']"/>
               </a>
             </li>
           </ul>
@@ -84,20 +64,17 @@
       <div :class="$style.wrapper">
         <div :class="$style.header">
           <div :class="$style.headerSearch">
-            <input type="text" placeholder="Search documentation..." />
-            <i class="lnr lnr-magnifier" />
+            <input type="text" placeholder="Search documentation...">
+            <i class="lnr lnr-magnifier"/>
           </div>
           <a
             href="javascript: void(0)"
             :class="[$style.headerLink, 'btn btn-sm btn-primary']"
-          >
-            Create Account
-          </a>
+          >Create Account</a>
+          <a href="javascript: void(0)" :class="[$style.headerLink, 'ml-4']">Support</a>
           <a href="javascript: void(0)" :class="[$style.headerLink, 'ml-4']">
-            Support
-          </a>
-          <a href="javascript: void(0)" :class="[$style.headerLink, 'ml-4']">
-            Sign In <i class="icmn icmn-arrow-right2" />
+            Sign In
+            <i class="icmn icmn-arrow-right2"/>
           </a>
         </div>
         <article :class="$style.content">
@@ -108,7 +85,9 @@
             <p>
               Learn about Clean Pay, a seamless way to start your company in the U.S. If you
               have any questions about the process after reading this, contact us at
-              <a href="javascript: void(0)">support@cleanuitemplate.com</a>.
+              <a
+                href="javascript: void(0)"
+              >support@cleanuitemplate.com</a>.
             </p>
           </header>
           <section>
@@ -118,7 +97,8 @@
             </p>
             <ul>
               <li>
-                Form a <a href="#c-corp">C Corporation</a> or
+                Form a
+                <a href="#c-corp">C Corporation</a> or
                 <a href="#llc">Limited Liability Company</a>
                 (LLC) in Delaware
               </li>
@@ -142,15 +122,19 @@
                 around the world
               </li>
               <li>
-                Connect to <a href="javascript: void(0)">legal</a> and
+                Connect to
+                <a href="javascript: void(0)">legal</a> and
                 <a href="javascript: void(0)">tax</a> experts
               </li>
               <li>
                 Access up to $5,000 in promotional credits from
-                <a href="javascript: void(0)">Amazon Web Services</a>
+                <a
+                  href="javascript: void(0)"
+                >Amazon Web Services</a>
               </li>
               <li>
-                Join the <a href="javascript: void(0)">Clean Pay Community</a>, a global
+                Join the
+                <a href="javascript: void(0)">Clean Pay Community</a>, a global
                 community of entrepreneurs and experts
               </li>
             </ul>
@@ -231,15 +215,16 @@
             </aside>
             <p>
               Establishing and running any business has both initial and ongoing costs. Clean
-              Pay has a <a href="javascript: void(0)">one-time fee</a> of $500 (all prices are
+              Pay has a
+              <a
+                href="javascript: void(0)"
+              >one-time fee</a> of $500 (all prices are
               in USD) that covers:
             </p>
             <ul>
               <li>Forming your company in Delaware as either a C Corporation or an LLC</li>
               <li>Delaware state filing fees</li>
-              <li>
-                Signed documents to establish company rules and protect intellectual property
-              </li>
+              <li>Signed documents to establish company rules and protect intellectual property</li>
               <li>
                 Tool to issue stock to founders of C Corporations within 30 days of
                 incorporation
@@ -249,7 +234,8 @@
               </li>
               <li>Registering your company with the U.S. Internal Revenue Service (IRS)</li>
               <li>
-                Your first year of Delaware <a href="javascript: void(0)">registered agent</a>
+                Your first year of Delaware
+                <a href="javascript: void(0)">registered agent</a>
                 services
               </li>
               <li>Access to the Clean Pay Community</li>
@@ -259,7 +245,8 @@
           <section>
             <h2>Filling out an Application</h2>
             <p>
-              Once you start your <a href="javascript: void(0)">application</a>:
+              Once you start your
+              <a href="javascript: void(0)">application</a>:
             </p>
             <ol>
               <li>
@@ -278,9 +265,13 @@
               </li>
             </ol>
             <p>
-              We’ll <a href="javascript: void(0)">take it from there</a>, sending you emails
+              We’ll
+              <a href="javascript: void(0)">take it from there</a>, sending you emails
               as steps are completed, and letting you know when we need more information. You
-              can also track the progress in the <a href="javascript: void(0)">Dashboard</a>.
+              can also track the progress in the
+              <a
+                href="javascript: void(0)"
+              >Dashboard</a>.
             </p>
           </section>
           <section>
@@ -289,31 +280,46 @@
             <ul :class="$style.steps">
               <li>
                 <a href="javascript: void(0)">
-                  <span :class="$style.stepsIcon" :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }" />
+                  <span
+                    :class="$style.stepsIcon"
+                    :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }"
+                  />
                   <span>Application</span>
                 </a>
               </li>
               <li>
                 <a href="javascript: void(0)">
-                  <span :class="$style.stepsIcon" :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }" />
+                  <span
+                    :class="$style.stepsIcon"
+                    :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }"
+                  />
                   <span>Account Progress</span>
                 </a>
               </li>
               <li>
                 <a href="javascript: void(0)">
-                  <span :class="$style.stepsIcon" :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }" />
+                  <span
+                    :class="$style.stepsIcon"
+                    :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }"
+                  />
                   <span>Details</span>
                 </a>
               </li>
               <li>
                 <a href="javascript: void(0)">
-                  <span :class="$style.stepsIcon" :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }" />
+                  <span
+                    :class="$style.stepsIcon"
+                    :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }"
+                  />
                   <span>Next Steps</span>
                 </a>
               </li>
               <li>
                 <a href="javascript: void(0)">
-                  <span :class="$style.stepsIcon" :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }" />
+                  <span
+                    :class="$style.stepsIcon"
+                    :style="{ backgroundImage: 'url(resources/images/icons/icon-next-step.svg)' }"
+                  />
                   <span>Guides to Starting an Internet Business</span>
                 </a>
               </li>
@@ -330,16 +336,18 @@
             </p>
             <dl>
               <dt>
-                <h3 class="mt-5 mb-3">
-                  Where can I go to learn more about the Clean Pay Partner Program?
-                </h3>
+                <h3
+                  class="mt-5 mb-3"
+                >Where can I go to learn more about the Clean Pay Partner Program?</h3>
               </dt>
               <dd>
                 <p>
                   To learn more about the Clean Pay Partner Program—including the different
                   partner types, what it means to be a Clean Pay Partner versus a Clean Pay
                   Verified Partner, and the Clean Pay Partner Program benefits—please see
-                  <a href="javascript: void(0)">this overview</a>.
+                  <a
+                    href="javascript: void(0)"
+                  >this overview</a>.
                 </p>
               </dd>
               <dt>
@@ -375,9 +383,13 @@
               <h3>Time zone in the Dashboard</h3>
               <p>
                 The Dashboard uses the time zone specified in your
-                <a href="javascript: void(0)">account settings</a>. Reports, API responses,
+                <a
+                  href="javascript: void(0)"
+                >account settings</a>. Reports, API responses,
                 and the timing of your subscriptions and payouts always use
-                <a href="javascript: void(0)">UTC</a> (Coordinated Universal Time).
+                <a
+                  href="javascript: void(0)"
+                >UTC</a> (Coordinated Universal Time).
               </p>
               <p>
                 If you use a different time zone for your record-keeping, this needs to be
@@ -386,7 +398,10 @@
             </aside>
             <p>
               Understanding how funds flow in and out of your account is an important part of
-              processing payments. Use the <a href="javascript: void(0)">Dashboard</a> to view
+              processing payments. Use the
+              <a
+                href="javascript: void(0)"
+              >Dashboard</a> to view
               information about the different types of account activity, which can be exported
               into a CSV-formatted report for use in spreadsheet apps.
             </p>
@@ -395,7 +410,9 @@
               This report includes all your account activity—grouped by month—up to the most
               recent full day. Account activity includes charges, refunds, fees, and disputes,
               divided into the sections below. It can be downloaded from your account’s
-              <a href="javascript: void(0)">Data settings</a>.
+              <a
+                href="javascript: void(0)"
+              >Data settings</a>.
             </p>
             <p>
               All amounts are expressed in the currency of the bank account that payouts are
@@ -431,62 +448,64 @@
             <p>If you’re using any of the following, you’ll also see separate lines for:</p>
             <ul>
               <li>
-                Other kinds of payments (e.g., <a href="javascript: void(0)">ACH</a>)
+                Other kinds of payments (e.g.,
+                <a href="javascript: void(0)">ACH</a>)
               </li>
               <li>
                 Your Clean Pay Connect
                 <a href="javascript: void(0)">application fees</a>
               </li>
               <li>
-                Fees for <a href="javascript: void(0)">manual payouts</a>
+                Fees for
+                <a href="javascript: void(0)">manual payouts</a>
               </li>
             </ul>
             <table class="table">
               <thead>
-              <tr>
-                <th />
-                <th>Month</th>
-                <th :style="{ textAlign: 'right' }">2018-09-01</th>
-                <th :style="{ textAlign: 'right' }">2018-08-01</th>
-              </tr>
+                <tr>
+                  <th/>
+                  <th>Month</th>
+                  <th :style="{ textAlign: 'right' }">2018-09-01</th>
+                  <th :style="{ textAlign: 'right' }">2018-08-01</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td />
-                <td>Currency</td>
-                <td :style="{ textAlign: 'right' }">USD</td>
-                <td :style="{ textAlign: 'right' }">USD</td>
-              </tr>
-              <tr>
-                <td>Sales</td>
-                <td>Count</td>
-                <td :style="{ textAlign: 'right' }">13</td>
-                <td :style="{ textAlign: 'right' }">17</td>
-              </tr>
-              <tr>
-                <td />
-                <td>Gross Amount</td>
-                <td :style="{ textAlign: 'right' }">15.26</td>
-                <td :style="{ textAlign: 'right' }">661.39</td>
-              </tr>
-              <tr>
-                <td />
-                <td>Fees</td>
-                <td :style="{ textAlign: 'right' }">-3.97</td>
-                <td :style="{ textAlign: 'right' }">-33</td>
-              </tr>
-              <tr>
-                <td>…</td>
-                <td>…</td>
-                <td :style="{ textAlign: 'right' }">…</td>
-                <td :style="{ textAlign: 'right' }">…</td>
-              </tr>
-              <tr>
-                <td>Net Activity</td>
-                <td />
-                <td :style="{ textAlign: 'right' }">11.29</td>
-                <td :style="{ textAlign: 'right' }">628.39</td>
-              </tr>
+                <tr>
+                  <td/>
+                  <td>Currency</td>
+                  <td :style="{ textAlign: 'right' }">USD</td>
+                  <td :style="{ textAlign: 'right' }">USD</td>
+                </tr>
+                <tr>
+                  <td>Sales</td>
+                  <td>Count</td>
+                  <td :style="{ textAlign: 'right' }">13</td>
+                  <td :style="{ textAlign: 'right' }">17</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>Gross Amount</td>
+                  <td :style="{ textAlign: 'right' }">15.26</td>
+                  <td :style="{ textAlign: 'right' }">661.39</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td>Fees</td>
+                  <td :style="{ textAlign: 'right' }">-3.97</td>
+                  <td :style="{ textAlign: 'right' }">-33</td>
+                </tr>
+                <tr>
+                  <td>…</td>
+                  <td>…</td>
+                  <td :style="{ textAlign: 'right' }">…</td>
+                  <td :style="{ textAlign: 'right' }">…</td>
+                </tr>
+                <tr>
+                  <td>Net Activity</td>
+                  <td/>
+                  <td :style="{ textAlign: 'right' }">11.29</td>
+                  <td :style="{ textAlign: 'right' }">628.39</td>
+                </tr>
               </tbody>
             </table>
             <p>
@@ -500,8 +519,11 @@
             </p>
             <p>
               If you are using Express or Custom Connect accounts, Clean Pay
-              <a href="javascript: void(0)">may hold a reserve</a>
-              on your platform account’s <code>available</code> balance to cover any negative
+              <a
+                href="javascript: void(0)"
+              >may hold a reserve</a>
+              on your platform account’s
+              <code>available</code> balance to cover any negative
               <code>available</code> balances across your Connect accounts to ensure funds can
               be covered.
             </p>
@@ -533,8 +555,10 @@
             <aside :class="$style.note">
               <h3>Payouts and transfers</h3>
               <p>
-                In our reporting, transfers are represented either as <em>payouts</em> to your
-                bank account or, for Connect platforms, <em>transfers</em> sent to connected
+                In our reporting, transfers are represented either as
+                <em>payouts</em> to your
+                bank account or, for Connect platforms,
+                <em>transfers</em> sent to connected
                 Clean Pay accounts.
               </p>
             </aside>
@@ -556,38 +580,38 @@
             </p>
             <table class="table">
               <thead>
-              <tr>
-                <th>Month</th>
-                <th :style="{ textAlign: 'right' }">2018-09-01</th>
-                <th :style="{ textAlign: 'right' }">2018-08-01</th>
-              </tr>
+                <tr>
+                  <th>Month</th>
+                  <th :style="{ textAlign: 'right' }">2018-09-01</th>
+                  <th :style="{ textAlign: 'right' }">2018-08-01</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Currency</td>
-                <td :style="{ textAlign: 'right' }">USD</td>
-                <td :style="{ textAlign: 'right' }">USD</td>
-              </tr>
-              <tr>
-                <td>Start of Month Balance</td>
-                <td :style="{ textAlign: 'right' }">623.29</td>
-                <td :style="{ textAlign: 'right' }">2.52</td>
-              </tr>
-              <tr>
-                <td>Net Activity</td>
-                <td :style="{ textAlign: 'right' }">11.29</td>
-                <td :style="{ textAlign: 'right' }">628.39</td>
-              </tr>
-              <tr>
-                <td>Less Net Transfers</td>
-                <td :style="{ textAlign: 'right' }">-631.97</td>
-                <td :style="{ textAlign: 'right' }">-7.62</td>
-              </tr>
-              <tr>
-                <td>End of Month Balance</td>
-                <td :style="{ textAlign: 'right' }">2.61</td>
-                <td :style="{ textAlign: 'right' }">623.29</td>
-              </tr>
+                <tr>
+                  <td>Currency</td>
+                  <td :style="{ textAlign: 'right' }">USD</td>
+                  <td :style="{ textAlign: 'right' }">USD</td>
+                </tr>
+                <tr>
+                  <td>Start of Month Balance</td>
+                  <td :style="{ textAlign: 'right' }">623.29</td>
+                  <td :style="{ textAlign: 'right' }">2.52</td>
+                </tr>
+                <tr>
+                  <td>Net Activity</td>
+                  <td :style="{ textAlign: 'right' }">11.29</td>
+                  <td :style="{ textAlign: 'right' }">628.39</td>
+                </tr>
+                <tr>
+                  <td>Less Net Transfers</td>
+                  <td :style="{ textAlign: 'right' }">-631.97</td>
+                  <td :style="{ textAlign: 'right' }">-7.62</td>
+                </tr>
+                <tr>
+                  <td>End of Month Balance</td>
+                  <td :style="{ textAlign: 'right' }">2.61</td>
+                  <td :style="{ textAlign: 'right' }">623.29</td>
+                </tr>
               </tbody>
             </table>
             <h3 class="mt-5 mb-3">Transfer reconciliation</h3>
@@ -634,43 +658,43 @@
             </ul>
             <table class="table">
               <thead>
-              <tr>
-                <th>Month</th>
-                <th :style="{ textAlign: 'right' }">2018-09-01</th>
-                <th :style="{ textAlign: 'right' }">2018-08-01</th>
-              </tr>
+                <tr>
+                  <th>Month</th>
+                  <th :style="{ textAlign: 'right' }">2018-09-01</th>
+                  <th :style="{ textAlign: 'right' }">2018-08-01</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Currency</td>
-                <td :style="{ textAlign: 'right' }">USD</td>
-                <td :style="{ textAlign: 'right' }">USD</td>
-              </tr>
-              <tr>
-                <td />
-                <td :style="{ textAlign: 'right' }" />
-                <td :style="{ textAlign: 'right' }" />
-              </tr>
-              <tr>
-                <td>Net Activity</td>
-                <td :style="{ textAlign: 'right' }">11.29</td>
-                <td :style="{ textAlign: 'right' }">628.39</td>
-              </tr>
-              <tr>
-                <td>Less Activity Transferred in Month</td>
-                <td :style="{ textAlign: 'right' }">-8.68</td>
-                <td :style="{ textAlign: 'right' }">-5.1</td>
-              </tr>
-              <tr>
-                <td>Less Activity Transferred in Later Months</td>
-                <td :style="{ textAlign: 'right' }">-623.29</td>
-                <td :style="{ textAlign: 'right' }">-2.52</td>
-              </tr>
-              <tr>
-                <td>Untransferred Activity</td>
-                <td :style="{ textAlign: 'right' }">0</td>
-                <td :style="{ textAlign: 'right' }">0</td>
-              </tr>
+                <tr>
+                  <td>Currency</td>
+                  <td :style="{ textAlign: 'right' }">USD</td>
+                  <td :style="{ textAlign: 'right' }">USD</td>
+                </tr>
+                <tr>
+                  <td/>
+                  <td :style="{ textAlign: 'right' }"/>
+                  <td :style="{ textAlign: 'right' }"/>
+                </tr>
+                <tr>
+                  <td>Net Activity</td>
+                  <td :style="{ textAlign: 'right' }">11.29</td>
+                  <td :style="{ textAlign: 'right' }">628.39</td>
+                </tr>
+                <tr>
+                  <td>Less Activity Transferred in Month</td>
+                  <td :style="{ textAlign: 'right' }">-8.68</td>
+                  <td :style="{ textAlign: 'right' }">-5.1</td>
+                </tr>
+                <tr>
+                  <td>Less Activity Transferred in Later Months</td>
+                  <td :style="{ textAlign: 'right' }">-623.29</td>
+                  <td :style="{ textAlign: 'right' }">-2.52</td>
+                </tr>
+                <tr>
+                  <td>Untransferred Activity</td>
+                  <td :style="{ textAlign: 'right' }">0</td>
+                  <td :style="{ textAlign: 'right' }">0</td>
+                </tr>
               </tbody>
             </table>
             <p>
@@ -685,11 +709,18 @@
           <section>
             <h2>Balance transaction source</h2>
             <p>
-              Balance transactions include a<a href="javascript: void(0)">source</a> field
+              Balance transactions include a
+              <a href="javascript: void(0)">source</a>
+              field
               which contains the ID of the related Clean Pay object. The{' '}
-              <a href="javascript: void(0)">API</a> can be used to retrieve additional
+              <a
+                href="javascript: void(0)"
+              >API</a> can be used to retrieve additional
               information about the payment activity that caused the Balance transaction to be
-              created. Using <a href="javascript: void(0)">Sigma</a>, you can also join the
+              created. Using
+              <a
+                href="javascript: void(0)"
+              >Sigma</a>, you can also join the
               <code>balance_transactions</code> table with other tables using the
               <code>source_id</code> column.
             </p>
@@ -698,16 +729,22 @@
             <h2>Questions?</h2>
             <p>
               We&#39;re always happy to help with code or other questions you might have!
-              <a href="javascript: void(0)">Search</a>
-              our documentation, <a href="javascript: void(0)">contact support</a>, or
-              <a href="javascript: void(0)">connect with our sales team</a>. You can also chat
+              <a
+                href="javascript: void(0)"
+              >Search</a>
+              our documentation,
+              <a href="javascript: void(0)">contact support</a>, or
+              <a href="javascript: void(0)">connect with our sales team</a>
+              . You can also chat
               live with other developers in{' '}
-              <a href="javascript: void(0)">#cleanuiadmintemplate</a> on freenode.
+              <a
+                href="javascript: void(0)"
+              >#cleanuiadmintemplate</a> on freenode.
             </p>
           </section>
           <section>
             <h2>
-              <span :class="$style.step">Step 1: </span>
+              <span :class="$style.step">Step 1:</span>
               Obtain your API keys
             </h2>
             <aside :class="$style.important">
@@ -720,7 +757,9 @@
               <p>
                 We include randomly generated API keys in our code examples if you are not
                 logged in. Replace these with your own or
-                <a href="javascript: void(0)">log in</a>
+                <a
+                  href="javascript: void(0)"
+                >log in</a>
                 to see code examples populated with your own test API keys.
               </p>
             </aside>
@@ -728,7 +767,10 @@
               <p>
                 If you&#39;re processing more than 6 million transactions per year, you are
                 not eligible to use a SAQ to prove PCI compliance. Payment brands require you
-                to complete a<a href="javascript: void(0)">Report on Compliance</a>
+                to complete a
+                <a
+                  href="javascript: void(0)"
+                >Report on Compliance</a>
                 (RoC) to validate your PCI compliance annually.
               </p>
             </aside>
@@ -740,9 +782,13 @@
               </dt>
               <dd>
                 The email address provided for the creation of a
-                <a href="javascript: void(0)">deferred account</a> already has an account
+                <a
+                  href="javascript: void(0)"
+                >deferred account</a> already has an account
                 associated with it. Use the
-                <a href="javascript: void(0)">OAuth flow</a>
+                <a
+                  href="javascript: void(0)"
+                >OAuth flow</a>
                 to connect the existing account to your platform.
               </dd>
               <dt>
@@ -754,7 +800,7 @@
               </dd>
             </dl>
             <div :class="$style.image">
-              <img src="resources/images/photos/2.jpeg" alt="" />
+              <img src="resources/images/photos/2.jpeg" alt>
               <p>Rolling an API key.</p>
             </div>
           </section>
@@ -763,18 +809,24 @@
             <ul>
               <li>Products no longer have SKU lists embedded.</li>
               <li>
-                The <code>id</code> field of invoice line items of{' '}
+                The
+                <code>id</code>
+                field of invoice line items of{' '}
                 <code>type=subscription</code> no longer can be interpreted as a subscription
                 ID, but instead is a unique invoice line item ID. It can be used for
                 pagination.
               </li>
               <li>
-                Coupon, SKU, customer, product and plan <code>id</code>s may only contain
-                alphanumeric and <code>_-</code> characters on creation.
+                Coupon, SKU, customer, product and plan
+                <code>id</code>s may only contain
+                alphanumeric and
+                <code>_-</code> characters on creation.
               </li>
               <li>
                 When creating or updating subscriptions, the default value of
-                <code>trial_from_plan</code> is now <code>false</code>, meaning that a
+                <code>trial_from_plan</code> is now
+                <code>false</code>
+                , meaning that a
                 subscription will not automatically inherit a plan’s{' '}
                 <code>trial_period_days</code>. If a subscription is already trialing,
                 switching to a new plan without specifying
@@ -797,5 +849,5 @@
   </section>
 </template>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

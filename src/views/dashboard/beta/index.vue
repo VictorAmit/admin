@@ -7,9 +7,7 @@
             <div class="utils__title">
               <strong>Account Information</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Account information
-            </div>
+            <div class="utils__titleDescription">Block with important Account information</div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -24,9 +22,7 @@
             <div class="utils__title">
               <strong>Work Progress</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Work Progress information
-            </div>
+            <div class="utils__titleDescription">Block with important Work Progress information</div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -41,9 +37,7 @@
             <div class="utils__title">
               <strong>Employees</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with Employees important information
-            </div>
+            <div class="utils__titleDescription">Block with Employees important information</div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -61,20 +55,23 @@
             <div class="utils__title">
               <strong>Task Table</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Task Table information
-            </div>
+            <div class="utils__titleDescription">Block with important Task Table information</div>
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col-lg-12">
-                <a-table :columns="taskTableColumns" :dataSource="taskTableData" :pagination="false"
-                         :rowSelection="rowSelection" class="utils__scrollTable" :scroll="{ x: '100%' }">
+                <a-table
+                  :columns="taskTableColumns"
+                  :dataSource="taskTableData"
+                  :pagination="false"
+                  :rowSelection="rowSelection"
+                  class="utils__scrollTable"
+                  :scroll="{ x: '100%' }"
+                >
                   <a slot="name" slot-scope="text" href="javascript: void(0);">{{text}}</a>
                   <a slot="username" slot-scope="username" href="javascript: void(0);">{{username}}</a>
                   <a-dropdown slot="actions">
-                    <a-button size="small">
-                      Actions
+                    <a-button size="small">Actions
                       <a-icon type="down"/>
                     </a-button>
                     <a-menu slot="overlay">
@@ -99,9 +96,7 @@
             <div class="utils__title">
               <strong>Information Cards</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Information Cards information
-            </div>
+            <div class="utils__titleDescription">Block with important Information Cards information</div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -121,9 +116,7 @@
             <div class="utils__title">
               <strong>Server Info</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Server Info information
-            </div>
+            <div class="utils__titleDescription">Block with important Server Info information</div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -141,9 +134,7 @@
             <div class="utils__title">
               <strong>Server Statistics</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Server Statistics information
-            </div>
+            <div class="utils__titleDescription">Block with important Server Statistics information</div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -163,9 +154,9 @@
             <div class="utils__title">
               <strong>Server Configuration</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Server Configuration information
-            </div>
+            <div
+              class="utils__titleDescription"
+            >Block with important Server Configuration information</div>
           </div>
           <div class="card-body">
             <div class="mb-5">
@@ -181,9 +172,9 @@
             <div class="utils__title">
               <strong>Week Revenue Statistics, Billions</strong>
             </div>
-            <cui-donut type="primary" name="Nuts" />
-            <cui-donut type="success" name="Apples" />
-            <cui-donut color="yellow" name="Peaches" />
+            <cui-donut type="primary" name="Nuts"/>
+            <cui-donut type="success" name="Apples"/>
+            <cui-donut color="yellow" name="Peaches"/>
           </div>
           <div class="card-body">
             <vue-chartist
@@ -199,8 +190,8 @@
             <div class="utils__title">
               <strong>Month Site Visits Growth, %</strong>
             </div>
-            <cui-donut type="primary" name="Income" />
-            <cui-donut type="success" name="Outcome" />
+            <cui-donut type="primary" name="Income"/>
+            <cui-donut type="success" name="Outcome"/>
           </div>
           <div class="card-body">
             <vue-chartist
@@ -216,12 +207,10 @@
             <div class="utils__title">
               <strong>Chat</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Information Cards information
-            </div>
+            <div class="utils__titleDescription">Block with important Information Cards information</div>
           </div>
           <div class="card-body">
-            <cui-chat />
+            <cui-chat/>
           </div>
         </div>
       </div>
@@ -246,9 +235,18 @@
             </div>
           </div>
           <div class="card-body">
-            <a-table :columns="tableColumns" :dataSource="tableData" :pagination="false" class="utils__scrollTable" :scroll="{ x: '100%' }">
-              <div slot="filterDropdown" slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
-                   class='custom-filter-dropdown'>
+            <a-table
+              :columns="tableColumns"
+              :dataSource="tableData"
+              :pagination="false"
+              class="utils__scrollTable"
+              :scroll="{ x: '100%' }"
+            >
+              <div
+                slot="filterDropdown"
+                slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
+                class="custom-filter-dropdown"
+              >
                 <a-input
                   v-ant-ref="c => searchInput = c"
                   :placeholder="`Search ${column.dataIndex}`"
@@ -258,27 +256,34 @@
                   style="width: 188px; margin-bottom: 8px; display: block;"
                 />
                 <a-button
-                  type='primary'
+                  type="primary"
                   @click="() => handleSearch(selectedKeys, confirm)"
                   icon="search"
                   size="small"
                   style="width: 90px; margin-right: 8px"
-                >
-                  Search
-                </a-button>
+                >Search</a-button>
                 <a-button
                   @click="() => handleReset(clearFilters)"
                   size="small"
                   style="width: 90px"
-                >
-                  Reset
-                </a-button>
+                >Reset</a-button>
               </div>
-              <a-icon slot="filterIcon" slot-scope="filtered" type='search' :style="{ color: filtered ? '#108ee9' : undefined }"/>
+              <a-icon
+                slot="filterIcon"
+                slot-scope="filtered"
+                type="search"
+                :style="{ color: filtered ? '#108ee9' : undefined }"
+              />
               <template slot="customRender" slot-scope="text">
                 <span v-if="searchText">
-                  <template v-for="(fragment, i) in text.toString().split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))">
-                    <mark v-if="fragment.toLowerCase() === searchText.toLowerCase()" :key="i" class="highlight">{{fragment}}</mark>
+                  <template
+                    v-for="(fragment, i) in text.toString().split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))"
+                  >
+                    <mark
+                      v-if="fragment.toLowerCase() === searchText.toLowerCase()"
+                      :key="i"
+                      class="highlight"
+                    >{{fragment}}</mark>
                     <template v-else>{{fragment}}</template>
                   </template>
                 </span>
@@ -292,15 +297,13 @@
             <div class="utils__title">
               <strong>Calendar</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Calendar information
-            </div>
+            <div class="utils__titleDescription">Block with important Calendar information</div>
           </div>
           <div class="card-body">
             <a-calendar>
               <ul class="events" slot="dateCellRender" slot-scope="value">
                 <li v-for="item in getListData(value)" :key="item.content">
-                  <a-badge :status="item.type" :text="item.content" />
+                  <a-badge :status="item.type" :text="item.content"/>
                 </li>
               </ul>
               <template slot="monthCellRender" slot-scope="value">
@@ -509,35 +512,35 @@ export default {
 }
 </script>
 <style scoped>
-  .custom-filter-dropdown {
-    padding: 8px;
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
-  }
+.custom-filter-dropdown {
+  padding: 8px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
 
-  .highlight {
-    background-color: rgb(255, 192, 105);
-    padding: 0px;
-  }
+.highlight {
+  background-color: rgb(255, 192, 105);
+  padding: 0px;
+}
 
-  .events {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .events .ant-badge-status {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    text-overflow: ellipsis;
-    font-size: 12px;
-  }
-  .notes-month {
-    text-align: center;
-    font-size: 28px;
-  }
-  .notes-month section {
-    font-size: 28px;
-  }
+.events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.events .ant-badge-status {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.notes-month {
+  text-align: center;
+  font-size: 28px;
+}
+.notes-month section {
+  font-size: 28px;
+}
 </style>

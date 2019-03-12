@@ -10,34 +10,34 @@
         <div class="mb-3">
           <a-tabs defaultActiveKey="1" type="card">
             <a-tab-pane key="1">
-                    <span slot="tab">
-                      <i class="mr-2 fa fa-home"/>
-                      Home
-                    </span>
+              <span slot="tab">
+                <i class="mr-2 fa fa-home"/>
+                Home
+              </span>
             </a-tab-pane>
             <a-tab-pane key="2">
-                    <span slot="tab">
-                      <i class="mr-2 fa fa-comments"/>
-                      Discussion
-                    </span>
+              <span slot="tab">
+                <i class="mr-2 fa fa-comments"/>
+                Discussion
+              </span>
             </a-tab-pane>
             <a-tab-pane key="3">
-                    <span slot="tab">
-                      <i class="mr-2 fa fa-user"/>
-                      Profile
-                    </span>
+              <span slot="tab">
+                <i class="mr-2 fa fa-user"/>
+                Profile
+              </span>
             </a-tab-pane>
             <a-tab-pane key="4">
-                    <span slot="tab">
-                      <i class="mr-2 fa fa-envelope"/>
-                      Messages
-                    </span>
+              <span slot="tab">
+                <i class="mr-2 fa fa-envelope"/>
+                Messages
+              </span>
             </a-tab-pane>
             <a-tab-pane key="5">
-                    <span slot="tab">
-                      <i class="mr-2 fa fa-cog"/>
-                      Settings
-                    </span>
+              <span slot="tab">
+                <i class="mr-2 fa fa-cog"/>
+                Settings
+              </span>
             </a-tab-pane>
           </a-tabs>
         </div>
@@ -51,25 +51,25 @@
           <ul :class="$style.overallDataList">
             <li :class="$style.overallDataItem">
               <a href="javascript: void(0);">
-                <i class="fa fa-check-circle-o mr-2" />
+                <i class="fa fa-check-circle-o mr-2"/>
                 {{projectData.commits}} commits
               </a>
             </li>
             <li :class="$style.overallDataItem">
               <a href="javascript: void(0);">
-                <i class="fa fa-th-list mr-2" />
+                <i class="fa fa-th-list mr-2"/>
                 {{projectData.branches}} branch
               </a>
             </li>
             <li :class="$style.overallDataItem">
               <a href="javascript: void(0);">
-                <i class="fa fa-window-maximize mr-2" />
+                <i class="fa fa-window-maximize mr-2"/>
                 {{projectData.releases}} releases
               </a>
             </li>
             <li :class="$style.overallDataItem">
               <a href="javascript: void(0);">
-                <i class="fa fa-bell mr-2" />
+                <i class="fa fa-bell mr-2"/>
                 {{projectData.contributors}} contributors
               </a>
             </li>
@@ -101,8 +101,7 @@
             </div>
             <div :class="$style.sortOption" class="mb-2">
               <a-dropdown slot="actions">
-                <a-button>
-                  Download
+                <a-button>Download
                   <a-icon type="down"/>
                 </a-button>
                 <a-menu slot="overlay">
@@ -123,17 +122,12 @@
         <div class="table-responsive">
           <table :class="$style.nav" class="table table-hover text-nowrap">
             <tbody>
-              <tr
-                v-for="(item, index) in projectData.explore"
-                :key="index"
-              >
+              <tr v-for="(item, index) in projectData.explore" :key="index">
                 <td :class="$style.navIcon">
-                  <i :class="[item.type === 'folder' ? 'fa-folder' : 'fa-file-o', 'fa']" />
+                  <i :class="[item.type === 'folder' ? 'fa-folder' : 'fa-file-o', 'fa']"/>
                 </td>
                 <td>
-                  <a href="javascript: void(0);">
-                    {{item.name}}
-                  </a>
+                  <a href="javascript: void(0);">{{item.name}}</a>
                 </td>
                 <td>{{item.info}}</td>
                 <td :class="$style.navTime">{{item.time}}</td>
@@ -156,5 +150,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

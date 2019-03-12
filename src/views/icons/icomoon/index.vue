@@ -7,8 +7,8 @@
           href="https://icomoon.io/#icons-icomoon"
           target="_blank"
           class="btn btn-sm btn-primary ml-4"
-        >
-          Official Documentation <i class="icmn-link ml-1" />
+        >Official Documentation
+          <i class="icmn-link ml-1"/>
         </a>
       </div>
     </div>
@@ -17,9 +17,7 @@
         <div class="col-xl-6 offset-xl-3">
           <ul class="utils__iconsBlock list-unstyled">
             <a-tooltip v-for="icon in iconsData" :key="icon">
-              <template slot="title">
-                {{icon}}
-              </template>
+              <template slot="title">{{icon}}</template>
               <li>
                 <i :class="icon"/>
               </li>

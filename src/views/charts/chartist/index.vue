@@ -8,7 +8,8 @@
           target="_blank"
           class="btn btn-sm btn-primary ml-4"
         >
-          Official Documentation <i class="icmn-link ml-1"/>
+          Official Documentation
+          <i class="icmn-link ml-1"/>
         </a>
       </div>
     </div>
@@ -32,7 +33,7 @@
             </a>
           </p>
           <vue-chartist
-            class="chartist-animated height-300 mt-4"
+            class="chartist-animated chartist-theme-dark height-300 mt-4"
             type="Line"
             :data="animationData"
             :options="animatonOptions"
@@ -81,12 +82,7 @@
               </small>
             </a>
           </p>
-          <vue-chartist
-            class="height-300 mt-4"
-            type="Line"
-            :data="lineData"
-            :options="lineData"
-          />
+          <vue-chartist class="height-300 mt-4" type="Line" :data="lineData" :options="lineData"/>
         </div>
         <div class="col-lg-6">
           <h5 class="text-black">
@@ -361,8 +357,7 @@ export default {
         {
           labels: [],
           series: scatterTimes(4).map(() => []),
-        },
-      )
+        })
     const lineHoleData = {
       labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
       series: [
@@ -568,5 +563,5 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

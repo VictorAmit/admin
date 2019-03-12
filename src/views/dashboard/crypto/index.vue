@@ -5,53 +5,29 @@
         <strong>Markets</strong>
       </div>
       <a-select showSearch defaultValue="btc" :style="{width: '100%'}">
-        <a-select-option value="btc">
-          BTC (Bitcoin)
-          <a-tag color="blue" class="ml-3">
-            11.7%
-          </a-tag>
+        <a-select-option value="btc">BTC (Bitcoin)
+          <a-tag color="blue" class="ml-3">11.7%</a-tag>
         </a-select-option>
-        <a-select-option value="xmr">
-          XMR (Monero)
-          <a-tag color="blue" class="ml-3">
-            67.5%
-          </a-tag>
+        <a-select-option value="xmr">XMR (Monero)
+          <a-tag color="blue" class="ml-3">67.5%</a-tag>
         </a-select-option>
-        <a-select-option value="gld">
-          GLD (GoldCoin)
-          <a-tag color="red" class="ml-3">
-            -22.9%
-          </a-tag>
+        <a-select-option value="gld">GLD (GoldCoin)
+          <a-tag color="red" class="ml-3">-22.9%</a-tag>
         </a-select-option>
-        <a-select-option value="neo">
-          NEO (Neo)
-          <a-tag color="red" class="ml-3">
-            -12.3%
-          </a-tag>
+        <a-select-option value="neo">NEO (Neo)
+          <a-tag color="red" class="ml-3">-12.3%</a-tag>
         </a-select-option>
-        <a-select-option value="btg">
-          BTG (Bitcoin Gold)
-          <a-tag color="blue" class="ml-3">
-            +4.3%
-          </a-tag>
+        <a-select-option value="btg">BTG (Bitcoin Gold)
+          <a-tag color="blue" class="ml-3">+4.3%</a-tag>
         </a-select-option>
-        <a-select-option value="xrp">
-          XRP (Ripple)
-          <a-tag color="red" class="ml-3">
-            -4.2%
-          </a-tag>
+        <a-select-option value="xrp">XRP (Ripple)
+          <a-tag color="red" class="ml-3">-4.2%</a-tag>
         </a-select-option>
-        <a-select-option value="zec">
-          ZEC (ZCash)
-          <a-tag color="red" class="ml-3">
-            -1.7%
-          </a-tag>
+        <a-select-option value="zec">ZEC (ZCash)
+          <a-tag color="red" class="ml-3">-1.7%</a-tag>
         </a-select-option>
-        <a-select-option value="zcl">
-          ZCL (ZClassic)
-          <a-tag color="red" class="ml-3">
-            -2.8%
-          </a-tag>
+        <a-select-option value="zcl">ZCL (ZClassic)
+          <a-tag color="red" class="ml-3">-2.8%</a-tag>
         </a-select-option>
       </a-select>
     </div>
@@ -80,9 +56,7 @@
             8.26
           </span>
         </a>
-        <a href="javascript: void(0);"
-          :class="[$style.listItem, $style.listItemNegative]"
-        >
+        <a href="javascript: void(0);" :class="[$style.listItem, $style.listItemNegative]">
           <span :class="$style.listPercents">
             <span>-22.9%</span>
             0.00016985
@@ -112,10 +86,7 @@
             5.64
           </span>
         </a>
-        <a
-          href="javascript: void(0);"
-          :class="[$style.listItem, $style.listItemNegative]"
-        >
+        <a href="javascript: void(0);" :class="[$style.listItem, $style.listItemNegative]">
           <span :class="$style.listPercents">
             <span>-4.2%</span>
             0.00035685
@@ -185,7 +156,11 @@
               <div :class="$style.form">
                 <a-form layout="vertical">
                   <a-form-item>
-                    <a-radio-group defaultValue="buy" style="width: 100%;" @change="toggleOrderType">
+                    <a-radio-group
+                      defaultValue="buy"
+                      style="width: 100%;"
+                      @change="toggleOrderType"
+                    >
                       <a-radio-button value="buy" style="width: 50%; text-align: center;">BUY</a-radio-button>
                       <a-radio-button value="sell" style="width: 50%; text-align: center;">SELL</a-radio-button>
                     </a-radio-group>
@@ -200,15 +175,15 @@
                     </a-form-item>
                     <span :class="$style.formLabel">QUANTITY (BTC)</span>
                     <a-form-item>
-                      <a-input defaultValue="0.00000000" />
+                      <a-input defaultValue="0.00000000"/>
                     </a-form-item>
                     <span :class="$style.formLabel">BID PRICE</span>
                     <a-form-item>
-                      <a-input defaultValue="0.00645198" />
+                      <a-input defaultValue="0.00645198"/>
                     </a-form-item>
                     <span :class="$style.formLabel">TOTAL</span>
                     <a-form-item>
-                      <a-input defaultValue="0.00000000" />
+                      <a-input defaultValue="0.00000000"/>
                     </a-form-item>
                     <span :class="$style.formLabel">TIME IN FORCE</span>
                     <a-form-item>
@@ -246,15 +221,15 @@
                     </a-form-item>
                     <span :class="$style.formLabel">QUANTITY (BTC)</span>
                     <a-form-item>
-                      <a-input defaultValue="0.00000000" />
+                      <a-input defaultValue="0.00000000"/>
                     </a-form-item>
                     <span :class="$style.formLabel">ASK PRICE</span>
                     <a-form-item>
-                      <a-input defaultValue="0.00645198" />
+                      <a-input defaultValue="0.00645198"/>
                     </a-form-item>
                     <span :class="$style.formLabel">TOTAL</span>
                     <a-form-item>
-                      <a-input defaultValue="0.00000000" />
+                      <a-input defaultValue="0.00000000"/>
                     </a-form-item>
                     <span :class="$style.formLabel">TIME IN FORCE</span>
                     <a-form-item>
@@ -322,7 +297,11 @@
             <a slot="sell" href="javascript: void(0);" class="utils__link--blue ml-2">
               <strong>BUY</strong>
             </a>
-            <span slot="type" slot-scope="value" :style="value === 'SELL' ? { color: '#f75535' } : { color: '#00a45b' }">{{value}}</span>
+            <span
+              slot="type"
+              slot-scope="value"
+              :style="value === 'SELL' ? { color: '#f75535' } : { color: '#00a45b' }"
+            >{{value}}</span>
           </a-table>
         </div>
       </div>
@@ -331,9 +310,17 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <a v-if="!myOpenOrders.loaded" href="javascript: void(0);" v-on:click="handleMyOpenOrders">
+          <a
+            v-if="!myOpenOrders.loaded"
+            href="javascript: void(0);"
+            v-on:click="handleMyOpenOrders"
+          >
             <a-spin :spinning="myOpenOrders.loading">
-              <a-alert message="Click to view open order details" type="info" :class="$style.warning" />
+              <a-alert
+                message="Click to view open order details"
+                type="info"
+                :class="$style.warning"
+              />
             </a-spin>
           </a>
           <div v-if="myOpenOrders.loaded" :class="$style.loaded" class="text-nowrap">
@@ -345,7 +332,11 @@
               :scroll="{ x: '100%' }"
               size="small"
             >
-              <span slot="type" slot-scope="value" :style="value === 'SELL' ? { color: '#f75535' } : { color: '#00a45b' }">{{value}}</span>
+              <span
+                slot="type"
+                slot-scope="value"
+                :style="value === 'SELL' ? { color: '#f75535' } : { color: '#00a45b' }"
+              >{{value}}</span>
             </a-table>
           </div>
         </div>
@@ -355,9 +346,17 @@
       </div>
       <div class="card">
         <div class="card-body">
-          <a v-if="!myOrderHistory.loaded" href="javascript: void(0);" v-on:click="handleMyOrderHistory">
+          <a
+            v-if="!myOrderHistory.loaded"
+            href="javascript: void(0);"
+            v-on:click="handleMyOrderHistory"
+          >
             <a-spin :spinning="myOrderHistory.loading">
-              <a-alert message="Click to view open order details" type="info" :class="$style.warning" />
+              <a-alert
+                message="Click to view open order details"
+                type="info"
+                :class="$style.warning"
+              />
             </a-spin>
           </a>
           <div v-if="myOrderHistory.loaded" :class="$style.loaded" class="text-nowrap">
@@ -369,7 +368,11 @@
               :scroll="{ x: '100%' }"
               size="small"
             >
-              <span slot="type" slot-scope="value" :style="value === 'SELL' ? { color: '#f75535' } : { color: '#00a45b' }">{{value}}</span>
+              <span
+                slot="type"
+                slot-scope="value"
+                :style="value === 'SELL' ? { color: '#f75535' } : { color: '#00a45b' }"
+              >{{value}}</span>
             </a-table>
           </div>
         </div>
@@ -731,5 +734,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

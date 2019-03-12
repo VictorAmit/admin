@@ -1,9 +1,7 @@
 <template>
   <div :class="$style.breadcrumbs">
     <div :class="$style.path">
-      <router-link to="/" class="text-muted">
-        Home
-      </router-link>
+      <router-link to="/" class="text-muted">Home</router-link>
       <template v-for="(item, index) in breadcrumb">
         <span v-if="index != 0" :key="index">
           <span :class="$style.arrow" class="text-muted"></span>
@@ -61,12 +59,12 @@ export default {
     this.breadcrumb = this.getPath(this.menuData, this.$route.path)
   },
   watch: {
-    $route (to) {
+    $route(to) {
       this.breadcrumb = this.getPath(this.menuData, to.path)
     },
   },
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

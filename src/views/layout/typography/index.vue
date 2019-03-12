@@ -1,10 +1,17 @@
 <template>
   <section class="card">
     <div class="card-header">
-        <span class="utils__title">
-            <strong>Typography</strong>
-            <a href="http://v4-alpha.getbootstrap.com/content/typography/" target="_blank" class="btn btn-sm btn-primary ml-2">Official Documentation <i class="icmn-link ml-1"></i></a>
-        </span>
+      <span class="utils__title">
+        <strong>Typography</strong>
+        <a
+          href="https://getbootstrap.com/docs/4.2/content/typography/"
+          target="_blank"
+          class="btn btn-sm btn-primary ml-2"
+        >
+          Official Documentation
+          <i class="icmn-link ml-1"></i>
+        </a>
+      </span>
     </div>
     <div class="card-body">
       <div class="row">
@@ -13,16 +20,40 @@
             <h5 class="text-black">
               <strong>Headings</strong>
             </h5>
-            <p class="text-muted">All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>,
-              are available. <code>.h1</code> through <code>.h6</code> classes
+            <p class="text-muted">
+              All HTML headings,
+              <code>&lt;h1&gt;</code> through
+              <code>&lt;h6&gt;</code>,
+              are available.
+              <code>.h1</code> through
+              <code>.h6</code> classes
               are also available, for when you want to match the font styling
-              of a heading but still want your text to be displayed inline</p>
-            <h1>h1. Bootstrap heading <span class="badge badge-default">LABEL</span></h1>
-            <h2>h2. Bootstrap heading <span class="badge badge-primary">LABEL</span></h2>
-            <h3>h3. Bootstrap heading <span class="badge badge-info">LABEL</span></h3>
-            <h4>h4. Bootstrap heading <span class="badge badge-danger">LABEL</span></h4>
-            <h5>h5. Bootstrap heading <span class="badge badge-success">LABEL</span></h5>
-            <h6>h6. Bootstrap heading <span class="badge badge-warning">LABEL</span></h6>
+              of a heading but still want your text to be displayed inline
+            </p>
+            <h1>
+              h1. Bootstrap heading
+              <span class="badge badge-default">LABEL</span>
+            </h1>
+            <h2>
+              h2. Bootstrap heading
+              <span class="badge badge-primary">LABEL</span>
+            </h2>
+            <h3>
+              h3. Bootstrap heading
+              <span class="badge badge-info">LABEL</span>
+            </h3>
+            <h4>
+              h4. Bootstrap heading
+              <span class="badge badge-danger">LABEL</span>
+            </h4>
+            <h5>
+              h5. Bootstrap heading
+              <span class="badge badge-success">LABEL</span>
+            </h5>
+            <h6>
+              h6. Bootstrap heading
+              <span class="badge badge-warning">LABEL</span>
+            </h6>
           </div>
         </div>
 
@@ -31,23 +62,33 @@
             <h5 class="text-black">
               <strong>Styled Headings</strong>
             </h5>
-            <p class="text-muted">Create lighter, secondary text in any heading with a generic <code>&lt;small&gt;</code> tag or the <code>.small</code> class</p>
-            <h1><i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
+            <p class="text-muted">
+              Create lighter, secondary text in any heading with a generic
+              <code>&lt;small&gt;</code> tag or the
+              <code>.small</code> class
+            </p>
+            <h1>
+              <i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
               <span class="text-muted">Secondary text</span>
             </h1>
-            <h2><i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
+            <h2>
+              <i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
               <span class="text-muted">Secondary text</span>
             </h2>
-            <h3><i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
+            <h3>
+              <i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
               <span class="text-muted">Secondary text</span>
             </h3>
-            <h4><i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
+            <h4>
+              <i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
               <span class="text-muted">Secondary text</span>
             </h4>
-            <h5><i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
+            <h5>
+              <i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
               <span class="text-muted">Secondary text</span>
             </h5>
-            <h6><i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
+            <h6>
+              <i class="icmn-home mr-3" aria-hidden="true"></i>Bootstrap heading
               <span class="text-muted">Secondary text</span>
             </h6>
           </div>
@@ -60,11 +101,17 @@
             <h5 class="text-black">
               <strong>Body Copy</strong>
             </h5>
-            <p>Bootstrap's global default <code>font-size</code> is
-              <strong>1rem</strong>, with a <code>line-height</code> of
-              <strong>1.5</strong>. This is applied to the <code>&lt;body&gt;</code> and all paragraphs. In addition, <code>&lt;p&gt;</code> (paragraphs)
+            <p>
+              Bootstrap's global default
+              <code>font-size</code> is
+              <strong>1rem</strong>, with a
+              <code>line-height</code> of
+              <strong>1.5</strong>. This is applied to the
+              <code>&lt;body&gt;</code> and all paragraphs. In addition,
+              <code>&lt;p&gt;</code> (paragraphs)
               receive a bottom margin of half their computed line-height (1rem
-              by default)</p>
+              by default)
+            </p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -72,10 +119,15 @@
             <h5 class="text-black">
               <strong>Highlight</strong>
             </h5>
-            <p>For highlighting a run of text due to its relevance in another
-              context, use the <code>&lt;mark&gt;</code> tag. Like this:</p>
-            <p>You can use the mark tag to
-              <mark>highlight</mark> text</p>
+            <p>
+              For highlighting a run of text due to its relevance in another
+              context, use the
+              <code>&lt;mark&gt;</code> tag. Like this:
+            </p>
+            <p>
+              You can use the mark tag to
+              <mark>highlight</mark> text
+            </p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -83,12 +135,15 @@
             <h5 class="text-black">
               <strong>Addresses</strong>
             </h5>
-            <p>Present contact information for the nearest ancestor or the entire
-              body of work. Preserve formatting by ending all lines with <code>&lt;br&gt;</code></p>
+            <p>
+              Present contact information for the nearest ancestor or the entire
+              body of work. Preserve formatting by ending all lines with
+              <code>&lt;br&gt;</code>
+            </p>
             <address>
               <strong>Twitter, Inc.</strong>
-              <br> 795 Folsom Ave, Suite 600
-              <br> San Francisco, CA 94107
+              <br>795 Folsom Ave, Suite 600
+              <br>San Francisco, CA 94107
               <br>
               <abbr title="Phone">P:</abbr> (123) 456-7890
             </address>
@@ -148,8 +203,10 @@
             <h5 class="text-black">
               <strong>Lists - Unstyled</strong>
             </h5>
-            <p class="text-muted">Remove the default default styles and left margin on list
-              items. Apply to each nested lists if you need</p>
+            <p class="text-muted">
+              Remove the default default styles and left margin on list
+              items. Apply to each nested lists if you need
+            </p>
             <ul class="list-unstyled">
               <li>Lorem ipsum dolor sit amet</li>
               <li>Nulla volutpat aliquam velit
@@ -204,7 +261,12 @@
                 Lorem ipsum dolor sit amet
               </li>
               <li>
-                <a data-toggle="collapse" href="#exampleSubmenu" aria-controls="exampleSubmenu" aria-expanded="false">
+                <a
+                  data-toggle="collapse"
+                  href="#exampleSubmenu"
+                  aria-controls="exampleSubmenu"
+                  aria-expanded="false"
+                >
                   <i class="icmn-checkmark2 mr-2" aria-hidden="false"></i>
                   Nulla volutpat aliquam velit
                 </a>
@@ -225,7 +287,10 @@
             <h5 class="text-black">
               <strong>Lists - Inline</strong>
             </h5>
-            <p class="text-muted">Place all list items on a single line with <code>display: inline-block;</code> and some light padding</p>
+            <p class="text-muted">
+              Place all list items on a single line with
+              <code>display: inline-block;</code> and some light padding
+            </p>
             <ul class="list-inline">
               <li class="list-inline-item">Lorem ipsum</li>
               <li class="list-inline-item">Phasellus iaculis</li>
@@ -245,8 +310,10 @@
               <dt>Description lists</dt>
               <dd>A description list is perfect for defining terms</dd>
               <dt>Euismod</dt>
-              <dd>Vestibulum id ligula porta felis euismod semper eget lacinia
-                odio</dd>
+              <dd>
+                Vestibulum id ligula porta felis euismod semper eget lacinia
+                odio
+              </dd>
               <dd>Donec id elit non mi porta gravida at eget metus</dd>
               <dt>Malesuada porta</dt>
               <dd>Etiam porta sem malesuada magna mollis euismod</dd>
@@ -258,21 +325,27 @@
             <h5 class="text-black">
               <strong>Horizontal Description</strong>
             </h5>
-            <p class="text-muted">Use the well as a simple effect on an element to give it an inset
-              effect</p>
+            <p class="text-muted">
+              Use the well as a simple effect on an element to give it an inset
+              effect
+            </p>
             <dl class="row">
               <dt class="col-sm-3">Description lists</dt>
               <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
 
               <dt class="col-sm-3">Euismod</dt>
-              <dd class="col-sm-9">Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+              <dd
+                class="col-sm-9"
+              >Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
               <dd class="col-sm-9 offset-sm-3">Donec id elit non mi porta gravida at eget metus.</dd>
 
               <dt class="col-sm-3">Malesuada porta</dt>
               <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
 
               <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-              <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+              <dd
+                class="col-sm-9"
+              >Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
 
               <dt class="col-sm-3">Malesuada porta</dt>
               <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
@@ -285,7 +358,11 @@
           <h4 class="text-black">
             <strong>Blockquotes</strong>
           </h4>
-          <p class="text-muted">Add a <code>&lt;footer class="blockquote-footer"&gt;</code> for identifying the source. Wrap the name of the source work in <code>&lt;cite&gt;</code>.</p>
+          <p class="text-muted">
+            Add a
+            <code>&lt;footer class="blockquote-footer"&gt;</code> for identifying the source. Wrap the name of the source work in
+            <code>&lt;cite&gt;</code>.
+          </p>
           <div class="row">
             <div class="col-lg-10 mb-2">
               <blockquote class="blockquote">
@@ -298,8 +375,12 @@
                   torquent per conubia nostra, per inceptos himenaeos. Curabitur
                   sodales ligula in libero. Sed dignissim lacinia nunc.sed cursus
                   ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
-                  imperdiet</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  imperdiet
+                </p>
+                <footer class="blockquote-footer">
+                  Someone famous in
+                  <cite title="Source Title">Source Title</cite>
+                </footer>
               </blockquote>
             </div>
           </div>
@@ -315,8 +396,12 @@
                   torquent per conubia nostra, per inceptos himenaeos. Curabitur
                   sodales ligula in libero. Sed dignissim lacinia nunc.sed cursus
                   ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum
-                  imperdiet</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  imperdiet
+                </p>
+                <footer class="blockquote-footer">
+                  Someone famous in
+                  <cite title="Source Title">Source Title</cite>
+                </footer>
               </blockquote>
             </div>
           </div>

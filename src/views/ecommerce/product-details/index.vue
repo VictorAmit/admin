@@ -18,10 +18,10 @@
               </div>
               <a-carousel>
                 <a slot="customPaging" slot-scope="props">
-                  <img :src="getImgUrl(props.i)"/>
+                  <img :src="getImgUrl(props.i)">
                 </a>
                 <a href="javascript: void(0)" v-for="(image, index) in images" :key="index">
-                  <img :src="image"/>
+                  <img :src="image">
                 </a>
               </a-carousel>
             </div>
@@ -98,8 +98,7 @@
           <hr>
           <div :class="$style.controls">
             <a-button type="primary" size="large">
-              <a-icon type="shopping-cart"/>
-              Buy now
+              <a-icon type="shopping-cart"/>Buy now
             </a-button>
             <a href="javascript: void(0);" class="btn btn-link">
               <i class="icmn-heart mr-1"/>
@@ -114,7 +113,8 @@
             <a-tabs defaultActiveKey="1">
               <a-tab-pane tab="Information" key="1">
                 <div class="mb-1" v-for="(property, index) in properties" :key="index">
-                  <strong class="mr-1">{{property.name}}: </strong> {{property.value}}
+                  <strong class="mr-1">{{property.name}}:</strong>
+                  {{property.value}}
                 </div>
               </a-tab-pane>
               <a-tab-pane tab="Description" key="2">
@@ -153,5 +153,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

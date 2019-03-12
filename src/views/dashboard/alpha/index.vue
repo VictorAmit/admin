@@ -19,9 +19,7 @@
             <div class="utils__title">
               <strong>Recently Referrals</strong>
             </div>
-            <div class="utils__titleDescription">
-              Block with important Recently Referrals information
-            </div>
+            <div class="utils__titleDescription">Block with important Recently Referrals information</div>
           </div>
           <div class="card-body">
             <a-table
@@ -30,8 +28,7 @@
               :pagination="false"
               class="utils__scrollTable"
               :scroll="{ x: '100%' }"
-            >
-            </a-table>
+            ></a-table>
           </div>
         </div>
       </div>
@@ -81,9 +78,7 @@
           :footer="paymentTransaction.footer"
         />
         <div class="text-center pb-5">
-          <a-button type="primary" class="width-200" :loading="true">
-            Load More...
-          </a-button>
+          <a-button type="primary" class="width-200" :loading="true">Load More...</a-button>
         </div>
       </div>
     </div>

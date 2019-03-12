@@ -3,12 +3,9 @@
     <div class="card-header">
       <div class="utils__title">
         <strong>C3</strong>
-        <a
-          href="http://c3js.org/"
-          target="_blank"
-          class="btn btn-sm btn-primary ml-4"
-        >
-          Official Documentation <i class="icmn-link ml-1" />
+        <a href="http://c3js.org/" target="_blank" class="btn btn-sm btn-primary ml-4">
+          Official Documentation
+          <i class="icmn-link ml-1"/>
         </a>
       </div>
     </div>
@@ -23,7 +20,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -40,7 +37,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -57,7 +54,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -74,7 +71,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -91,7 +88,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -108,7 +105,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -125,7 +122,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -142,7 +139,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -159,7 +156,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -176,7 +173,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -193,7 +190,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -210,7 +207,7 @@
             <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>

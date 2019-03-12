@@ -2,31 +2,22 @@
   <div class="card" :class="$style.mail">
     <div :class="$style.sidebar">
       <div :class="$style.sidebarHeader">
-        <a-input-search
-          placeholder="Input search text"
-          style="width: 100%"
-        />
+        <a-input-search placeholder="Input search text" style="width: 100%"/>
       </div>
       <div :class="$style.tabs">
-        <a-tabs
-          tabPosition="left"
-          v-model="activeCategory"
-          @change="changeMailCategory"
-        >
+        <a-tabs tabPosition="left" v-model="activeCategory" @change="changeMailCategory">
           <a-tab-pane v-for="category in mailCategories" :key="category.key">
             <div :class="$style.tab" slot="tab">
               <div :class="$style.tabContent">
                 <div class="mb-1">
-                  <strong>
-                    {{category.mailCount > 0 ? category.title + '(' + category.mailCount + ')' : category.title}}
-                  </strong>
+                  <strong>{{category.mailCount > 0 ? category.title + '(' + category.mailCount + ')' : category.title}}</strong>
                 </div>
                 <div v-if="category.mailCount > 0">
                   <small :class="$style.tabTime">8:34PM</small>
                   <div :class="$style.tabName">Barak Obama</div>
-                  <div :class="$style.tabText">
-                    Hello! Where you are now? I want to talk. Hello! Where you are now? I want to talk
-                  </div>
+                  <div
+                    :class="$style.tabText"
+                  >Hello! Where you are now? I want to talk. Hello! Where you are now? I want to talk</div>
                 </div>
               </div>
             </div>
@@ -43,30 +34,41 @@
           <a-tabs defaultActiveKey="2">
             <a-tab-pane key="1">
               <span slot="tab">
-                <a-icon type="home"/>
-                Primary
-               </span>
+                <a-icon type="home"/>Primary
+              </span>
             </a-tab-pane>
             <a-tab-pane key="2">
               <span slot="tab">
-                <a-icon type="message"/>
-                Social
+                <a-icon type="message"/>Social
               </span>
             </a-tab-pane>
             <a-tab-pane key="3">
               <span slot="tab">
-                <a-icon type="tags"/>
-                Promotion
+                <a-icon type="tags"/>Promotion
               </span>
             </a-tab-pane>
           </a-tabs>
         </div>
       </div>
       <div :class="$style.contentWrapper">
-        <a-table :columns="columns" :dataSource="mails" class="utils__scrollTable" :scroll="{ x: '100%' }">
-          <i slot="favorites" slot-scope="value" :class="[value === true ? 'icmn-star-full text-warning' : 'icmn-star-full text-default']" />
+        <a-table
+          :columns="columns"
+          :dataSource="mails"
+          class="utils__scrollTable"
+          :scroll="{ x: '100%' }"
+        >
+          <i
+            slot="favorites"
+            slot-scope="value"
+            :class="[value === true ? 'icmn-star-full text-warning' : 'icmn-star-full text-default']"
+          />
           <a slot="from" slot-scope="text" href="javascript: void(0);">{{text}}</a>
-          <i slot="attachments" slot-scope="value" v-if="value=== true" class="icmn-attachment text-default" />
+          <i
+            slot="attachments"
+            slot-scope="value"
+            v-if="value=== true"
+            class="icmn-attachment text-default"
+          />
         </a-table>
       </div>
     </div>
@@ -119,7 +121,7 @@ export default {
     }
   },
   methods: {
-    changeMailCategory (key) {
+    changeMailCategory(key) {
       this.activeMailKey = key
       this.mails = mailData[key]
     },
@@ -127,5 +129,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

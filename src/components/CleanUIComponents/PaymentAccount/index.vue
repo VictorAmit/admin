@@ -1,9 +1,5 @@
 <template>
-  <a
-    href="javascript: void(0);"
-    class="card card--withShadow"
-    :class="$style.account"
-  >
+  <a href="javascript: void(0);" class="card card--withShadow" :class="$style.account">
     <div v-if="icon" :class="$style.icon">
       <i :class="icon"></i>
     </div>
@@ -24,5 +20,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

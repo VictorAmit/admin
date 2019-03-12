@@ -8,7 +8,8 @@
           target="_blank"
           class="btn btn-sm btn-primary ml-4"
         >
-          Official Documentation <i class="icmn-link ml-1" />
+          Official Documentation
+          <i class="icmn-link ml-1"/>
         </a>
       </div>
     </div>
@@ -27,56 +28,80 @@
             >
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
           <div class="mb-5">
             <table class="table table-hover table-vertical-middle">
               <tbody>
-              <tr>
-                <td>Pie Charts</td>
-                <td>
-                  <span v-for="(pieItemData, index) in pieData" :key="index" class="mr-2">
-                    <peity :type="'pie'" :options="{ 'fill': ['#01a8fe', '#72cfff', '#c6eafd'], 'radius': 11 }" :data="pieItemData"></peity>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>Donut Charts</td>
-                <td>
-                  <span v-for="(donutItemData, index) in donutData" :key="index" class="mr-2">
-                    <peity :type="'donut'" :options="{ 'fill': ['#01a8fe', '#72cfff', '#c6eafd'], 'radius': 11 }" :data="donutItemData"></peity>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>Line Charts</td>
-                <td>
-                  <span v-for="(lineItemData, index) in lineData" :key="index" class="mr-2">
-                    <peity :type="'line'" :options="{ 'fill': ['#72cfff'], 'stroke': '#01a8fe', 'height': 22, 'width': 44, 'strokeWidth': 1, }" :data="lineItemData"></peity>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>Bar Charts</td>
-                <td>
-                  <span v-for="(barItemData, index) in barData" :key="index" class="mr-2">
-                    <peity :type="'bar'" :options="{ 'fill': ['#01a8fe'], 'height': 22, 'width': 44, }" :data="barItemData"></peity>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>Dynamic Charts</td>
-                <td>
-                  <span class="mr-2">
-                    <peity :type="'line'" :options="{ 'fill': ['#72cfff'], 'stroke': '#01a8fe', 'height': 22, 'width': 44, 'strokeWidth': 1, }" :data="lineDataDinamycFirst"></peity>
-                  </span>
-                  <span class="mr-2">
-                    <peity :type="'line'" :options="{ 'fill': ['#72cfff'], 'stroke': '#01a8fe', 'height': 22, 'width': 44, 'strokeWidth': 1, }" :data="lineDataDinamycSecond"></peity>
-                  </span>
-                </td>
-              </tr>
+                <tr>
+                  <td>Pie Charts</td>
+                  <td>
+                    <span v-for="(pieItemData, index) in pieData" :key="index" class="mr-2">
+                      <peity
+                        :type="'pie'"
+                        :options="{ 'fill': ['#01a8fe', '#72cfff', '#c6eafd'], 'radius': 11 }"
+                        :data="pieItemData"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Donut Charts</td>
+                  <td>
+                    <span v-for="(donutItemData, index) in donutData" :key="index" class="mr-2">
+                      <peity
+                        :type="'donut'"
+                        :options="{ 'fill': ['#01a8fe', '#72cfff', '#c6eafd'], 'radius': 11 }"
+                        :data="donutItemData"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Line Charts</td>
+                  <td>
+                    <span v-for="(lineItemData, index) in lineData" :key="index" class="mr-2">
+                      <peity
+                        :type="'line'"
+                        :options="{ 'fill': ['#72cfff'], 'stroke': '#01a8fe', 'height': 22, 'width': 44, 'strokeWidth': 1, }"
+                        :data="lineItemData"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bar Charts</td>
+                  <td>
+                    <span v-for="(barItemData, index) in barData" :key="index" class="mr-2">
+                      <peity
+                        :type="'bar'"
+                        :options="{ 'fill': ['#01a8fe'], 'height': 22, 'width': 44, }"
+                        :data="barItemData"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dynamic Charts</td>
+                  <td>
+                    <span class="mr-2">
+                      <peity
+                        :type="'line'"
+                        :options="{ 'fill': ['#72cfff'], 'stroke': '#01a8fe', 'height': 22, 'width': 44, 'strokeWidth': 1, }"
+                        :data="lineDataDinamycFirst"
+                      ></peity>
+                    </span>
+                    <span class="mr-2">
+                      <peity
+                        :type="'line'"
+                        :options="{ 'fill': ['#72cfff'], 'stroke': '#01a8fe', 'height': 22, 'width': 44, 'strokeWidth': 1, }"
+                        :data="lineDataDinamycSecond"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -94,56 +119,80 @@
             >
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
           <div class="mb-5">
             <table class="table table-hover table-vertical-middle">
               <tbody>
-              <tr>
-                <td>Pie Charts</td>
-                <td>
-                  <span v-for="(pieItemData, index) in pieData" :key="index" class="mr-2">
-                    <peity :type="'pie'" :options="{ 'fill': ['#46be8a', '#79dcb1', '#b1f8d9'], 'radius': 11 }" :data="pieItemData"></peity>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>Donut Charts</td>
-                <td>
-                  <span v-for="(donutItemData, index) in donutData" :key="index" class="mr-2">
-                    <peity :type="'donut'" :options="{ 'fill': ['#46be8a', '#79dcb1', '#b1f8d9'], 'radius': 11 }" :data="donutItemData"></peity>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>Line Charts</td>
-                <td>
-                  <span v-for="(lineItemData, index) in lineData" :key="index" class="mr-2">
-                    <peity :type="'line'" :options="{ 'fill': ['#79dcb1'], 'stroke': '#46be8a', 'height': 22, 'width': 44, 'strokeWidth': 1, }" :data="lineItemData"></peity>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>Bar Charts</td>
-                <td>
-                  <span v-for="(barItemData, index) in barData" :key="index" class="mr-2">
-                    <peity :type="'bar'" :options="{ 'fill': ['#46be8a'], 'height': 22, 'width': 44, }" :data="barItemData"></peity>
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <td>Dynamic Charts</td>
-                <td>
-                  <span class="mr-2">
-                    <peity :type="'line'" :options="{ 'fill': ['#79dcb1'], 'stroke': '#46be8a', 'height': 22, 'width': 44, 'strokeWidth': 1, }" :data="lineDataDinamycFirst"></peity>
-                  </span>
-                  <span class="mr-2">
-                    <peity :type="'line'" :options="{ 'fill': ['#79dcb1'], 'stroke': '#46be8a', 'height': 22, 'width': 44, 'strokeWidth': 1, }" :data="lineDataDinamycSecond"></peity>
-                  </span>
-                </td>
-              </tr>
+                <tr>
+                  <td>Pie Charts</td>
+                  <td>
+                    <span v-for="(pieItemData, index) in pieData" :key="index" class="mr-2">
+                      <peity
+                        :type="'pie'"
+                        :options="{ 'fill': ['#46be8a', '#79dcb1', '#b1f8d9'], 'radius': 11 }"
+                        :data="pieItemData"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Donut Charts</td>
+                  <td>
+                    <span v-for="(donutItemData, index) in donutData" :key="index" class="mr-2">
+                      <peity
+                        :type="'donut'"
+                        :options="{ 'fill': ['#46be8a', '#79dcb1', '#b1f8d9'], 'radius': 11 }"
+                        :data="donutItemData"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Line Charts</td>
+                  <td>
+                    <span v-for="(lineItemData, index) in lineData" :key="index" class="mr-2">
+                      <peity
+                        :type="'line'"
+                        :options="{ 'fill': ['#79dcb1'], 'stroke': '#46be8a', 'height': 22, 'width': 44, 'strokeWidth': 1, }"
+                        :data="lineItemData"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bar Charts</td>
+                  <td>
+                    <span v-for="(barItemData, index) in barData" :key="index" class="mr-2">
+                      <peity
+                        :type="'bar'"
+                        :options="{ 'fill': ['#46be8a'], 'height': 22, 'width': 44, }"
+                        :data="barItemData"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dynamic Charts</td>
+                  <td>
+                    <span class="mr-2">
+                      <peity
+                        :type="'line'"
+                        :options="{ 'fill': ['#79dcb1'], 'stroke': '#46be8a', 'height': 22, 'width': 44, 'strokeWidth': 1, }"
+                        :data="lineDataDinamycFirst"
+                      ></peity>
+                    </span>
+                    <span class="mr-2">
+                      <peity
+                        :type="'line'"
+                        :options="{ 'fill': ['#79dcb1'], 'stroke': '#46be8a', 'height': 22, 'width': 44, 'strokeWidth': 1, }"
+                        :data="lineDataDinamycSecond"
+                      ></peity>
+                    </span>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -160,7 +209,7 @@ export default {
   components: {
     Peity,
   },
-  data () {
+  data() {
     return {
       pieData: ['1/5', '226/360', '0.52/1.561', '1,4', '226,134', '0.52,1.041', '1,2,3,2,2'],
       donutData: ['1/5', '226/360', '0.52/1.561', '1,4', '226,134', '0.52,1.041', '1,2,3,2,2'],
@@ -171,14 +220,14 @@ export default {
     }
   },
   computed: {
-    lineDataDinamycFirst () {
+    lineDataDinamycFirst() {
       return this.dynamicDataFirst.toString()
     },
-    lineDataDinamycSecond () {
+    lineDataDinamycSecond() {
       return this.dynamicDataSecond.toString()
     },
   },
-  created () {
+  created() {
     setInterval(() => {
       this.dynamicDataFirst.unshift(this.dynamicDataFirst.pop())
       this.dynamicDataSecond.unshift(this.dynamicDataSecond.pop())

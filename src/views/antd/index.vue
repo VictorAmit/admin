@@ -8,7 +8,8 @@
           target="_blank"
           class="btn btn-sm btn-primary ml-4"
         >
-          Official Documentation <i class="icmn-link ml-1" />
+          Official Documentation
+          <i class="icmn-link ml-1"/>
         </a>
       </div>
       <div class="utils__titleDescription">
@@ -19,8 +20,8 @@
     <div class="card-body">
       <div class="row">
         <div class="col-lg-12" v-for="category in data" :key="category.name">
-          <div :class=$style.block>
-            <div :class=$style.label>{{category.name}}</div>
+          <div :class="$style.block">
+            <div :class="$style.label">{{category.name}}</div>
             <div class="row">
               <div class="col-md-6" v-for="item in category.items" :key="item.name">
                 <div :class="$style.item">
@@ -36,7 +37,7 @@
                     >
                       Examples
                       <small>
-                        <i class="icmn-link ml-1" />
+                        <i class="icmn-link ml-1"/>
                       </small>
                     </a>
                   </div>
@@ -52,7 +53,7 @@
 <script>
 import { data } from './data.json'
 export default {
-  data: function() {
+  data: function () {
     return {
       data,
     }
@@ -60,5 +61,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

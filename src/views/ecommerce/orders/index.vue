@@ -6,9 +6,17 @@
       </div>
     </div>
     <div class="card-body">
-      <a-table :columns="columns" :dataSource="data" class="utils__scrollTable"
-               :scroll="{ x: '100%' }">
-        <div slot="filterDropdown" slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }" class='custom-filter-dropdown'>
+      <a-table
+        :columns="columns"
+        :dataSource="data"
+        class="utils__scrollTable"
+        :scroll="{ x: '100%' }"
+      >
+        <div
+          slot="filterDropdown"
+          slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"
+          class="custom-filter-dropdown"
+        >
           <a-input
             v-ant-ref="c => searchInput = c"
             :placeholder="`Search ${column.dataIndex}`"
@@ -18,36 +26,49 @@
             style="width: 188px; margin-bottom: 8px; display: block;"
           />
           <a-button
-            type='primary'
+            type="primary"
             @click="() => handleSearch(selectedKeys, confirm)"
             icon="search"
             size="small"
             style="width: 90px; margin-right: 8px"
           >Search</a-button>
-          <a-button
-            @click="() => handleReset(clearFilters)"
-            size="small"
-            style="width: 90px"
-          >Reset</a-button>
+          <a-button @click="() => handleReset(clearFilters)" size="small" style="width: 90px">Reset</a-button>
         </div>
-        <a-icon slot="filterIcon" slot-scope="filtered" type='search' :style="{ color: filtered ? '#108ee9' : undefined }" />
+        <a-icon
+          slot="filterIcon"
+          slot-scope="filtered"
+          type="search"
+          :style="{ color: filtered ? '#108ee9' : undefined }"
+        />
         <template slot="customRender" slot-scope="text">
-      <span v-if="searchText">
-        <template v-for="(fragment, i) in text.toString().split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))">
-          <mark v-if="fragment.toLowerCase() === searchText.toLowerCase()" :key="i" class="highlight">{{fragment}}</mark>
-          <template v-else>{{fragment}}</template>
-        </template>
-      </span>
+          <span v-if="searchText">
+            <template
+              v-for="(fragment, i) in text.toString().split(new RegExp(`(?<=${searchText})|(?=${searchText})`, 'i'))"
+            >
+              <mark
+                v-if="fragment.toLowerCase() === searchText.toLowerCase()"
+                :key="i"
+                class="highlight"
+              >{{fragment}}</mark>
+              <template v-else>{{fragment}}</template>
+            </template>
+          </span>
           <template v-else>{{text}}</template>
         </template>
-        <a slot="id" slot-scope="text" href="javascript: void(0);" class="utils__link--underlined">#{{text}}</a>
+        <a
+          slot="id"
+          slot-scope="text"
+          href="javascript: void(0);"
+          class="utils__link--underlined"
+        >#{{text}}</a>
         <span slot="total" slot-scope="text">${{text}}</span>
         <span slot="tax" slot-scope="text">${{text}}</span>
         <span slot="shipping" slot-scope="text">${{text}}</span>
-        <span slot="status" slot-scope="text"
-              :class="[text === 'Processing' ? 'font-size-12 badge badge-primary' : 'font-size-12 badge badge-default']">
-          {{text}}
-        </span>
+        <span
+          slot="status"
+          slot-scope="text"
+          :class="[text === 'Processing' ? 'font-size-12 badge badge-primary' : 'font-size-12 badge badge-default']"
+        >{{text}}</span>
         <span slot="action">
           <a-button icon="edit" class="mr-1" size="small">View</a-button>
           <a-button icon="cross" size="small">Remove</a-button>
@@ -140,12 +161,12 @@ export default {
     }
   },
   methods: {
-    handleSearch (selectedKeys, confirm) {
+    handleSearch(selectedKeys, confirm) {
       confirm()
       this.searchText = selectedKeys[0]
     },
 
-    handleReset (clearFilters) {
+    handleReset(clearFilters) {
       clearFilters()
       this.searchText = ''
     },
@@ -153,5 +174,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

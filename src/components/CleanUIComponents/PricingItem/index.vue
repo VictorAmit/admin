@@ -10,12 +10,13 @@
     </div>
     <ul :class="$style.features">
       <li v-for="(feature,index) in item.features" :key="index">
-        <strong>{{feature.main}}</strong> {{feature.descr}}
+        <strong>{{feature.main}}</strong>
+        {{feature.descr}}
       </li>
     </ul>
     <div :class="$style.footer">
       <a href="javascript: void(0);" class="btn" role="button">
-        <i class="icmn-download mr-3" aria-hidden="true" />
+        <i class="icmn-download mr-3" aria-hidden="true"/>
         {{item.btnText}}
       </a>
     </div>
@@ -35,7 +36,7 @@ export default {
       default: false,
     },
   },
-  data: function() {
+  data: function () {
     return {
       item,
     }
@@ -43,5 +44,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

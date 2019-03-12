@@ -5,32 +5,24 @@
     </div>
     <a-menu slot="overlay">
       <a-menu-item>
-        <span role="img" aria-label="English" className="mr-2">
-          🇬🇧
-        </span>
+        <span role="img" aria-label="English" class="mr-2">🇬🇧</span>
         English
       </a-menu-item>
       <a-menu-item>
-        <span role="img" aria-label="French" className="mr-2">
-          🇫🇷
-        </span>
+        <span role="img" aria-label="French" class="mr-2">🇫🇷</span>
         French
       </a-menu-item>
       <a-menu-item>
-        <span role="img" aria-label="Русский" className="mr-2">
-          🇷🇺
-        </span>
+        <span role="img" aria-label="Русский" class="mr-2">🇷🇺</span>
         Русский
       </a-menu-item>
       <a-menu-item>
-        <span role="img" aria-label="简体中文" className="mr-2">
-          🇨🇳
-        </span>
+        <span role="img" aria-label="简体中文" class="mr-2">🇨🇳</span>
         简体中文
       </a-menu-item>
     </a-menu>
   </a-dropdown>
 </template>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

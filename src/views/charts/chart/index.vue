@@ -3,12 +3,9 @@
     <div class="card-header">
       <div class="utils__title">
         <strong>Chart.js</strong>
-        <a
-          href="http://www.chartjs.org/"
-          target="_blank"
-          class="btn btn-sm btn-primary ml-4"
-        >
-          Official Documentation <i class="icmn-link ml-1" />
+        <a href="http://www.chartjs.org/" target="_blank" class="btn btn-sm btn-primary ml-4">
+          Official Documentation
+          <i class="icmn-link ml-1"/>
         </a>
       </div>
     </div>
@@ -20,10 +17,14 @@
           </h5>
           <p class="text-muted">
             Element: read
-            <a href="http://www.chartjs.org/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://www.chartjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -37,10 +38,14 @@
           </h5>
           <p class="text-muted">
             Element: read
-            <a href="http://www.chartjs.org/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://www.chartjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -54,10 +59,14 @@
           </h5>
           <p class="text-muted">
             Element: read
-            <a href="http://www.chartjs.org/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://www.chartjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -71,10 +80,14 @@
           </h5>
           <p class="text-muted">
             Element: read
-            <a href="http://www.chartjs.org/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://www.chartjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -88,10 +101,14 @@
           </h5>
           <p class="text-muted">
             Element: read
-            <a href="http://www.chartjs.org/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://www.chartjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -105,10 +122,14 @@
           </h5>
           <p class="text-muted">
             Element: read
-            <a href="http://www.chartjs.org/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://www.chartjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               official documentation
               <small>
-                <i class="icmn-link ml-1" />
+                <i class="icmn-link ml-1"/>
               </small>
             </a>
           </p>
@@ -297,7 +318,7 @@ export default {
     PolarChart,
     RadarChart,
   },
-  data: function() {
+  data: function () {
     return {
       lineData,
       lineOptions,

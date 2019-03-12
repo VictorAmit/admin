@@ -7,8 +7,13 @@
         </div>
         <div class="row">
           <div class="col-lg-6" v-for="(item, index) in progressCardsData" :key="index">
-            <cui-progress-card :title="item.title" :note="item.note" :currentValue="item.currentValue"
-                               :percent="+item.percent" :dataColor="item.dataColor"/>
+            <cui-progress-card
+              :title="item.title"
+              :note="item.note"
+              :currentValue="item.currentValue"
+              :percent="+item.percent"
+              :dataColor="item.dataColor"
+            />
           </div>
         </div>
       </div>
@@ -63,7 +68,8 @@
           </div>
           <div class="card-body">
             <cui-short-item-info
-              v-for="(item, index) in topPhotosData" :key="index"
+              v-for="(item, index) in topPhotosData"
+              :key="index"
               :img="item.img"
               :name="item.name"
               :note="item.name"
@@ -88,14 +94,13 @@
           </div>
           <div class="card-body">
             <cui-short-item-info
-              v-for="(item, index) in newUsersData" :key="index"
+              v-for="(item, index) in newUsersData"
+              :key="index"
               :img="item.img"
               :name="item.name"
               :note="item.name"
             >
-              <a href="javascript: void(0);" class="btn btn-sm btn-outline-default">
-                Follow
-              </a>
+              <a href="javascript: void(0);" class="btn btn-sm btn-outline-default">Follow</a>
             </cui-short-item-info>
           </div>
         </div>
@@ -113,8 +118,18 @@
             <div class="row">
               <div class="col-xl-6">
                 <div class="mb-3">
-                  <a-table :columns="supportCasesTableColumns" :dataSource="supportCasesTableData" :pagination="false" class="utils__scrollTable" :scroll="{ x: '100%' }">
-                    <span slot="amount" slot-scope="data" :class="[data === 'Negative' ? 'text-danger' : 'text-primary', 'font-weight-bold']">{{data}}</span>
+                  <a-table
+                    :columns="supportCasesTableColumns"
+                    :dataSource="supportCasesTableData"
+                    :pagination="false"
+                    class="utils__scrollTable"
+                    :scroll="{ x: '100%' }"
+                  >
+                    <span
+                      slot="amount"
+                      slot-scope="data"
+                      :class="[data === 'Negative' ? 'text-danger' : 'text-primary', 'font-weight-bold']"
+                    >{{data}}</span>
                   </a-table>
                 </div>
               </div>
@@ -154,7 +169,8 @@
           </div>
           <div class="card-body">
             <cui-short-item-info
-              v-for="(item, index) in financeStatsData" :key="index"
+              v-for="(item, index) in financeStatsData"
+              :key="index"
               :img="item.img"
               :name="item.name"
               :note="item.name"
@@ -267,5 +283,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

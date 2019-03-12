@@ -1,9 +1,13 @@
 <template>
   <div :class="$style.chat">
     <div :class="$style.messaging" class="height-300">
-      <div v-for="(message, index) in chats" :key="index" :class="[$style.message, message.username === username ? $style.me : $style.companion]">
+      <div
+        v-for="(message, index) in chats"
+        :key="index"
+        :class="[$style.message, message.username === username ? $style.me : $style.companion]"
+      >
         <div>
-          <cui-avatar :src="message.img" :size="50" :bordered="false" />
+          <cui-avatar :src="message.img" :size="50" :bordered="false"/>
         </div>
         <div :class="$style.messageContent">
           <strong>{{message.username}}</strong>
@@ -20,9 +24,7 @@
           <i class="fa fa-send mr-2"/>
           Send
         </button>
-        <button type="button" class="btn btn-link">
-          Attach File
-        </button>
+        <button type="button" class="btn btn-link">Attach File</button>
       </a-form-item>
     </a-form>
   </div>
@@ -47,5 +49,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

@@ -1,9 +1,5 @@
 <template>
-  <a
-    href="javascript: void(0);"
-    class="card card--withShadow"
-    :class="$style.paymentCard"
-  >
+  <a href="javascript: void(0);" class="card card--withShadow" :class="$style.paymentCard">
     <span :class="$style.sum" v-if="sum">{{sum}}</span>
     <div :class="$style.icon" v-if="icon">
       <i :class="icon"></i>
@@ -28,5 +24,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

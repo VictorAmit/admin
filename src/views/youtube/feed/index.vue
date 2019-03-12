@@ -9,7 +9,12 @@
       <div :class="$style.feed">
         <div :class="$style.partition" v-for="(partition, index) in partitions" :key="index">
           <h2 :class="$style.title">
-            <img v-if="partition.cover"  :src="partition.cover" class="mr-3" :class="$style.titleThumb">
+            <img
+              v-if="partition.cover"
+              :src="partition.cover"
+              class="mr-3"
+              :class="$style.titleThumb"
+            >
             {{partition.name}}
           </h2>
           <ul :class="$style.partitionContent">
@@ -19,16 +24,14 @@
                 <div :class="$style.itemDescr">
                   <span :class="$style.itemName">{{video.name}}</span>
                   <span :class="$style.itemAuthor">{{video.author}}</span>
-                  <span :class="$style.itemViews" class="text-muted">
-                    {{video.views}} views
-                  </span>
+                  <span :class="$style.itemViews" class="text-muted">{{video.views}} views</span>
                 </div>
               </a>
             </li>
           </ul>
         </div>
         <div class="mb-5">
-          <a-pagination :total="50" />
+          <a-pagination :total="50"/>
         </div>
       </div>
     </div>
@@ -37,7 +40,7 @@
 <script>
 import { partitions } from './data.json'
 export default {
-  data: function() {
+  data: function () {
     return {
       partitions,
     }
@@ -45,5 +48,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

@@ -9,7 +9,7 @@
       <h4 class="text-black mb-3">
         <strong>Main Parameters</strong>
       </h4>
-      <a-form  :form="form">
+      <a-form :form="form">
         <div class="row">
           <div class="col-lg-8">
             <div class="row">
@@ -33,35 +33,39 @@
                     multiple
                     treeDefaultExpandAll
                   >
-                  <a-tree-select-node value="furniture" title="Furniture" key="0">
-                    <a-tree-select-node value="tables" title="Tables" key="0-0" />
-                    <a-tree-select-node value="chairs" title="Chairs" key="0-1">
-                      <a-tree-select-node
-                        value="roundedchairs"
-                        title="Rounded Chairs"
-                        key="0-1-0"
-                      />
-                      <a-tree-select-node
-                        value="squaredchairs"
-                        title="Squared Chairs"
-                        key="0-1-1"
-                      />
+                    <a-tree-select-node value="furniture" title="Furniture" key="0">
+                      <a-tree-select-node value="tables" title="Tables" key="0-0"/>
+                      <a-tree-select-node value="chairs" title="Chairs" key="0-1">
+                        <a-tree-select-node
+                          value="roundedchairs"
+                          title="Rounded Chairs"
+                          key="0-1-0"
+                        />
+                        <a-tree-select-node
+                          value="squaredchairs"
+                          title="Squared Chairs"
+                          key="0-1-1"
+                        />
+                      </a-tree-select-node>
                     </a-tree-select-node>
-                  </a-tree-select-node>
-                  <a-tree-select-node value="electronics" title="Electronics" key="1">
-                    <a-tree-select-node value="tv" title="TV" key="1-0" />
-                    <a-tree-select-node value="consoles" title="Consoles" key="1-1">
-                      <a-tree-select-node value="playstation" title="Playstation" key="1-1-0" />
-                      <a-tree-select-node value="xbox" title="Xbox" key="1-1-1" />
+                    <a-tree-select-node value="electronics" title="Electronics" key="1">
+                      <a-tree-select-node value="tv" title="TV" key="1-0"/>
+                      <a-tree-select-node value="consoles" title="Consoles" key="1-1">
+                        <a-tree-select-node value="playstation" title="Playstation" key="1-1-0"/>
+                        <a-tree-select-node value="xbox" title="Xbox" key="1-1-1"/>
+                      </a-tree-select-node>
                     </a-tree-select-node>
-                  </a-tree-select-node>
                   </a-tree-select>
                 </a-form-item>
                 <a-form-item label="Short Description">
-                  <a-textarea placeholder="Short Description" :rows="4"  v-decorator="['shortDescr']"/>
+                  <a-textarea
+                    placeholder="Short Description"
+                    :rows="4"
+                    v-decorator="['shortDescr']"
+                  />
                 </a-form-item>
                 <a-form-item label="Full Description">
-                  <a-textarea placeholder="Full Description" :rows="4"  v-decorator="['fullDescr']"/>
+                  <a-textarea placeholder="Full Description" :rows="4" v-decorator="['fullDescr']"/>
                 </a-form-item>
               </div>
             </div>
@@ -86,10 +90,7 @@
             <div class="row">
               <div class="col-lg-6">
                 <a-form-item label="Colors">
-                  <a-select
-                    showSearch
-                    placeholder="Select a color"
-                  >
+                  <a-select showSearch placeholder="Select a color">
                     <a-select-option value="red">Red</a-select-option>
                     <a-select-option value="black">Black</a-select-option>
                     <a-select-option value="cyan">Cyan</a-select-option>
@@ -99,10 +100,7 @@
               </div>
               <div class="col-lg-6">
                 <a-form-item label="Size">
-                  <a-select
-                    showSearch
-                    placeholder="Select a size"
-                  >
+                  <a-select showSearch placeholder="Select a size">
                     <a-select-option value="red">Red</a-select-option>
                     <a-select-option value="black">Black</a-select-option>
                     <a-select-option value="cyan">Cyan</a-select-option>
@@ -112,29 +110,32 @@
               </div>
               <div class="col-lg-12">
                 <div class="form-actions">
-                  <a-button type="primary" class="mr-2">
-                    Save Product
-                  </a-button>
-                  <a-button type="default">
-                    Cancel
-                  </a-button>
+                  <a-button type="primary" class="mr-2">Save Product</a-button>
+                  <a-button type="default">Cancel</a-button>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="mb-4 height-300">
-              <a-upload-dragger name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" @change="handleChange">
+              <a-upload-dragger
+                name="file"
+                :multiple="true"
+                action="//jsonplaceholder.typicode.com/posts/"
+                @change="handleChange"
+              >
                 <p class="ant-upload-drag-icon">
-                  <a-icon type="inbox" />
+                  <a-icon type="inbox"/>
                 </p>
                 <p class="ant-upload-text">Click or drag file to this area to upload</p>
-                <p class="ant-upload-hint">Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files</p>
+                <p
+                  class="ant-upload-hint"
+                >Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files</p>
               </a-upload-dragger>
             </div>
             <a-upload name="file" :multiple="true">
               <a-button>
-                <a-icon type="upload" /> Click to Upload
+                <a-icon type="upload"/>Click to Upload
               </a-button>
             </a-upload>
           </div>
@@ -145,7 +146,7 @@
 </template>
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       form: this.$form.createForm(this),
     }

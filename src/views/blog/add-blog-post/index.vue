@@ -10,9 +10,7 @@
         <a-form class="mt-3" :form="form">
           <div class="form-group">
             <a-form-item label="Title">
-              <a-input v-decorator="['username']"
-                       placeholder="Post Title"
-              />
+              <a-input v-decorator="['username']" placeholder="Post Title"/>
             </a-form-item>
           </div>
           <div class="form-group">
@@ -27,8 +25,12 @@
             </a-form-item>
             <div class="form-group">
               <a-form-item label="Category">
-                <a-select mode="multiple" style="width: 100%" placeholder="Please select tags"
-                          v-decorator="['category', { initialValue: ['lifestyle', 'blog'] }]">
+                <a-select
+                  mode="multiple"
+                  style="width: 100%"
+                  placeholder="Please select tags"
+                  v-decorator="['category', { initialValue: ['lifestyle', 'blog'] }]"
+                >
                   <a-select-option value="lifestyle">Lifestyle</a-select-option>
                   <a-select-option value="blog">Blog</a-select-option>
                 </a-select>
@@ -43,25 +45,28 @@
             </div>
             <div class="form-group">
               <a-form-item>
-                <a-upload-dragger name="file" :multiple="true" action="//jsonplaceholder.typicode.com/posts/" @change="handleChange">
+                <a-upload-dragger
+                  name="file"
+                  :multiple="true"
+                  action="//jsonplaceholder.typicode.com/posts/"
+                  @change="handleChange"
+                >
                   <p class="ant-upload-drag-icon">
-                    <a-icon type="inbox" />
+                    <a-icon type="inbox"/>
                   </p>
                   <p class="ant-upload-text">Click or drag file to this area to upload</p>
-                  <p class="ant-upload-hint">Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files</p>
+                  <p
+                    class="ant-upload-hint"
+                  >Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files</p>
                 </a-upload-dragger>
               </a-form-item>
             </div>
             <a-form-item>
               <div :class="$style.submit">
                 <span class="mr-3">
-                  <a-button type="primary" htmlType="submit">
-                    Save and Post
-                  </a-button>
+                  <a-button type="primary" htmlType="submit">Save and Post</a-button>
                 </span>
-                <a-button type="danger">
-                  Discard
-                </a-button>
+                <a-button type="danger">Discard</a-button>
               </div>
             </a-form-item>
           </div>
@@ -100,5 +105,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>

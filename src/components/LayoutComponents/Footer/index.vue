@@ -4,9 +4,7 @@
       <div class="row">
         <div class="col-lg-9">
           <p>
-            <strong>
-              Clean UI React Admin Template - Best Solution for Your App!
-            </strong>
+            <strong>Clean UI React Admin Template - Best Solution for Your App!</strong>
           </p>
           <p>
             Clean UI – a modern professional admin template, based on Bootstrap
@@ -42,18 +40,15 @@
                 src="resources/images/mediatec.png"
                 rel="noopener noreferrer"
                 alt="Mediatec Software"
-              />
+              >
               <span>
                 © 2019
                 <a
                   href="http://mediatec.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  Mediatec Software
-                </a>
-                <br />
-                All rights reserved
+                >Mediatec Software</a>
+                <br>All rights reserved
               </span>
             </div>
           </div>

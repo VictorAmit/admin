@@ -1,7 +1,7 @@
 <template>
   <div :class="[$style.item, size === 'large' ? $style.large : '']">
     <div v-if="img" :class="$style.img">
-      <img :src="img" />
+      <img :src="img">
     </div>
     <div :class="$style.description">
       <h2 v-if="name" :class="$style.name">{{name}}</h2>
@@ -24,5 +24,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import "./style.module.scss";
+@import "./style.module.scss";
 </style>
