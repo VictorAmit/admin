@@ -8,8 +8,9 @@
 export default {
   name: 'app',
   watch: {
-    '$route' (to, from) {
-      this.$store.commit('SETUP_URL_SETTINGS', to.query)
+    '$route'(to, from) {
+      const query = Object.assign({}, to.query)
+      this.$store.commit('SETUP_URL_SETTINGS', query)
     },
   },
 }
