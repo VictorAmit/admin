@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import { getLeftMenuData } from '../Menu/MenuLeft/menu.config'
+import { getLeftMenuData } from '@/services/menu'
 import { reduce } from 'lodash'
 
 export default {

@@ -10,8 +10,8 @@ import './global.scss'
 import {
   Avatar, TreeSelect, Rate, Breadcrumb, InputNumber, Steps, Message,
   Upload, Button, Layout, Table, Icon, Progress, Radio, Dropdown, Menu,
-  Carousel, Input, Calendar, Badge, Slider, Form, Tooltip, Select,
-  Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination, notification,
+  Carousel, Input, Calendar, Badge, Slider, Form, Tooltip, Select, Switch,
+  Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination, notification, Drawer,
 } from 'ant-design-vue'
 
 Vue.use(Avatar)
@@ -45,6 +45,8 @@ Vue.use(Upload)
 Vue.use(Message)
 Vue.use(Steps)
 Vue.use(InputNumber)
+Vue.use(Drawer)
+Vue.use(Switch)
 Vue.use(notification)
 
 Vue.prototype.$notification = notification

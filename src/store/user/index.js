@@ -8,7 +8,7 @@ export default {
     user: null,
   },
   mutations: {
-    updateUser(state, { user }) {
+    UPDATE_USER(state, { user }) {
       state.user = user
     },
   },
