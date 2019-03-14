@@ -22,7 +22,10 @@
           :theme="settings.isLightTheme ? 'light' : 'dark'"
           :inlineCollapsed="withDrawer ? false : settings.isMenuCollapsed"
           :mode="'inline'"
-          @click="menuClick"
+          :selectedKeys="selectedKeys"
+          :openKeys.sync="openKeys"
+          @click="handleClick"
+          @openChange="handleOpenChange"
         >
           <a-menu-item :key="'settings'">
             <span>
@@ -36,6 +39,7 @@
               <i :class="[$style.icon, 'icmn icmn-books']"></i>
             </a>
           </a-menu-item>
+          <a-menu-divider/>
           <template v-for="(item, index) in menuData">
             <item
               v-if="!item.children && !item.divider"
@@ -64,6 +68,8 @@
 </template>
 
 <script>
+import store from 'store'
+import _ from 'lodash'
 import vueCustomScrollbar from 'vue-custom-scrollbar'
 import { getLeftMenuData } from '@/services/menu'
 import SubMenu from './partials/submenu'
@@ -79,6 +85,11 @@ export default {
       default: false,
     },
   },
+  mounted() {
+    this.openKeys = store.get('app.menu.openedKeys') || []
+    this.selectedKeys = store.get('app.menu.selectedKeys') || []
+    this.setSelectedKeys()
+  },
   data() {
     return {
       menuData: getLeftMenuData,
@@ -86,11 +97,43 @@ export default {
       openKeys: [],
     }
   },
+  watch: {
+    'settings.isMenuCollapsed'() {
+      this.openKeys = []
+    },
+    '$route'() {
+      this.setSelectedKeys()
+    },
+  },
   methods: {
-    menuClick(e) {
+    handleClick(e) {
       if (e.key === 'settings') {
         this.$store.commit('CHANGE_SETTING', { setting: 'isSettingsOpen', value: true })
+        return
       }
+      store.set('app.menu.selectedKeys', [e.key])
+      this.selectedKeys = [e.key]
+    },
+    handleOpenChange(openKeys) {
+      store.set('app.menu.openedKeys', openKeys)
+      this.openKeys = openKeys
+    },
+    setSelectedKeys() {
+      const pathname = this.$route.path
+      const menuData = this.menuData.concat()
+      const flattenItems = (items, key) =>
+        items.reduce((flattenedItems, item) => {
+          flattenedItems.push(item)
+          if (Array.isArray(item[key])) {
+            return flattenedItems.concat(flattenItems(item[key], key))
+          }
+          return flattenedItems
+        }, [])
+      const selectedItem = _.find(flattenItems(menuData, 'children'), [
+        'url',
+        pathname,
+      ])
+      this.selectedKeys = selectedItem ? [selectedItem.key] : []
     },
   },
 }

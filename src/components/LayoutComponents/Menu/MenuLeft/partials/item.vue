@@ -1,5 +1,5 @@
 <template>
-  <a-menu-item :key="menuInfo.key" v-bind="$props" v-on="$listeners">
+  <a-menu-item :key="menuInfo.key" v-bind="$props" v-on="$listeners" :disabled="menuInfo.disabled">
     <router-link v-if="menuInfo.url" :to="menuInfo.url">
       <span :class="styles.title">{{ menuInfo.title }}</span>
       <i v-if="menuInfo.icon" :class="[styles.icon, menuInfo.icon]"></i>
@@ -20,10 +20,7 @@ export default {
   name: 'SubMenu',
   props: {
     ...Menu.Item.props,
-    menuInfo: {
-      type: Object,
-      default: () => ({}),
-    },
+    menuInfo: Object,
     styles: Object,
   },
 }

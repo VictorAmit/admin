@@ -17,7 +17,7 @@
       :collapsed="settings.isMenuCollapsed"
       @collapse="onCollapse"
     >
-      <cui-menu-left v-bind:settings="settings"/>
+      <cui-menu-left :settings="settings"/>
     </a-layout-sider>
     <!-- left menu mobile -->
     <div v-if="settings.isMobileView">
@@ -31,11 +31,11 @@
         :wrapClassName="$style.mobileMenu"
         @close="toggleMobileMenu"
       >
-        <cui-menu-left v-bind:settings="settings" :withDrawer="true"/>
+        <cui-menu-left :settings="settings" :withDrawer="true"/>
       </a-drawer>
     </div>
     <!-- top menu -->
-    <div v-if="settings.isMenuTop">[menuTop]</div>
+    <div v-if="settings.isMenuTop && !settings.isMobileView">[menuTop]</div>
     <cui-settings :settings="settings"/>
     <a-layout>
       <a-layout-header>

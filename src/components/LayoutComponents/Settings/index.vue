@@ -5,55 +5,44 @@
     :closable="true"
     @close="onClose"
     :visible="settings.isSettingsOpen"
+    :zIndex="1010"
   >
     <div :class="$style.description">
       This component "Settings" gives possibility to construct custom blocks with any widgets, components and elements
       inside, like this theme settings
     </div>
     <div :class="$style.item">
-      <a-switch v-bind:checked="settings.isMenuTop" @click="settingChange($event, 'isMenuTop')"/>
+      <a-switch :checked="settings.isMenuTop" @click="settingChange($event, 'isMenuTop')"/>
       <span :class="$style.itemLabel">Menu Top (Horizontal)</span>
     </div>
     <div :class="$style.item">
       <a-switch
-        v-bind:checked="settings.isMenuCollapsed"
+        :checked="settings.isMenuCollapsed"
         @click="settingChange($event, 'isMenuCollapsed')"
       />
       <span :class="$style.itemLabel">Collapsed Menu</span>
     </div>
     <div :class="$style.item">
-      <a-switch
-        v-bind:checked="settings.isMenuShadow"
-        @click="settingChange($event, 'isMenuShadow')"
-      />
+      <a-switch :checked="settings.isMenuShadow" @click="settingChange($event, 'isMenuShadow')"/>
       <span :class="$style.itemLabel">Menu Shadow</span>
     </div>
     <div :class="$style.item">
-      <a-switch
-        v-bind:checked="settings.isLightTheme"
-        @click="settingChange($event, 'isLightTheme')"
-      />
+      <a-switch :checked="settings.isLightTheme" @click="settingChange($event, 'isLightTheme')"/>
       <span :class="$style.itemLabel">Light Theme</span>
     </div>
     <div :class="$style.item">
-      <a-switch
-        v-bind:checked="settings.isBorderless"
-        @click="settingChange($event, 'isBorderless')"
-      />
+      <a-switch :checked="settings.isBorderless" @click="settingChange($event, 'isBorderless')"/>
       <span :class="$style.itemLabel">Borderless Cards</span>
     </div>
     <div :class="$style.item">
       <a-switch
-        v-bind:checked="settings.isSquaredBorders"
+        :checked="settings.isSquaredBorders"
         @click="settingChange($event, 'isSquaredBorders')"
       />
       <span :class="$style.itemLabel">Squared Borders</span>
     </div>
     <div :class="$style.item">
-      <a-switch
-        v-bind:checked="settings.isFixedWidth"
-        @click="settingChange($event, 'isFixedWidth')"
-      />
+      <a-switch :checked="settings.isFixedWidth" @click="settingChange($event, 'isFixedWidth')"/>
       <span :class="$style.itemLabel">Fixed Width</span>
     </div>
   </a-drawer>

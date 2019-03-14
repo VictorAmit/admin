@@ -27,10 +27,7 @@ export default {
   isSubMenu: true,
   props: {
     ...Menu.SubMenu.props,
-    menuInfo: {
-      type: Object,
-      default: () => ({}),
-    },
+    menuInfo: Object,
     styles: Object,
   },
 }
