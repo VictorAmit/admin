@@ -67,10 +67,10 @@ export default {
       this.$store.commit('CHANGE_SETTING', { setting: 'isMobileView', value: isMobileView })
       this.$store.commit('CHANGE_SETTING', { setting: 'isTabletView', value: isTabletView })
     },
-    detectViewPortListener: function() {
+    detectViewPortListener: function () {
       this.detectViewPort(false)
     },
-    detectViewPort: function(load = false) {
+    detectViewPort: function (firstLoad = false) {
       const isMobile = this.settings['isMobileView']
       const isTablet = this.settings['isTabletView']
       const width = window.innerWidth
@@ -87,16 +87,16 @@ export default {
         },
       }
       // desktop
-      if (state.next.desktop && ((state.next.desktop !== state.prev.desktop) || load)) {
+      if (state.next.desktop && ((state.next.desktop !== state.prev.desktop) || firstLoad)) {
         this.setViewPort(false, false)
       }
       // tablet & collapse menu
-      if (state.next.tablet && !state.next.mobile && ((state.next.tablet !== state.prev.tablet) || load)) {
+      if (state.next.tablet && !state.next.mobile && ((state.next.tablet !== state.prev.tablet) || firstLoad)) {
         this.setViewPort(false, true)
         this.$store.commit('CHANGE_SETTING', { setting: 'isMenuCollapsed', value: true })
       }
       // mobile
-      if (state.next.mobile && ((state.next.mobile !== state.prev.mobile) || load)) {
+      if (state.next.mobile && ((state.next.mobile !== state.prev.mobile) || firstLoad)) {
         this.setViewPort(true, false)
       }
     },

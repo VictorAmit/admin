@@ -85,25 +85,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 export default {
   data: function () {
     return {
       form: this.$form.createForm(this),
     }
-  },
-  computed: {
-    ...mapGetters(['user']),
-    nextRoute() {
-      return this.$route.query.redirect || '/'
-    },
-  },
-  watch: {
-    user(auth) {
-      if (auth) {
-        this.$router.replace(this.nextRoute)
-      }
-    },
   },
   methods: {
     handleSubmit(e) {
