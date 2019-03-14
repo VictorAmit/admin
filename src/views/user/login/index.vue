@@ -2,11 +2,11 @@
   <div>
     <div :class="[$style.title, 'login-heading']">
       <h1>
-        <strong>WELCOME TO CLEAN UI REACT - REACT REDUX ADMIN TEMPLATE</strong>
+        <strong>WELCOME TO CLEAN UI VUE - VUE REDUX ADMIN TEMPLATE</strong>
       </h1>
       <p>
-        Pluggable enterprise-level react application framework.
-        <br>An excellent front-end solution for web applications built upon Ant Design and UmiJS.
+        Pluggable enterprise-level vue application framework.
+        <br>An excellent front-end solution for web applications built upon Ant Design.
         <br>Credentials for testing purposes -
         <strong>admin@mediatec.org</strong> /
         <strong>cleanui</strong>
@@ -102,7 +102,7 @@ export default {
               this.$nprogress.done()
               this.$notification['success']({
                 message: 'Logged In',
-                description: 'You have successfully logged in to Clean UI React Admin Template!',
+                description: 'You have successfully logged in to Clean UI Vue Admin Template!',
               })
             })
             .catch((error) => {

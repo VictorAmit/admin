@@ -35,7 +35,8 @@
       </a-drawer>
     </div>
     <!-- top menu -->
-    <div v-if="settings.isMenuTop && !settings.isMobileView">[menuTop]</div>
+    <cui-menu-top v-if="settings.isMenuTop && !settings.isMobileView" :settings="settings"/>
+
     <cui-settings :settings="settings"/>
     <a-layout>
       <a-layout-header>
@@ -61,10 +62,11 @@ import CuiBreadcrumbs from '@/components/LayoutComponents/Breadcrumbs'
 import CuiFooter from '@/components/LayoutComponents/Footer'
 import CuiSettings from '@/components/LayoutComponents/Settings'
 import CuiMenuLeft from '@/components/LayoutComponents/Menu/MenuLeft'
+import CuiMenuTop from '@/components/LayoutComponents/Menu/MenuTop'
 
 export default {
   name: 'MainLayout',
-  components: { CuiFooter, CuiTopbar, CuiMenuLeft, CuiBreadcrumbs, CuiSettings },
+  components: { CuiFooter, CuiTopbar, CuiMenuLeft, CuiMenuTop, CuiBreadcrumbs, CuiSettings },
   computed: mapState(['settings']),
   mounted() {
     this.detectViewPort(true)

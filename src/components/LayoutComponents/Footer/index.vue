@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-9">
           <p>
-            <strong>Clean UI React Admin Template - Best Solution for Your App!</strong>
+            <strong>Clean UI Vue Admin Template - Best Solution for Your App!</strong>
           </p>
           <p>
             Clean UI – a modern professional admin template, based on Bootstrap
@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-sm-6">
             <a
-              href="https://themeforest.net/item/clean-ui-react-admin-template/21938700"
+              href="https://themeforest.net/user/mediatec_software"
               target="_blank"
               rel="noopener noreferrer"
               class="mr-4"

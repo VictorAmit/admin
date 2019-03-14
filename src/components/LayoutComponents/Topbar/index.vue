@@ -10,7 +10,7 @@
       <cui-live-search/>
     </div>
     <a
-      href="https://themeforest.net/item/clean-ui-admin-template-react-redux-ant-design-fully-responsive-freebies/21938700"
+      href="https://themeforest.net/user/mediatec_software"
       target="_blank"
       rel="noopener noreferrer"
       class="mr-4 d-none d-sm-inline"
