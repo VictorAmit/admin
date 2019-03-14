@@ -8,7 +8,7 @@
           :style="{ backgroundImage: 'url(' + background + ')'}"
         >
           <div class="card-body text-center">
-            <cui-avatar :src="photo" size="110" bordered="true" bordercolor="white"/>
+            <cui-avatar :src="photo" size="110" bordered="true" :borderColor="white"/>
             <br>
             <br>
             <a-button-group>

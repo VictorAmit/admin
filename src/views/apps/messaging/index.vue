@@ -12,7 +12,7 @@
                 <cui-avatar
                   :src="chat.companionImg"
                   :size="50"
-                  bordercolor="white"
+                  :borderColor="'white'"
                   :bordered="true"
                 />
               </div>

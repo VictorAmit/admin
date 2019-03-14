@@ -6,7 +6,7 @@
       </h2>
     </div>
     <div :class="$style.left">
-      <cui-avatar :src="user.avatar" :size="90" bordercolor="white" :bordered="true"/>
+      <cui-avatar :src="user.avatar" :size="90" :borderColor="'white'" :bordered="true"/>
       <strong class="d-block">{{user.name}}</strong>
       <span class="text-muted">{{user.link}}</span>
     </div>
