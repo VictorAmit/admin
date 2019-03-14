@@ -8,7 +8,6 @@
     </div>
     <div class="mr-auto">
       <cui-live-search/>
-      <a @click="toggleSettings">Settings</a>
     </div>
     <a
       href="https://themeforest.net/item/clean-ui-admin-template-react-redux-ant-design-fully-responsive-freebies/21938700"
@@ -49,11 +48,6 @@ export default {
     CuiLanguageSelector,
     CuiHomeMenu,
     CuiProfileMenu,
-  },
-  methods: {
-    toggleSettings() {
-      this.$store.commit('CHANGE_SETTING', { setting: 'isSettingsOpen', value: true })
-    },
   },
 }
 </script>

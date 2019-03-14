@@ -20,7 +20,7 @@
       >
         <a-menu
           :theme="settings.isLightTheme ? 'light' : 'dark'"
-          :inlineCollapsed="settings.isMenuCollapsed"
+          :inlineCollapsed="withDrawer ? false : settings.isMenuCollapsed"
           :mode="'inline'"
           @click="menuClick"
         >
