@@ -10,6 +10,7 @@
   >
     <!-- left menu -->
     <a-layout-sider
+      v-if="!settings.isMobileView && !settings.isMenuTop"
       :width="256"
       :class="settings.isLightTheme ? [$style.sider, $style.light] : $style.sider"
       collapsible
@@ -18,12 +19,29 @@
     >
       <cui-menu-left v-bind:settings="settings"/>
     </a-layout-sider>
-    <cui-settings v-bind:settings="settings"/>
+    <!-- left menu mobile -->
+    <div v-if="settings.isMobileView">
+      <div :class="$style.handler" @click="toggleMobileMenu">
+        <div :class="$style.handlerIcon"></div>
+      </div>
+      <a-drawer
+        :closable="false"
+        :visible="settings.isMobileMenuOpen"
+        placement="left"
+        :wrapClassName="$style.mobileMenu"
+        @close="toggleMobileMenu"
+      >
+        <cui-menu-left v-bind:settings="settings" :withDrawer="true"/>
+      </a-drawer>
+    </div>
+    <!-- top menu -->
+    <div v-if="settings.isMenuTop">[menuTop]</div>
+    <cui-settings :settings="settings"/>
     <a-layout>
       <a-layout-header>
         <cui-topbar/>
       </a-layout-header>
-      <cui-breadcrumbs/>
+      <cui-breadcrumbs :settings="settings"/>
       <a-layout-content>
         <div class="utils__content">
           <router-view/>
@@ -56,6 +74,10 @@ export default {
     window.removeEventListener('resize', this.detectViewPortListener)
   },
   methods: {
+    toggleMobileMenu() {
+      const value = !this.settings['isMobileMenuOpen']
+      this.$store.commit('CHANGE_SETTING', { setting: 'isMobileMenuOpen', value })
+    },
     onCollapse: function (collapsed, type) {
       const value = !this.settings['isMenuCollapsed']
       this.$store.commit('CHANGE_SETTING', { setting: 'isMenuCollapsed', value })

@@ -17,18 +17,25 @@
 </template>
 
 <script>
-import { getLeftMenuData } from '@/services/menu'
+import { getLeftMenuData, getTopMenuData } from '@/services/menu'
 import { reduce } from 'lodash'
 
 export default {
   name: 'breadcrumbs',
   data() {
     return {
-      menuData: getLeftMenuData,
       breadcrumb: [],
       activeItem: {},
       path: [],
     }
+  },
+  props: {
+    settings: Object,
+  },
+  computed: {
+    menuData() {
+      return this.settings.isMenuTop ? getTopMenuData : getLeftMenuData
+    },
   },
   methods: {
     getPath(data, url, parents = []) {

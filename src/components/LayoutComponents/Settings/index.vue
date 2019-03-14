@@ -15,27 +15,45 @@
       <span :class="$style.itemLabel">Menu Top (Horizontal)</span>
     </div>
     <div :class="$style.item">
-      <a-switch v-bind:checked="settings.isMenuCollapsed" @click="settingChange($event, 'isMenuCollapsed')"/>
+      <a-switch
+        v-bind:checked="settings.isMenuCollapsed"
+        @click="settingChange($event, 'isMenuCollapsed')"
+      />
       <span :class="$style.itemLabel">Collapsed Menu</span>
     </div>
     <div :class="$style.item">
-      <a-switch v-bind:checked="settings.isMenuShadow" @click="settingChange($event, 'isMenuShadow')"/>
+      <a-switch
+        v-bind:checked="settings.isMenuShadow"
+        @click="settingChange($event, 'isMenuShadow')"
+      />
       <span :class="$style.itemLabel">Menu Shadow</span>
     </div>
     <div :class="$style.item">
-      <a-switch v-bind:checked="settings.isLightTheme" @click="settingChange($event, 'isLightTheme')"/>
+      <a-switch
+        v-bind:checked="settings.isLightTheme"
+        @click="settingChange($event, 'isLightTheme')"
+      />
       <span :class="$style.itemLabel">Light Theme</span>
     </div>
     <div :class="$style.item">
-      <a-switch v-bind:checked="settings.isBorderless" @click="settingChange($event, 'isBorderless')"/>
+      <a-switch
+        v-bind:checked="settings.isBorderless"
+        @click="settingChange($event, 'isBorderless')"
+      />
       <span :class="$style.itemLabel">Borderless Cards</span>
     </div>
     <div :class="$style.item">
-      <a-switch v-bind:checked="settings.isSquaredBorders" @click="settingChange($event, 'isSquaredBorders')"/>
+      <a-switch
+        v-bind:checked="settings.isSquaredBorders"
+        @click="settingChange($event, 'isSquaredBorders')"
+      />
       <span :class="$style.itemLabel">Squared Borders</span>
     </div>
     <div :class="$style.item">
-      <a-switch v-bind:checked="settings.isFixedWidth" @click="settingChange($event, 'isFixedWidth')"/>
+      <a-switch
+        v-bind:checked="settings.isFixedWidth"
+        @click="settingChange($event, 'isFixedWidth')"
+      />
       <span :class="$style.itemLabel">Fixed Width</span>
     </div>
   </a-drawer>
@@ -61,7 +79,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '@/assets/styles/mixins.scss';
+@import "@/assets/styles/mixins.scss";
 
 .description {
   font-size: 12px;

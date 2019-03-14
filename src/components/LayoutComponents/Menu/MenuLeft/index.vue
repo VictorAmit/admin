@@ -2,8 +2,16 @@
   <div>
     <div :class="$style.logo">
       <div :class="$style.logoContainer">
-        <img v-if="!settings.isMenuCollapsed" src="resources/images/logo-inverse.png" alt>
-        <img v-if="settings.isMenuCollapsed" src="resources/images/logo-inverse-mobile.png" alt>
+        <img
+          v-if="!settings.isMenuCollapsed || withDrawer"
+          src="resources/images/logo-inverse.png"
+          alt
+        >
+        <img
+          v-if="settings.isMenuCollapsed && !withDrawer"
+          src="resources/images/logo-inverse-mobile.png"
+          alt
+        >
       </div>
     </div>
     <div :class="settings.isLightTheme ? [$style.navigation, $style.light] : $style.navigation">
@@ -31,6 +39,10 @@ export default {
   components: { CuiMenuLeft, vueCustomScrollbar },
   props: {
     settings: Object,
+    withDrawer: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
