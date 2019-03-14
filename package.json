@@ -1,6 +1,6 @@
 {
-  "name": "vue",
-  "version": "0.1.0",
+  "name": "clean-ui-admin-template-vue",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -19,7 +19,7 @@
     "register-service-worker": "^1.5.2",
     "store": "^2.0.12",
     "v-chartist": "^0.1.6",
-    "vue": "^2.6.6",
+    "vue": "^2.6.9",
     "vue-c3": "^1.2.11",
     "vue-chartist": "^2.2.0",
     "vue-chartjs": "^3.4.0",
@@ -51,7 +51,7 @@
     "lint-staged": "^8.1.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.9"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

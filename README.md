@@ -1,29 +1,11 @@
-# vue
+## Installation
 
-## Project setup
-```
-yarn install
-```
+* Install latest node.js: https://nodejs.org​
+* Install latest yarn package manager: https://yarnpkg.com/​
+* Install node modules by running terminal command `yarn install`
+* Run the app `yarn serve`
+* For build production files use `yarn build` (build to /dist/ folder)
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+## Reference
 
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[https://vuejs.org/v2/guide/](https://vuejs.org/v2/guide/)
