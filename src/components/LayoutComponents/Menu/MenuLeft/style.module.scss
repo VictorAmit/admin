@@ -47,7 +47,7 @@
     }
 
     @at-root {
-      :global(.settings__menuShadow .navigation.light) {
+      :global(.settings__menuShadow) .navigation.light {
         &:before,
         &:after {
           display: none;
@@ -55,7 +55,7 @@
       }
 
       @media (max-width: 1435px) {
-        :global(.settings__fixedWidth .navigation.light) {
+        :global(.settings__fixedWidth) .navigation.light {
           &:before {
             display: none;
           }
@@ -68,13 +68,14 @@
     padding: rem(15) 0 rem(30) !important;
     transition: all 0.3s !important;
     border: none;
-    > :global(.ant-dropdown-menu-item-divider) {
+    > :global(.ant-menu-item-divider) {
       margin: 0 23px !important;
       transition: all 0.3s !important;
     }
 
     &:global(.ant-menu-inline-collapsed) {
       > :global(.ant-menu-item) {
+        > a,
         > span {
           :global(.badge) {
             display: none;
@@ -91,7 +92,7 @@
   }
 
   :global(.ant-menu-inline-collapsed) {
-    :global(.title) {
+    .title {
       display: none;
     }
 
@@ -111,7 +112,7 @@
       }
     }
 
-    :global(.icon) {
+    .icon {
       right: 30px;
     }
   }
@@ -125,7 +126,7 @@
   }
 
   :global(.ant-menu-light) {
-    :global(.icon) {
+    .icon {
       color: $gray-darken;
       @include transition-slow();
     }
@@ -142,7 +143,7 @@
     :global(.ant-menu-item),
     :global(.ant-menu-submenu) {
       &:hover {
-        :global(.icon) {
+        .icon {
           color: $text;
         }
       }
@@ -157,7 +158,7 @@
   :global(.ant-menu-dark) {
     color: $gray-darken;
 
-    :global(.ant-dropdown-menu-item-divider) {
+    :global(.ant-menu-item-divider) {
       opacity: 0.2;
     }
 
@@ -197,7 +198,7 @@
         span {
           color: $white;
 
-          :global(.icon) {
+          .icon {
             color: $white !important;
           }
         }
@@ -209,7 +210,7 @@
       span {
         color: $white !important;
 
-        :global(.icon) {
+        .icon {
           color: $white !important;
         }
       }
@@ -218,14 +219,14 @@
     :global(.ant-menu-submenu:hover),
     :global(.ant-menu-submenu-selected),
     :global(.ant-menu-submenu-open) {
-      :global(.icon) {
+      .icon {
         opacity: 1;
         color: $white !important;
       }
     }
 
     :global(.ant-menu-submenu-active) {
-      :global(.icon) {
+      .icon {
         color: $blue !important;
       }
     }
@@ -243,6 +244,12 @@
   }
 }
 
+:global(.ant-menu-inline-collapsed-tooltip) {
+  .icon {
+    display: none;
+  }
+}
+
 .scrollbarDesktop {
   height: calc(100vh - 112px) !important;
 }
@@ -251,7 +258,7 @@
   height: calc(100vh - 64px) !important;
 }
 
-:global(.buyPro) {
+.buyPro {
   padding: rem(20);
   background: #e4e9f0;
   border-radius: 3px;
@@ -260,6 +267,6 @@
   overflow: hidden;
 }
 
-:global(.ant-menu-inline-collapsed + .buyPro) {
+:global(.ant-menu-inline-collapsed) + .buyPro {
   display: none;
 }

@@ -1,20 +1,5 @@
 export const getLeftMenuData = [
   {
-    title: 'Settings',
-    key: 'settings',
-    icon: 'icmn icmn-cog utils__spin-delayed--pseudo-selector',
-  },
-  {
-    title: 'Documentation',
-    key: 'documentation',
-    url: 'https://docs.cleanuitemplate.com/react/getting-started',
-    target: '_blank',
-    icon: 'icmn icmn-books',
-  },
-  {
-    divider: true,
-  },
-  {
     title: 'Dashboard Alpha',
     key: 'dashboardAlpha',
     url: '/dashboard/alpha',
@@ -365,18 +350,6 @@ export const getLeftMenuData = [
   },
 ]
 export const getTopMenuData = [
-  {
-    title: 'Settings',
-    key: 'settings',
-    icon: 'icmn icmn-cog utils__spin-delayed--pseudo-selector',
-  },
-  {
-    title: 'Docs',
-    key: 'documentation',
-    url: 'https://docs.cleanuitemplate.com/angular/getting-started',
-    target: '_blank',
-    icon: 'icmn icmn-books',
-  },
   {
     title: 'Pages',
     key: 'pages',
