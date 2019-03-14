@@ -4,7 +4,7 @@
       <div class="utils__title">
         <strong>AntDesign Components</strong>
         <a
-          href="https://ant.design/docs/react/introduce"
+          href="https://vue.ant.design/docs/vue/introduce/"
           target="_blank"
           class="btn btn-sm btn-primary ml-4"
         >
