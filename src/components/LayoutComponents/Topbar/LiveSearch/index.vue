@@ -93,6 +93,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data: function () {
@@ -113,6 +114,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

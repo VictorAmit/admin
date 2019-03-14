@@ -139,8 +139,10 @@
     </div>
   </section>
 </template>
+
 <script>
 import { projectData } from './data.json'
+
 export default {
   data: function () {
     return {
@@ -149,6 +151,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

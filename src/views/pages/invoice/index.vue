@@ -5,8 +5,10 @@
     </div>
   </div>
 </template>
+
 <script>
 import CuiInvoice from '@/components/CleanUIComponents/Invoice'
+
 export default {
   components: {
     CuiInvoice,

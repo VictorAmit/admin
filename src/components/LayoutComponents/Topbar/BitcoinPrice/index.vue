@@ -11,6 +11,7 @@
     <span>+20%</span>
   </div>
 </template>
+
 <script>
 import Peity from 'vue-peity'
 
@@ -35,6 +36,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

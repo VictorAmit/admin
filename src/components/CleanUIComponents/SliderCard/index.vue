@@ -22,6 +22,7 @@
     </a-carousel>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -32,6 +33,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

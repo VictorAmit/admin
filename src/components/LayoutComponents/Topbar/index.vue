@@ -29,6 +29,7 @@
     <cui-profile-menu/>
   </div>
 </template>
+
 <script>
 import CuiIssuesHistory from '@/components/LayoutComponents/Topbar/IssuesHistory'
 import CuiProjectManagement from '@/components/LayoutComponents/Topbar/ProjectManagement'
@@ -50,6 +51,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

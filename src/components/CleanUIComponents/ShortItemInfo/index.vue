@@ -12,6 +12,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'CuiShortItemInfo',
@@ -23,6 +24,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

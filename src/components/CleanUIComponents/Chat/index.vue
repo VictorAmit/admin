@@ -29,9 +29,9 @@
     </a-form>
   </div>
 </template>
+
 <script>
 import CuiAvatar from '@/components/CleanUIComponents/Avatar'
-
 import { chats } from './data.json'
 
 export default {
@@ -48,6 +48,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

@@ -340,6 +340,7 @@
 <script>
 import { articleData, articlesCategories, latesArticlesData, comments } from './data.json'
 import CuiAvatar from '@/components/CleanUIComponents/Avatar'
+
 export default {
   components: {
     CuiAvatar,
@@ -355,6 +356,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

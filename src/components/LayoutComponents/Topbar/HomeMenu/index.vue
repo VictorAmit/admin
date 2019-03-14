@@ -9,7 +9,8 @@
         <div :class="$style.inner">
           <div :class="$style.title">
             <span class="pull-right">now</span>
-            <a href="javascript: void(0);">Update Status:
+            <a href="javascript: void(0);">
+              Update Status:
               <span class="badge badge-danger">New</span>
             </a>
             <div :class="$style.descr">
@@ -24,7 +25,8 @@
         <div :class="$style.inner">
           <div :class="$style.title">
             <span class="pull-right">24 min ago</span>
-            <a href="javascript: void(0);">Income:
+            <a href="javascript: void(0);">
+              Income:
               <span class="badge badge-default">$299.00</span>
             </a>
             <div :class="$style.descr">
@@ -40,7 +42,8 @@
           <div :class="$style.title">
             <span class="pull-right">30 min ago</span>
             <a href="javascript: void(0);">Inbox Message</a>
-            <div :class="$style.descr">From:
+            <div :class="$style.descr">
+              From:
               <a href="javascript: void(0);">David Bowie</a>
             </div>
           </div>
@@ -51,7 +54,8 @@
         <div :class="$style.inner">
           <div :class="$style.title">
             <span class="pull-right">now</span>
-            <a href="javascript: void(0);">Update Status:
+            <a href="javascript: void(0);">
+              Update Status:
               <span class="badge badge-primary">New</span>
             </a>
             <div :class="$style.descr">
@@ -66,7 +70,8 @@
         <div :class="$style.inner">
           <div :class="$style.title">
             <span class="pull-right">24 min ago</span>
-            <a href="javascript: void(0);">Income:
+            <a href="javascript: void(0);">
+              Income:
               <span class="badge badge-warning">$299.00</span>
             </a>
             <div :class="$style.descr">
@@ -87,6 +92,7 @@
     </a-menu>
   </a-dropdown>
 </template>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

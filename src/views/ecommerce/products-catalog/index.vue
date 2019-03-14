@@ -69,9 +69,11 @@
     </div>
   </div>
 </template>
+
 <script>
 import CuiInfoCard from '@/components/CleanUIComponents/InfoCard'
 import CuiProductCard from '@/components/CleanUIComponents/ProductCard'
+
 export default {
   components: {
     CuiInfoCard,

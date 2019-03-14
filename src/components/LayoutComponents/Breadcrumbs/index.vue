@@ -15,6 +15,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { getLeftMenuData } from '@/services/menu'
 import { reduce } from 'lodash'
@@ -65,6 +66,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

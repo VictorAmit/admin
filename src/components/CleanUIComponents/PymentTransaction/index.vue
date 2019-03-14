@@ -14,6 +14,7 @@
     <div v-if="footer" :class="$style.footer">{{footer}}</div>
   </a>
 </template>
+
 <script>
 export default {
   name: 'CuiPaymentTransaction',
@@ -28,6 +29,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

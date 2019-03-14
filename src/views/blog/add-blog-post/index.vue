@@ -75,6 +75,7 @@
     </div>
   </section>
 </template>
+
 <script>
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
@@ -104,6 +105,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

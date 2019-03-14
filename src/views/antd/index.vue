@@ -50,6 +50,7 @@
     </div>
   </section>
 </template>
+
 <script>
 import { data } from './data.json'
 export default {
@@ -60,6 +61,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

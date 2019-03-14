@@ -41,6 +41,7 @@
     </div>
   </section>
 </template>
+
 <script>
 import CuiAvatar from '@/components/CleanUIComponents/Avatar'
 
@@ -68,6 +69,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

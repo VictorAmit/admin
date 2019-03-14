@@ -186,13 +186,12 @@
     </div>
   </section>
 </template>
+
 <script>
 import CuiAvatar from '@/components/CleanUIComponents/Avatar'
 import { discuss } from './data.json'
-
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
-
 import { quillEditor } from 'vue-quill-editor'
 
 export default {
@@ -207,6 +206,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

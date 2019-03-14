@@ -141,6 +141,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import LineChart from './LineChart.vue'
 import BarChart from './BarChart.vue'

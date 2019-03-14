@@ -319,6 +319,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import CuiProfileHeadCard from '@/components/CleanUIComponents/ProfileHeadCard'
 import CuiProgressGroup from '@/components/CleanUIComponents/ProgressGroup'
@@ -511,6 +512,7 @@ export default {
   },
 }
 </script>
+
 <style scoped>
 .custom-filter-dropdown {
   padding: 8px;

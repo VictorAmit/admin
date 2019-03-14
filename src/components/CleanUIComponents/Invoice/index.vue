@@ -86,8 +86,10 @@
     </div>
   </div>
 </template>
+
 <script>
 import { invoiceData } from './data.json'
+
 const { invoiceContent } = invoiceData
 const columns = [
   {

@@ -44,6 +44,7 @@
     </section>
   </div>
 </template>
+
 <script>
 import { iconsData } from './data.json'
 export default {

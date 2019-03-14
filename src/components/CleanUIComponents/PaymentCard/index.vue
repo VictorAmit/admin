@@ -10,6 +10,7 @@
     <span :class="$style.footer" v-if="footer">{{footer}}</span>
   </a>
 </template>
+
 <script>
 export default {
   name: 'CuiPaymentCard',
@@ -23,6 +24,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

@@ -28,6 +28,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'CuiProgressCard',
@@ -40,6 +41,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

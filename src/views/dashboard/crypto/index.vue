@@ -380,6 +380,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import ECharts from 'vue-echarts'
 import 'echarts/lib/chart/line'
@@ -388,6 +389,7 @@ import 'echarts/lib/component/tooltip'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/dataZoom'
 import { myOpenOrdersData, marketHistoryData, orderBookBuy, orderBookSell } from './data.json'
+
 const myOrderColumns = [
   {
     title: 'Order Date',
@@ -733,6 +735,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

@@ -85,6 +85,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { chatsOwner, chats } from './data.json'
 import CuiAvatar from '@/components/CleanUIComponents/Avatar'
@@ -110,6 +111,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

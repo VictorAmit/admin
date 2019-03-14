@@ -14,14 +14,17 @@
     </div>
   </div>
 </template>
+
 <script>
 import CuiPricingItem from '@/components/CleanUIComponents/PricingItem'
+
 export default {
   components: {
     CuiPricingItem,
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

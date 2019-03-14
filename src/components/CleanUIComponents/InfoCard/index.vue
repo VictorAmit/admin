@@ -49,6 +49,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { stats, information, commerceStats } from './data.json'
 
@@ -80,6 +81,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

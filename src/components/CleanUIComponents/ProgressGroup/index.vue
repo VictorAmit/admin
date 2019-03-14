@@ -27,8 +27,10 @@
     </div>
   </div>
 </template>
+
 <script>
 import { progressGroup } from './data.json'
+
 export default {
   name: 'CuiProgressGroup',
   data: function () {

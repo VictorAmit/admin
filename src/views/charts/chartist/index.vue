@@ -325,6 +325,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import VueChartist from 'v-chartist'
 import ChartistTooltip from 'chartist-plugin-tooltips-updated'
@@ -562,6 +563,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss">
 @import "./style.module.scss";
 </style>

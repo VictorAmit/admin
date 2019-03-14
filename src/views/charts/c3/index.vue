@@ -219,6 +219,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import Vue from 'vue'
 import VueC3 from 'vue-c3'

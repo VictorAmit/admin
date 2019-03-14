@@ -84,6 +84,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { data } from './data.json'
 
@@ -194,6 +195,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module scoped>
 @import "./style.module.scss";
 </style>

@@ -189,9 +189,11 @@
     </div>
   </div>
 </template>
+
 <script>
 import { ordersTableData, invoicePrices } from './data.json'
 import CuiInvoice from '@/components/CleanUIComponents/Invoice'
+
 const columns = [
   {
     title: '#',
@@ -244,6 +246,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

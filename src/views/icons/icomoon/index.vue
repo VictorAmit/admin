@@ -7,7 +7,8 @@
           href="https://icomoon.io/#icons-icomoon"
           target="_blank"
           class="btn btn-sm btn-primary ml-4"
-        >Official Documentation
+        >
+          Official Documentation
           <i class="icmn-link ml-1"/>
         </a>
       </div>
@@ -28,8 +29,10 @@
     </div>
   </section>
 </template>
+
 <script>
 import { iconsData } from './data.json'
+
 export default {
   data: function () {
     return {

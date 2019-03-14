@@ -184,6 +184,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import VueChartist from 'v-chartist'
 import CuiProgressCard from '@/components/CleanUIComponents/ProgressCard'
@@ -282,6 +283,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

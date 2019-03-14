@@ -123,9 +123,11 @@
     </div>
   </section>
 </template>
+
 <script>
 import CuiAvatar from '@/components/CleanUIComponents/Avatar'
 import { viewData, upNext } from './data.json'
+
 export default {
   components: {
     CuiAvatar,
@@ -138,6 +140,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

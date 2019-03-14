@@ -127,6 +127,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { images, sku, name, rate, price, oldPrice, shortDescr, description, properties } from './data.json'
 
@@ -152,6 +153,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

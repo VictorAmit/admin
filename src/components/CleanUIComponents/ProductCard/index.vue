@@ -43,6 +43,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import {
   productImg,
@@ -52,6 +53,7 @@ import {
   productNote,
   productStatus,
 } from './data.json'
+
 export default {
   name: 'CuiProductCard',
   data: function () {
@@ -66,6 +68,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

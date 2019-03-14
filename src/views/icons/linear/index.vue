@@ -25,8 +25,10 @@
     </div>
   </section>
 </template>
+
 <script>
 import { iconsData } from './data.json'
+
 export default {
   data: function () {
     return {
