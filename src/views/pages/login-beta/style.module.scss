@@ -6,11 +6,15 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  padding: rem(40);
+  padding: rem(40) rem(40) rem(80);
   overflow-y: auto;
   flex: 0;
-  background-color: #fff;
   transition: background-image 0.4s linear;
+
+  @media (max-width: $sm-max-width) {
+    margin: 0 rem(-10);
+    padding: rem(40) rem(10);
+  }
 
   &.fullscreen {
     position: fixed;
@@ -22,7 +26,7 @@
   }
 
   &.windowed {
-    min-height: 1200px;
+    min-height: rem(800);
   }
 }
 
@@ -33,12 +37,6 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: rem(50);
-
-  @media screen and (max-width: $sm-max-width) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-  }
 }
 
 .logo {
@@ -55,6 +53,10 @@
 .loginNav {
   padding-top: rem(10);
   padding-bottom: rem(10);
+
+  @media (max-width: $sm-max-width) {
+    display: none;
+  }
 }
 
 .navItems {
@@ -103,20 +105,15 @@
   margin-right: auto;
   margin-left: rem(20);
 
-  @media screen and (max-width: $xxl-max-width) {
+  @media screen and (max-width: $md-max-width) {
     order: 1;
     width: 100%;
     margin-left: 0;
-    margin-top: rem(10);
   }
 
-  @media screen and (max-width: $sm-max-width) {
-    text-align: center;
+  @media (max-width: $sm-max-width) {
+    display: none;
   }
-}
-
-.content {
-  margin: auto;
 }
 
 .promo {
@@ -124,6 +121,12 @@
   text-align: center;
   max-width: rem(800);
   margin-bottom: rem(60);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: $sm-max-width) {
+    display: none;
+  }
 
   h1 {
     text-transform: uppercase;
@@ -136,6 +139,9 @@
 }
 
 .formWrapper {
+  max-width: rem(800);
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -227,4 +233,12 @@
 .sidebarFooter {
   margin-top: auto;
   font-weight: 700;
+}
+
+.register-link {
+  @media (max-width: $md-max-width) {
+    width: 100%;
+    display: block;
+    margin-top: rem(10);
+  }
 }

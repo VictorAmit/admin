@@ -58,14 +58,11 @@
 }
 
 .wrapper {
-  padding-top: rem(14);
-  padding-left: rem(65);
-  padding-right: rem(15);
+  padding: rem(20) rem(60);
   line-height: 1.7;
 
   @media screen and (max-width: $sm-max-width) {
-    padding-left: rem(60);
-    padding-right: rem(30);
+    padding: rem(20);
   }
 }
 
