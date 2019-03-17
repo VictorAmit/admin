@@ -56,7 +56,7 @@
             <strong>More components, more styles, more themes, and premium support!</strong>
           </p>
           <a
-            href="https://themeforest.net/user/mediatec_software"
+            href="https://themeforest.net/item/clean-ui-vue-pro-vue-vuex-admin-template/23474274"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-sm btn-danger"

@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-sm-6">
             <a
-              href="https://themeforest.net/user/mediatec_software"
+              href="https://themeforest.net/item/clean-ui-vue-pro-vue-vuex-admin-template/23474274"
               target="_blank"
               rel="noopener noreferrer"
               class="mr-4"
