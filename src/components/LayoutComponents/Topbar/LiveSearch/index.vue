@@ -2,7 +2,7 @@
   <div class="d-inline-block mr-4">
     <a-input
       :class="$style.extInput"
-      placeholder="Inpit search text..."
+      placeholder="Input search text..."
       style="width: 200px;"
       @focus="openSearch"
       ref="outerInput"
