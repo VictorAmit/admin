@@ -1,5 +1,5 @@
 <template>
-  <div class="d-inline-block mr-4">
+  <div class="d-inline-block mr-4" @keydown.esc="closeSearch()">
     <a-input
       :class="$style.extInput"
       placeholder="Inpit search text..."
@@ -7,7 +7,7 @@
       @focus="openSearch"
       ref="outerInput"
     >
-      <a-icon slot="prefix" type="search"/>
+      <a-icon slot="prefix" type="search" />
     </a-input>
     <div :class="[$style.livesearch, showSearch ? $style.livesearchVisible : '']">
       <button @click="closeSearch" :class="$style.close" type="button">
@@ -17,9 +17,9 @@
       <div class="container-fluid">
         <div :class="$style.wrapper">
           <div :class="$style.logoContainer">
-            <img :class="$style.logo" src="resources/images/logo.png">
+            <img :class="$style.logo" src="resources/images/logo.png" />
           </div>
-          <a-input :class="$style.searchInput" placeholder="Type to search..." ref="innerInput"/>
+          <a-input :class="$style.searchInput" placeholder="Type to search..." ref="innerInput" />
           <ul :class="$style.options">
             <li :class="[$style.option, $style.optionCheckbox]">
               <a-checkbox>Search within page</a-checkbox>

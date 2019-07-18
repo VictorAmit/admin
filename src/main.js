@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VuePageTitle from 'vue-page-title'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -53,6 +54,10 @@ Vue.prototype.$notification = notification
 
 Vue.use(NProgress)
 Vue.use(FirebaseAuthService)
+Vue.use(VuePageTitle, {
+  prefix: 'Clean UI Vue Pro | ',
+  router,
+})
 
 Vue.config.productionTip = false
 const nprogress = new NProgress({ parent: 'body' })

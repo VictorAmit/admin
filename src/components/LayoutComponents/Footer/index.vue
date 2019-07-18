@@ -26,12 +26,12 @@
         <div class="row">
           <div class="col-sm-6">
             <a
-              href="https://themeforest.net/item/clean-ui-vue-pro-vue-vuex-admin-template/23474274"
+              href="https://themeforest.net/item/clean-ui-react-admin-template/21938700"
               target="_blank"
               rel="noopener noreferrer"
               class="mr-4"
             >
-              <a-button type="danger">Buy Now 24$</a-button>
+              <a-button type="danger">Buy Bundle 26$</a-button>
             </a>
           </div>
           <div class="col-sm-6">
@@ -40,7 +40,7 @@
                 src="resources/images/mediatec.png"
                 rel="noopener noreferrer"
                 alt="Mediatec Software"
-              >
+              />
               <span>
                 © 2019
                 <a
@@ -48,7 +48,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >Mediatec Software</a>
-                <br>All rights reserved
+                <br />All rights reserved
               </span>
             </div>
           </div>

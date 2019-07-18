@@ -1,32 +1,32 @@
 <template>
   <div :class="$style.topbar">
     <div class="mr-4">
-      <cui-issues-history/>
+      <cui-issues-history />
     </div>
     <div class="mr-4">
-      <cui-project-management/>
+      <cui-project-management />
     </div>
     <div class="mr-auto">
-      <cui-live-search/>
+      <cui-live-search />
     </div>
     <a
-      href="https://themeforest.net/item/clean-ui-vue-pro-vue-vuex-admin-template/23474274"
+      href="https://themeforest.net/item/clean-ui-react-admin-template/21938700"
       target="_blank"
       rel="noopener noreferrer"
       class="mr-4 d-none d-sm-inline"
     >
-      <a-button type="danger">Buy Now $24</a-button>
+      <a-button type="danger">Buy Bundle 26$</a-button>
     </a>
     <div class="mr-4">
-      <cui-bitcoin-price/>
+      <cui-bitcoin-price />
     </div>
     <div class="mr-4">
-      <cui-language-selector/>
+      <cui-language-selector />
     </div>
     <div class="mr-4">
-      <cui-home-menu/>
+      <cui-home-menu />
     </div>
-    <cui-profile-menu/>
+    <cui-profile-menu />
   </div>
 </template>
 

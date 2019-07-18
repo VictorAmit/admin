@@ -56,11 +56,11 @@
             <strong>More components, more styles, more themes, and premium support!</strong>
           </p>
           <a
-            href="https://themeforest.net/item/clean-ui-vue-pro-vue-vuex-admin-template/23474274"
+            href="https://themeforest.net/item/clean-ui-react-admin-template/21938700"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-sm btn-danger"
-          >Buy Pro 24$</a>
+          >Buy Bundle 26$</a>
         </div>
       </vue-custom-scrollbar>
     </div>
