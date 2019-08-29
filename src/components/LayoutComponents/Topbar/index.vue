@@ -15,7 +15,7 @@
       rel="noopener noreferrer"
       class="mr-4 d-none d-sm-inline"
     >
-      <a-button type="danger">Buy Bundle 26$</a-button>
+      <a-button type="danger">Buy Bundle</a-button>
     </a>
     <div class="mr-4">
       <cui-bitcoin-price />

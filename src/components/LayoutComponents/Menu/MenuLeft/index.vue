@@ -6,12 +6,12 @@
           v-if="!settings.isMenuCollapsed || withDrawer"
           src="resources/images/logo-inverse.png"
           alt
-        >
+        />
         <img
           v-if="settings.isMenuCollapsed && !withDrawer"
           src="resources/images/logo-inverse-mobile.png"
           alt
-        >
+        />
       </div>
     </div>
     <div :class="settings.isLightTheme ? [$style.navigation, $style.light] : $style.navigation">
@@ -39,7 +39,7 @@
               <i :class="[$style.icon, 'icmn icmn-books']"></i>
             </a>
           </a-menu-item>
-          <a-menu-divider/>
+          <a-menu-divider />
           <template v-for="(item, index) in menuData">
             <item
               v-if="!item.children && !item.divider"
@@ -47,8 +47,8 @@
               :styles="$style"
               :key="item.key"
             />
-            <a-menu-divider v-if="item.divider" :key="index"/>
-            <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key"/>
+            <a-menu-divider v-if="item.divider" :key="index" />
+            <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key" />
           </template>
         </a-menu>
         <div :class="$style.buyPro">
@@ -60,7 +60,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-sm btn-danger"
-          >Buy Bundle 26$</a>
+          >Buy Bundle</a>
         </div>
       </vue-custom-scrollbar>
     </div>

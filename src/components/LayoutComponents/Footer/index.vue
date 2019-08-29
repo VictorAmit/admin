@@ -31,7 +31,7 @@
               rel="noopener noreferrer"
               class="mr-4"
             >
-              <a-button type="danger">Buy Bundle 26$</a-button>
+              <a-button type="danger">Buy Bundle</a-button>
             </a>
           </div>
           <div class="col-sm-6">
