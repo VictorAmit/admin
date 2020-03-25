@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <localization></localization>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import Localization from '@/localization'
 
 export default {
   name: 'app',
+  components: { Localization },
   computed: {
     ...mapGetters(['user']),
     nextRoute() {

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import LoginLayout from '@/layouts/Login'
+import AuthLayout from '@/layouts/Auth'
 import MainLayout from '@/layouts/Main'
 import store from '@/store'
 
@@ -8,6 +8,10 @@ Vue.use(Router)
 
 const router = new Router({
   base: process.env.BASE_URL,
+  // mode: 'history',
+  scrollBehavior() {
+    return { x: 0, y: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -26,351 +30,366 @@ const router = new Router({
           },
           component: () => import('./views/dashboard/alpha'),
         },
-        {
-          path: '/dashboard/beta',
-          meta: {
-            title: 'Dashboard Beta',
-          },
-          component: () => import('./views/dashboard/beta'),
-        },
-        {
-          path: '/dashboard/crypto',
-          meta: {
-            title: 'Dashboard Crypto',
-          },
-          component: () => import('./views/dashboard/crypto'),
-        },
-        {
-          path: '/dashboard/gamma',
-          meta: {
-            title: 'Dashboard Gamma',
-          },
-          component: () => import('./views/dashboard/gamma'),
-        },
-        {
-          path: '/dashboard/docs',
-          meta: {
-            title: 'Dashboard Docs',
-          },
-          component: () => import('./views/dashboard/docs'),
-        },
+        // {
+        //   path: '/dashboard/beta',
+        //   meta: {
+        //     title: 'Dashboard Beta',
+        //   },
+        //   component: () => import('./views/dashboard/beta'),
+        // },
+        // {
+        //   path: '/dashboard/crypto',
+        //   meta: {
+        //     title: 'Dashboard Crypto',
+        //   },
+        //   component: () => import('./views/dashboard/crypto'),
+        // },
+        // {
+        //   path: '/dashboard/gamma',
+        //   meta: {
+        //     title: 'Dashboard Gamma',
+        //   },
+        //   component: () => import('./views/dashboard/gamma'),
+        // },
 
-        // Default Pages
+        // Widgets
         {
-          path: '/pages/login-alpha',
+          path: '/widgets/general',
           meta: {
-            title: 'Login Alpha',
+            title: 'Widgets / General',
           },
-          component: () => import('./views/pages/login-alpha'),
+          component: () => import('./views/widgets/general'),
         },
         {
-          path: '/pages/login-beta',
+          path: '/widgets/lists',
           meta: {
-            title: 'Login Beta',
+            title: 'Widgets / Lists',
           },
-          component: () => import('./views/pages/login-beta'),
+          component: () => import('./views/widgets/lists'),
         },
         {
-          path: '/pages/register',
+          path: '/widgets/tables',
           meta: {
-            title: 'Register',
+            title: 'Widgets / Tables',
           },
-          component: () => import('./views/pages/register'),
+          component: () => import('./views/widgets/tables'),
         },
         {
-          path: '/pages/lockscreen',
+          path: '/widgets/charts',
           meta: {
-            title: 'Lockscreen',
+            title: 'Widgets / Charts',
           },
-          component: () => import('./views/pages/lockscreen'),
+          component: () => import('./views/widgets/charts'),
         },
-        {
-          path: '/pages/pricing-table',
-          meta: {
-            title: 'Pricing Tables',
-          },
-          component: () => import('./views/pages/pricing-table'),
-        },
-        {
-          path: '/pages/invoice',
-          meta: {
-            title: 'Invoice',
-          },
-          component: () => import('./views/pages/invoice'),
-        },
-
         // Apps
         {
-          path: '/apps/messaging',
+          path: '/apps/calendar',
           meta: {
-            title: 'Messaging',
+            title: 'Apps / Calendar',
           },
-          component: () => import('./views/apps/messaging'),
+          component: () => import('./views/apps/calendar'),
         },
         {
-          path: '/apps/mail',
+          path: '/apps/digitalocean-create',
           meta: {
-            title: 'Mail',
+            title: 'Apps / DigitalOcean Create',
           },
-          component: () => import('./views/apps/mail'),
+          component: () => import('./views/apps/digitalocean-create'),
         },
         {
-          path: '/apps/profile',
+          path: '/apps/digitalocean-droplets',
           meta: {
-            title: 'Profile',
+            title: 'Apps / DigitalOcean Droplets',
           },
-          component: () => import('./views/apps/profile'),
+          component: () => import('./views/apps/digitalocean-droplets'),
         },
         {
           path: '/apps/gallery',
           meta: {
-            title: 'Gallery',
+            title: 'Apps / Gallery',
           },
           component: () => import('./views/apps/gallery'),
         },
-
-        // Ecommerce
         {
-          path: '/ecommerce/dashboard',
+          path: '/apps/github-discuss',
           meta: {
-            title: 'Ecommerce Dashboard',
+            title: 'Apps / GitHub Discuss',
           },
-          component: () => import('./views/ecommerce/dashboard'),
+          component: () => import('./views/apps/github-discuss'),
         },
         {
-          path: '/ecommerce/products-catalog',
+          path: '/apps/github-explore',
           meta: {
-            title: 'Ecommerce Catalog',
+            title: 'Apps / GitHub Explore',
           },
-          component: () => import('./views/ecommerce/products-catalog'),
+          component: () => import('./views/apps/github-explore'),
         },
         {
-          path: '/ecommerce/product-details',
+          path: '/apps/google-analytics',
           meta: {
-            title: 'Ecommerce Product Details',
+            title: 'Apps / Google Analytics',
           },
-          component: () => import('./views/ecommerce/product-details'),
+          component: () => import('./views/apps/google-analytics'),
         },
         {
-          path: '/ecommerce/product-edit',
+          path: '/apps/helpdesk-dashboard',
           meta: {
-            title: 'Ecommerce Product Edit',
+            title: 'Apps / Helpdesk Dashboard',
           },
-          component: () => import('./views/ecommerce/product-edit'),
+          component: () => import('./views/apps/helpdesk-dashboard'),
         },
         {
-          path: '/ecommerce/products-list',
+          path: '/apps/jira-agile-board',
           meta: {
-            title: 'Ecommerce Products List',
+            title: 'Apps / Jira Agile Board',
           },
-          component: () => import('./views/ecommerce/products-list'),
+          component: () => import('./views/apps/jira-agile-board'),
         },
         {
-          path: '/ecommerce/orders',
+          path: '/apps/jira-dashboard',
           meta: {
-            title: 'Ecommerce Orders',
+            title: 'Apps / Jira Dashboard',
           },
-          component: () => import('./views/ecommerce/orders'),
+          component: () => import('./views/apps/jira-dashboard'),
         },
         {
-          path: '/ecommerce/cart',
+          path: '/apps/mail',
           meta: {
-            title: 'Ecommerce Cart',
+            title: 'Apps / Mail',
           },
-          component: () => import('./views/ecommerce/cart'),
-        },
-
-        // Layout
-        {
-          path: '/layout/bootstrap',
-          meta: {
-            title: 'Layout Bootstrap',
-          },
-          component: () => import('./views/layout/bootstrap'),
+          component: () => import('./views/apps/mail'),
         },
         {
-          path: '/layout/card',
+          path: '/apps/messaging',
           meta: {
-            title: 'Layout Cards',
+            title: 'Apps / Mesagging',
           },
-          component: () => import('./views/layout/card'),
+          component: () => import('./views/apps/messaging'),
         },
         {
-          path: '/layout/utilities',
+          path: '/apps/profile',
           meta: {
-            title: 'Layout Utilities',
+            title: 'Apps / Profile',
           },
-          component: () => import('./views/layout/utilities'),
+          component: () => import('./views/apps/profile'),
         },
         {
-          path: '/layout/typography',
+          path: '/apps/todoist-list',
           meta: {
-            title: 'Layout Typography',
+            title: 'Apps / Todoist List',
           },
-          component: () => import('./views/layout/typography'),
+          component: () => import('./views/apps/todoist-list'),
         },
         {
-          path: '/layout/mail-templates',
+          path: '/apps/wordpress-add',
           meta: {
-            title: 'Layout Mail Templates',
+            title: 'Apps / Wordpress Add',
           },
-          component: () => import('./views/layout/mail-templates'),
-        },
-
-        // Icons
-        {
-          path: '/icons/fontawesome',
-          meta: {
-            title: 'Fontawesome Icons',
-          },
-          component: () => import('./views/icons/fontawesome'),
+          component: () => import('./views/apps/wordpress-add'),
         },
         {
-          path: '/icons/linear',
+          path: '/apps/wordpress-post',
           meta: {
-            title: 'Linear Icons',
+            title: 'Apps / Wordpress Post',
           },
-          component: () => import('./views/icons/linear'),
+          component: () => import('./views/apps/wordpress-post'),
         },
         {
-          path: '/icons/icomoon',
+          path: '/apps/wordpress-posts',
           meta: {
-            title: 'Icomoon Icons',
+            title: 'Apps / Wordpress Posts',
           },
-          component: () => import('./views/icons/icomoon'),
+          component: () => import('./views/apps/wordpress-posts'),
         },
-
+        // Cards
+        {
+          path: '/cards/basic-cards',
+          meta: {
+            title: 'Cards / Basic',
+          },
+          component: () => import('./views/cards/basic-cards'),
+        },
+        {
+          path: '/cards/tabbed-cards',
+          meta: {
+            title: 'Cards / Tabbed',
+          },
+          component: () => import('./views/cards/tabbed-cards'),
+        },
+        // UI Kits
+        {
+          path: '/ui-kits/bootstrap',
+          meta: {
+            title: 'UI Kit / Bootstrap',
+          },
+          component: () => import('./views/ui-kits/bootstrap'),
+        },
+        {
+          path: '/ui-kits/antd',
+          meta: {
+            title: 'UI Kit / Ant Design',
+          },
+          component: () => import('./views/ui-kits/antd'),
+        },
+        // Tables
+        {
+          path: '/tables/bootstrap',
+          meta: {
+            title: 'Tables / Bootstrap',
+          },
+          component: () => import('./views/tables/bootstrap'),
+        },
+        {
+          path: '/tables/antd',
+          meta: {
+            title: 'Tables / Ant Design',
+          },
+          component: () => import('./views/tables/antd'),
+        },
         // Charts
         {
-          path: '/charts/chartist',
+          path: '/charts/chartistjs',
           meta: {
-            title: 'Chartist.js',
+            title: 'Charts / Chartist.js',
           },
-          component: () => import('./views/charts/chartist'),
+          component: () => import('./views/charts/chartistjs'),
         },
         {
-          path: '/charts/chart',
+          path: '/charts/chartjs',
           meta: {
-            title: 'Chart.js',
+            title: 'Charts / Chart.js',
           },
-          component: () => import('./views/charts/chart'),
-        },
-        {
-          path: '/charts/peity',
-          meta: {
-            title: 'Peity',
-          },
-          component: () => import('./views/charts/peity'),
+          component: () => import('./views/charts/chartjs'),
         },
         {
           path: '/charts/c3',
           meta: {
-            title: 'C3',
+            title: 'Charts / C3 Charts',
           },
           component: () => import('./views/charts/c3'),
         },
-
-        // Blog
+        // Icons
         {
-          path: '/blog/feed',
+          path: '/icons/feather-icons',
           meta: {
-            title: 'Blog Feed',
+            title: 'Icons / Feather',
           },
-          component: () => import('./views/blog/feed'),
+          component: () => import('./views/icons/feather-icons'),
         },
         {
-          path: '/blog/post',
+          path: '/icons/fontawesome',
           meta: {
-            title: 'Blog Post',
+            title: 'Icons / Fontawesome',
           },
-          component: () => import('./views/blog/post'),
+          component: () => import('./views/icons/fontawesome'),
         },
         {
-          path: '/blog/add-blog-post',
+          path: '/icons/linearicons-free',
           meta: {
-            title: 'Blog Add Post',
+            title: 'Icons / Linearicons Free',
           },
-          component: () => import('./views/blog/add-blog-post'),
-        },
-
-        // YouTube
-        {
-          path: '/youtube/feed',
-          meta: {
-            title: 'Youtube Feed',
-          },
-          component: () => import('./views/youtube/feed'),
+          component: () => import('./views/icons/linearicons-free'),
         },
         {
-          path: '/youtube/view',
+          path: '/icons/icomoon-free',
           meta: {
-            title: 'Youtube View',
+            title: 'Icons / Icomoon Free',
           },
-          component: () => import('./views/youtube/view'),
+          component: () => import('./views/icons/icomoon-free'),
         },
-
-        // GitHub
+        // Advanced
         {
-          path: '/github/explore',
+          path: '/advanced/form-examples',
           meta: {
-            title: 'Github Explore',
+            title: 'Advanced / Form Examples',
           },
-          component: () => import('./views/github/explore'),
+          component: () => import('./views/advanced/form-examples'),
         },
         {
-          path: '/github/discuss',
+          path: '/advanced/email-templates',
           meta: {
-            title: 'Github Discuss',
+            title: 'Advanced / Email Templates',
           },
-          component: () => import('./views/github/discuss'),
+          component: () => import('./views/advanced/email-templates'),
         },
-
-        // AntDesign
         {
-          path: '/antd',
+          path: '/advanced/utilities',
           meta: {
-            title: 'Antd',
+            title: 'Advanced / Utilities',
           },
-          component: () => import('./views/antd'),
+          component: () => import('./views/advanced/utilities'),
         },
-
-        // 404
         {
-          path: '/404',
+          path: '/advanced/grid',
           meta: {
-            title: '404',
+            title: 'Advanced / Grid',
           },
-          component: () => import('./views/404'),
+          component: () => import('./views/advanced/grid'),
+        },
+        {
+          path: '/advanced/typography',
+          meta: {
+            title: 'Advanced / Typography',
+          },
+          component: () => import('./views/advanced/typography'),
+        },
+        {
+          path: '/advanced/pricing-tables',
+          meta: {
+            title: 'Advanced / Pricing Tables',
+          },
+          component: () => import('./views/advanced/pricing-tables'),
+        },
+        {
+          path: '/advanced/invoice',
+          meta: {
+            title: 'Advanced / Invoice',
+          },
+          component: () => import('./views/advanced/invoice'),
+        },
+        {
+          path: '/advanced/colors',
+          meta: {
+            title: 'Advanced / Colors',
+          },
+          component: () => import('./views/advanced/colors'),
         },
       ],
     },
 
     // System Pages
     {
-      path: '/user',
-      component: LoginLayout,
-      redirect: '/user/login',
+      path: '/auth',
+      component: AuthLayout,
+      redirect: 'auth/login',
       children: [
         {
-          path: '/user/login',
+          path: '/auth/404',
+          meta: {
+            title: '404',
+          },
+          component: () => import('./views/auth/404'),
+        },
+        {
+          path: '/auth/login',
           meta: {
             title: 'Login',
           },
-          component: () => import('./views/user/login'),
+          component: () => import('./views/auth/login'),
         },
         {
-          path: '/user/forgot',
+          path: '/auth/forgot',
           meta: {
             title: 'Forgot Password',
           },
-          component: () => import('./views/user/forgot'),
+          component: () => import('./views/auth/forgot-password'),
         },
       ],
     },
 
     // Redirect to 404
     {
-      path: '*', redirect: '/404', hidden: true,
+      path: '*', redirect: 'auth/404', hidden: true,
     },
   ],
 })
@@ -379,7 +398,7 @@ router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.authRequired)) {
     if (!store.state.user.user) {
       next({
-        path: '/user/login',
+        path: '/auth/login',
         query: { redirect: to.fullPath },
       })
     } else {

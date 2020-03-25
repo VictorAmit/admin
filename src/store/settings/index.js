@@ -15,17 +15,31 @@ const STORED_SETTINGS = storedSettings => {
 export default {
   state: {
     ...STORED_SETTINGS({
+      authProvider: 'firebase', // firebase, jwt
+      logo: 'Clean UI Pro',
+      locale: 'en-US',
+      isSidebarOpen: false,
+      isSupportChatOpen: false,
       isMobileView: false,
-      isTabletView: false,
       isMobileMenuOpen: false,
-      isLightTheme: true,
-      isSettingsOpen: false,
-      isMenuTop: false,
       isMenuCollapsed: false,
-      isBorderless: true,
+      menuLayoutType: 'left', // left, top, nomenu
+      routerAnimation: 'slide-fadein-up', // none, slide-fadein-up, slide-fadein-right, fadein, zoom-fadein
+      menuColor: 'white', // white, dark, gray
+      theme: 'light', // light, dark
+      authPagesColor: 'white', // white, gray, image
+      primaryColor: '#4b7cf3',
+      leftMenuWidth: 256,
+      isMenuUnfixed: false,
+      isMenuShadow: false,
+      isTopbarFixed: false,
+      isGrayTopbar: false,
+      isContentMaxWidth: false,
+      isAppMaxWidth: false,
+      isGrayBackground: false,
+      isCardShadow: true,
       isSquaredBorders: false,
-      isFixedWidth: false,
-      isMenuShadow: true,
+      isBorderless: false,
     }),
   },
   mutations: {
@@ -43,7 +57,7 @@ export default {
           queryParams = JSON.parse('{"' + decodeURI(subs).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
         }
       }
-      delete queryParams['redirect']
+      delete queryParams.redirect
       keys = Object.keys(queryParams)
       if (keys.length) {
         keys.forEach(key => {

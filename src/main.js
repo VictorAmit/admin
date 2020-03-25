@@ -5,17 +5,36 @@ import router from './router'
 import store from './store'
 import NProgress from 'vue-nprogress'
 import FirebaseAuthService from './services/firebase'
-import './registerServiceWorker'
-import './global.scss'
-
+import { i18n } from '@/localization'
+import VueLayers from 'vuelayers'
+import BootstrapVue from 'bootstrap-vue'
 import {
   Avatar, TreeSelect, Rate, Breadcrumb, InputNumber, Steps, Message,
   Upload, Button, Layout, Table, Icon, Progress, Radio, Dropdown, Menu,
   Carousel, Input, Calendar, Badge, Slider, Form, Tooltip, Select, Switch,
   Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination, notification, Drawer,
+  Cascader, DatePicker, TimePicker, Divider, Anchor, AutoComplete, BackTop, Collapse, Card, List, Popover,
+  Tree, Timeline, Row, Col, Transfer, Modal, message, Popconfirm, Skeleton, LocaleProvider,
 } from 'ant-design-vue'
 
+import './registerServiceWorker'
+import './global.scss'
+
+Vue.use(BootstrapVue)
+Vue.use(VueLayers)
+Vue.use(Skeleton)
 Vue.use(Avatar)
+Vue.use(Popconfirm)
+Vue.use(Transfer)
+Vue.use(Modal)
+Vue.use(Divider)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Timeline)
+Vue.use(Tree)
+Vue.use(Popover)
+Vue.use(List)
+Vue.use(Card)
 Vue.use(Button)
 Vue.use(Rate)
 Vue.use(TreeSelect)
@@ -48,14 +67,22 @@ Vue.use(Steps)
 Vue.use(InputNumber)
 Vue.use(Drawer)
 Vue.use(Switch)
-Vue.use(notification)
+Vue.use(Cascader)
+Vue.use(DatePicker)
+Vue.use(TimePicker)
+Vue.use(Anchor)
+Vue.use(AutoComplete)
+Vue.use(Collapse)
+Vue.use(BackTop)
+Vue.use(LocaleProvider)
 
 Vue.prototype.$notification = notification
+Vue.prototype.$message = message
 
 Vue.use(NProgress)
 Vue.use(FirebaseAuthService)
 Vue.use(VuePageTitle, {
-  prefix: 'Clean UI Vue Pro | ',
+  prefix: 'Clean UI Pro Vue | ',
   router,
 })
 
@@ -66,5 +93,6 @@ new Vue({
   router,
   store,
   nprogress,
+  i18n,
   render: h => h(App),
 }).$mount('#app')

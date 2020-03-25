@@ -1,10 +1,10 @@
-@import '@/assets/styles/mixins.scss';
+@import '@/components/kit-core/mixins.scss';
 
 .item {
   position: relative;
 
   :global(.slick-list) {
-    border: 1px solid $gray-border;
+    border: 1px solid $border;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: rem(20);
@@ -38,7 +38,7 @@
         display: inline-block;
         width: rem(100);
         height: rem(100);
-        border: 1px solid $gray-border;
+        border: 1px solid $border;
         border-radius: rem(5);
         overflow: hidden;
         margin-right: rem(10);
@@ -116,7 +116,7 @@
   span {
     display: inline-block;
     margin-right: rem(5);
-    border: 1px solid $gray;
+    border: 1px solid $gray-1;
     line-height: rem(14);
     border-radius: rem(20);
     padding: rem(3);
@@ -189,7 +189,7 @@
 
 .mainTitle {
   margin-top: rem(20);
-  color: $text-darken-more;
+  color: $text;
 }
 
 .info {

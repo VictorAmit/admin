@@ -8,48 +8,23 @@
       'settings__menuTop': settings.isMenuTop
     }"
   >
-    <!-- left menu -->
-    <a-layout-sider
-      v-if="!settings.isMobileView && !settings.isMenuTop"
-      :width="256"
-      :class="settings.isLightTheme ? [$style.sider, $style.light] : $style.sider"
-      collapsible
-      :collapsed="settings.isMenuCollapsed"
-      @collapse="onCollapse"
-    >
-      <cui-menu-left :settings="settings"/>
-    </a-layout-sider>
-    <!-- left menu mobile -->
-    <div v-if="settings.isMobileView">
-      <div :class="$style.handler" @click="toggleMobileMenu">
-        <div :class="$style.handlerIcon"></div>
-      </div>
-      <a-drawer
-        :closable="false"
-        :visible="settings.isMobileMenuOpen"
-        placement="left"
-        :wrapClassName="$style.mobileMenu"
-        @close="toggleMobileMenu"
-      >
-        <cui-menu-left :settings="settings" :withDrawer="true"/>
-      </a-drawer>
-    </div>
-    <!-- top menu -->
-    <cui-menu-top v-if="settings.isMenuTop && !settings.isMobileView" :settings="settings"/>
-
-    <cui-settings :settings="settings"/>
+    <cui-sidebar :settings="settings" />
+    <cui-support-chat />
+    <cui-menu />
     <a-layout>
       <a-layout-header>
-        <cui-topbar/>
+        <cui-topbar />
       </a-layout-header>
-      <cui-breadcrumbs :settings="settings"/>
-      <a-layout-content>
-        <div class="utils__content">
-          <router-view/>
+      <cui-breadcrumbs :settings="settings" />
+      <a-layout-content style="height: '100%';  position: 'relative'">
+        <div class="cui__utils__content">
+          <transition :name="settings.routerAnimation" mode="out-in">
+            <router-view />
+          </transition>
         </div>
       </a-layout-content>
       <a-layout-footer>
-        <cui-footer/>
+        <cui-footer />
       </a-layout-footer>
     </a-layout>
   </a-layout>
@@ -57,16 +32,16 @@
 
 <script>
 import { mapState } from 'vuex'
-import CuiTopbar from '@/components/LayoutComponents/Topbar'
-import CuiBreadcrumbs from '@/components/LayoutComponents/Breadcrumbs'
-import CuiFooter from '@/components/LayoutComponents/Footer'
-import CuiSettings from '@/components/LayoutComponents/Settings'
-import CuiMenuLeft from '@/components/LayoutComponents/Menu/MenuLeft'
-import CuiMenuTop from '@/components/LayoutComponents/Menu/MenuTop'
+import CuiTopbar from '@/components/layout/Topbar'
+import CuiBreadcrumbs from '@/components/layout/Breadcrumbs'
+import CuiFooter from '@/components/layout/Footer'
+import CuiSidebar from '@/components/layout/Sidebar'
+import CuiSupportChat from '@/components/layout/SupportChat'
+import CuiMenu from '@/components/layout/Menu'
 
 export default {
   name: 'MainLayout',
-  components: { CuiFooter, CuiTopbar, CuiMenuLeft, CuiMenuTop, CuiBreadcrumbs, CuiSettings },
+  components: { CuiFooter, CuiTopbar, CuiMenu, CuiBreadcrumbs, CuiSidebar, CuiSupportChat },
   computed: mapState(['settings']),
   mounted() {
     this.detectViewPort(true)
@@ -77,11 +52,11 @@ export default {
   },
   methods: {
     toggleMobileMenu() {
-      const value = !this.settings['isMobileMenuOpen']
+      const value = !this.settings.isMobileMenuOpen
       this.$store.commit('CHANGE_SETTING', { setting: 'isMobileMenuOpen', value })
     },
     onCollapse: function (collapsed, type) {
-      const value = !this.settings['isMenuCollapsed']
+      const value = !this.settings.isMenuCollapsed
       this.$store.commit('CHANGE_SETTING', { setting: 'isMenuCollapsed', value })
     },
     changeSetting: function (setting, value) {
@@ -95,8 +70,8 @@ export default {
       this.detectViewPort(false)
     },
     detectViewPort: function (firstLoad = false) {
-      const isMobile = this.settings['isMobileView']
-      const isTablet = this.settings['isTabletView']
+      const isMobile = this.settings.isMobileView
+      const isTablet = this.settings.isTabletView
       const width = window.innerWidth
       const state = {
         next: {
@@ -127,7 +102,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" module>
-@import "./style.module.scss";
-</style>

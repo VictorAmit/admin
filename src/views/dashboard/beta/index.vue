@@ -12,7 +12,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-xl-12">
-                <cui-profile-head-card/>
+                <cui-profile-head-card />
               </div>
             </div>
           </div>
@@ -27,7 +27,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-xl-12">
-                <cui-progress-group/>
+                <cui-progress-group />
               </div>
             </div>
           </div>
@@ -42,10 +42,10 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                <cui-user-card type="primary"/>
+                <cui-user-card type="primary" />
               </div>
               <div class="col-md-6">
-                <cui-user-card/>
+                <cui-user-card />
               </div>
             </div>
           </div>
@@ -71,8 +71,9 @@
                   <a slot="name" slot-scope="text" href="javascript: void(0);">{{text}}</a>
                   <a slot="username" slot-scope="username" href="javascript: void(0);">{{username}}</a>
                   <a-dropdown slot="actions">
-                    <a-button size="small">Actions
-                      <a-icon type="down"/>
+                    <a-button size="small">
+                      Actions
+                      <a-icon type="down" />
                     </a-button>
                     <a-menu slot="overlay">
                       <a-menu-item>
@@ -101,10 +102,10 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                <cui-info-card form="interactive" icon="database" type="danger"/>
+                <cui-info-card form="interactive" icon="database" type="danger" />
               </div>
               <div class="col-md-6">
-                <cui-info-card form="interactive" icon="database" btnType="success" type="success"/>
+                <cui-info-card form="interactive" icon="database" btnType="success" type="success" />
               </div>
             </div>
           </div>
@@ -121,10 +122,10 @@
           <div class="card-body">
             <div class="row">
               <div class="col-lg-6">
-                <cui-slider-card/>
+                <cui-slider-card />
               </div>
               <div class="col-lg-6">
-                <cui-slider-card :inverse="true"/>
+                <cui-slider-card :inverse="true" />
               </div>
             </div>
           </div>
@@ -139,12 +140,12 @@
           <div class="card-body">
             <div class="row">
               <div class="col-lg-6">
-                <cui-info-card form="stats" icon="database" type="primary"/>
-                <cui-info-card form="stats" icon="users" type="empty"/>
+                <cui-info-card form="stats" icon="database" type="primary" />
+                <cui-info-card form="stats" icon="users" type="empty" />
               </div>
               <div class="col-lg-6">
-                <cui-info-card form="stats" icon="bullhorn" type="success"/>
-                <cui-info-card form="stats" icon="price-tags" type="empty"/>
+                <cui-info-card form="stats" icon="bullhorn" type="success" />
+                <cui-info-card form="stats" icon="price-tags" type="empty" />
               </div>
             </div>
           </div>
@@ -160,10 +161,10 @@
           </div>
           <div class="card-body">
             <div class="mb-5">
-              <a-slider :marks="rangeMarks" :defaultValue="rangeSlider.first"/>
+              <a-slider :marks="rangeMarks" :defaultValue="rangeSlider.first" />
             </div>
             <div class="mb-5">
-              <a-slider range :marks="rangeMarks" :defaultValue="rangeSlider.second"/>
+              <a-slider range :marks="rangeMarks" :defaultValue="rangeSlider.second" />
             </div>
           </div>
         </div>
@@ -172,9 +173,9 @@
             <div class="utils__title">
               <strong>Week Revenue Statistics, Billions</strong>
             </div>
-            <cui-donut type="primary" name="Nuts"/>
-            <cui-donut type="success" name="Apples"/>
-            <cui-donut color="yellow" name="Peaches"/>
+            <cui-donut type="primary" name="Nuts" />
+            <cui-donut type="success" name="Apples" />
+            <cui-donut color="yellow" name="Peaches" />
           </div>
           <div class="card-body">
             <vue-chartist
@@ -190,8 +191,8 @@
             <div class="utils__title">
               <strong>Month Site Visits Growth, %</strong>
             </div>
-            <cui-donut type="primary" name="Income"/>
-            <cui-donut type="success" name="Outcome"/>
+            <cui-donut type="primary" name="Income" />
+            <cui-donut type="success" name="Outcome" />
           </div>
           <div class="card-body">
             <vue-chartist
@@ -210,7 +211,7 @@
             <div class="utils__titleDescription">Block with important Information Cards information</div>
           </div>
           <div class="card-body">
-            <cui-chat/>
+            <cui-chat />
           </div>
         </div>
       </div>
@@ -221,16 +222,16 @@
           <div class="card-header">
             <div class="row">
               <div class="col-lg-3">
-                <cui-info-card form="bordered" icon="home" type="danger"/>
+                <cui-info-card form="bordered" icon="home" type="danger" />
               </div>
               <div class="col-lg-3">
-                <cui-info-card form="bordered" icon="key" type="primary"/>
+                <cui-info-card form="bordered" icon="key" type="primary" />
               </div>
               <div class="col-lg-3">
-                <cui-info-card form="bordered" icon="play2" type="warning"/>
+                <cui-info-card form="bordered" icon="play2" type="warning" />
               </div>
               <div class="col-lg-3">
-                <cui-info-card form="bordered" icon="database" type="sucess"/>
+                <cui-info-card form="bordered" icon="database" type="sucess" />
               </div>
             </div>
           </div>
@@ -303,7 +304,7 @@
             <a-calendar>
               <ul class="events" slot="dateCellRender" slot-scope="value">
                 <li v-for="item in getListData(value)" :key="item.content">
-                  <a-badge :status="item.type" :text="item.content"/>
+                  <a-badge :status="item.type" :text="item.content" />
                 </li>
               </ul>
               <template slot="monthCellRender" slot-scope="value">

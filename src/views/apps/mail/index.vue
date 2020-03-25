@@ -1,135 +1,169 @@
 <template>
-  <div class="card" :class="$style.mail">
-    <div :class="$style.sidebar">
-      <div :class="$style.sidebarHeader">
-        <a-input-search placeholder="Input search text" style="width: 100%"/>
-      </div>
-      <div :class="$style.tabs">
-        <a-tabs tabPosition="left" v-model="activeCategory" @change="changeMailCategory">
-          <a-tab-pane v-for="category in mailCategories" :key="category.key">
-            <div :class="$style.tab" slot="tab">
-              <div :class="$style.tabContent">
-                <div class="mb-1">
-                  <strong>{{category.mailCount > 0 ? category.title + '(' + category.mailCount + ')' : category.title}}</strong>
-                </div>
-                <div v-if="category.mailCount > 0">
-                  <small :class="$style.tabTime">8:34PM</small>
-                  <div :class="$style.tabName">Barak Obama</div>
-                  <div
-                    :class="$style.tabText"
-                  >Hello! Where you are now? I want to talk. Hello! Where you are now? I want to talk</div>
-                </div>
-              </div>
+  <div>
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div class="mb-4">
+          <a-input placeholder="Search mail...">
+            <a-icon slot="prefix" type="search" />
+          </a-input>
+        </div>
+        <div :class="$style.categories">
+          <vue-custom-scrollbar style="height: 100%">
+            <div class="d-flex flex-column">
+              <a
+                href="javascript: void(0);"
+                :class="[$style.category, $style.current]"
+                class="text-dark font-size-18 font-weight-bold"
+              >
+                <span class="text-truncate">Inbox</span>
+                <span>(2)</span>
+              </a>
+              <a
+                href="javascript: void(0);"
+                :class="$style.category"
+                class="text-dark font-size-18"
+              >
+                <span class="text-truncate">Snoozed</span>
+              </a>
+              <a
+                href="javascript: void(0);"
+                :class="$style.category"
+                class="text-dark font-size-18"
+              >
+                <span class="text-truncate">Sent</span>
+              </a>
+              <a
+                href="javascript: void(0);"
+                :class="$style.category"
+                class="text-dark font-size-18 font-weight-bold"
+              >
+                <span class="text-truncate">Drafts</span>
+                <span>(1)</span>
+              </a>
+              <a
+                href="javascript: void(0);"
+                :class="$style.category"
+                class="text-dark font-size-18"
+              >
+                <span class="text-truncate">Spam</span>
+              </a>
             </div>
-          </a-tab-pane>
-        </a-tabs>
-      </div>
-    </div>
-    <div :class="$style.content">
-      <div :class="$style.contentHeader">
-        <div class="card-header clearfix">
-          <div class="pull-right">
-            <a-button type="primary">Compose mail</a-button>
-          </div>
-          <a-tabs defaultActiveKey="2">
-            <a-tab-pane key="1">
-              <span slot="tab">
-                <a-icon type="home"/>Primary
-              </span>
-            </a-tab-pane>
-            <a-tab-pane key="2">
-              <span slot="tab">
-                <a-icon type="message"/>Social
-              </span>
-            </a-tab-pane>
-            <a-tab-pane key="3">
-              <span slot="tab">
-                <a-icon type="tags"/>Promotion
-              </span>
-            </a-tab-pane>
-          </a-tabs>
+          </vue-custom-scrollbar>
         </div>
       </div>
-      <div :class="$style.contentWrapper">
-        <a-table
-          :columns="columns"
-          :dataSource="mails"
-          class="utils__scrollTable"
-          :scroll="{ x: '100%' }"
-        >
-          <i
-            slot="favorites"
-            slot-scope="value"
-            :class="[value === true ? 'icmn-star-full text-warning' : 'icmn-star-full text-default']"
-          />
-          <a slot="from" slot-scope="text" href="javascript: void(0);">{{text}}</a>
-          <i
-            slot="attachments"
-            slot-scope="value"
-            v-if="value=== true"
-            class="icmn-attachment text-default"
-          />
-        </a-table>
+      <div class="col-12 col-md-9">
+        <div class="card">
+          <div class="card-header card-header-flex">
+            <a-tabs defaultActiveKey="1" class="kit-tabs-bold mr-auto">
+              <a-tab-pane tab="History" key="1" />
+              <a-tab-pane key="2">
+                <span slot="tab">
+                  Social
+                  <span class="ml-2 badge badge-primary text-uppercase">4 new</span>
+                </span>
+              </a-tab-pane>
+              <a-tab-pane tab="Actions" key="3" />
+            </a-tabs>
+            <div class="d-inline-flex align-items-center">
+              <a-tooltip placement="top">
+                <template slot="title">
+                  <span>Unlock Account</span>
+                </template>
+                <a href="javascript: void(0);" class="btn btn-sm btn-light mr-2">
+                  <i class="fe fe-unlock" />
+                </a>
+              </a-tooltip>
+              <a-tooltip placement="top">
+                <template slot="title">
+                  <span>Mark as important</span>
+                </template>
+                <a href="javascript: void(0);" class="btn btn-sm btn-light mr-2">
+                  <i class="fe fe-star" />
+                </a>
+              </a-tooltip>
+              <a-tooltip placement="top">
+                <template slot="title">
+                  <span>Delete user</span>
+                </template>
+                <a href="javascript: void(0);" class="btn btn-sm btn-light mr-2">
+                  <i class="fe fe-trash" />
+                </a>
+              </a-tooltip>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="kit__utils__scrollTable mb-4">
+              <a-table
+                :columns="columns"
+                :dataSource="data"
+                :scroll="{ x: '100%' }"
+                :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
+              >
+                <i
+                  slot="favorites"
+                  slot-scope="value"
+                  :class="[value === true ? 'icmn-star-full text-warning' : 'icmn-star-full text-default']"
+                />
+                <a slot="from" slot-scope="text" href="javascript: void(0);">{{text}}</a>
+                <i
+                  slot="attachments"
+                  slot-scope="value"
+                  v-if="value=== true"
+                  class="icmn-attachment text-default"
+                />
+              </a-table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
-import { mailData } from './data.json'
-
+import data from './data.json'
+import vueCustomScrollbar from 'vue-custom-scrollbar'
 const columns = [
   {
     title: '',
     dataIndex: 'favorites',
-    key: 'favorites',
     scopedSlots: { customRender: 'favorites' },
   },
   {
     title: 'From',
     dataIndex: 'from',
-    key: 'from',
     sorter: (a, b) => a.from.length - b.from.length,
     scopedSlots: { customRender: 'from' },
   },
   {
     title: 'Message',
     dataIndex: 'message',
-    key: 'message',
-    sorter: (a, b) => a.message.length - b.message.length,
   },
   {
     title: '',
     dataIndex: 'attachments',
-    key: 'attachments',
     scopedSlots: { customRender: 'attachments' },
   },
   {
     title: '',
     dataIndex: 'time',
-    key: 'time',
   },
 ]
-
 export default {
+  components: { vueCustomScrollbar },
   data: function () {
     return {
-      mailData,
-      mailCategories: mailData.mailCategories,
-      activeCategory: 'inbox',
-      mails: mailData.inbox,
+      data,
       columns,
+      selectedRowKeys: [],
     }
   },
   methods: {
-    changeMailCategory(key) {
-      this.activeMailKey = key
-      this.mails = mailData[key]
+    onSelectChange(selectedRowKeys) {
+      this.selectedRowKeys = selectedRowKeys
     },
   },
 }
 </script>
-
 <style lang="scss" module>
 @import "./style.module.scss";
 </style>

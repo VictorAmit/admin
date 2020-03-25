@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div>Dashboard</div>
+  <!-- <div>
     <div class="utils__title mb-3">
       <strong class="text-uppercase font-size-16">Last Week Statistics</strong>
     </div>
@@ -82,15 +83,15 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 </template>
 
 <script>
 import data from './data.json'
-import CuiChartCard from '@/components/CleanUIComponents/ChartCard'
-import CuiPaymentCard from '@/components/CleanUIComponents/PaymentCard'
-import CuiPaymentAccount from '@/components/CleanUIComponents/PaymentAccount'
-import CuiPaymentTransaction from '@/components/CleanUIComponents/PymentTransaction'
+// import CuiChartCard from '@/components/CleanUIComponents/ChartCard'
+// import CuiPaymentCard from '@/components/CleanUIComponents/PaymentCard'
+// import CuiPaymentAccount from '@/components/CleanUIComponents/PaymentAccount'
+// import CuiPaymentTransaction from '@/components/CleanUIComponents/PymentTransaction'
 
 const referalsColumns = [
   {
@@ -129,10 +130,10 @@ const referalsColumns = [
 
 export default {
   components: {
-    CuiPaymentTransaction,
-    CuiChartCard,
-    CuiPaymentCard,
-    CuiPaymentAccount,
+    // CuiPaymentTransaction,
+    // CuiChartCard,
+    // CuiPaymentCard,
+    // CuiPaymentAccount,
   },
   data() {
     return {
