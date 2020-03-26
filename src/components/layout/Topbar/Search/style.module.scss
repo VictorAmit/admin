@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   background-color: $white;
-  z-index: 1200;
+  z-index: 12000;
   opacity: 0;
   visibility: hidden;
   @include transition-slow;
@@ -20,11 +20,7 @@
 
 .extInput {
   input {
-    background-color: $gray-2;
-  }
-
-  :global(.anticon) {
-    color: $text;
+    background-color: $gray-1;
   }
 
   @media screen and (max-width: 620px) {
@@ -58,13 +54,10 @@
 }
 
 .wrapper {
-  padding: rem(20) rem(60);
+  padding-top: rem(60);
+  padding-left: rem(65);
+  padding-right: rem(15);
   line-height: 1.7;
-
-  @media screen and (max-width: $sm-max-width) {
-    padding-left: rem(30);
-    padding-right: rem(30);
-  }
 
   @media screen and (max-width: $sm-max-width) {
     padding-left: rem(20);
@@ -89,7 +82,6 @@
   font-weight: bold;
   padding: 0;
   margin-bottom: rem(20);
-  height: auto;
 
   @media screen and (max-width: $sm-max-width) {
     font-size: rem(40);
@@ -111,29 +103,6 @@
 
   &:last-child {
     margin-right: 0;
-  }
-}
-
-.optionCheckbox {
-  :global(.ant-checkbox-wrapper) {
-    color: $text;
-
-    :global(.ant-checkbox) {
-      top: -0.19em;
-    }
-
-    :global(.ant-checkbox-inner) {
-      border-color: $gray-5;
-    }
-
-    :global(.ant-checkbox-checked) {
-      :global(.ant-checkbox-inner) {
-        background-color: $gray-5;
-      }
-      &:after {
-        border: 1px solid $gray-5;
-      }
-    }
   }
 }
 
@@ -189,4 +158,24 @@
 
 .resultSource {
   color: $text;
+}
+
+// dark theme
+:global(body.kit__dark) {
+  .extInput {
+    input {
+      background-color: $dark-gray-4;
+    }
+    :global(.anticon) {
+      color: $dark-gray-3 !important;
+    }
+  }
+
+  .livesearch {
+    background-color: $dark-gray-6;
+  }
+
+  .resultThumb {
+    background-color: $dark-gray-4;
+  }
 }

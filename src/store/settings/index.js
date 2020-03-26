@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import store from 'store'
+import AntDesignDarkTheme from '@/components/kit-vendors/antd/themes/themeDark'
+import AntDesignLightTheme from '@/components/kit-vendors/antd/themes/themeLight'
 
 Vue.use(Vuex)
 
 const STORED_SETTINGS = storedSettings => {
   const settings = {}
   Object.keys(storedSettings).forEach(key => {
-    const item = JSON.parse(localStorage.getItem(`app.settings.${key}`))
-    settings[key] = item === null ? storedSettings[key] : item
+    const item = store.get(`app.settings.${key}`)
+    settings[key] = typeof item !== 'undefined' ? item : storedSettings[key]
   })
   return settings
 }
@@ -61,9 +64,91 @@ export default {
       keys = Object.keys(queryParams)
       if (keys.length) {
         keys.forEach(key => {
-          if (key in state) { state[key] = queryParams[key] === 'true' }
+          let value
+          switch (queryParams[key]) {
+            case 'false':
+              value = false
+              break
+            case 'true':
+              value = true
+              break
+            default:
+              value = queryParams[key]
+              break
+          }
+          if (key in state) { state[key] = value }
         })
       }
+    },
+    SET_PRIMARY_COLOR(state, payload) {
+      const { color } = payload
+      const addStyles = () => {
+        const styleElement = document.querySelector('#primaryColor')
+        if (styleElement) {
+          styleElement.remove()
+        }
+        const body = document.querySelector('body')
+        const styleEl = document.createElement('style')
+        const css = document.createTextNode(`:root { --kit-color-primary: ${color};}`)
+        styleEl.setAttribute('id', 'primaryColor')
+        styleEl.appendChild(css)
+        body.appendChild(styleEl)
+      }
+      addStyles()
+      state.primaryColor = color
+      store.set('app.settings.primaryColor', color)
+    },
+    TOGGLE_THEME(state) {
+      const currentTheme = state.theme
+      const nextTheme = currentTheme === 'light' ? 'dark' : 'light'
+      const toggleTheme = () => {
+        if (nextTheme === 'light') {
+          document.querySelector('body').classList.remove('kit__dark')
+          window.less.modifyVars(AntDesignLightTheme)
+        } else {
+          document.querySelector('body').classList.add('kit__dark')
+          window.less.modifyVars(AntDesignDarkTheme)
+          state.menuColor = 'dark'
+        }
+      }
+      toggleTheme()
+      state.theme = nextTheme
+      store.set('app.settings.theme', nextTheme)
+    },
+    INIT_THEME(state) {
+      // set primary color on app load
+      const primaryColor = () => {
+        const color = store.get('app.settings.primaryColor')
+        if (color) {
+          const addStyles = () => {
+            const styleElement = document.querySelector('#primaryColor')
+            if (styleElement) {
+              styleElement.remove()
+            }
+            const body = document.querySelector('body')
+            const styleEl = document.createElement('style')
+            const css = document.createTextNode(`:root { --kit-color-primary: ${color};}`)
+            styleEl.setAttribute('id', 'primaryColor')
+            styleEl.appendChild(css)
+            body.appendChild(styleEl)
+          }
+          addStyles()
+          state.primaryColor = color
+        }
+      }
+      primaryColor()
+
+      // set primary color on app load
+      const initTheme = () => {
+        const theme = store.get('app.settings.theme')
+        if (theme === 'dark') {
+          document.querySelector('body').classList.add('kit__dark')
+          global.window.less.modifyVars(AntDesignDarkTheme)
+        } else {
+          global.window.less.modifyVars(AntDesignLightTheme)
+        }
+      }
+      initTheme()
     },
   },
   actions: {},

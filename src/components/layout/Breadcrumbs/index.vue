@@ -1,23 +1,24 @@
 <template>
   <div :class="$style.breadcrumbs">
     <div :class="$style.path">
-      <router-link to="/" class="text-muted">Home</router-link>
+      <router-link to="/">Home</router-link>
       <template v-for="(item, index) in breadcrumb">
         <span v-if="index != 0" :key="index">
-          <span :class="$style.arrow" class="text-muted"></span>
-          <strong class="text-muted font-weight-normal">{{item.title}}</strong>
+          <span :class="$style.arrow"></span>
+          <span>{{item.title}}</span>
         </span>
       </template>
       <span v-if="activeItem">
         <span :class="$style.arrow"></span>
-        <strong>{{activeItem.title}}</strong>
+        <strong :class="$style.current">{{activeItem.title}}</strong>
       </span>
     </div>
   </div>
 </template>
 
 <script>
-import { getLeftMenuData, getTopMenuData } from '@/services/menu'
+import { mapState } from 'vuex'
+import { getMenuData } from '@/services/menu'
 import { reduce } from 'lodash'
 
 export default {
@@ -29,12 +30,10 @@ export default {
       path: [],
     }
   },
-  props: {
-    settings: Object,
-  },
   computed: {
+    ...mapState(['settings']),
     menuData() {
-      return this.settings.isMenuTop ? getTopMenuData : getLeftMenuData
+      return getMenuData
     },
   },
   methods: {

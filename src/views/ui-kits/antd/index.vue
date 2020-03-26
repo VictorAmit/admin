@@ -18,7 +18,7 @@
             :href="example.link"
             rel="noopener noreferrer"
             target="_blank"
-            class="btn btn-sm btn-light"
+            class="btn btn-sm btn-light mr-3"
           >
             Component Docs & Examples
             <i class="fe fe-corner-right-up"></i>

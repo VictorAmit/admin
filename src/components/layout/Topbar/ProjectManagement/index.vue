@@ -1,10 +1,8 @@
 <template>
   <a-dropdown :trigger="['click']" placement="bottomLeft">
     <div :class="$style.dropdown">
-      <i class="icmn-database" :class="$style.icon"></i>
-      <span class="d-none d-xl-inline">
-        <strong>Project Management</strong>
-      </span>
+      <i class="fe fe-database" :class="$style.icon"></i>
+      <span class="d-none d-xl-inline">{{ $t('topBar.projectManagement') }}</span>
     </div>
     <a-menu slot="overlay">
       <a-menu-item-group title="Active">
@@ -23,10 +21,10 @@
           <a href="javascript: void(0);">Marketing</a>
         </a-menu-item>
       </a-menu-item-group>
-      <a-menu-divider/>
+      <a-menu-divider />
       <a-menu-item>
         <a href="javascript: void(0);">
-          <i class="icmn-cog" :class="$style.menuIcon"/>
+          <i class="fe fe-settings mr-2" />
           Settings
         </a>
       </a-menu-item>

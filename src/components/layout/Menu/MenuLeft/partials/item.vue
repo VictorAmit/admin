@@ -2,13 +2,13 @@
   <a-menu-item :key="menuInfo.key" v-bind="$props" v-on="$listeners" :disabled="menuInfo.disabled">
     <router-link v-if="menuInfo.url" :to="menuInfo.url">
       <span :class="styles.title">{{ menuInfo.title }}</span>
+      <span v-if="menuInfo.count" class="badge badge-success ml-2">{{ menuInfo.count }}</span>
       <i v-if="menuInfo.icon" :class="[styles.icon, menuInfo.icon]"></i>
-      <span v-if="menuInfo.pro" class="badge badge-primary ml-2">PRO</span>
     </router-link>
     <span v-if="!menuInfo.url" :to="menuInfo.url">
       <span :class="styles.title">{{ menuInfo.title }}</span>
+      <span v-if="menuInfo.count" class="badge badge-success ml-2">{{ menuInfo.count }}</span>
       <i v-if="menuInfo.icon" :class="[styles.icon, menuInfo.icon]"></i>
-      <span v-if="menuInfo.pro" class="badge badge-primary ml-2">PRO</span>
     </span>
   </a-menu-item>
 </template>

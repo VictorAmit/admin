@@ -49,14 +49,6 @@
 
 // dark theme
 :global(body.kit__dark) {
-  .dropdown {
-    color: $dark-gray-2;
-
-    &:hover {
-      color: $primary;
-    }
-  }
-
   .icon {
     color: $dark-gray-2;
   }

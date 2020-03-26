@@ -17,6 +17,15 @@ export default {
       return this.$route.query.redirect || '/'
     },
   },
+  mounted() {
+    this.$store.commit('INIT_THEME')
+  },
+  methods: {
+    initTheme() {
+      const value = !this.settings.isMobileMenuOpen
+      this.$store.commit('CHANGE_SETTING', { setting: 'isMobileMenuOpen', value })
+    },
+  },
   watch: {
     user(auth) {
       if (auth) {

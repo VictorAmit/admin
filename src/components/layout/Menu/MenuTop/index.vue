@@ -1,61 +1,54 @@
 <template>
-  <div>
-    <div :class="$style.logo">
-      <div :class="$style.logoContainer">
-        <img src="resources/images/logo-inverse.png" alt>
+  <div
+    :class="{
+      [$style.menu]: true,
+      [$style.white]: settings.menuColor === 'white',
+      [$style.gray]: settings.menuColor === 'gray',
+      [$style.dark]: settings.menuColor === 'dark',
+    }"
+  >
+    <div :class="$style.logoContainer">
+      <div :class="$style.logo">
+        <img src="resources/images/logo.svg" class="mr-2" alt="Clean UI" />
+        <div :class="$style.name">{{ settings.logo }}</div>
+        <div :class="$style.descr">Vue</div>
       </div>
     </div>
-    <a-menu
-      :theme="settings.isLightTheme ? 'light' : 'dark'"
-      :mode="'horizontal'"
-      :selectedKeys="selectedKeys"
-      @click="handleClick"
-    >
-      <a-menu-item :key="'settings'">
-        <span>
-          <span :class="$style.title">Settings</span>
-          <i :class="[$style.icon, 'icmn icmn-cog']"></i>
-        </span>
-      </a-menu-item>
-      <a-menu-item :key="'docs'">
-        <a href="https://docs.cleanuitemplate.com" target="_blank">
-          <span :class="$style.title">Docs</span>
-          <i :class="[$style.icon, 'icmn icmn-books']"></i>
-        </a>
-      </a-menu-item>
-      <template v-for="item in menuData">
-        <item
-          v-if="!item.children && !item.divider"
-          :menu-info="item"
-          :styles="$style"
-          :key="item.key"
-        />
-        <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key"/>
-      </template>
-    </a-menu>
+    <div :class="$style.navigation">
+      <a-menu :mode="'horizontal'" :selectedKeys="selectedKeys" @click="handleClick">
+        <template v-for="item in menuData">
+          <item
+            v-if="!item.children && !item.category"
+            :menu-info="item"
+            :styles="$style"
+            :key="item.key"
+          />
+          <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key" />
+        </template>
+      </a-menu>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import store from 'store'
 import _ from 'lodash'
-import { getTopMenuData } from '@/services/menu'
+import { getMenuData } from '@/services/menu'
 import SubMenu from './partials/submenu'
 import Item from './partials/item'
 
 export default {
   name: 'menu-top',
   components: { SubMenu, Item },
-  props: {
-    settings: Object,
-  },
+  computed: mapState(['settings']),
   mounted() {
     this.selectedKeys = store.get('app.menu.selectedKeys') || []
     this.setSelectedKeys()
   },
   data() {
     return {
-      menuData: getTopMenuData,
+      menuData: getMenuData,
       selectedKeys: [],
       openKeys: [],
     }

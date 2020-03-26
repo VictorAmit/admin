@@ -14,7 +14,7 @@
       <div class="card-header">
         <h5>
           <strong class="mr-3">{{example.name}}</strong>
-          <a :href="example.link" target="_blank" class="btn btn-sm btn-light">
+          <a :href="example.link" target="_blank" class="btn btn-sm btn-light mr-3">
             Component Docs & Examples
             <i class="fe fe-corner-right-up"></i>
           </a>

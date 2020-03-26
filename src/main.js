@@ -14,7 +14,7 @@ import {
   Carousel, Input, Calendar, Badge, Slider, Form, Tooltip, Select, Switch,
   Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination, notification, Drawer,
   Cascader, DatePicker, TimePicker, Divider, Anchor, AutoComplete, BackTop, Collapse, Card, List, Popover,
-  Tree, Timeline, Row, Col, Transfer, Modal, message, Popconfirm, Skeleton, LocaleProvider,
+  Tree, Timeline, Row, Col, Transfer, Modal, message, Popconfirm, Skeleton, LocaleProvider, Comment,
 } from 'ant-design-vue'
 
 import './registerServiceWorker'
@@ -75,6 +75,7 @@ Vue.use(AutoComplete)
 Vue.use(Collapse)
 Vue.use(BackTop)
 Vue.use(LocaleProvider)
+Vue.use(Comment)
 
 Vue.prototype.$notification = notification
 Vue.prototype.$message = message

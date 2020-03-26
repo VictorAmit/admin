@@ -1,44 +1,52 @@
 @import '@/components/kit-core/mixins.scss';
 
 .footer {
-  max-width: rem(1560);
   margin: 0 auto;
-}
-
-.inner {
-  padding: rem(40) rem(30) rem(30);
-  margin: rem(0) rem(30) 0;
-  border-radius: 5px 5px 0 0;
-  color: $text;
-  background: $border;
-  @media (max-width: $sm-max-width) {
-    margin: 0 rem(10) !important;
-  }
-}
-
-.bottom {
-  border-top: 1px solid $gray-1;
-  padding-top: rem(20);
-  margin-top: rem(10);
-}
-
-.copyright {
-  float: right;
-  position: relative;
+  padding: 0 rem(30) rem(30);
 
   @media (max-width: $sm-max-width) {
-    margin-top: rem(20);
-    float: none;
+    padding: 0 rem(16) !important;
   }
+}
 
-  img {
-    float: left;
-    width: 30px;
-    position: absolute;
-    top: 6px;
-  }
+.footerInner {
+  border-top: 1px solid $border;
+  padding-top: rem(30);
+}
+
+.logo {
+  color: $black;
+  font-size: rem(17);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: 900;
+
   span {
-    display: block;
-    margin-left: 50px;
+    display: inline-block;
+    height: rem(13);
+    width: rem(13);
+    background: $black;
+    border-radius: 20px;
+    margin-left: rem(8);
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+  }
+}
+
+// dark theme
+:global(body.kit__dark) {
+  .footer {
+    color: $dark-gray-1;
+  }
+
+  .footerInner {
+    border-top: 1px solid $dark-gray-4;
+  }
+
+  .logo {
+    span {
+      background: $dark-gray-1;
+    }
   }
 }

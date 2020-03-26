@@ -4,10 +4,10 @@
   padding-right: 15px;
   position: relative;
   cursor: pointer;
-  @include transition-slow;
 
   &::after {
-    color: $gray-1;
+    opacity: 0.5;
+    color: $gray-5;
     position: absolute;
     top: 50%;
     right: 0;
@@ -29,13 +29,18 @@
     color: $blue;
 
     &::after {
-      color: $gray-5;
+      color: $gray-6;
     }
   }
+}
 
-  :global {
-    .anticon {
-      font-size: rem(16) !important;
-    }
+.avatar {
+  background-color: $gray-2 !important;
+}
+
+// dark theme
+:global(body.kit__dark) {
+  .avatar {
+    background: $dark-gray-4 !important;
   }
 }

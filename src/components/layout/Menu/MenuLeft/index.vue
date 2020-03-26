@@ -1,90 +1,88 @@
 <template>
-  <div>
-    <div :class="$style.logo">
+  <a-layout-sider
+    :width="settings.leftMenuWidth"
+    :collapsible="settings.isMobileView ? false : true"
+    :collapsed="settings.isMenuCollapsed && !settings.isMobileView"
+    @collapse="onCollapse"
+    :class="{
+      [$style.menu]: true,
+      [$style.white]: settings.menuColor === 'white',
+      [$style.gray]: settings.menuColor === 'gray',
+      [$style.dark]: settings.menuColor === 'dark',
+      [$style.unfixed]: settings.isMenuUnfixed,
+      [$style.shadow]: settings.isMenuShadow,
+    }"
+  >
+    <div
+      :class="$style.menuOuter"
+      :style="{
+        width: settings.isMenuCollapsed && !settings.isMobileView ? '80px' : settings.leftMenuWidth + 'px',
+        height: settings.isMobileView || settings.isMenuUnfixed ? 'calc(100% - 64px)' : 'calc(100% - 110px)',
+      }"
+    >
       <div :class="$style.logoContainer">
-        <img
-          v-if="!settings.isMenuCollapsed || withDrawer"
-          src="resources/images/logo-inverse.png"
-          alt
-        />
-        <img
-          v-if="settings.isMenuCollapsed && !withDrawer"
-          src="resources/images/logo-inverse-mobile.png"
-          alt
-        />
+        <div :class="$style.logo">
+          <img src="resources/images/logo.svg" class="mr-2" alt="Clean UI" />
+          <div :class="$style.name">{{ settings.logo }}</div>
+          <div :class="$style.descr">Vue</div>
+        </div>
       </div>
-    </div>
-    <div :class="settings.isLightTheme ? [$style.navigation, $style.light] : $style.navigation">
       <vue-custom-scrollbar
-        :class="settings.isMobileView ? $style.scrollbarMobile : $style.scrollbarDesktop"
+        :style="{
+          height: settings.isMobileView || settings.isMenuUnfixed ? 'calc(100vh - 64px)' : 'calc(100vh - 110px)',
+        }"
       >
         <a-menu
-          :theme="settings.isLightTheme ? 'light' : 'dark'"
-          :inlineCollapsed="withDrawer ? false : settings.isMenuCollapsed"
+          forceSubMenuRender
+          :inlineCollapsed="settings.isMobileView ? false : settings.isMenuCollapsed"
           :mode="'inline'"
           :selectedKeys="selectedKeys"
           :openKeys.sync="openKeys"
           @click="handleClick"
           @openChange="handleOpenChange"
+          :inlineIndent="15"
+          :class="$style.navigation"
         >
-          <a-menu-item :key="'settings'">
-            <span>
-              <span :class="$style.title">Settings</span>
-              <i :class="[$style.icon, 'icmn icmn-cog']"></i>
-            </span>
-          </a-menu-item>
-          <a-menu-item :key="'docs'">
-            <a href="https://docs.cleanuitemplate.com" target="_blank">
-              <span :class="$style.title">Documentation</span>
-              <i :class="[$style.icon, 'icmn icmn-books']"></i>
-            </a>
-          </a-menu-item>
-          <a-menu-divider />
           <template v-for="(item, index) in menuData">
+            <a-menu-item-group :key="index" v-if="item.category">
+              <template slot="title">{{ item.title }}</template>
+            </a-menu-item-group>
             <item
-              v-if="!item.children && !item.divider"
+              v-if="!item.children && !item.category"
               :menu-info="item"
               :styles="$style"
               :key="item.key"
             />
-            <a-menu-divider v-if="item.divider" :key="index" />
             <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key" />
           </template>
         </a-menu>
-        <div :class="$style.buyPro">
-          <p>
-            <strong>More components, more styles, more themes, and premium support!</strong>
-          </p>
+        <div :class="$style.banner">
+          <p>More components, more style, more themes, and premium support!</p>
           <a
             href="https://themeforest.net/item/clean-ui-react-admin-template/21938700"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-sm btn-danger"
+            class="btn btn-sm btn-success btn-rounded px-3"
           >Buy Bundle</a>
         </div>
       </vue-custom-scrollbar>
     </div>
-  </div>
+  </a-layout-sider>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import store from 'store'
 import _ from 'lodash'
 import vueCustomScrollbar from 'vue-custom-scrollbar'
-import { getLeftMenuData } from '@/services/menu'
+import { getMenuData } from '@/services/menu'
 import SubMenu from './partials/submenu'
 import Item from './partials/item'
 
 export default {
   name: 'menu-left',
   components: { vueCustomScrollbar, SubMenu, Item },
-  props: {
-    settings: Object,
-    withDrawer: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  computed: mapState(['settings']),
   mounted() {
     this.openKeys = store.get('app.menu.openedKeys') || []
     this.selectedKeys = store.get('app.menu.selectedKeys') || []
@@ -92,7 +90,7 @@ export default {
   },
   data() {
     return {
-      menuData: getLeftMenuData,
+      menuData: getMenuData,
       selectedKeys: [],
       openKeys: [],
     }
@@ -106,6 +104,10 @@ export default {
     },
   },
   methods: {
+    onCollapse: function (collapsed, type) {
+      const value = !this.settings.isMenuCollapsed
+      this.$store.commit('CHANGE_SETTING', { setting: 'isMenuCollapsed', value })
+    },
     handleClick(e) {
       if (e.key === 'settings') {
         this.$store.commit('CHANGE_SETTING', { setting: 'isSettingsOpen', value: true })

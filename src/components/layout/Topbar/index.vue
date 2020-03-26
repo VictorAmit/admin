@@ -1,48 +1,47 @@
 <template>
   <div :class="$style.topbar">
     <div class="mr-4">
-      <cui-issues-history />
-    </div>
-    <div class="mr-4">
-      <cui-project-management />
+      <cui-fav-pages />
     </div>
     <div class="mr-auto">
-      <cui-live-search />
+      <cui-search />
     </div>
-    <a
-      href="https://themeforest.net/item/clean-ui-react-admin-template/21938700"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="mr-4 d-none d-sm-inline"
-    >
-      <a-button type="danger">Buy Bundle</a-button>
-    </a>
-    <div class="mr-4">
-      <cui-language-selector />
+    <div class="mr-4 d-none d-md-block">
+      <cui-issues-history />
     </div>
-    <div class="mr-4">
-      <cui-home-menu />
+    <div class="mb-0 mr-auto d-xl-block d-none">
+      <cui-project-management />
     </div>
-    <cui-profile-menu />
+    <div class="mr-4 d-none d-sm-block">
+      <cui-language-switcher />
+    </div>
+    <div class="mr-4 d-none d-sm-block">
+      <cui-actions />
+    </div>
+    <div>
+      <cui-user-menu />
+    </div>
   </div>
 </template>
 
 <script>
 import CuiIssuesHistory from './IssuesHistory'
 import CuiProjectManagement from './ProjectManagement'
-import CuiLiveSearch from './LiveSearch'
-import CuiLanguageSelector from './LanguageSelector'
-import CuiHomeMenu from './HomeMenu'
-import CuiProfileMenu from './ProfileMenu'
+import CuiSearch from './Search'
+import CuiLanguageSwitcher from './LanguageSwitcher'
+import CuiActions from './Actions'
+import CuiUserMenu from './UserMenu'
+import CuiFavPages from './FavPages'
 
 export default {
   components: {
     CuiIssuesHistory,
     CuiProjectManagement,
-    CuiLiveSearch,
-    CuiLanguageSelector,
-    CuiHomeMenu,
-    CuiProfileMenu,
+    CuiSearch,
+    CuiLanguageSwitcher,
+    CuiActions,
+    CuiUserMenu,
+    CuiFavPages,
   },
 }
 </script>

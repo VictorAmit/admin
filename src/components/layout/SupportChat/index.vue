@@ -1,11 +1,6 @@
 <template>
   <div :class="$style.chat">
-    <button
-      type="button"
-      :class="$style.toggleButton"
-      class="btn btn-rounded btn-light text-nowrap text-dark font-weight-bold font-size-18"
-      @click="toggleSupportChat()"
-    >
+    <button type="button" :class="$style.toggleButton" @click="toggleSupportChat()">
       <i :class="$style.icon" class="fe fe-message-square text-blue mr-md-2" />
       <span class="d-none d-md-inline">Support Chat</span>
     </button>
