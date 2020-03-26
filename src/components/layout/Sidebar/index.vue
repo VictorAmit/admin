@@ -274,8 +274,8 @@
         style="bottom: calc(50% + 60px)"
         :class="$style.cui__sidebar__toggleButton"
       >
-        <i v-if="settings.isMenuCollapsed === 'light'" class="fe fe-moon" />
-        <i v-if="settings.isMenuCollapsed !== 'light'" class="fe fe-sun" />
+        <i v-if="settings.theme === 'light'" class="fe fe-moon" />
+        <i v-if="settings.theme !== 'light'" class="fe fe-sun" />
       </a>
     </a-tooltip>
     <a-tooltip placement="left">
