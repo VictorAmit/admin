@@ -1,55 +1,66 @@
 <template>
-  <a-layout
-    :class="{
-      'settings__borderLess': settings.isBorderless,
-      'settings__squaredBorders': settings.isSquaredBorders,
-      'settings__fixedWidth': settings.isFixedWidth,
-      'settings__menuShadow': settings.isMenuShadow,
-      'settings__menuTop': settings.isMenuTop
+  <div :class="{
+    'cui__layout__grayBackground': settings.isGrayBackground,
+  }">
+    <a-layout
+      :class="{
+      'cui__layout__contentMaxWidth': settings.isContentMaxWidth,
+      'cui__layout__appMaxWidth': settings.isAppMaxWidth,
+      'cui__layout__grayBackground': settings.isGrayBackground,
+      'cui__layout__squaredBorders': settings.isSquaredBorders,
+      'cui__layout__cardsShadow': settings.isCardShadow,
+      'cui__layout__borderless': settings.isBorderless,
     }"
-  >
-    <cui-sidebar />
-    <cui-support-chat />
+    >
+      <cui-sidebar />
+      <cui-support-chat />
 
-    <!-- left menu -->
-    <cui-menu-left v-if="settings.menuLayoutType === 'left' && !settings.isMobileView" />
+      <!-- left menu -->
+      <cui-menu-left v-if="settings.menuLayoutType === 'left' && !settings.isMobileView" />
 
-    <!-- left menu mobile -->
-    <div v-if="settings.menuLayoutType === 'left' && settings.isMobileView">
-      <div :class="$style.handler" @click="toggleMobileMenu">
-        <div :class="$style.handlerIcon"></div>
-      </div>
-      <a-drawer
-        :closable="false"
-        :visible="settings.isMobileMenuOpen"
-        placement="left"
-        :wrapClassName="$style.mobileMenu"
-        @close="toggleMobileMenu"
-      >
-        <cui-menu-left />
-      </a-drawer>
-    </div>
-
-    <!-- top menu -->
-    <cui-menu-top v-if="settings.menuLayoutType === 'top' && !settings.isMobileView" />
-
-    <a-layout>
-      <a-layout-header>
-        <cui-topbar />
-      </a-layout-header>
-      <cui-breadcrumbs />
-      <a-layout-content style="height: '100%';  position: 'relative'">
-        <div class="cui__utils__content">
-          <transition :name="settings.routerAnimation" mode="out-in">
-            <router-view />
-          </transition>
+      <!-- left menu mobile -->
+      <div v-if="settings.menuLayoutType === 'left' && settings.isMobileView">
+        <div :class="$style.handler" @click="toggleMobileMenu">
+          <div :class="$style.handlerIcon"></div>
         </div>
-      </a-layout-content>
-      <a-layout-footer>
-        <cui-footer />
-      </a-layout-footer>
+        <a-drawer
+          :closable="false"
+          :visible="settings.isMobileMenuOpen"
+          placement="left"
+          :wrapClassName="$style.mobileMenu"
+          @close="toggleMobileMenu"
+        >
+          <cui-menu-left />
+        </a-drawer>
+      </div>
+
+      <!-- top menu -->
+      <cui-menu-top v-if="settings.menuLayoutType === 'top' && !settings.isMobileView" />
+
+      <a-layout>
+        <a-layout-header
+          :class="{
+          'cui__layout__header': true,
+          'cui__layout__fixedHeader': settings.isTopbarFixed,
+          'cui__layout__headerGray': settings.isGrayTopbar,
+        }"
+        >
+          <cui-topbar />
+        </a-layout-header>
+        <cui-breadcrumbs />
+        <a-layout-content style="height: '100%';  position: 'relative'">
+          <div class="cui__utils__content">
+            <transition :name="settings.routerAnimation" mode="out-in">
+              <router-view />
+            </transition>
+          </div>
+        </a-layout-content>
+        <a-layout-footer>
+          <cui-footer />
+        </a-layout-footer>
+      </a-layout>
     </a-layout>
-  </a-layout>
+  </div>
 </template>
 
 <script>

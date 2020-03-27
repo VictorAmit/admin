@@ -30,28 +30,63 @@ const router = new Router({
           },
           component: () => import('./views/dashboard/alpha'),
         },
-        // {
-        //   path: '/dashboard/beta',
-        //   meta: {
-        //     title: 'Dashboard Beta',
-        //   },
-        //   component: () => import('./views/dashboard/beta'),
-        // },
-        // {
-        //   path: '/dashboard/crypto',
-        //   meta: {
-        //     title: 'Dashboard Crypto',
-        //   },
-        //   component: () => import('./views/dashboard/crypto'),
-        // },
-        // {
-        //   path: '/dashboard/gamma',
-        //   meta: {
-        //     title: 'Dashboard Gamma',
-        //   },
-        //   component: () => import('./views/dashboard/gamma'),
-        // },
-
+        {
+          path: '/dashboard/beta',
+          meta: {
+            title: 'Dashboard Beta',
+          },
+          component: () => import('./views/dashboard/beta'),
+        },
+        {
+          path: '/dashboard/crypto',
+          meta: {
+            title: 'Dashboard Crypto',
+          },
+          component: () => import('./views/dashboard/crypto'),
+        },
+        {
+          path: '/dashboard/gamma',
+          meta: {
+            title: 'Dashboard Gamma',
+          },
+          component: () => import('./views/dashboard/gamma'),
+        },
+        // Ecommerce
+        {
+          path: '/ecommerce/dashboard',
+          meta: {
+            title: 'Ecommerce Dashboard',
+          },
+          component: () => import('./views/ecommerce/dashboard'),
+        },
+        {
+          path: '/ecommerce/orders',
+          meta: {
+            title: 'Ecommerce Orders',
+          },
+          component: () => import('./views/ecommerce/orders'),
+        },
+        {
+          path: '/ecommerce/product-catalog',
+          meta: {
+            title: 'Ecommerce Product Catalog',
+          },
+          component: () => import('./views/ecommerce/product-catalog'),
+        },
+        {
+          path: '/ecommerce/product-details',
+          meta: {
+            title: 'Ecommerce Product Details',
+          },
+          component: () => import('./views/ecommerce/product-details'),
+        },
+        {
+          path: '/ecommerce/cart',
+          meta: {
+            title: 'Ecommerce Cart',
+          },
+          component: () => import('./views/ecommerce/cart'),
+        },
         // Widgets
         {
           path: '/widgets/general',

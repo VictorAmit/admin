@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.crypto">
     <div :class="$style.listMobile">
-      <div class="utils__title utils__title--flat mb-3">
+      <div class="cui__utils__heading mb-3">
         <strong>Markets</strong>
       </div>
       <a-select showSearch defaultValue="btc" :style="{width: '100%'}">
@@ -40,7 +40,7 @@
       </a-select>
     </div>
     <div :class="$style.list">
-      <div class="utils__title utils__title--flat mb-3">
+      <div class="cui__utils__heading mb-3">
         <strong>Markets</strong>
       </div>
       <a href="javascript: void(0);" :class="$style.listItem">
@@ -125,17 +125,17 @@
       </a>
     </div>
     <div :class="$style.content">
-      <div class="utils__title utils__title--flat mb-3">
+      <div class="cui__utils__heading mb-3">
         <strong>Bittrex Live Market</strong>
       </div>
-      <div class="card">
+      <div class="card bg-white">
         <div class="card-body pl-0 pr-0">
           <div class="height-400">
             <e-chart :options="option" :autoresize="true" />
           </div>
         </div>
       </div>
-      <div class="utils__title utils__title--flat mb-3">
+      <div class="cui__utils__heading mb-3">
         <strong>Order Book</strong>
       </div>
       <div class="card">
@@ -286,7 +286,7 @@
           </div>
         </div>
       </div>
-      <div class="utils__title utils__title--flat mb-3">
+      <div class="cui__utils__heading mb-3">
         <strong>Market History</strong>
       </div>
       <div class="card">
@@ -311,7 +311,7 @@
           </a-table>
         </div>
       </div>
-      <div class="utils__title utils__title--flat mb-3">
+      <div class="cui__utils__heading mb-3">
         <strong>My Open Orders</strong>
       </div>
       <div class="card">
@@ -347,7 +347,7 @@
           </div>
         </div>
       </div>
-      <div class="utils__title utils__title--flat mb-3">
+      <div class="cui__utils__heading mb-3">
         <strong>My Order History</strong>
       </div>
       <div class="card">

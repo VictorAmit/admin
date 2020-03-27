@@ -15,10 +15,14 @@
             <strong>Theme Settings</strong>
           </h5>
           <div class="cui__utils__line" :style="{ marginTop: '25px', marginBottom: '30px' }" />
-          <p class="text-muted mb-5">
-            This component gives possibility to construct custom blocks with any widgets,
-            components and elements inside, like this theme settings
-          </p>
+          <div :class="$style.cui__sidebar__type" class="mb-4">
+            <div :class="$style.cui__sidebar__type__title">
+              <span>Application Name</span>
+            </div>
+            <div :class="$style.cui__sidebar__type__items">
+              <a-input :value="settings.logo" @change="changeLogo" />
+            </div>
+          </div>
           <div :class="$style.cui__sidebar__type">
             <div :class="$style.cui__sidebar__type__title">
               <span>Menu Layout</span>
@@ -31,48 +35,12 @@
                       <a-radio :value="'left'">Left Menu</a-radio>
                     </div>
                     <div class="mb-2">
-                      <a-radio :value="'top-dark'">Top Dark</a-radio>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="mb-2">
                       <a-radio :value="'top'">Top Menu</a-radio>
                     </div>
+                  </div>
+                  <div class="col-6">
                     <div class="mb-2">
                       <a-radio :value="'nomenu'">No menu</a-radio>
-                    </div>
-                  </div>
-                </div>
-              </a-radio-group>
-            </div>
-          </div>
-          <div :class="$style.cui__sidebar__type">
-            <div :class="$style.cui__sidebar__type__title">
-              <span>Left Menu Type</span>
-            </div>
-            <div :class="$style.cui__sidebar__type__items">
-              <a-radio-group :defaultValue="settings.menuType" @change="selectMenuType">
-                <div class="row">
-                  <div class="col-6">
-                    <div class="mb-2">
-                      <a-radio
-                        :value="'default'"
-                        :disabled="settings.menuLayoutType !== 'left'"
-                      >Default</a-radio>
-                    </div>
-                    <div class="mb-2">
-                      <a-radio
-                        :value="'flyout'"
-                        :disabled="settings.menuLayoutType !== 'left'"
-                      >Flyout</a-radio>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="mb-2">
-                      <a-radio
-                        :value="'compact'"
-                        :disabled="settings.menuLayoutType !== 'left'"
-                      >Compact</a-radio>
                     </div>
                   </div>
                 </div>
@@ -102,7 +70,7 @@
               <span>Internationalization</span>
             </div>
             <div :class="$style.cui__sidebar__type__items">
-              <a-select :defaultValue="settings.locale" style="width: 100%;" @change="selectLocale">
+              <a-select :value="settings.locale" style="width: 100%;" @change="selectLocale">
                 <a-select-option value="en-US">English (en-US)</a-select-option>
                 <a-select-option value="fr-FR">French (fr-FR)</a-select-option>
                 <a-select-option value="ru-RU">Русский (ru-RU)</a-select-option>
@@ -110,8 +78,16 @@
               </a-select>
             </div>
           </div>
+          <div :class="$style.cui__sidebar__type" class="mb-2">
+            <div :class="$style.cui__sidebar__type__title">
+              <span>Left Menu Width</span>
+            </div>
+            <div :class="$style.cui__sidebar__type__items">
+              <a-slider :min="256" :max="300" @change="setWidth" :value="settings.leftMenuWidth" />
+            </div>
+          </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Toggled left menu</div>
+            <div :class="$style.cui__sidebar__label">Left Menu: Collapsed</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
                 :checked="settings.isMenuCollapsed"
@@ -120,7 +96,7 @@
             </div>
           </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Unfixed left menu</div>
+            <div :class="$style.cui__sidebar__label">Left Menu: Unfixed</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
                 :checked="settings.isMenuUnfixed"
@@ -129,7 +105,36 @@
             </div>
           </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Fixed topbar</div>
+            <div :class="$style.cui__sidebar__label">Left Menu: Shadow</div>
+            <div :class="$style.cui__sidebar__container">
+              <a-switch
+                :checked="settings.isMenuShadow"
+                @click="settingChange($event, 'isMenuShadow')"
+              />
+            </div>
+          </div>
+          <div :class="$style.cui__sidebar__item">
+            <div :class="$style.cui__sidebar__label">Menu: Color</div>
+            <div :class="$style.cui__sidebar__container">
+              <air-color-picker
+                :value="settings.menuColor"
+                :setting="'menuColor'"
+                :colors="['white', 'gray', 'dark']"
+              />
+            </div>
+          </div>
+          <div :class="$style.cui__sidebar__item">
+            <div :class="$style.cui__sidebar__label">Auth: Background</div>
+            <div :class="$style.cui__sidebar__container">
+              <air-color-picker
+                :value="settings.authPagesColor"
+                :setting="'authPagesColor'"
+                :colors="['white', 'gray', 'image']"
+              />
+            </div>
+          </div>
+          <div :class="$style.cui__sidebar__item">
+            <div :class="$style.cui__sidebar__label">Topbar: Fixed</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
                 :checked="settings.isTopbarFixed"
@@ -138,55 +143,26 @@
             </div>
           </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Dark Footer</div>
+            <div :class="$style.cui__sidebar__label">Topbar: Gray Background</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
-                :checked="settings.isFooterDark"
-                @click="settingChange($event, 'isFooterDark')"
+                :checked="settings.isGrayTopbar"
+                @click="settingChange($event, 'isGrayTopbar')"
               />
             </div>
           </div>
+
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Menu color</div>
-            <div :class="$style.cui__sidebar__container">
-              <air-color-picker
-                :value="settings.menuColor"
-                :setting="'menuColor'"
-                :colors="['white', 'gray', 'blue', 'dark']"
-              />
-            </div>
-          </div>
-          <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Flyout menu</div>
-            <div :class="$style.cui__sidebar__container">
-              <air-color-picker
-                :value="settings.flyoutMenuColor"
-                :setting="'flyoutMenuColor'"
-                :colors="['white', 'gray', 'blue', 'dark']"
-              />
-            </div>
-          </div>
-          <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Login color</div>
-            <div :class="$style.cui__sidebar__container">
-              <air-color-picker
-                :value="settings.systemLayoutColor"
-                :setting="'systemLayoutColor'"
-                :colors="['white', 'gray', 'blue', 'dark', 'image']"
-              />
-            </div>
-          </div>
-          <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Content no max-width</div>
+            <div :class="$style.cui__sidebar__label">App: Content Max-Width</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
-                :checked="settings.isContentNoMaxWidth"
-                @click="settingChange($event, 'isContentNoMaxWidth')"
+                :checked="settings.isContentMaxWidth"
+                @click="settingChange($event, 'isContentMaxWidth')"
               />
             </div>
           </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">App max-width</div>
+            <div :class="$style.cui__sidebar__label">App: Max-Width</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
                 :checked="settings.isAppMaxWidth"
@@ -195,7 +171,7 @@
             </div>
           </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Gray background</div>
+            <div :class="$style.cui__sidebar__label">App: Gray Background</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
                 :checked="settings.isGrayBackground"
@@ -204,16 +180,7 @@
             </div>
           </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Gray topbar</div>
-            <div :class="$style.cui__sidebar__container">
-              <a-switch
-                :checked="settings.isGrayTopbar"
-                @click="settingChange($event, 'isGrayTopbar')"
-              />
-            </div>
-          </div>
-          <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Squared card borders</div>
+            <div :class="$style.cui__sidebar__label">Cards: Squared Borders</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
                 :checked="settings.isSquaredBorders"
@@ -222,7 +189,7 @@
             </div>
           </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Card shadow</div>
+            <div :class="$style.cui__sidebar__label">Cards: Shadow</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
                 :checked="settings.isCardShadow"
@@ -231,20 +198,11 @@
             </div>
           </div>
           <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Borderless cards</div>
+            <div :class="$style.cui__sidebar__label">Cards: Borderless</div>
             <div :class="$style.cui__sidebar__container">
               <a-switch
                 :checked="settings.isBorderless"
                 @click="settingChange($event, 'isBorderless')"
-              />
-            </div>
-          </div>
-          <div :class="$style.cui__sidebar__item">
-            <div :class="$style.cui__sidebar__label">Menu shadow</div>
-            <div :class="$style.cui__sidebar__container">
-              <a-switch
-                :checked="settings.isMenuShadow"
-                @click="settingChange($event, 'isMenuShadow')"
               />
             </div>
           </div>
@@ -324,7 +282,7 @@
 import vueCustomScrollbar from 'vue-custom-scrollbar'
 import { mapState } from 'vuex'
 import { throttle } from 'lodash'
-import AirColorPicker from '@/components/layout/Sidebar/partials/colorPicker'
+import AirColorPicker from './partials/colorPicker'
 
 export default {
   components: { vueCustomScrollbar, AirColorPicker },
@@ -349,11 +307,6 @@ export default {
       const value = !this.settings[setting]
       this.$store.commit('CHANGE_SETTING', { setting, value })
     },
-    selectMenuType(e) {
-      const setting = 'menuType'
-      const { value } = e.target
-      this.$store.commit('CHANGE_SETTING', { setting, value })
-    },
     selectMenuLayoutType(e) {
       const setting = 'menuLayoutType'
       const { value } = e.target
@@ -375,6 +328,15 @@ export default {
     }, 200),
     resetColor() {
       this.$store.commit('SET_PRIMARY_COLOR', { color: this.defaultColor })
+    },
+    changeLogo(e) {
+      const setting = 'logo'
+      const { value } = e.target
+      this.$store.commit('CHANGE_SETTING', { setting, value })
+    },
+    setWidth(value) {
+      const setting = 'leftMenuWidth'
+      this.$store.commit('CHANGE_SETTING', { setting, value })
     },
   },
 }

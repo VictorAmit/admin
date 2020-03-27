@@ -4,58 +4,92 @@
       <div class="col-lg-12 col-xl-6">
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Account Information</strong>
             </div>
-            <div class="utils__titleDescription">Block with important Account information</div>
+            <div class="text-muted">Block with important Account information</div>
           </div>
           <div class="card-body">
-            <div class="row">
-              <div class="col-xl-12">
-                <cui-profile-head-card />
-              </div>
-            </div>
+            <cui-general-19 />
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Work Progress</strong>
             </div>
-            <div class="utils__titleDescription">Block with important Work Progress information</div>
+            <div class="text-muted">Block with important Work Progress information</div>
           </div>
           <div class="card-body">
-            <div class="row">
-              <div class="col-xl-12">
-                <cui-progress-group />
+            <div>
+              <strong>{{progressGroup.first.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.first.description}}</p>
+              <div class="mb-3">
+                <a-progress
+                  :percent="progressGroup.first.progress"
+                  :status="progressGroup.first.status"
+                />
+              </div>
+              <strong>{{progressGroup.second.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.second.description}}</p>
+              <div class="mb-3">
+                <a-progress
+                  :percent="progressGroup.second.progress"
+                  :status="progressGroup.second.status"
+                />
+              </div>
+              <strong>{{progressGroup.third.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.third.description}}</p>
+              <div class="mb-3">
+                <a-progress
+                  :percent="progressGroup.third.progress"
+                  :status="progressGroup.third.status"
+                />
+              </div>
+              <strong>{{progressGroup.fourth.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.fourth.description}}</p>
+              <div class="mb-3">
+                <a-progress
+                  :percent="progressGroup.fourth.progress"
+                  :status="progressGroup.fourth.status"
+                />
+              </div>
+              <strong>{{progressGroup.fives.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.fives.description}}</p>
+              <div class="mb-3">
+                <a-progress :percent="progressGroup.fives.progress" />
               </div>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Employees</strong>
             </div>
-            <div class="utils__titleDescription">Block with Employees important information</div>
+            <div class="text-muted">Block with Employees important information</div>
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                <cui-user-card type="primary" />
+                <div class="card bg-light border-0 mb-0">
+                  <cui-general-23 />
+                </div>
               </div>
               <div class="col-md-6">
-                <cui-user-card />
+                <div class="card border-0 mb-0">
+                  <cui-general-23v1 />
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Task Table</strong>
             </div>
-            <div class="utils__titleDescription">Block with important Task Table information</div>
+            <div class="text-muted">Block with important Task Table information</div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -94,18 +128,20 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Information Cards</strong>
             </div>
-            <div class="utils__titleDescription">Block with important Information Cards information</div>
+            <div class="text-muted">Block with important Information Cards information</div>
           </div>
           <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <cui-info-card form="interactive" icon="database" type="danger" />
+            <div class="card bg-primary border-0 mb-4">
+              <div class="card-body">
+                <cui-general-24 />
               </div>
-              <div class="col-md-6">
-                <cui-info-card form="interactive" icon="database" btnType="success" type="success" />
+            </div>
+            <div class="card bg-light border-0 mb-0">
+              <div class="card-body">
+                <cui-general-24v1 />
               </div>
             </div>
           </div>
@@ -114,68 +150,79 @@
       <div class="col-lg-12 col-xl-6">
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Server Info</strong>
             </div>
-            <div class="utils__titleDescription">Block with important Server Info information</div>
+            <div class="text-muted">Block with important Server Info information</div>
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col-lg-6">
-                <cui-slider-card />
+                <div class="overflow-hidden rounded card border-0 mb-0">
+                  <cui-general-20 />
+                </div>
               </div>
               <div class="col-lg-6">
-                <cui-slider-card :inverse="true" />
+                <div class="overflow-hidden rounded card border-0 mb-0">
+                  <cui-general-20v1 />
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Server Statistics</strong>
             </div>
-            <div class="utils__titleDescription">Block with important Server Statistics information</div>
+            <div class="text-muted">Block with important Server Statistics information</div>
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col-lg-6">
-                <cui-info-card form="stats" icon="database" type="primary" />
-                <cui-info-card form="stats" icon="users" type="empty" />
+                <cui-general-21 />
+                <cui-general-21v1 />
               </div>
               <div class="col-lg-6">
-                <cui-info-card form="stats" icon="bullhorn" type="success" />
-                <cui-info-card form="stats" icon="price-tags" type="empty" />
+                <cui-general-21v2 />
+                <cui-general-21v3 />
               </div>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Server Configuration</strong>
             </div>
-            <div
-              class="utils__titleDescription"
-            >Block with important Server Configuration information</div>
+            <div class="text-muted">Block with important Server Configuration information</div>
           </div>
           <div class="card-body">
             <div class="mb-5">
               <a-slider :marks="rangeMarks" :defaultValue="rangeSlider.first" />
             </div>
-            <div class="mb-5">
+            <div class="mb-4">
               <a-slider range :marks="rangeMarks" :defaultValue="rangeSlider.second" />
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Week Revenue Statistics, Billions</strong>
             </div>
-            <cui-donut type="primary" name="Nuts" />
-            <cui-donut type="success" name="Apples" />
-            <cui-donut color="yellow" name="Peaches" />
+            <span class="mr-2">
+              <span class="kit__utils__donut kit__utils__donut--primary"></span>
+              Nuts
+            </span>
+            <span class="mr-2">
+              <span class="kit__utils__donut kit__utils__donut--success"></span>
+              Apples
+            </span>
+            <span class="mr-2">
+              <span class="kit__utils__donut kit__utils__donut--yellow"></span>
+              Peaches
+            </span>
           </div>
           <div class="card-body">
             <vue-chartist
@@ -188,11 +235,17 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Month Site Visits Growth, %</strong>
             </div>
-            <cui-donut type="primary" name="Income" />
-            <cui-donut type="success" name="Outcome" />
+            <span class="mr-2">
+              <span class="kit__utils__donut kit__utils__donut--primary"></span>
+              Income
+            </span>
+            <span class="mr-2">
+              <span class="kit__utils__donut kit__utils__donut--success"></span>
+              Outcome
+            </span>
           </div>
           <div class="card-body">
             <vue-chartist
@@ -205,13 +258,13 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Chat</strong>
             </div>
-            <div class="utils__titleDescription">Block with important Information Cards information</div>
+            <div class="text-muted">Block with important Chat information</div>
           </div>
           <div class="card-body">
-            <cui-chat />
+            <cui-general-14 />
           </div>
         </div>
       </div>
@@ -219,23 +272,10 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="card">
-          <div class="card-header">
-            <div class="row">
-              <div class="col-lg-3">
-                <cui-info-card form="bordered" icon="home" type="danger" />
-              </div>
-              <div class="col-lg-3">
-                <cui-info-card form="bordered" icon="key" type="primary" />
-              </div>
-              <div class="col-lg-3">
-                <cui-info-card form="bordered" icon="play2" type="warning" />
-              </div>
-              <div class="col-lg-3">
-                <cui-info-card form="bordered" icon="database" type="sucess" />
-              </div>
-            </div>
-          </div>
           <div class="card-body">
+            <div class="mb-4">
+              <cui-general-22 />
+            </div>
             <a-table
               :columns="tableColumns"
               :dataSource="tableData"
@@ -295,10 +335,10 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="utils__title">
+            <div class="cui__utils__heading mb-0">
               <strong>Calendar</strong>
             </div>
-            <div class="utils__titleDescription">Block with important Calendar information</div>
+            <div class="text-muted">Block with important Calendar information</div>
           </div>
           <div class="card-body">
             <a-calendar>
@@ -322,15 +362,21 @@
 </template>
 
 <script>
-import CuiProfileHeadCard from '@/components/CleanUIComponents/ProfileHeadCard'
-import CuiProgressGroup from '@/components/CleanUIComponents/ProgressGroup'
-import CuiUserCard from '@/components/CleanUIComponents/UserCard'
-import CuiInfoCard from '@/components/CleanUIComponents/InfoCard'
-import CuiSliderCard from '@/components/CleanUIComponents/SliderCard'
-import CuiDonut from '@/components/CleanUIComponents/Donut'
-import CuiChat from '@/components/CleanUIComponents/Chat'
+import CuiGeneral19 from '@/components/kit-widgets/General/19'
+import CuiGeneral23 from '@/components/kit-widgets/General/23'
+import CuiGeneral23v1 from '@/components/kit-widgets/General/23v1'
+import CuiGeneral24 from '@/components/kit-widgets/General/24'
+import CuiGeneral24v1 from '@/components/kit-widgets/General/24v1'
+import CuiGeneral14 from '@/components/kit-widgets/General/14'
+import CuiGeneral20 from '@/components/kit-widgets/General/20'
+import CuiGeneral20v1 from '@/components/kit-widgets/General/20v1'
+import CuiGeneral21 from '@/components/kit-widgets/General/21'
+import CuiGeneral21v1 from '@/components/kit-widgets/General/21v1'
+import CuiGeneral21v2 from '@/components/kit-widgets/General/21v2'
+import CuiGeneral21v3 from '@/components/kit-widgets/General/21v3'
+import CuiGeneral22 from '@/components/kit-widgets/General/22'
 import VueChartist from 'v-chartist'
-import { taskTableData, tableData, rangeSlider, weekChartistData, monthCartistData } from './data.json'
+import { taskTableData, tableData, rangeSlider, weekChartistData, monthCartistData, progressGroup } from './data.json'
 
 const taskTableColumns = [
   {
@@ -443,16 +489,23 @@ const monthChartistOptions = {
 export default {
   components: {
     'vue-chartist': VueChartist,
-    CuiProfileHeadCard,
-    CuiProgressGroup,
-    CuiUserCard,
-    CuiInfoCard,
-    CuiSliderCard,
-    CuiDonut,
-    CuiChat,
+    CuiGeneral19,
+    CuiGeneral23,
+    CuiGeneral23v1,
+    CuiGeneral24,
+    CuiGeneral24v1,
+    CuiGeneral14,
+    CuiGeneral20,
+    CuiGeneral20v1,
+    CuiGeneral21,
+    CuiGeneral21v1,
+    CuiGeneral21v2,
+    CuiGeneral21v3,
+    CuiGeneral22,
   },
   data: function () {
     return {
+      progressGroup,
       taskTableColumns,
       taskTableData,
       rowSelection,

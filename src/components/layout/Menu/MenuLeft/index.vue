@@ -24,7 +24,7 @@
         <div :class="$style.logo">
           <img src="resources/images/logo.svg" class="mr-2" alt="Clean UI" />
           <div :class="$style.name">{{ settings.logo }}</div>
-          <div :class="$style.descr">Vue</div>
+          <div v-if="settings.logo === 'Clean UI Pro'" :class="$style.descr">Vue</div>
         </div>
       </div>
       <vue-custom-scrollbar
