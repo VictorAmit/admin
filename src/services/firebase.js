@@ -23,7 +23,7 @@ export default {
         return auth.signInWithEmailAndPassword(username, pass)
       },
       logout: async () => {
-        router.push('/user/login')
+        router.push('/auth/login')
         await auth.signOut()
       },
     }

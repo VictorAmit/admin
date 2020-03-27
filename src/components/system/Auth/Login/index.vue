@@ -1,15 +1,21 @@
 <template>
-  <div :class="$style.auth">
-    <div class="pt-5 pb-5 d-flex align-items-end mt-auto">
-      <img src="resources/images/air-logo.png" alt="AIR UI Logo" />
-      <div class="air__utils__logo__text">
-        <div class="air__utils__logo__name text-uppercase text-dark font-size-21">AIR UI</div>
-        <div class="air__utils__logo__descr text-uppercase font-size-12 text-gray-6">Admin template</div>
-      </div>
+  <div>
+    <div class="text-center mb-5">
+      <h1 class="mb-5">
+        <strong>Welcome to {{ settings.logo }}</strong>
+      </h1>
+      <p>
+        Pluggable enterprise-level application framework.
+        <br />An excellent front-end solution for web applications built upon Ant Design.
+        <br />Credentials for testing purposes -
+        <strong>admin@mediatec.org</strong> /
+        <strong>cleanui</strong>
+      </p>
     </div>
-    <div class="pl-5 pr-5 pt-5 pb-5 bg-white text-center" :class="$style.container">
-      <div class="text-dark font-size-30 mb-2 text-center">Log In</div>
-      <div class="text-muted text-center mb-4">Login and password - admin@mediatec.org / mediatec</div>
+    <div class="card" :class="$style.container">
+      <div class="text-dark font-size-24 mb-4">
+        <strong>Sign in to your account</strong>
+      </div>
       <a-form class="mb-4" :form="form" @submit="handleSubmit">
         <a-form-item>
           <a-input
@@ -26,55 +32,24 @@
             v-decorator="['password', {initialValue: 'mediatec', rules: [{ required: true, message: 'Please input your Password!' }]}]"
           />
         </a-form-item>
-        <a-button
-          type="primary"
-          htmlType="submit"
-          size="large"
-          class="text-center btn btn-success w-100 font-weight-bold font-size-18"
-        >Log in</a-button>
+        <a-button type="primary" htmlType="submit" size="large" class="text-center w-100">
+          <strong>Sign in</strong>
+        </a-button>
       </a-form>
-      <a
-        href="#"
-        class="font-weight-bold font-size-18 text-dark btn btn-outline-light w-100 mb-3"
-        :class="$style.googleSign"
-        :style="{ backgroundImage: 'url(resources/images/icons/google-logo.svg)' }"
-      >Log in with Google</a>
-      <router-link
-        to="/system/forgot-password"
-        class="text-blue font-weight-bold font-size-18"
-      >Forgot password?</router-link>
+      <router-link to="/auth/forgot-password" class="kit__utils__link font-size-16">Forgot Password?</router-link>
     </div>
-    <div class="text-center font-size-18 pt-4 mb-auto">
-      Don't have an account?
-      <router-link to="/system/register" class="font-weight-bold text-blue text-underlined">
-        <u>Sign Up</u>
-      </router-link>
-    </div>
-    <div class="mt-auto pb-5 pt-5">
-      <ul
-        class="list-unstyled d-flex mb-2 flex-wrap justify-content-center"
-        :class="$style.footerNav"
-      >
-        <li>
-          <a href="#">Terms of Use</a>
-        </li>
-        <li>
-          <a href="#">Compliance</a>
-        </li>
-        <li>
-          <a href="#">Support</a>
-        </li>
-        <li>
-          <a href="#">Contacts</a>
-        </li>
-      </ul>
-      <div class="text-gray-4 text-center">© 2019 Mediatec. All rights reserved.</div>
+    <div class="text-center pt-2 mb-auto">
+      <span class="mr-2">Don't have an account?</span>
+      <router-link to="/auth/register" class="kit__utils__link font-size-16">Sign up</router-link>
     </div>
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'AirLogin',
+  name: 'CuiLogin',
+  computed: mapState(['settings']),
   data: function () {
     return {
       form: this.$form.createForm(this),

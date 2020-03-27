@@ -401,23 +401,44 @@ const router = new Router({
         {
           path: '/auth/404',
           meta: {
-            title: '404',
+            title: 'Error 404',
           },
           component: () => import('./views/auth/404'),
         },
         {
+          path: '/auth/500',
+          meta: {
+            title: 'Error 500',
+          },
+          component: () => import('./views/auth/500'),
+        },
+        {
           path: '/auth/login',
           meta: {
-            title: 'Login',
+            title: 'Sign In',
           },
           component: () => import('./views/auth/login'),
         },
         {
-          path: '/auth/forgot',
+          path: '/auth/register',
+          meta: {
+            title: 'Sign Up',
+          },
+          component: () => import('./views/auth/register'),
+        },
+        {
+          path: '/auth/forgot-password',
           meta: {
             title: 'Forgot Password',
           },
           component: () => import('./views/auth/forgot-password'),
+        },
+        {
+          path: '/auth/lockscreen',
+          meta: {
+            title: 'Lockscreen',
+          },
+          component: () => import('./views/auth/lockscreen'),
         },
       ],
     },

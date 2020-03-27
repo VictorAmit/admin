@@ -1,13 +1,13 @@
 <template>
   <div>
-    <cui-error-404 />
+    <cui-register />
   </div>
 </template>
 <script>
-import CuiError404 from '@/components/system/Errors/404'
+import CuiRegister from '@/components/system/Auth/Register'
 export default {
   components: {
-    CuiError404,
+    CuiRegister,
   },
 }
 </script>

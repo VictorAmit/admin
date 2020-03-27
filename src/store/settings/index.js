@@ -109,6 +109,7 @@ export default {
           document.querySelector('body').classList.add('kit__dark')
           window.less.modifyVars(AntDesignDarkTheme)
           state.menuColor = 'dark'
+          store.set('app.settings.menuColor', 'dark')
         }
       }
       toggleTheme()

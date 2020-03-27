@@ -1,55 +1,47 @@
 <template>
   <a-layout>
     <a-layout-content>
+      <cui-sidebar />
+      <cui-support-chat />
       <div
-        :class="[$style.layout, backgroundEnabled ? $style.light : '']"
-        :style="{backgroundImage: backgroundEnabled ? `url(\'resources/images/photos/${backgroundNumber}.jpeg\')` : 'none'}"
+        :class="{
+          [$style.container]: true,
+          cui__layout__squaredBorders: settings.isSquaredBorders,
+          cui__layout__cardsShadow: settings.isCardShadow,
+          cui__layout__borderless: settings.isBorderless,
+          [$style.white]: settings.authPagesColor === 'white',
+          [$style.gray]: settings.authPagesColor === 'gray',
+        }"
+        :style="{backgroundImage: settings.authPagesColor === 'image' ? `url(resources/images/content/photos/7.jpg)` : 'none'}"
       >
-        <div :class="$style.header">
-          <div :class="$style.logo">
-            <router-link to="/">
-              <img
-                v-if="!backgroundEnabled"
-                src="resources/images/logo.png"
-                alt="Clean UI Admin Template"
-              />
-              <img
-                v-if="backgroundEnabled"
-                src="resources/images/logo-inverse.png"
-                alt="Clean UI Admin Template"
-              />
-            </router-link>
-          </div>
-          <div :class="$style.controls">
-            <div class="d-inline-block mr-3">
-              <a-button type="default" @click="changeBackground">Change Background</a-button>
-            </div>
-            <div class="d-inline-block">
-              <a-button type="default" @click="toggleBackground">Toggle Background</a-button>
+        <div
+          :class="{
+          [$style.topbar]: true,
+          [$style.topbarGray]: isGrayTopbar,
+        }"
+        >
+          <div :class="$style.logoContainer">
+            <div :class="$style.logo">
+              <img src="resources/images/logo.svg" class="mr-2" alt="Clean UI" />
+              <div :class="$style.name">{{ settings.logo }}</div>
+              <div v-if="settings.logo === 'Clean UI Pro'" :class="$style.descr">Vue</div>
             </div>
           </div>
-          <nav :class="$style.navigation">
-            <ul :class="$style.navigationItems">
-              <li>
-                <a href="javascript: void(0);">&larr; Back</a>
-              </li>
-              <li>
-                <a :class="$style.navigationActive" href="javascript: void(0);">Login</a>
-              </li>
-              <li>
-                <a href="javascript: void(0);">About</a>
-              </li>
-              <li>
-                <a href="javascript: void(0);">Support</a>
-              </li>
-            </ul>
-          </nav>
+          <div class="d-none d-sm-block">
+            <span class="mr-2">Don't have an account?</span>
+            <router-link to="/auth/register" class="font-size-16 kit__utils__link">Sign up</router-link>
+          </div>
         </div>
-        <div :class="$style.content">
-          <router-view />
+        <div :class="$style.containerInner">
+          <transition :name="settings.routerAnimation" mode="out-in">
+            <router-view />
+          </transition>
         </div>
-        <div :class="[$style.footer, 'text-center']">
-          <ul class="list-unstyled list-inline mb-3">
+        <div class="mt-auto pb-5 pt-5">
+          <ul
+            class="list-unstyled d-flex mb-0 flex-wrap justify-content-center"
+            :class="[$style.footerNav]"
+          >
             <li class="list-inline-item">
               <a href="javascript: void(0);">Terms of Use</a>
             </li>
@@ -66,7 +58,14 @@
               <a href="javascript: void(0);">Contacts</a>
             </li>
           </ul>
-          <p>&copy; 2019 Mediatec. All rights reserved.</p>
+          <div class="text-center">
+            Copyright © 2017-2020 Mdtk Soft |
+            <a
+              href="https://www.mediatec.org/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Privacy Policy</a>
+          </div>
         </div>
       </div>
     </a-layout-content>
@@ -74,27 +73,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import CuiSidebar from '@/components/layout/Sidebar'
+import CuiSupportChat from '@/components/layout/SupportChat'
+
 export default {
   name: 'AuthLayout',
-  data: function () {
-    return {
-      backgroundEnabled: false,
-      backgroundNumber: 1,
-    }
-  },
-  methods: {
-    changeBackground() {
-      this.backgroundEnabled = true
-      if (this.backgroundNumber === 5) {
-        this.backgroundNumber = 1
-      } else {
-        this.backgroundNumber += 1
-      }
-    },
-    toggleBackground() {
-      this.backgroundEnabled = !this.backgroundEnabled
-    },
-  },
+  components: { CuiSidebar, CuiSupportChat },
+  computed: mapState(['settings']),
 }
 </script>
 

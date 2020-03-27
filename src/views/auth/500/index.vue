@@ -1,13 +1,13 @@
 <template>
   <div>
-    <cui-error-404 />
+    <cui-error-500 />
   </div>
 </template>
 <script>
-import CuiError404 from '@/components/system/Errors/404'
+import CuiError500 from '@/components/system/Errors/500'
 export default {
   components: {
-    CuiError404,
+    CuiError500,
   },
 }
 </script>
