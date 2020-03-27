@@ -1,225 +1,118 @@
 <template>
-  <div class="card">
-    <div class="card-header">
-      <div class="utils__title">
-        <strong>C3</strong>
-        <a href="http://c3js.org/" target="_blank" class="btn btn-sm btn-primary ml-4">
+  <div>
+    <div class="kit__utils__heading">
+      <h5>
+        <span class="mr-3">C3</span>
+        <a href="http://c3js.org/" target="_blank" class="btn btn-sm btn-light">
           Official Documentation
-          <i class="icmn-link ml-1"/>
+          <i class="fe fe-corner-right-up" />
         </a>
-      </div>
+      </h5>
     </div>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Simple Line</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="line" class="height-300"></vue-c3>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Simple Line</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="line" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Spline</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="spline" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Spline</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="spline" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Step</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="step" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Step</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="step" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Area</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="area" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Area</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="area" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Scatter</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="scatter" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Scatter</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="scatter" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Bar</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="bar" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Bar</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="bar" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Stacked Bar</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="stackedBar" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Stacked Bar</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="stackedBar" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Combination</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="combination" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Combination</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="combination" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Sub Chart</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="subChart" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Sub Chart</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="subChart" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Zoom</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="zoom" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Zoom</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="zoom" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Pie Chart</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="pie" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Pie Chart</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="pie" class="height-300"></vue-c3>
+            </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <h5 class="text-black">
-            <strong>Donut Chart</strong>
-          </h5>
-          <p class="text-muted">
-            Element: read
-            <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-              official documentation
-              <small>
-                <i class="icmn-link ml-1"/>
-              </small>
-            </a>
-          </p>
-          <div class="mb-5">
-            <vue-c3 :handler="donut" class="height-300"></vue-c3>
+          <div class="col-xl-6 col-lg-12">
+            <h5 class="mb-4">
+              <strong>Donut Chart</strong>
+            </h5>
+            <div class="mb-5">
+              <vue-c3 :handler="donut" class="height-300"></vue-c3>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import Vue from 'vue'
 import VueC3 from 'vue-c3'

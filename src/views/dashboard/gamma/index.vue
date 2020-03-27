@@ -2,37 +2,76 @@
   <div>
     <div class="row">
       <div class="col-xl-12">
-        <div class="utils__title utils__title--flat mb-3">
-          <strong class="text-uppercase font-size-16">Progress Information</strong>
-        </div>
         <div class="row">
-          <div class="col-lg-6" v-for="(item, index) in progressCardsData" :key="index">
-            <cui-progress-card
-              :title="item.title"
-              :note="item.note"
-              :currentValue="item.currentValue"
-              :percent="+item.percent"
-              :dataColor="item.dataColor"
-            />
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <cui-chart-12 />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <cui-chart-12v1 />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xl-4">
+        <div class="card">
+          <cui-general-13v1 />
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <cui-general-5v1 />
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="card">
+          <div class="card-header border-0 pb-0">
+            <div class="cui__utils__heading mb-0">
+              <strong>RECENT INVITES</strong>
+            </div>
+          </div>
+          <div class="card-body">
+            <cui-list-10 />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <cui-general-2 />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <cui-general-2v1 />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <cui-general-2v2 />
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
         <div class="row">
           <div class="col-xl-12">
             <div class="card">
-              <div class="card-header">
-                <div class="utils__title utils__title--flat">
-                  <strong class="text-uppercase font-size-16">Inbound Bandwidth</strong>
+              <div class="card-header border-0 pb-0">
+                <div class="cui__utils__heading mb-0">
+                  <strong>Inbound Bandwidth</strong>
                 </div>
               </div>
               <div class="card-body">
-                <span class="font-size-36 font-weight-bold text-primary">246</span>
+                <strong class="font-size-36 text-dark">246Gb</strong>
               </div>
               <vue-chartist
-                class="height-200"
+                class="height-250"
                 type="Line"
                 :data="inboundBandwidthData"
                 :options="boundChartistOptions"
@@ -40,77 +79,33 @@
             </div>
           </div>
           <div class="col-xl-12">
-            <div class="card">
-              <div class="card-header">
-                <div class="utils__title utils__title--flat">
-                  <strong class="text-uppercase font-size-16">Outbound Bandwidth</strong>
+            <div class="graphCard card">
+              <div class="card-header border-0 pb-0">
+                <div class="cui__utils__heading mb-0">
+                  <strong>Outbound Bandwidth</strong>
                 </div>
               </div>
               <div class="card-body">
-                <span class="font-size-36 font-weight-bold text-success">52</span>
+                <strong class="font-size-36 text-dark">52Gb</strong>
               </div>
-              <vue-chartist
-                class="height-200"
-                type="Line"
-                :data="outboundBandwidthData"
-                :options="boundChartistOptions"
-              />
+              <div class="utils__chartist utils__chartist--success">
+                <vue-chartist
+                  class="height-250"
+                  type="Line"
+                  :data="outboundBandwidthData"
+                  :options="boundChartistOptions"
+                />
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4">
-        <div class="card card--fullHeight">
-          <div class="card-header">
-            <div class="utils__title utils__title--flat">
-              <strong class="text-uppercase font-size-16">Top photos</strong>
-            </div>
-          </div>
-          <div class="card-body">
-            <cui-short-item-info
-              v-for="(item, index) in topPhotosData"
-              :key="index"
-              :img="item.img"
-              :name="item.name"
-              :note="item.name"
-            >
-              <span :style="{color: item.actionDataColor}">{{item.actionData}}</span>
-            </cui-short-item-info>
-          </div>
-          <vue-chartist
-            class="height-300"
-            type="Line"
-            :data="topPhotosGraphData"
-            :options="boundChartistOptions"
-          />
-        </div>
-      </div>
-      <div class="col-xl-4">
-        <div class="card">
-          <div class="card-header">
-            <div class="utils__title utils__title--flat">
-              <strong class="text-uppercase font-size-16">New Users</strong>
-            </div>
-          </div>
-          <div class="card-body">
-            <cui-short-item-info
-              v-for="(item, index) in newUsersData"
-              :key="index"
-              :img="item.img"
-              :name="item.name"
-              :note="item.name"
-            >
-              <a href="javascript: void(0);" class="btn btn-sm btn-outline-default">Follow</a>
-            </cui-short-item-info>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6">
-        <div class="card card--fullHeight">
-          <div class="card-header">
-            <div class="utils__title utils__title--flat">
+        <div class="card">
+          <div class="card-header border-0 pb-0">
+            <div class="cui__utils__heading mb-0">
               <strong class="text-uppercase font-size-16">Support cases</strong>
             </div>
           </div>
@@ -138,20 +133,25 @@
                   class="h-100 d-flex flex-column justify-content-center align-items-center"
                   :class="$style.chartPieExample"
                 >
-                  <vue-chartist
-                    type="Pie"
-                    :data="supportCasesPieData"
-                    :options="supportCasesPieOptions"
-                  />
-                  <div class="text-center mt-2">
-                    <span class="mr-2 mt-1 d-inline-block">
-                      <cui-donut type="success" name="Ready"></cui-donut>
+                  <div class="mb-4">
+                    <vue-chartist
+                      type="Pie"
+                      :data="supportCasesPieData"
+                      :options="supportCasesPieOptions"
+                    />
+                  </div>
+                  <div class="text-center mb-4">
+                    <span class="mr-2">
+                      <span class="kit__utils__donut kit__utils__donut--success"></span>
+                      Ready
                     </span>
-                    <span class="mr-2 mt-1 d-inline-block">
-                      <cui-donut type="primary" name="In progress"></cui-donut>
+                    <span class="mr-2">
+                      <span class="kit__utils__donut kit__utils__donut--primary"></span>
+                      In Progress
                     </span>
-                    <span class="mr-2 mt-1 d-inline-block">
-                      <cui-donut type="danger" name="Defected"></cui-donut>
+                    <span class="mr-2">
+                      <span class="kit__utils__donut kit__utils__donut--danger"></span>
+                      Defected
                     </span>
                   </div>
                 </div>
@@ -161,23 +161,14 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <div class="card card--fullHeight">
-          <div class="card-header">
-            <div class="utils__title utils__title--flat">
+        <div class="card">
+          <div class="card-header border-0 pb-0">
+            <div class="cui__utils__heading mb-0">
               <strong class="text-uppercase font-size-16">Finance Stats</strong>
             </div>
           </div>
           <div class="card-body">
-            <cui-short-item-info
-              v-for="(item, index) in financeStatsData"
-              :key="index"
-              :img="item.img"
-              :name="item.name"
-              :note="item.name"
-              size="large"
-            >
-              <span :style="{color: item.actionDataColor}">{{item.actionData}}</span>
-            </cui-short-item-info>
+            <cui-list-11 />
           </div>
         </div>
       </div>
@@ -187,18 +178,20 @@
 
 <script>
 import VueChartist from 'v-chartist'
-import CuiProgressCard from '@/components/CleanUIComponents/ProgressCard'
-import CuiShortItemInfo from '@/components/CleanUIComponents/ShortItemInfo'
-import CuiDonut from '@/components/CleanUIComponents/Donut'
+import CuiChart12 from '@/components/kit-widgets/Charts/12'
+import CuiChart12v1 from '@/components/kit-widgets/Charts/12v1'
+import CuiGeneral5v1 from '@/components/kit-widgets/General/5v1'
+import CuiGeneral2 from '@/components/kit-widgets/General/2'
+import CuiGeneral2v1 from '@/components/kit-widgets/General/2v1'
+import CuiGeneral2v2 from '@/components/kit-widgets/General/2v2'
+import CuiGeneral13v1 from '@/components/kit-widgets/General/13v1'
+import CuiList10 from '@/components/kit-widgets/Lists/10'
+import CuiList11 from '@/components/kit-widgets/Lists/11'
+
 import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 import {
-  progressCardsData,
-  newUsersData,
   inboundBandwidthData,
   outboundBandwidthData,
-  topPhotosData,
-  topPhotosGraphData,
-  financeStatsData,
   supportCasesTableData,
   supportCasesPieData,
 } from './data.json'
@@ -261,24 +254,25 @@ const supportCasesTableColumns = [
 export default {
   components: {
     'vue-chartist': VueChartist,
-    CuiProgressCard,
-    CuiShortItemInfo,
-    CuiDonut,
+    CuiChart12,
+    CuiChart12v1,
+    CuiGeneral5v1,
+    CuiGeneral2,
+    CuiGeneral2v1,
+    CuiGeneral2v2,
+    CuiGeneral13v1,
+    CuiList10,
+    CuiList11,
   },
   data: function () {
     return {
-      progressCardsData,
-      newUsersData,
-      inboundBandwidthData,
-      outboundBandwidthData,
-      topPhotosData,
-      topPhotosGraphData,
-      financeStatsData,
-      supportCasesTableData,
-      supportCasesPieData,
       boundChartistOptions,
       supportCasesPieOptions,
       supportCasesTableColumns,
+      inboundBandwidthData,
+      outboundBandwidthData,
+      supportCasesTableData,
+      supportCasesPieData,
     }
   },
 }

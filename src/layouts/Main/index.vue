@@ -1,72 +1,81 @@
 <template>
-  <a-layout
-    :class="{
-      'settings__borderLess': settings.isBorderless,
-      'settings__squaredBorders': settings.isSquaredBorders,
-      'settings__fixedWidth': settings.isFixedWidth,
-      'settings__menuShadow': settings.isMenuShadow,
-      'settings__menuTop': settings.isMenuTop
+  <div :class="{
+    'cui__layout__grayBackground': settings.isGrayBackground,
+  }">
+    <a-layout
+      :class="{
+      'cui__layout__contentMaxWidth': settings.isContentMaxWidth,
+      'cui__layout__appMaxWidth': settings.isAppMaxWidth,
+      'cui__layout__grayBackground': settings.isGrayBackground,
+      'cui__layout__squaredBorders': settings.isSquaredBorders,
+      'cui__layout__cardsShadow': settings.isCardShadow,
+      'cui__layout__borderless': settings.isBorderless,
     }"
-  >
-    <!-- left menu -->
-    <a-layout-sider
-      v-if="!settings.isMobileView && !settings.isMenuTop"
-      :width="256"
-      :class="settings.isLightTheme ? [$style.sider, $style.light] : $style.sider"
-      collapsible
-      :collapsed="settings.isMenuCollapsed"
-      @collapse="onCollapse"
     >
-      <cui-menu-left :settings="settings"/>
-    </a-layout-sider>
-    <!-- left menu mobile -->
-    <div v-if="settings.isMobileView">
-      <div :class="$style.handler" @click="toggleMobileMenu">
-        <div :class="$style.handlerIcon"></div>
-      </div>
-      <a-drawer
-        :closable="false"
-        :visible="settings.isMobileMenuOpen"
-        placement="left"
-        :wrapClassName="$style.mobileMenu"
-        @close="toggleMobileMenu"
-      >
-        <cui-menu-left :settings="settings" :withDrawer="true"/>
-      </a-drawer>
-    </div>
-    <!-- top menu -->
-    <cui-menu-top v-if="settings.isMenuTop && !settings.isMobileView" :settings="settings"/>
+      <cui-sidebar />
+      <cui-support-chat />
 
-    <cui-settings :settings="settings"/>
-    <a-layout>
-      <a-layout-header>
-        <cui-topbar/>
-      </a-layout-header>
-      <cui-breadcrumbs :settings="settings"/>
-      <a-layout-content>
-        <div class="utils__content">
-          <router-view/>
+      <!-- left menu -->
+      <cui-menu-left v-if="settings.menuLayoutType === 'left' && !settings.isMobileView" />
+
+      <!-- left menu mobile -->
+      <div v-if="settings.menuLayoutType === 'left' && settings.isMobileView">
+        <div :class="$style.handler" @click="toggleMobileMenu">
+          <div :class="$style.handlerIcon"></div>
         </div>
-      </a-layout-content>
-      <a-layout-footer>
-        <cui-footer/>
-      </a-layout-footer>
+        <a-drawer
+          :closable="false"
+          :visible="settings.isMobileMenuOpen"
+          placement="left"
+          :wrapClassName="$style.mobileMenu"
+          @close="toggleMobileMenu"
+        >
+          <cui-menu-left />
+        </a-drawer>
+      </div>
+
+      <!-- top menu -->
+      <cui-menu-top v-if="settings.menuLayoutType === 'top' && !settings.isMobileView" />
+
+      <a-layout>
+        <a-layout-header
+          :class="{
+          'cui__layout__header': true,
+          'cui__layout__fixedHeader': settings.isTopbarFixed,
+          'cui__layout__headerGray': settings.isGrayTopbar,
+        }"
+        >
+          <cui-topbar />
+        </a-layout-header>
+        <cui-breadcrumbs />
+        <a-layout-content style="height: '100%';  position: 'relative'">
+          <div class="cui__utils__content">
+            <transition :name="settings.routerAnimation" mode="out-in">
+              <router-view />
+            </transition>
+          </div>
+        </a-layout-content>
+        <a-layout-footer>
+          <cui-footer />
+        </a-layout-footer>
+      </a-layout>
     </a-layout>
-  </a-layout>
+  </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import CuiTopbar from '@/components/LayoutComponents/Topbar'
-import CuiBreadcrumbs from '@/components/LayoutComponents/Breadcrumbs'
-import CuiFooter from '@/components/LayoutComponents/Footer'
-import CuiSettings from '@/components/LayoutComponents/Settings'
-import CuiMenuLeft from '@/components/LayoutComponents/Menu/MenuLeft'
-import CuiMenuTop from '@/components/LayoutComponents/Menu/MenuTop'
+import CuiTopbar from '@/components/layout/Topbar'
+import CuiBreadcrumbs from '@/components/layout/Breadcrumbs'
+import CuiFooter from '@/components/layout/Footer'
+import CuiSidebar from '@/components/layout/Sidebar'
+import CuiSupportChat from '@/components/layout/SupportChat'
+import CuiMenuLeft from '@/components/layout/Menu/MenuLeft'
+import CuiMenuTop from '@/components/layout/Menu/MenuTop'
 
 export default {
   name: 'MainLayout',
-  components: { CuiFooter, CuiTopbar, CuiMenuLeft, CuiMenuTop, CuiBreadcrumbs, CuiSettings },
+  components: { CuiFooter, CuiTopbar, CuiMenuLeft, CuiMenuTop, CuiBreadcrumbs, CuiSidebar, CuiSupportChat },
   computed: mapState(['settings']),
   mounted() {
     this.detectViewPort(true)
@@ -77,12 +86,8 @@ export default {
   },
   methods: {
     toggleMobileMenu() {
-      const value = !this.settings['isMobileMenuOpen']
+      const value = !this.settings.isMobileMenuOpen
       this.$store.commit('CHANGE_SETTING', { setting: 'isMobileMenuOpen', value })
-    },
-    onCollapse: function (collapsed, type) {
-      const value = !this.settings['isMenuCollapsed']
-      this.$store.commit('CHANGE_SETTING', { setting: 'isMenuCollapsed', value })
     },
     changeSetting: function (setting, value) {
       this.$store.commit('CHANGE_SETTING', { setting, value })
@@ -95,8 +100,8 @@ export default {
       this.detectViewPort(false)
     },
     detectViewPort: function (firstLoad = false) {
-      const isMobile = this.settings['isMobileView']
-      const isTablet = this.settings['isTabletView']
+      const isMobile = this.settings.isMobileView
+      const isTablet = this.settings.isTabletView
       const width = window.innerWidth
       const state = {
         next: {

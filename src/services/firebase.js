@@ -18,17 +18,21 @@ export default {
   install: (Vue, options) => {
     const firebaseApp = firebase.initializeApp(config)
     const auth = firebaseApp.auth()
-    Vue.prototype.$auth = {
+    Vue.prototype.$firebaseAuth = {
       login: async (username, pass) => {
         return auth.signInWithEmailAndPassword(username, pass)
       },
       logout: async () => {
-        router.push('/user/login')
+        router.push('/auth/login')
         await auth.signOut()
       },
     }
     auth.onAuthStateChanged(user => {
-      store.commit('UPDATE_USER', { user })
+      const _user = user ? {
+        ...user,
+        role: 'admin',
+      } : user
+      store.commit('UPDATE_USER', { user: _user })
     })
   },
 }

@@ -1,33 +1,6 @@
-@import '@/assets/styles/mixins.scss';
+@import '@/components/kit-core/mixins.scss';
 
-.sider {
-  box-sizing: content-box;
-  transition: all 0.3s !important;
-  :global(.ant-layout-sider-children) {
-      position: fixed;
-      height: 100%;
-      width: 256px;
-      transition: width 0.3s;
-    }
-  &:global(.ant-layout-sider-collapsed) {
-    :global(.ant-layout-sider-children) {
-      width: 80px;
-    }
-  }
-}
-
-.light {
-  background: $white;
-  
-  :global(.ant-layout-sider-trigger) {
-    color: inherit;
-    background: $gray-border !important;
-  }
-}
-
-:global(.ant-layout-sider-trigger) {
-  transition: all 0.3s !important;
-}
+// main layout
 
 .mobileMenu {
   :global(.ant-drawer-content),
@@ -38,6 +11,10 @@
   :global(.ant-drawer-body) {
     padding: 0 !important;
     pointer-events: all;
+    height: 100%;
+  }
+  :global(.ant-layout-sider) {
+    height: 100%;
   }
 }
 
