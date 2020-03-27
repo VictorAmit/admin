@@ -1,5 +1,10 @@
 <template>
   <div>
+    <cui-acl :roles="['manager']">
+      <div>Hidden element for all roles expect 'manager' role</div>
+      <div>Next ACL component will redirect all roles except 'admin' role to 'dashboard/beta'</div>
+    </cui-acl>
+    <cui-acl :roles="['admin']" redirect />
     <div class="cui__utils__heading">
       <strong>Today Statistics</strong>
     </div>
@@ -149,6 +154,8 @@
 </template>
 
 <script>
+import CuiAcl from '@/components/system/ACL'
+
 import CuiChart4 from '@/components/kit-widgets/Charts/4'
 import CuiChart4v1 from '@/components/kit-widgets/Charts/4v1'
 import CuiChart4v2 from '@/components/kit-widgets/Charts/4v2'
@@ -203,6 +210,7 @@ const tableColumns = [
 
 export default {
   components: {
+    CuiAcl,
     CuiChart4,
     CuiChart4v1,
     CuiChart4v2,

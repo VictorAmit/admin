@@ -17,7 +17,7 @@
         <div
           :class="{
           [$style.topbar]: true,
-          [$style.topbarGray]: isGrayTopbar,
+          [$style.topbarGray]: settings.isGrayTopbar,
         }"
         >
           <div :class="$style.logoContainer">

@@ -28,7 +28,11 @@ export default {
       },
     }
     auth.onAuthStateChanged(user => {
-      store.commit('UPDATE_USER', { user })
+      const _user = user ? {
+        ...user,
+        role: 'admin',
+      } : user
+      store.commit('UPDATE_USER', { user: _user })
     })
   },
 }
