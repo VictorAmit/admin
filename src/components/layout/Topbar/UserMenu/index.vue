@@ -56,7 +56,8 @@ export default {
       this.count++
     },
     logout() {
-      this.$auth.logout()
+      this.$firebaseAuth.logout()
+      this.$jwtAuth.logout()
     },
   },
 }

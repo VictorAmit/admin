@@ -18,7 +18,7 @@ export default {
   install: (Vue, options) => {
     const firebaseApp = firebase.initializeApp(config)
     const auth = firebaseApp.auth()
-    Vue.prototype.$auth = {
+    Vue.prototype.$firebaseAuth = {
       login: async (username, pass) => {
         return auth.signInWithEmailAndPassword(username, pass)
       },
