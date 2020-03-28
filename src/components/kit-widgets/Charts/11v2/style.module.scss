@@ -16,13 +16,13 @@
   }
 
   :global(.ct-series-a) {
-    .ct-area {
-      fill: rgba(199, 228, 255, 0.5) !important;
+    :global(.ct-area) {
+      fill: rgba(75,124,243, 0.1) !important;
       fill-opacity: 1 !important;
     }
 
-    .ct-line {
-      stroke: rgb(0, 69, 133) !important;
+    :global(.ct-line) {
+      stroke: #4b7cf3 !important;
     }
   }
 }
