@@ -77,7 +77,14 @@ export default {
   name: 'MainLayout',
   components: { CuiFooter, CuiTopbar, CuiMenuLeft, CuiMenuTop, CuiBreadcrumbs, CuiSidebar, CuiSupportChat },
   computed: mapState(['settings']),
+  data: function () {
+    return {
+      touchStartPrev: 0,
+      touchStartLocked: false,
+    }
+  },
   mounted() {
+    this.bindMobileSlide()
     this.detectViewPort(true)
     window.addEventListener('resize', this.detectViewPortListener)
   },
@@ -128,6 +135,33 @@ export default {
       if (state.next.mobile && ((state.next.mobile !== state.prev.mobile) || firstLoad)) {
         this.setViewPort(true, false)
       }
+    },
+    bindMobileSlide() {
+      // mobile menu touch slide opener
+      const unify = e => {
+        return e.changedTouches ? e.changedTouches[0] : e
+      }
+      document.addEventListener(
+        'touchstart',
+        e => {
+          const x = unify(e).clientX
+          this.touchStartPrev = x
+          this.touchStartLocked = x > 70
+        },
+        { passive: false },
+      )
+      document.addEventListener(
+        'touchmove',
+        e => {
+          const x = unify(e).clientX
+          const prev = this.touchStartPrev
+          if (x - prev > 50 && !this.touchStartLocked) {
+            this.toggleMobileMenu()
+            this.touchStartLocked = true
+          }
+        },
+        { passive: false },
+      )
     },
   },
 }
