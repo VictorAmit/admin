@@ -20,7 +20,7 @@
           <input
             v-model="searchText"
             :class="$style.searchInput"
-            placeholder="Type to search..."
+            :placeholder="$t('topBar.typeToSearch')"
             ref="innerInput"
           />
           <ul :class="$style.options">
