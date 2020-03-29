@@ -4,7 +4,7 @@
       <i class="fe fe-bell" :class="$style.icon"></i>
     </div>
     <div slot="overlay">
-      <div class="card air__utils__shadow width-350">
+      <div class="card cui__utils__shadow width-350">
         <div class="card-body pb-2">
           <list3 />
         </div>
