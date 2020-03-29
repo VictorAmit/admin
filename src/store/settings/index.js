@@ -139,7 +139,7 @@ export default {
       }
       primaryColor()
 
-      // set primary color on app load
+      // init theme
       const initTheme = () => {
         const theme = store.get('app.settings.theme')
         if (theme === 'dark') {
