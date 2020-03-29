@@ -1,6 +1,6 @@
 <template>
   <div :class="$style.footer">
-    <div :class="$style.inner">
+    <div :class="$style.footerInner">
       <a
         href="https://sellpixels.com"
         target="_blank"
