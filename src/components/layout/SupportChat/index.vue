@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.chat">
     <button type="button" :class="$style.toggleButton" @click="toggleSupportChat()">
-      <i :class="$style.icon" class="fe fe-message-square text-blue mr-md-2" />
+      <i :class="$style.icon" class="fe fe-message-square mr-md-2" />
       <span class="d-none d-md-inline">Support Chat</span>
     </button>
     <div :class="{[$style.container]: true, [$style.containerToggled]: settings.isSupportChatOpen}">
