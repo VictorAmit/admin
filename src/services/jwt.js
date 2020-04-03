@@ -10,6 +10,7 @@ const FAKE_USERS = [
     email: 'admin@mediatec.org',
     avatar: '',
     password: 'cleanui',
+    role: 'admin',
   },
 ]
 
@@ -26,11 +27,13 @@ const fakeFetch = (url, params) => {
       })
     case 'api/currentUser':
       return new Promise((resolve, reject) => {
-        resolve({
-          headers: '',
-          jwt: FAKE_JWT,
-          data: FAKE_USERS[0],
-        })
+        setTimeout(function () {
+          resolve({
+            headers: '',
+            jwt: FAKE_JWT,
+            data: FAKE_USERS[0],
+          })
+        }, 1500)
       })
     case 'api/logout':
       return new Promise((resolve, reject) => {
@@ -109,11 +112,11 @@ export default {
           if (data.message) {
             return false
           } else {
-            const _user = data.data ? {
-              ...data.data,
-              role: 'admin',
-            } : data.data
-            store.commit('UPDATE_USER', { user: _user })
+            const user = data.data
+            if (store.getters.state.authProvider !== 'jwt') {
+              return
+            }
+            store.commit('UPDATE_USER', { user })
           }
         })
     }

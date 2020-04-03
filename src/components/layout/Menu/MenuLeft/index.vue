@@ -44,16 +44,18 @@
           :class="$style.navigation"
         >
           <template v-for="(item, index) in menuData">
-            <a-menu-item-group :key="index" v-if="item.category">
-              <template slot="title">{{ item.title }}</template>
-            </a-menu-item-group>
-            <item
-              v-if="!item.children && !item.category"
-              :menu-info="item"
-              :styles="$style"
-              :key="item.key"
-            />
-            <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key" />
+            <template v-if="!item.roles || item.roles.includes(user.role)">
+              <a-menu-item-group :key="index" v-if="item.category">
+                <template slot="title">{{ item.title }}</template>
+              </a-menu-item-group>
+              <item
+                v-if="!item.children && !item.category"
+                :menu-info="item"
+                :styles="$style"
+                :key="item.key"
+              />
+              <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key" />
+            </template>
           </template>
         </a-menu>
         <div :class="$style.banner">
@@ -71,7 +73,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import store from 'store'
 import _ from 'lodash'
 import vueCustomScrollbar from 'vue-custom-scrollbar'
@@ -82,7 +84,10 @@ import Item from './partials/item'
 export default {
   name: 'menu-left',
   components: { vueCustomScrollbar, SubMenu, Item },
-  computed: mapState(['settings']),
+  computed: {
+    ...mapState(['settings']),
+    ...mapGetters(['user']),
+  },
   mounted() {
     this.openKeys = store.get('app.menu.openedKeys') || []
     this.selectedKeys = store.get('app.menu.selectedKeys') || []

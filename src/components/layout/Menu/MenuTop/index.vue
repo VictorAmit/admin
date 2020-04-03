@@ -17,13 +17,15 @@
     <div :class="$style.navigation">
       <a-menu :mode="'horizontal'" :selectedKeys="selectedKeys" @click="handleClick">
         <template v-for="item in menuData">
-          <item
-            v-if="!item.children && !item.category"
-            :menu-info="item"
-            :styles="$style"
-            :key="item.key"
-          />
-          <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key" />
+          <template v-if="!item.roles || item.roles.includes(user.role)">
+            <item
+              v-if="!item.children && !item.category"
+              :menu-info="item"
+              :styles="$style"
+              :key="item.key"
+            />
+            <sub-menu v-if="item.children" :menu-info="item" :styles="$style" :key="item.key" />
+          </template>
         </template>
       </a-menu>
     </div>
@@ -31,7 +33,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import store from 'store'
 import _ from 'lodash'
 import { getMenuData } from '@/services/menu'
@@ -41,7 +43,10 @@ import Item from './partials/item'
 export default {
   name: 'menu-top',
   components: { SubMenu, Item },
-  computed: mapState(['settings']),
+  computed: {
+    ...mapState(['settings']),
+    ...mapGetters(['user']),
+  },
   mounted() {
     this.selectedKeys = store.get('app.menu.selectedKeys') || []
     this.setSelectedKeys()

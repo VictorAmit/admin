@@ -32,6 +32,9 @@ export default {
         ...user,
         role: 'admin',
       } : user
+      if (store.getters.state.authProvider !== 'firebase') {
+        return
+      }
       store.commit('UPDATE_USER', { user: _user })
     })
   },
