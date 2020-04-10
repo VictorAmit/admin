@@ -99,8 +99,7 @@
                   :dataSource="taskTableData"
                   :pagination="false"
                   :rowSelection="rowSelection"
-                  class="utils__scrollTable"
-                  :scroll="{ x: '100%' }"
+                  class="kit__utils__table"
                 >
                   <a slot="name" slot-scope="text" href="javascript: void(0);">{{text}}</a>
                   <a slot="username" slot-scope="username" href="javascript: void(0);">{{username}}</a>
@@ -280,8 +279,7 @@
               :columns="tableColumns"
               :dataSource="tableData"
               :pagination="false"
-              class="utils__scrollTable"
-              :scroll="{ x: '100%' }"
+              class="kit__utils__table"
             >
               <div
                 slot="filterDropdown"

@@ -25,13 +25,7 @@
       </a-tab-pane>
     </a-tabs>
     <div class="mb-4 px-4">
-      <a-table
-        :columns="columns"
-        :dataSource="data"
-        :pagination="false"
-        :scroll="{ x: '100%' }"
-        :class="$style.table"
-      >
+      <a-table :columns="columns" :dataSource="data" :pagination="false" :class="$style.table">
         <template slot="avatar" slot-scope="link">
           <div class="kit__utils__avatar">
             <img :src="link" alt="User" />

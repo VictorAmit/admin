@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="card-body">
-        <a-table :columns="columns" :dataSource="data" :scroll="{ x: '100%' }">
+        <a-table :columns="columns" :dataSource="data">
           <div
             slot="filterDropdown"
             slot-scope="{ setSelectedKeys, selectedKeys, confirm, clearFilters, column }"

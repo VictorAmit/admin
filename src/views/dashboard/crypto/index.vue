@@ -147,8 +147,7 @@
                   :columns="ordersSellColumns"
                   :dataSource="orderBook.sell"
                   :pagination="{ position: 'bottom' }"
-                  class="utils__scrollTable"
-                  :scroll="{ x: '100%' }"
+                  class="kit__utils__table"
                   size="small"
                 >
                   <span slot="bid" slot-scope="value" style="color: #00a45b;">{{value}}</span>
@@ -267,13 +266,12 @@
               </div>
             </div>
             <div :class="$style.orderRight">
-              <div :class="$style.table">
+              <div :class="$style.table" class="kit__utils__table">
                 <a-table
                   :columns="ordersBuyColumns"
                   :dataSource="orderBook.buy"
                   :pagination="{ position: 'bottom' }"
                   class="utils__scrollTable"
-                  :scroll="{ x: '100%' }"
                   size="small"
                 >
                   <span slot="ask" slot-scope="value" style="color: #f75535;">{{value}}</span>
@@ -295,8 +293,7 @@
             :columns="marketHistoryColumns"
             :dataSource="marketHistory.data"
             :pagination="{ position: 'bottom' }"
-            class="utils__scrollTable"
-            :scroll="{ x: '100%' }"
+            class="kit__utils__table"
             size="small"
           >
             <span slot="ask" slot-scope="value" style="color: #f75535;">{{value}}</span>
@@ -334,8 +331,7 @@
               :columns="myOrderColumns"
               :dataSource="myOpenOrders.data"
               :pagination="{ position: 'bottom' }"
-              class="utils__scrollTable"
-              :scroll="{ x: '100%' }"
+              class="kit__utils__table"
               size="small"
             >
               <span
@@ -370,8 +366,7 @@
               :columns="myOrderColumns"
               :dataSource="myOrderHistory.data"
               :pagination="{ position: 'bottom' }"
-              class="utils__scrollTable"
-              :scroll="{ x: '100%' }"
+              class="kit__utils__table"
               size="small"
             >
               <span

@@ -9,12 +9,7 @@
           <strong>Order items</strong>
         </h6>
         <div class="mb-4">
-          <a-table
-            :columns="columns"
-            :dataSource="data"
-            :pagination="false"
-            :scroll="{ x: '100%' }"
-          >
+          <a-table :columns="columns" :dataSource="data" :pagination="false">
             <a
               href="javascript: void(0);"
               slot="description"

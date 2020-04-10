@@ -92,11 +92,10 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="kit__utils__scrollTable mb-4">
+            <div class="kit__utils__table mb-4">
               <a-table
                 :columns="columns"
                 :dataSource="data"
-                :scroll="{ x: '100%' }"
                 :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
               >
                 <i

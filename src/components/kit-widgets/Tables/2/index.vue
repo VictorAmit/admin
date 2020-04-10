@@ -1,13 +1,7 @@
 <template>
   <div>
     <div class="mb-4">
-      <a-table
-        :columns="columns"
-        :dataSource="data"
-        :pagination="false"
-        :scroll="{ x: '100%' }"
-        :class="$style.table"
-      >
+      <a-table :columns="columns" :dataSource="data" :pagination="false" :class="$style.table">
         <template slot="description" slot-scope="text">
           <div class="text-wrap width-300">
             <div class="text-dark mb-3">{{text.title}}</div>

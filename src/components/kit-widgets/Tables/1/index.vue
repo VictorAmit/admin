@@ -1,12 +1,6 @@
 <template>
   <div class="mb-4">
-    <a-table
-      :columns="columns"
-      :dataSource="data"
-      :pagination="false"
-      :scroll="{ x: '100%' }"
-      :class="$style.table"
-    >
+    <a-table :columns="columns" :dataSource="data" :pagination="false" :class="$style.table">
       <template slot="progress" slot-scope="bar">
         <div class="progress">
           <div

@@ -1,39 +1,29 @@
 <template>
   <div>
     <div class="mb-2" :class="$style.textDivider">
-      <h4 class="font-size-24 font-weight-bold" :class="$style.textDividerContent">
-        Waiting actions
-      </h4>
+      <h4 class="font-size-24 font-weight-bold" :class="$style.textDividerContent">Waiting actions</h4>
     </div>
     <div class="mb-4">
       <a-table
         :columns="columns"
         :dataSource="tableData"
         :pagination="false"
-        :scroll="{ x: '100%' }"
         :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
-        :class="$style.table"
       >
         <template slot="userName" slot-scope="user">
           <div>
             <div>{{user.name}}</div>
-            <div className="text-gray-4">{{user.position}}</div>
+            <div class="text-gray-4">{{user.position}}</div>
           </div>
         </template>
         <template slot="location" slot-scope="text">
-          <a href="javascript: void(0);" class="text-blue">
-            {{text}}
-          </a>
+          <a href="javascript: void(0);" class="text-blue">{{text}}</a>
         </template>
         <template slot="value" slot-scope="text">
           <span class="font-weight-bold">{{text}}</span>
         </template>
         <template slot="chart" slot-scope="chartData">
-          <vue-chartist
-            type="Line"
-            :data="chartData"
-            :options="options"
-          />
+          <vue-chartist type="Line" :data="chartData" :options="options" />
         </template>
       </a-table>
     </div>
@@ -112,5 +102,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

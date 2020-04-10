@@ -1,8 +1,12 @@
 <template>
   <div>
     <div>
-      <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
-              data-projection="EPSG:4326" style="height: 300px">
+      <vl-map
+        :load-tiles-while-animating="true"
+        :load-tiles-while-interacting="true"
+        data-projection="EPSG:4326"
+        style="height: 300px"
+      >
         <vl-view
           :min-zoom.sync="minZoom"
           :zoom.sync="zoom"
@@ -15,17 +19,9 @@
       </vl-map>
     </div>
     <div class="mb-4">
-      <a-table
-        :columns="columns"
-        :dataSource="data"
-        :pagination="false"
-        :scroll="{ x: '100%' }"
-        :class="$style.table"
-      >
+      <a-table :columns="columns" :dataSource="data" :pagination="false" :class="$style.table">
         <template slot="location" slot-scope="text">
-          <a href="javascript: void(0);" class="text-blue">
-            {{text}}
-          </a>
+          <a href="javascript: void(0);" class="text-blue">{{text}}</a>
         </template>
         <template slot="value" slot-scope="text">
           <span class="font-weight-bold">{{text}}</span>
@@ -76,5 +72,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

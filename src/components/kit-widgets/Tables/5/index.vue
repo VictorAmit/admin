@@ -5,13 +5,7 @@
       <sup class="text-uppercase text-gray-6 font-size-30">paid</sup>
     </div>
     <div class="mb-4">
-      <a-table
-        :columns="columns"
-        :dataSource="data"
-        :pagination="false"
-        :scroll="{ x: '100%' }"
-        :class="$style.table"
-      >
+      <a-table :columns="columns" :dataSource="data" :pagination="false" :class="$style.table">
         <template slot="avatar" slot-scope="link">
           <div class="kit__utils__avatar">
             <img :src="link" alt="User" />

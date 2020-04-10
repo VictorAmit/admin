@@ -63,12 +63,7 @@
             <div class="text-muted">Block with important Recently Referrals information</div>
           </div>
           <div class="card-body">
-            <a-table
-              :columns="tableColumns"
-              :dataSource="tableData"
-              :pagination="false"
-              :scroll="{ x: '100%' }"
-            ></a-table>
+            <a-table :columns="tableColumns" :dataSource="tableData" :pagination="false"></a-table>
           </div>
         </div>
       </div>

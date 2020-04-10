@@ -58,13 +58,8 @@
         <div class="card">
           <div class="card-body">
             <h6 class="text-uppercase text-dark font-weight-bold mb-3">Recent help requests</h6>
-            <div class="kit__utils__scrollTable mb-4">
-              <a-table
-                :columns="columns"
-                :dataSource="data"
-                :pagination="false"
-                :scroll="{ x: '100%' }"
-              >
+            <div class="kit__utils__table mb-4">
+              <a-table :columns="columns" :dataSource="data" :pagination="false">
                 <template slot="email" slot-scope="text">
                   <a href="javascript: void(0);" class="text-blue">{{text}}</a>
                 </template>

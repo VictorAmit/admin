@@ -117,8 +117,7 @@
                     :columns="supportCasesTableColumns"
                     :dataSource="supportCasesTableData"
                     :pagination="false"
-                    class="utils__scrollTable"
-                    :scroll="{ x: '100%' }"
+                    class="kit__utils__table"
                   >
                     <span
                       slot="amount"

@@ -36,7 +36,6 @@
         :columns="columns"
         :dataSource="data"
         :pagination="false"
-        :scroll="{ x: '100%' }"
         :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
         :class="$style.table"
       >

@@ -21,13 +21,7 @@
       </div>
     </div>
     <div class="mb-4">
-      <a-table
-        :columns="columns"
-        :dataSource="data"
-        :pagination="false"
-        :scroll="{ x: '100%' }"
-        :class="$style.table"
-      >
+      <a-table :columns="columns" :dataSource="data" :pagination="false" :class="$style.table">
         <template slot="location" slot-scope="text">
           <a href="javascript: void(0);" class="text-blue">{{text}}</a>
         </template>
