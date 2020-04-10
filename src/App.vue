@@ -5,28 +5,33 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 import Localization from '@/localization'
 
 export default {
   name: 'app',
   components: { Localization },
   computed: {
+    ...mapState(['settings']),
     ...mapGetters(['user']),
     nextRoute() {
       return this.$route.query.redirect || '/'
     },
   },
   mounted() {
-    this.$store.commit('INIT_THEME')
+    this.$store.commit('SET_PRIMARY_COLOR', { color: this.settings.primaryColor })
+    this.$store.commit('SET_THEME', { theme: this.settings.theme })
   },
   methods: {
-    initTheme() {
-      const value = !this.settings.isMobileMenuOpen
-      this.$store.commit('CHANGE_SETTING', { setting: 'isMobileMenuOpen', value })
-    },
+    // initTheme() {
+    //   const value = !this.settings.isMobileMenuOpen
+    //   this.$store.commit('CHANGE_SETTING', { setting: 'isMobileMenuOpen', value })
+    // },
   },
   watch: {
+    '$store.state.settings.theme'(theme) {
+      this.$store.commit('SET_THEME', { theme })
+    },
     user(auth) {
       if (auth) {
         this.$router.replace(this.nextRoute)

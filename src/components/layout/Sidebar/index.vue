@@ -228,7 +228,7 @@
       </template>
       <a
         href="javascript: void(0);"
-        @click="switchDarkTheme()"
+        @click="setTheme(settings.theme === 'light' ? 'dark' : 'light')"
         style="bottom: calc(50% + 60px)"
         :class="$style.cui__sidebar__toggleButton"
       >
@@ -320,8 +320,8 @@ export default {
       const setting = 'locale'
       this.$store.commit('CHANGE_SETTING', { setting, value })
     },
-    switchDarkTheme() {
-      this.$store.commit('TOGGLE_THEME')
+    setTheme(nextTheme) {
+      this.$store.commit('SET_THEME', { theme: nextTheme })
     },
     selectColor: throttle(function (color) {
       this.$store.commit('SET_PRIMARY_COLOR', { color })

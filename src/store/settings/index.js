@@ -98,58 +98,23 @@ export default {
       state.primaryColor = color
       store.set('app.settings.primaryColor', color)
     },
-    TOGGLE_THEME(state) {
-      const currentTheme = state.theme
-      const nextTheme = currentTheme === 'light' ? 'dark' : 'light'
-      const toggleTheme = () => {
-        if (nextTheme === 'light') {
-          document.querySelector('body').classList.remove('kit__dark')
-          window.less.modifyVars(AntDesignLightTheme)
-        } else {
-          document.querySelector('body').classList.add('kit__dark')
-          window.less.modifyVars(AntDesignDarkTheme)
-          state.menuColor = 'dark'
-          store.set('app.settings.menuColor', 'dark')
-        }
+    SET_THEME(state, payload) {
+      const { theme } = payload
+      if (theme === 'light') {
+        document.querySelector('body').classList.remove('kit__dark')
+        window.less.modifyVars(AntDesignLightTheme)
+        state.menuColor = 'light'
+        store.set('app.settings.menuColor', 'light')
       }
-      toggleTheme()
-      state.theme = nextTheme
-      store.set('app.settings.theme', nextTheme)
-    },
-    INIT_THEME(state) {
-      // set primary color on app load
-      const primaryColor = () => {
-        const color = store.get('app.settings.primaryColor')
-        if (color) {
-          const addStyles = () => {
-            const styleElement = document.querySelector('#primaryColor')
-            if (styleElement) {
-              styleElement.remove()
-            }
-            const body = document.querySelector('body')
-            const styleEl = document.createElement('style')
-            const css = document.createTextNode(`:root { --kit-color-primary: ${color};}`)
-            styleEl.setAttribute('id', 'primaryColor')
-            styleEl.appendChild(css)
-            body.appendChild(styleEl)
-          }
-          addStyles()
-          state.primaryColor = color
-        }
-      }
-      primaryColor()
 
-      // init theme
-      const initTheme = () => {
-        const theme = store.get('app.settings.theme')
-        if (theme === 'dark') {
-          document.querySelector('body').classList.add('kit__dark')
-          global.window.less.modifyVars(AntDesignDarkTheme)
-        } else {
-          global.window.less.modifyVars(AntDesignLightTheme)
-        }
+      if (theme === 'dark') {
+        document.querySelector('body').classList.add('kit__dark')
+        window.less.modifyVars(AntDesignDarkTheme)
+        state.menuColor = 'dark'
+        store.set('app.settings.menuColor', 'dark')
       }
-      initTheme()
+      state.theme = theme
+      store.set('app.settings.theme', theme)
     },
   },
   actions: {},
