@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center mb-5">
+    <div class="text-center mb-5 px-3">
       <h1 class="mb-5">
         <strong>Welcome to {{ settings.logo }}</strong>
       </h1>
@@ -39,7 +39,7 @@
             size="large"
             placeholder="Password"
             type="password"
-            v-decorator="['password', {initialValue: 'mediatec', rules: [{ required: true, message: 'Please input your Password!' }]}]"
+            v-decorator="['password', {initialValue: 'cleanui', rules: [{ required: true, message: 'Please input your Password!' }]}]"
           />
         </a-form-item>
         <a-button type="primary" htmlType="submit" size="large" class="text-center w-100">
