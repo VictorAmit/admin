@@ -4,8 +4,8 @@
       <a-tooltip placement="bottom" :key="item.key">
         <template slot="title">{{ item.title }}</template>
         <span>
-          <router-link :to="item.url" :class="$style.item" class="mr-2">
-            <i class="mr-2 fe" :class="[$style.icon, item.icon]" />
+          <router-link :to="item.url" :class="$style.item" class="mr-3">
+            <i class="fe" :class="[$style.icon, item.icon]" />
           </router-link>
         </span>
       </a-tooltip>
