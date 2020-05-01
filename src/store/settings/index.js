@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import store from 'store'
-import AntDesignDarkTheme from '@/components/kit-vendors/antd/themes/themeDark'
-import AntDesignLightTheme from '@/components/kit-vendors/antd/themes/themeLight'
 
 Vue.use(Vuex)
 
@@ -29,7 +27,7 @@ export default {
       menuLayoutType: 'left', // left, top, nomenu
       routerAnimation: 'slide-fadein-up', // none, slide-fadein-up, slide-fadein-right, fadein, zoom-fadein
       menuColor: 'white', // white, dark, gray
-      theme: 'light', // light, dark
+      theme: 'default', // default, dark
       authPagesColor: 'white', // white, gray, image
       primaryColor: '#4b7cf3',
       leftMenuWidth: 256,
@@ -100,16 +98,12 @@ export default {
     },
     SET_THEME(state, payload) {
       const { theme } = payload
-      if (theme === 'light') {
-        document.querySelector('body').classList.remove('kit__dark')
-        window.less.modifyVars(AntDesignLightTheme)
+      document.querySelector('html').setAttribute('data-kit-theme', theme)
+      if (theme === 'default') {
         state.menuColor = 'light'
         store.set('app.settings.menuColor', 'light')
       }
-
       if (theme === 'dark') {
-        document.querySelector('body').classList.add('kit__dark')
-        window.less.modifyVars(AntDesignDarkTheme)
         state.menuColor = 'dark'
         store.set('app.settings.menuColor', 'dark')
       }

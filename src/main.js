@@ -1,3 +1,8 @@
+import 'ant-design-vue/lib/style/index.less' // antd core styles
+import './components/kit-vendors/antd/themes/default.less' // default theme antd components
+import './components/kit-vendors/antd/themes/dark.less' // dark theme antd components
+import './global.scss' // app & third-party component styles
+
 import Vue from 'vue'
 import VuePageTitle from 'vue-page-title'
 import App from './App.vue'
@@ -10,16 +15,15 @@ import { i18n } from '@/localization'
 import VueLayers from 'vuelayers'
 import BootstrapVue from 'bootstrap-vue'
 import {
-  Avatar, TreeSelect, Rate, Breadcrumb, InputNumber, Steps, Message,
+  Avatar, TreeSelect, Rate, Breadcrumb, InputNumber, Steps,
   Upload, Button, Layout, Table, Icon, Progress, Radio, Dropdown, Menu,
   Carousel, Input, Calendar, Badge, Slider, Form, Tooltip, Select, Switch,
   Tag, Affix, Spin, Alert, Checkbox, Tabs, Pagination, notification, Drawer,
   Cascader, DatePicker, TimePicker, Divider, Anchor, AutoComplete, BackTop, Collapse, Card, List, Popover,
-  Tree, Timeline, Row, Col, Transfer, Modal, message, Popconfirm, Skeleton, LocaleProvider, Comment,
+  Tree, Timeline, Row, Col, Transfer, Modal, message, Popconfirm, Skeleton, ConfigProvider, Comment,
 } from 'ant-design-vue'
 
 import './registerServiceWorker'
-import './global.scss'
 
 Vue.use(BootstrapVue)
 Vue.use(VueLayers)
@@ -63,7 +67,6 @@ Vue.use(Checkbox)
 Vue.use(Tabs)
 Vue.use(Pagination)
 Vue.use(Upload)
-Vue.use(Message)
 Vue.use(Steps)
 Vue.use(InputNumber)
 Vue.use(Drawer)
@@ -75,7 +78,7 @@ Vue.use(Anchor)
 Vue.use(AutoComplete)
 Vue.use(Collapse)
 Vue.use(BackTop)
-Vue.use(LocaleProvider)
+Vue.use(ConfigProvider)
 Vue.use(Comment)
 
 Vue.prototype.$notification = notification

@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import CuiError500 from '@/components/system/Errors/500'
+import CuiError500 from '@/components/cui-system/Errors/500'
 export default {
   components: {
     CuiError500,

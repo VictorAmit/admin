@@ -22,12 +22,6 @@ export default {
     this.$store.commit('SET_PRIMARY_COLOR', { color: this.settings.primaryColor })
     this.$store.commit('SET_THEME', { theme: this.settings.theme })
   },
-  methods: {
-    // initTheme() {
-    //   const value = !this.settings.isMobileMenuOpen
-    //   this.$store.commit('CHANGE_SETTING', { setting: 'isMobileMenuOpen', value })
-    // },
-  },
   watch: {
     '$store.state.settings.theme'(theme) {
       this.$store.commit('SET_THEME', { theme })

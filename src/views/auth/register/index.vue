@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import CuiRegister from '@/components/system/Auth/Register'
+import CuiRegister from '@/components/cui-system/Auth/Register'
 export default {
   components: {
     CuiRegister,

@@ -65,13 +65,13 @@
 
 <script>
 import { mapState } from 'vuex'
-import CuiTopbar from '@/components/layout/Topbar'
-import CuiBreadcrumbs from '@/components/layout/Breadcrumbs'
-import CuiFooter from '@/components/layout/Footer'
-import CuiSidebar from '@/components/layout/Sidebar'
-import CuiSupportChat from '@/components/layout/SupportChat'
-import CuiMenuLeft from '@/components/layout/Menu/MenuLeft'
-import CuiMenuTop from '@/components/layout/Menu/MenuTop'
+import CuiTopbar from '@/components/cui-layout/Topbar'
+import CuiBreadcrumbs from '@/components/cui-layout/Breadcrumbs'
+import CuiFooter from '@/components/cui-layout/Footer'
+import CuiSidebar from '@/components/cui-layout/Sidebar'
+import CuiSupportChat from '@/components/cui-layout/SupportChat'
+import CuiMenuLeft from '@/components/cui-layout/Menu/MenuLeft'
+import CuiMenuTop from '@/components/cui-layout/Menu/MenuTop'
 
 export default {
   name: 'MainLayout',

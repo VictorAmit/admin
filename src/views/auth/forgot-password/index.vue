@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import CuiForgotPassword from '@/components/system/Auth/ForgotPassword'
+import CuiForgotPassword from '@/components/cui-system/Auth/ForgotPassword'
 export default {
   components: {
     CuiForgotPassword,

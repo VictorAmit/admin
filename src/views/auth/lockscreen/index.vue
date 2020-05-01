@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import CuiLockscreen from '@/components/system/Auth/Lockscreen'
+import CuiLockscreen from '@/components/cui-system/Auth/Lockscreen'
 export default {
   components: {
     CuiLockscreen,

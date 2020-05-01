@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import CuiError404 from '@/components/system/Errors/404'
+import CuiError404 from '@/components/cui-system/Errors/404'
 export default {
   components: {
     CuiError404,
