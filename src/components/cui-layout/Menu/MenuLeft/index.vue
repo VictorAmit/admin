@@ -77,7 +77,7 @@ import { mapState, mapGetters } from 'vuex'
 import store from 'store'
 import _ from 'lodash'
 import vueCustomScrollbar from 'vue-custom-scrollbar'
-import { getMenuData } from '@/services/menu'
+import { getMenuData } from '@/services/menu.service'
 import SubMenu from './partials/submenu'
 import Item from './partials/item'
 

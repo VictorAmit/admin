@@ -9,8 +9,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import NProgress from 'vue-nprogress'
-import FirebaseAuthService from './services/firebase'
-import JwtAuthService from './services/jwt'
+import FirebaseAuthService from './services/firebase.auth.service'
 import { i18n } from '@/localization'
 import VueLayers from 'vuelayers'
 import BootstrapVue from 'bootstrap-vue'
@@ -86,7 +85,6 @@ Vue.prototype.$message = message
 
 Vue.use(NProgress)
 Vue.use(FirebaseAuthService)
-Vue.use(JwtAuthService)
 Vue.use(VuePageTitle, {
   prefix: 'Clean UI Pro Vue | ',
   router,

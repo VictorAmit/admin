@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center mb-5 px-3">
+    <div class="text-center mb-5">
       <h1 class="mb-5">
         <strong>Welcome to {{ settings.logo }}</strong>
       </h1>
@@ -22,8 +22,18 @@
           @change="e => changeAuthProvider(e.target.value)"
         >
           <a-radio value="firebase">Firebase</a-radio>
-          <a-radio value="jwt">JWT</a-radio>
-          <a-radio value="Auth0" disabled>Auth0</a-radio>
+          <a-tooltip>
+            <template slot="title">
+              <span>Read docs - Auth/JWT section</span>
+            </template>
+            <a-radio value="jwt" disabled>JWT</a-radio>
+          </a-tooltip>
+          <a-tooltip>
+            <template slot="title">
+              <span>Read docs - Auth/Auth0 section</span>
+            </template>
+            <a-radio value="Auth0" disabled>Auth0</a-radio>
+          </a-tooltip>
         </a-radio-group>
       </div>
       <a-form class="mb-4" :form="form" @submit="handleSubmit">
@@ -73,44 +83,23 @@ export default {
       e.preventDefault()
       this.form.validateFields((err, values) => {
         if (!err) {
-          if (this.settings.authProvider === 'firebase') {
-            this.$nprogress.start()
-            this.$firebaseAuth.login(values.email, values.password)
-              .then(() => {
-                this.$nprogress.done()
-                this.$router.push('/')
-                this.$notification.success({
-                  message: 'Logged In',
-                  description: 'You have successfully logged in to Air UI Vue Admin Template!',
-                })
+          this.$nprogress.start()
+          this.$firebaseAuth.login(values.email, values.password)
+            .then(() => {
+              this.$nprogress.done()
+              this.$router.push('/')
+              this.$notification.success({
+                message: 'Logged In',
+                description: 'You have successfully logged in to Air UI Vue Admin Template!',
               })
-              .catch((error) => {
-                this.$nprogress.done()
-                this.$notification.warning({
-                  message: error.code,
-                  description: error.message,
-                })
+            })
+            .catch((error) => {
+              this.$nprogress.done()
+              this.$notification.warning({
+                message: error.code,
+                description: error.message,
               })
-          }
-          if (this.settings.authProvider === 'jwt') {
-            this.$nprogress.start()
-            this.$jwtAuth.login(values.email, values.password)
-              .then(() => {
-                this.$nprogress.done()
-                this.$router.push('/')
-                this.$notification.success({
-                  message: 'Logged In',
-                  description: 'You have successfully logged in to Air UI Vue Admin Template!',
-                })
-              })
-              .catch((error) => {
-                this.$nprogress.done()
-                this.$notification.warning({
-                  message: error.code,
-                  description: error.message,
-                })
-              })
-          }
+            })
         }
       })
     },
