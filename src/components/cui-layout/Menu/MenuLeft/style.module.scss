@@ -5,7 +5,7 @@
 .menu {
   background: $white !important;
   color: $text;
-  transition: none;
+  transition: none !important;
   font-size: rem(15);
 
   .menuOuter {
@@ -242,7 +242,7 @@
     }
 
     :global(.ant-menu-item),
-    :global(.ant-menu-submenu-title) {
+    :global(.ant-menu > .ant-menu-submenu > .ant-menu-submenu-title) {
       padding-left: 0 !important;
       padding-right: 0 !important;
 

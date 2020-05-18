@@ -98,17 +98,10 @@ export default {
     },
     SET_THEME(state, payload) {
       const { theme } = payload
-      document.querySelector('html').setAttribute('data-kit-theme', theme)
-      if (theme === 'default') {
-        state.menuColor = 'light'
-        store.set('app.settings.menuColor', 'light')
-      }
-      if (theme === 'dark') {
-        state.menuColor = 'dark'
-        store.set('app.settings.menuColor', 'dark')
-      }
-      state.theme = theme
-      store.set('app.settings.theme', theme)
+      const nextTheme = theme === 'dark' ? 'dark' : 'default'
+      document.querySelector('html').setAttribute('data-kit-theme', nextTheme)
+      state.theme = nextTheme
+      store.set('app.settings.theme', nextTheme)
     },
   },
   actions: {},

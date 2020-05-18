@@ -19,7 +19,7 @@
 <script>
 import { mapState } from 'vuex'
 import { getMenuData } from '@/services/menu.service'
-import { reduce } from 'lodash'
+import reduce from 'lodash/reduce'
 
 export default {
   name: 'breadcrumbs',

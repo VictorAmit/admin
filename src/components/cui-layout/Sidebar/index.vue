@@ -281,7 +281,7 @@
 <script>
 import vueCustomScrollbar from 'vue-custom-scrollbar'
 import { mapState } from 'vuex'
-import { throttle } from 'lodash'
+import throttle from 'lodash/throttle'
 import AirColorPicker from './partials/colorPicker'
 
 export default {
@@ -322,6 +322,10 @@ export default {
     },
     setTheme(nextTheme) {
       this.$store.commit('SET_THEME', { theme: nextTheme })
+      this.$store.commit('CHANGE_SETTING', {
+        setting: 'menuColor',
+        value: nextTheme === 'dark' ? 'dark' : 'light',
+      })
     },
     selectColor: throttle(function (color) {
       this.$store.commit('SET_PRIMARY_COLOR', { color })

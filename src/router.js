@@ -451,6 +451,12 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  // auth for demo build, remove it in your app
+  if (process.env.VUE_APP_AUTHENTICATED) {
+    next()
+    return
+  }
+
   if (to.matched.some(record => record.meta.authRequired)) {
     if (!store.state.user.user) {
       next({

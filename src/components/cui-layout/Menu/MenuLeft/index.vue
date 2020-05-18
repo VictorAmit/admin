@@ -75,7 +75,7 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import store from 'store'
-import _ from 'lodash'
+import find from 'lodash/find'
 import vueCustomScrollbar from 'vue-custom-scrollbar'
 import { getMenuData } from '@/services/menu.service'
 import SubMenu from './partials/submenu'
@@ -136,7 +136,7 @@ export default {
           }
           return flattenedItems
         }, [])
-      const selectedItem = _.find(flattenItems(menuData, 'children'), [
+      const selectedItem = find(flattenItems(menuData, 'children'), [
         'url',
         pathname,
       ])

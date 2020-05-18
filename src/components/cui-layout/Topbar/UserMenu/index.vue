@@ -57,7 +57,6 @@ export default {
     },
     logout() {
       this.$firebaseAuth.logout()
-      this.$jwtAuth.logout()
     },
   },
 }
