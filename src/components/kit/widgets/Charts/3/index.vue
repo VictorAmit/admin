@@ -10,15 +10,13 @@
     <div class="d-flex flex-wrap">
       <div class="mr-5 mb-2">
         <div class="text-nowrap text-uppercase text-gray-4">
-          <div :class="[$style.donut, $style.success]" />
-          Gross revenue
+          <div :class="[$style.donut, $style.success]" />Gross revenue
         </div>
         <div class="font-weight-bold font-size-18 text-dark">+$125,367.36</div>
       </div>
       <div class="mr-5 mb-2">
         <div class="text-nowrap text-uppercase text-gray-4">
-          <div :class="[$style.primary, $style.donut]" />
-          Gross Earnings
+          <div :class="[$style.primary, $style.donut]" />Gross Earnings
         </div>
         <div class="font-weight-bold font-size-18 text-dark">+$125,367.36</div>
       </div>
@@ -28,6 +26,7 @@
 <script>
 import data from './data.json'
 import VueChartist from 'v-chartist'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 export default {
   name: 'KitChart3',
   components: {
@@ -43,7 +42,7 @@ export default {
         bottom: 0,
       },
       fullWidth: true,
-      showPoint: false,
+      showPoint: true,
       lineSmooth: false,
       axisY: {
         showGrid: false,
@@ -56,6 +55,7 @@ export default {
         offset: 0,
       },
       showArea: true,
+      plugins: [ChartistTooltip({ anchorToPoint: false, appendToBody: true, seriesName: false })],
     }
     const listener = {
       draw: item => {
@@ -80,5 +80,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

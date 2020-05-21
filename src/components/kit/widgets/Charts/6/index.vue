@@ -9,9 +9,7 @@
           <i class="fe fe-menu font-size-18" />
         </div>
         <div class="flex-grow-1">
-          <div class="text-dark font-size-18 font-weight-bold text-nowrap mb-2">
-            78% from $500,000.00
-          </div>
+          <div class="text-dark font-size-18 font-weight-bold text-nowrap mb-2">78% from $500,000.00</div>
           <div class="progress">
             <div class="progress-bar bg-success" style="width: 70%" />
           </div>
@@ -19,7 +17,7 @@
       </div>
     </div>
     <vue-chartist
-      class="height-200"
+      class="height-200 ct-hidden-points"
       :class="$style.chart"
       type="Line"
       :data="data"
@@ -30,6 +28,7 @@
 <script>
 import data from './data.json'
 import VueChartist from 'v-chartist'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 export default {
   name: 'KitChart6',
   components: {
@@ -45,7 +44,7 @@ export default {
         bottom: 0,
       },
       fullWidth: true,
-      showPoint: false,
+      showPoint: true,
       lineSmooth: false,
       axisY: {
         showGrid: false,
@@ -58,6 +57,7 @@ export default {
         offset: 0,
       },
       showArea: true,
+      plugins: [ChartistTooltip({ anchorToPoint: false, appendToBody: true, seriesName: false })],
     }
 
     return {
@@ -68,5 +68,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

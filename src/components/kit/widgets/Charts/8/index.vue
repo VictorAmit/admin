@@ -23,7 +23,7 @@
           <span class="font-weight-bold">{{text}}</span>
         </template>
         <template slot="chart" slot-scope="chartData">
-          <vue-chartist type="Line" :data="chartData" :options="options" />
+          <vue-chartist class="ct-hidden-points" type="Line" :data="chartData" :options="options" />
         </template>
       </a-table>
     </div>
@@ -32,6 +32,7 @@
 <script>
 import tableData from './data.json'
 import VueChartist from 'v-chartist'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 
 const columns = [
   {
@@ -73,7 +74,7 @@ export default {
         bottom: 5,
       },
       fullWidth: true,
-      showPoint: false,
+      showPoint: true,
       lineSmooth: true,
       axisY: {
         showGrid: false,
@@ -86,6 +87,7 @@ export default {
         offset: 0,
       },
       showArea: false,
+      plugins: [ChartistTooltip({ anchorToPoint: false, appendToBody: true, seriesName: false })],
     }
     return {
       tableData,

@@ -2,17 +2,13 @@
   <div>
     <div class="font-weight-bold text-dark font-size-24">+90%</div>
     <div>Sales Rise</div>
-    <vue-chartist
-      class="height-200"
-      type="Line"
-      :data="data"
-      :options="options"
-    />
+    <vue-chartist class="height-200 ct-hidden-points" type="Line" :data="data" :options="options" />
   </div>
 </template>
 <script>
 import data from './data.json'
 import VueChartist from 'v-chartist'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 export default {
   name: 'KitChart4v1',
   components: {
@@ -27,7 +23,7 @@ export default {
         bottom: 5,
       },
       fullWidth: true,
-      showPoint: false,
+      showPoint: true,
       lineSmooth: true,
       axisY: {
         showGrid: false,
@@ -35,11 +31,12 @@ export default {
         offset: 0,
       },
       axisX: {
-        showGrid: false,
-        showLabel: false,
-        offset: 0,
+        showGrid: true,
+        showLabel: true,
+        offset: 20,
       },
       showArea: false,
+      plugins: [ChartistTooltip({ anchorToPoint: false, appendToBody: true, seriesName: false })],
     }
 
     return {

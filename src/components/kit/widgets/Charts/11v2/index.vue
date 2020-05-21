@@ -3,12 +3,19 @@
     <div class="font-size-36 font-weight-bold text-dark mb-n2">$240.56</div>
     <div class="text-uppercase">Outcome</div>
     <div :class="$style.chartContainer">
-      <vue-chartist :class="$style.chart" :data="chartData" :options="chartOptions" type="Line" />
+      <vue-chartist
+        :class="$style.chart"
+        class="ct-hidden-points"
+        :data="chartData"
+        :options="chartOptions"
+        type="Line"
+      />
     </div>
   </div>
 </template>
 <script>
 import VueChartist from 'v-chartist'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 
 export default {
   name: 'KitChart11v1',
@@ -43,7 +50,8 @@ export default {
         },
         fullWidth: true,
         height: '110px',
-        showPoint: false,
+        showPoint: true,
+        plugins: [ChartistTooltip({ anchorToPoint: false, appendToBody: true, seriesName: false })],
       },
       chartData: {
         series: [
@@ -53,7 +61,8 @@ export default {
             67,
             84,
             74,
-            97,
+            82,
+            64,
           ],
         ],
       },

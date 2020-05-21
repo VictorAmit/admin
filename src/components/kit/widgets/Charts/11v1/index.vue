@@ -5,6 +5,7 @@
     <div :class="$style.chartContainer">
       <vue-chartist
         :class="$style.chart"
+        class="ct-hidden-points"
         :data="chartData"
         :options="chartOptions"
         type="Line"
@@ -14,6 +15,7 @@
 </template>
 <script>
 import VueChartist from 'v-chartist'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 
 export default {
   name: 'KitChart11v1',
@@ -48,7 +50,8 @@ export default {
         },
         fullWidth: true,
         height: '110px',
-        showPoint: false,
+        showPoint: true,
+        plugins: [ChartistTooltip({ anchorToPoint: false, appendToBody: true, seriesName: false })],
       },
       chartData: {
         series: [
@@ -68,5 +71,5 @@ export default {
 }
 </script>
 <style lang="scss" module>
-  @import './style.module.scss';
+@import "./style.module.scss";
 </style>

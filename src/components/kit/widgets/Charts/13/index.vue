@@ -1,13 +1,11 @@
 <template>
   <div>
     <div class="card-body">
-      <div class="font-weight-bold font-size-36 font-weight-bold text-primary">
-        246 / Day
-      </div>
+      <div class="font-weight-bold font-size-36 font-weight-bold text-primary">246 / Day</div>
     </div>
     <div class="position-relative">
       <vue-chartist
-        class="height-200"
+        class="height-200 ct-hidden-points"
         type="Line"
         :data="data"
         :options="options"
@@ -18,6 +16,8 @@
 <script>
 import data from './data.json'
 import VueChartist from 'v-chartist'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
+import Chartist from 'chartist'
 export default {
   name: 'KitChart13',
   components: {
@@ -25,6 +25,9 @@ export default {
   },
   data: function () {
     const options = {
+      lineSmooth: Chartist.Interpolation.none({
+        fillHoles: false,
+      }),
       showPoint: true,
       showLine: true,
       showArea: true,
@@ -42,6 +45,7 @@ export default {
       },
       chartPadding: 0,
       low: 0,
+      plugins: [ChartistTooltip({ anchorToPoint: false, appendToBody: true, seriesName: false })],
     }
 
     return {
