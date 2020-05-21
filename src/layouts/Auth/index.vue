@@ -74,8 +74,8 @@
 
 <script>
 import { mapState } from 'vuex'
-import CuiSidebar from '@/components/cui-layout/Sidebar'
-import CuiSupportChat from '@/components/cui-layout/SupportChat'
+import CuiSidebar from '@/components/cleanui/layout/Sidebar'
+import CuiSupportChat from '@/components/cleanui/layout/SupportChat'
 
 export default {
   name: 'AuthLayout',

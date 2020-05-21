@@ -155,8 +155,8 @@
   </div>
 </template>
 <script>
-import KitGeneral15 from '@/components/kit-widgets/General/15/index'
-import KitList15 from '@/components/kit-widgets/Lists/15/index'
+import KitGeneral15 from '@/components/kit/widgets/General/15/index'
+import KitList15 from '@/components/kit/widgets/Lists/15/index'
 
 export default {
   components: {

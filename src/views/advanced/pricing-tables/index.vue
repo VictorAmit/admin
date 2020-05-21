@@ -17,9 +17,9 @@
   </div>
 </template>
 <script>
-import KitList21 from '@/components/kit-widgets/Lists/21'
-import KitList21v1 from '@/components/kit-widgets/Lists/21v1'
-import KitList21v2 from '@/components/kit-widgets/Lists/21v2'
+import KitList21 from '@/components/kit/widgets/Lists/21'
+import KitList21v1 from '@/components/kit/widgets/Lists/21v1'
+import KitList21v2 from '@/components/kit/widgets/Lists/21v2'
 
 export default {
   components: {

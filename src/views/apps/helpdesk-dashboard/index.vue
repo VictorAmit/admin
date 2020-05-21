@@ -85,10 +85,10 @@
 </template>
 <script>
 import { DraggableTree } from 'vue-draggable-nested-tree'
-import KitGeneral2 from '@/components/kit-widgets/General/2/index'
-import KitGeneral2v1 from '@/components/kit-widgets/General/2v1/index'
-import KitGeneral2v2 from '@/components/kit-widgets/General/2v2/index'
-import KitTable7 from '@/components/kit-widgets/Tables/7/index'
+import KitGeneral2 from '@/components/kit/widgets/General/2/index'
+import KitGeneral2v1 from '@/components/kit/widgets/General/2v1/index'
+import KitGeneral2v2 from '@/components/kit/widgets/General/2v2/index'
+import KitTable7 from '@/components/kit/widgets/Tables/7/index'
 import data from './data.json'
 const columns = [
   {

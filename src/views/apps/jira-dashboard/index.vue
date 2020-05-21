@@ -193,11 +193,11 @@
   </div>
 </template>
 <script>
-import KitGeneral1 from '@/components/kit-widgets/General/1/index'
-import KitGeneral6 from '@/components/kit-widgets/General/6/index'
-import KitGeneral6v1 from '@/components/kit-widgets/General/6v1/index'
-import KitList11 from '@/components/kit-widgets/Lists/11/index'
-import KitTable1 from '@/components/kit-widgets/Tables/1/index'
+import KitGeneral1 from '@/components/kit/widgets/General/1/index'
+import KitGeneral6 from '@/components/kit/widgets/General/6/index'
+import KitGeneral6v1 from '@/components/kit/widgets/General/6v1/index'
+import KitList11 from '@/components/kit/widgets/Lists/11/index'
+import KitTable1 from '@/components/kit/widgets/Tables/1/index'
 
 export default {
   components: {

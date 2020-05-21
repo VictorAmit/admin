@@ -75,14 +75,14 @@
 
 <script>
 
-import KitTable1 from '@/components/kit-widgets/Tables/1'
-import KitTable2 from '@/components/kit-widgets/Tables/2'
-import KitTable3 from '@/components/kit-widgets/Tables/3'
-import KitTable4 from '@/components/kit-widgets/Tables/4'
-import KitTable5 from '@/components/kit-widgets/Tables/5'
-import KitTable6 from '@/components/kit-widgets/Tables/6'
-import KitTable7 from '@/components/kit-widgets/Tables/7'
-import KitTable8 from '@/components/kit-widgets/Tables/8'
+import KitTable1 from '@/components/kit/widgets/Tables/1'
+import KitTable2 from '@/components/kit/widgets/Tables/2'
+import KitTable3 from '@/components/kit/widgets/Tables/3'
+import KitTable4 from '@/components/kit/widgets/Tables/4'
+import KitTable5 from '@/components/kit/widgets/Tables/5'
+import KitTable6 from '@/components/kit/widgets/Tables/6'
+import KitTable7 from '@/components/kit/widgets/Tables/7'
+import KitTable8 from '@/components/kit/widgets/Tables/8'
 
 export default {
   components: {

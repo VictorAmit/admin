@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import KitTable8 from '@/components/kit-widgets/Tables/8'
+import KitTable8 from '@/components/kit/widgets/Tables/8'
 
 export default {
   components: {

@@ -72,14 +72,14 @@
   </div>
 </template>
 <script>
-import CuiChart3 from '@/components/kit-widgets/Charts/3/index'
-import CuiGeneral2 from '@/components/kit-widgets/General/2/index'
-import CuiGeneral2v1 from '@/components/kit-widgets/General/2v1/index'
-import CuiGeneral2v2 from '@/components/kit-widgets/General/2v2/index'
-import CuiGeneral2v3 from '@/components/kit-widgets/General/2v3/index'
-import CuiGeneral16 from '@/components/kit-widgets/General/16/index'
-import CuiList11 from '@/components/kit-widgets/Lists/11/index'
-import CuiList12 from '@/components/kit-widgets/Lists/12/index'
+import CuiChart3 from '@/components/kit/widgets/Charts/3/index'
+import CuiGeneral2 from '@/components/kit/widgets/General/2/index'
+import CuiGeneral2v1 from '@/components/kit/widgets/General/2v1/index'
+import CuiGeneral2v2 from '@/components/kit/widgets/General/2v2/index'
+import CuiGeneral2v3 from '@/components/kit/widgets/General/2v3/index'
+import CuiGeneral16 from '@/components/kit/widgets/General/16/index'
+import CuiList11 from '@/components/kit/widgets/Lists/11/index'
+import CuiList12 from '@/components/kit/widgets/Lists/12/index'
 import products from './data.json'
 
 export default {

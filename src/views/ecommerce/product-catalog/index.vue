@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-import CuiGeneral16 from '@/components/kit-widgets/General/16/index'
+import CuiGeneral16 from '@/components/kit/widgets/General/16/index'
 import products from './data.json'
 
 export default {

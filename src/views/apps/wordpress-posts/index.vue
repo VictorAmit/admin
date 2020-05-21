@@ -191,7 +191,7 @@
   </div>
 </template>
 <script>
-import KitList15 from '@/components/kit-widgets/Lists/15/index'
+import KitList15 from '@/components/kit/widgets/Lists/15/index'
 
 export default {
   components: {

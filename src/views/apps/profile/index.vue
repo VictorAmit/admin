@@ -127,12 +127,12 @@
   </div>
 </template>
 <script>
-import KitGeneral1 from '@/components/kit-widgets/General/1/index'
-import KitGeneral10v1 from '@/components/kit-widgets/General/10v1/index'
-import KitGeneral12v1 from '@/components/kit-widgets/General/12v1/index'
-import KitGeneral14 from '@/components/kit-widgets/General/14/index'
-import KitGeneral15 from '@/components/kit-widgets/General/15/index'
-import KitList19 from '@/components/kit-widgets/Lists/19/index'
+import KitGeneral1 from '@/components/kit/widgets/General/1/index'
+import KitGeneral10v1 from '@/components/kit/widgets/General/10v1/index'
+import KitGeneral12v1 from '@/components/kit/widgets/General/12v1/index'
+import KitGeneral14 from '@/components/kit/widgets/General/14/index'
+import KitGeneral15 from '@/components/kit/widgets/General/15/index'
+import KitList19 from '@/components/kit/widgets/Lists/19/index'
 export default {
   components: {
     KitGeneral1,

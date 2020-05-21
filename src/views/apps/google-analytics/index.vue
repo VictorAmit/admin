@@ -53,13 +53,13 @@
   </div>
 </template>
 <script>
-import KitChart1 from '@/components/kit-widgets/Charts/1/index'
-import KitChart2 from '@/components/kit-widgets/Charts/2/index'
-import KitChart5 from '@/components/kit-widgets/Charts/5/index'
-import KitChart9 from '@/components/kit-widgets/Charts/9/index'
-import KitChart10 from '@/components/kit-widgets/Charts/10/index'
-import KitList12 from '@/components/kit-widgets/Lists/12/index'
-import KitList15 from '@/components/kit-widgets/Lists/15/index'
+import KitChart1 from '@/components/kit/widgets/Charts/1/index'
+import KitChart2 from '@/components/kit/widgets/Charts/2/index'
+import KitChart5 from '@/components/kit/widgets/Charts/5/index'
+import KitChart9 from '@/components/kit/widgets/Charts/9/index'
+import KitChart10 from '@/components/kit/widgets/Charts/10/index'
+import KitList12 from '@/components/kit/widgets/Lists/12/index'
+import KitList15 from '@/components/kit/widgets/Lists/15/index'
 
 export default {
   components: {

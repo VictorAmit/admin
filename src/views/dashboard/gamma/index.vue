@@ -177,15 +177,15 @@
 
 <script>
 import VueChartist from 'v-chartist'
-import CuiChart12 from '@/components/kit-widgets/Charts/12'
-import CuiChart12v1 from '@/components/kit-widgets/Charts/12v1'
-import CuiGeneral5v1 from '@/components/kit-widgets/General/5v1'
-import CuiGeneral2 from '@/components/kit-widgets/General/2'
-import CuiGeneral2v1 from '@/components/kit-widgets/General/2v1'
-import CuiGeneral2v2 from '@/components/kit-widgets/General/2v2'
-import CuiGeneral13v1 from '@/components/kit-widgets/General/13v1'
-import CuiList10 from '@/components/kit-widgets/Lists/10'
-import CuiList11 from '@/components/kit-widgets/Lists/11'
+import CuiChart12 from '@/components/kit/widgets/Charts/12'
+import CuiChart12v1 from '@/components/kit/widgets/Charts/12v1'
+import CuiGeneral5v1 from '@/components/kit/widgets/General/5v1'
+import CuiGeneral2 from '@/components/kit/widgets/General/2'
+import CuiGeneral2v1 from '@/components/kit/widgets/General/2v1'
+import CuiGeneral2v2 from '@/components/kit/widgets/General/2v2'
+import CuiGeneral13v1 from '@/components/kit/widgets/General/13v1'
+import CuiList10 from '@/components/kit/widgets/Lists/10'
+import CuiList11 from '@/components/kit/widgets/Lists/11'
 
 import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 import {

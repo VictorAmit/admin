@@ -205,10 +205,10 @@
 <script>
 import vueCustomScrollbar from 'vue-custom-scrollbar'
 import { DraggableTree } from 'vue-draggable-nested-tree'
-import KitTable6 from '@/components/kit-widgets/Tables/6/index'
-import KitChart4 from '@/components/kit-widgets/Charts/4/index'
-import KitChart4v1 from '@/components/kit-widgets/Charts/4v1/index'
-import KitChart4v2 from '@/components/kit-widgets/Charts/4v2/index'
+import KitTable6 from '@/components/kit/widgets/Tables/6/index'
+import KitChart4 from '@/components/kit/widgets/Charts/4/index'
+import KitChart4v1 from '@/components/kit/widgets/Charts/4v1/index'
+import KitChart4v2 from '@/components/kit/widgets/Charts/4v2/index'
 export default {
   components: {
     vueCustomScrollbar,

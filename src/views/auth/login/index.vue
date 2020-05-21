@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import CuiLogin from '@/components/cui-system/Auth/Login'
+import CuiLogin from '@/components/cleanui/system/Auth/Login'
 export default {
   components: {
     CuiLogin,
