@@ -2,8 +2,8 @@ name = "cleanui-vue"
 type = "webpack"
 account_id = "792461088a4c863230f3faee467094b1"
 # workers_dev = true
-route = "vue.cleanuitemplate.com/*"
-zone_id = "f97fb61fdf15fe0e0461e9b715430db1"
+route = "vue.cleanui.cloud/*"
+zone_id = "10c74f67e750c4daaa0612e5a8227d68"
 
 [site]
 bucket = "../dist"
