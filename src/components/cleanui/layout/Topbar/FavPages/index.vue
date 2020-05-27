@@ -66,7 +66,7 @@
 <script>
 import store from 'store'
 import vueCustomScrollbar from 'vue-custom-scrollbar'
-import { getMenuData } from '@/services/menu.service'
+import { getMenuData } from '@/services/menu'
 
 export default {
   components: {

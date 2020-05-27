@@ -15,7 +15,7 @@ export default {
     roles: Array,
   },
   computed: {
-    ...mapGetters(['user']),
+    ...mapGetters('user', ['user']),
   },
   data() {
     return {

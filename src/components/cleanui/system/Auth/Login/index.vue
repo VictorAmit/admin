@@ -8,8 +8,8 @@
         Pluggable enterprise-level application framework.
         <br />An excellent front-end solution for web applications built upon Ant Design.
         <br />Credentials for testing purposes -
-        <strong>admin@mediatec.org</strong> /
-        <strong>cleanui</strong>
+        <strong>demo@sellpixels.com</strong> /
+        <strong>demo123</strong>
       </p>
     </div>
     <div class="card" :class="$style.container">
@@ -22,17 +22,18 @@
           @change="e => changeAuthProvider(e.target.value)"
         >
           <a-radio value="firebase">Firebase</a-radio>
+          <a-radio value="jwt">JWT</a-radio>
           <a-tooltip>
             <template slot="title">
-              <span>Read docs - Auth/JWT section</span>
+              <span>Read docs - Auth/Auth0 section</span>
             </template>
-            <a-radio value="jwt" disabled>JWT</a-radio>
+            <a-radio value="auth0" disabled>Auth0</a-radio>
           </a-tooltip>
           <a-tooltip>
             <template slot="title">
               <span>Read docs - Auth/Auth0 section</span>
             </template>
-            <a-radio value="Auth0" disabled>Auth0</a-radio>
+            <a-radio value="strapi" disabled>Auth0</a-radio>
           </a-tooltip>
         </a-radio-group>
       </div>
@@ -41,7 +42,7 @@
           <a-input
             size="large"
             placeholder="Email"
-            v-decorator="['email', { initialValue: 'admin@mediatec.org', rules: [{ required: true, message: 'Please input your username!' }]}]"
+            v-decorator="['email', { initialValue: 'demo@sellpixels.com', rules: [{ required: true, message: 'Please input your username!' }]}]"
           />
         </a-form-item>
         <a-form-item>
@@ -49,10 +50,16 @@
             size="large"
             placeholder="Password"
             type="password"
-            v-decorator="['password', {initialValue: 'cleanui', rules: [{ required: true, message: 'Please input your Password!' }]}]"
+            v-decorator="['password', {initialValue: 'demo123', rules: [{ required: true, message: 'Please input your Password!' }]}]"
           />
         </a-form-item>
-        <a-button type="primary" htmlType="submit" size="large" class="text-center w-100">
+        <a-button
+          type="primary"
+          htmlType="submit"
+          size="large"
+          class="text-center w-100"
+          :loading="loading"
+        >
           <strong>Sign in</strong>
         </a-button>
       </a-form>
@@ -69,7 +76,12 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'CuiLogin',
-  computed: mapState(['settings']),
+  computed: {
+    ...mapState(['settings']),
+    loading() {
+      return this.$store.state.user.loading
+    },
+  },
   data: function () {
     return {
       form: this.$form.createForm(this),
@@ -83,23 +95,7 @@ export default {
       e.preventDefault()
       this.form.validateFields((err, values) => {
         if (!err) {
-          this.$nprogress.start()
-          this.$firebaseAuth.login(values.email, values.password)
-            .then(() => {
-              this.$nprogress.done()
-              this.$router.push('/')
-              this.$notification.success({
-                message: 'Logged In',
-                description: 'You have successfully logged in to Air UI Vue Admin Template!',
-              })
-            })
-            .catch((error) => {
-              this.$nprogress.done()
-              this.$notification.warning({
-                message: error.code,
-                description: error.message,
-              })
-            })
+          this.$store.dispatch('user/LOGIN', { payload: values })
         }
       })
     },

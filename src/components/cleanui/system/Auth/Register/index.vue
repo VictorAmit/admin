@@ -10,29 +10,36 @@
           infrastructure.
         </p>
       </div>
-      <a-form class="mb-4" :form="form">
+      <a-form class="mb-4" :form="form" @submit="handleSubmit">
         <a-form-item>
           <a-input
             size="large"
             placeholder="Full Name"
-            v-decorator="['fullName', {rules: [{ required: true, message: 'Please input your full name!' }]}]"
+            v-decorator="['name', {rules: [{ required: true, message: 'Please input your full name' }]}]"
           />
         </a-form-item>
         <a-form-item>
           <a-input
             size="large"
             placeholder="Email Address"
-            v-decorator="['email', {rules: [{ required: true, message: 'Please input your email address!' }]}]"
+            v-decorator="['email', {rules: [{ required: true, message: 'Please input your email address' }]}]"
           />
         </a-form-item>
         <a-form-item>
           <a-input
             size="large"
+            type="password"
             placeholder="Password"
-            v-decorator="['password', {rules: [{ required: true, message: 'Please input your Password!' }]}]"
+            v-decorator="['password', {rules: [{ required: true, message: 'Please input your password' }]}]"
           />
         </a-form-item>
-        <a-button type="primary" size="large" class="text-center w-100">
+        <a-button
+          type="primary"
+          size="large"
+          class="text-center w-100"
+          :loading="loading"
+          htmlType="submit"
+        >
           <strong>Sign Up</strong>
         </a-button>
       </a-form>
@@ -51,10 +58,25 @@
 <script>
 export default {
   name: 'CuiRegister',
+  computed: {
+    loading() {
+      return this.$store.state.user.loading
+    },
+  },
   data: function () {
     return {
       form: this.$form.createForm(this),
     }
+  },
+  methods: {
+    handleSubmit(e) {
+      e.preventDefault()
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          this.$store.dispatch('user/REGISTER', { payload: values })
+        }
+      })
+    },
   },
 }
 </script>

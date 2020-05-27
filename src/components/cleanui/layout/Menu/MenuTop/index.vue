@@ -36,7 +36,7 @@
 import { mapState, mapGetters } from 'vuex'
 import store from 'store'
 import find from 'lodash/find'
-import { getMenuData } from '@/services/menu.service'
+import { getMenuData } from '@/services/menu'
 import SubMenu from './partials/submenu'
 import Item from './partials/item'
 
@@ -45,7 +45,7 @@ export default {
   components: { SubMenu, Item },
   computed: {
     ...mapState(['settings']),
-    ...mapGetters(['user']),
+    ...mapGetters('user', ['user']),
   },
   mounted() {
     this.selectedKeys = store.get('app.menu.selectedKeys') || []

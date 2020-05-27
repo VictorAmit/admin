@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapState } from 'vuex'
 import Localization from '@/localization'
 
 export default {
@@ -13,12 +13,13 @@ export default {
   components: { Localization },
   computed: {
     ...mapState(['settings']),
-    ...mapGetters(['user']),
+    ...mapState('user', ['authorized']),
     nextRoute() {
       return this.$route.query.redirect || '/'
     },
   },
   mounted() {
+    this.$store.dispatch('user/LOAD_CURRENT_ACCOUNT')
     this.$store.commit('SET_PRIMARY_COLOR', { color: this.settings.primaryColor })
     this.$store.commit('SET_THEME', { theme: this.settings.theme })
   },
@@ -26,8 +27,8 @@ export default {
     '$store.state.settings.theme'(theme) {
       this.$store.commit('SET_THEME', { theme })
     },
-    user(auth) {
-      if (auth) {
+    authorized(authorized) {
+      if (authorized) {
         this.$router.replace(this.nextRoute)
       }
     },

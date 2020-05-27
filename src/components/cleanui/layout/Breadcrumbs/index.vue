@@ -18,7 +18,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { getMenuData } from '@/services/menu.service'
+import { getMenuData } from '@/services/menu'
 import reduce from 'lodash/reduce'
 
 export default {
