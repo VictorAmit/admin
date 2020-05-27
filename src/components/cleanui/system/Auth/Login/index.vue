@@ -25,15 +25,15 @@
           <a-radio value="jwt">JWT</a-radio>
           <a-tooltip>
             <template slot="title">
-              <span>Read docs - Auth/Auth0 section</span>
+              <span>Read Docs Guide</span>
             </template>
             <a-radio value="auth0" disabled>Auth0</a-radio>
           </a-tooltip>
           <a-tooltip>
             <template slot="title">
-              <span>Read docs - Auth/Auth0 section</span>
+              <span>Read Docs Guide</span>
             </template>
-            <a-radio value="strapi" disabled>Auth0</a-radio>
+            <a-radio value="strapi" disabled>Strapi</a-radio>
           </a-tooltip>
         </a-radio-group>
       </div>
