@@ -1,8 +1,8 @@
 ### Clean UI Pro Vue Admin Template Preview ###
-https://vue.cleanuitemplate.com
+https://vue.cleanui.cloud
 
 ### Documentation ###
-Please read documentation here https://docs.cleanuitemplate.com
+Please read documentation here https://docs.sellpixels.com
 
 ### Quick Start ###
 * Install latest node.js: https://nodejs.org​
