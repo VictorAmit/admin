@@ -125,6 +125,7 @@
 
     :global(.ant-menu-submenu) {
       border-radius: 5px;
+      will-change: transform;
     }
 
     :global(.ant-menu-item) {
