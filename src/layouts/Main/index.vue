@@ -19,7 +19,7 @@
       <cui-menu-left v-if="settings.menuLayoutType === 'left' && !settings.isMobileView" />
 
       <!-- left menu mobile -->
-      <div v-if="settings.menuLayoutType === 'left' && settings.isMobileView">
+      <div v-if="settings.isMobileView">
         <div :class="$style.handler" @click="toggleMobileMenu">
           <div :class="$style.handlerIcon"></div>
         </div>
