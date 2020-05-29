@@ -17,6 +17,9 @@ export default {
     nextRoute() {
       return this.$route.query.redirect || '/'
     },
+    currentRoute() {
+      return this.$route.path
+    },
   },
   mounted() {
     this.$store.dispatch('user/LOAD_CURRENT_ACCOUNT')
@@ -28,7 +31,7 @@ export default {
       this.$store.commit('SET_THEME', { theme })
     },
     authorized(authorized) {
-      if (authorized) {
+      if (authorized && this.currentRoute === '/auth/login') {
         this.$router.replace(this.nextRoute)
       }
     },
