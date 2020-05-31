@@ -271,9 +271,14 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /* SETTINGS */
-.unfixed {
-  .menuOuter {
-    position: relative;
+@media (min-width: $md-max-width) {
+  .unfixed {
+    .menuOuter {
+      position: relative;
+      :global(.ps-container) {
+        height: auto !important;
+      }
+    }
   }
 }
 
