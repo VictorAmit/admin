@@ -4,12 +4,12 @@ import 'firebase/auth'
 import 'firebase/database'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBJVhr2WZshEGR7egcxoygQIphKOkKVIYQ',
-  authDomain: 'sellpixels-7d5d4.firebaseapp.com',
-  databaseURL: 'https://sellpixels-7d5d4.firebaseio.com',
-  projectId: 'sellpixels-7d5d4',
-  storageBucket: 'cleanui-72a42.appspot.com',
-  messagingSenderId: '338219933237',
+  apiKey: 'AIzaSyAfa1xMawE6cmaz3mbA-591U0FERJUlke4',
+  authDomain: 'victorbuzz-633c3.firebaseapp.com',
+  databaseURL: 'https://victorbuzz-633c3.firebaseio.com',
+  projectId: 'victorbuzz-633c3',
+  storageBucket: 'victorbuzz-633c3.appspot.com',
+  messagingSenderId: '1085121889973',
 }
 
 firebase.initializeApp(firebaseConfig)
