@@ -1,4 +1,5 @@
 module.exports = {
+    publicPath: '/admin/'
   pwa: {
     iconPaths: {
       favicon32: './favicon.png',
